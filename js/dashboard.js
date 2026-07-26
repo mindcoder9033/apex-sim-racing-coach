@@ -63,7 +63,7 @@ class DashboardController {
             </div>
 
             <!-- Primary Action CTAs -->
-            <div class="flex items-center gap-3 flex-wrap">
+            <div class="hero-cta-group flex items-center gap-3 flex-wrap">
               <button class="btn btn-primary btn-lg flex items-center gap-2" id="btnContinueActiveSession">
                 <i data-lucide="play" class="icon-sm"></i> Continue Session ${nextSession.moduleId}.${nextSession.sessionId}
               </button>

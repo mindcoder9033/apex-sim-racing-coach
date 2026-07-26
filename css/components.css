@@ -63,6 +63,8 @@ i[data-lucide] {
   transition: all var(--transition-fast);
   text-decoration: none;
   line-height: 1.2;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .btn-primary {
@@ -1480,15 +1482,45 @@ textarea.form-control {
   padding: 0 0.25rem;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 767px) {
   .driver-command-hero {
     padding: 1.25rem 1rem;
+    overflow: hidden;
+  }
+  .hero-header-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .hero-footer-bar {
+    flex-direction: column;
+    align-items: stretch !important;
+    gap: 1.25rem;
+  }
+  .hero-cta-group {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch !important;
+    gap: 0.75rem;
+  }
+  .hero-cta-group .btn {
+    width: 100% !important;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+    word-break: break-word;
+    box-sizing: border-box;
+  }
+  .hero-cta-group .btn-lg {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
   }
   .hero-target-banner {
     padding: 0.85rem 1rem;
   }
   .hero-target-title {
     font-size: 1.15rem;
+    word-break: break-word;
   }
   .stint-history-item {
     flex-direction: column;

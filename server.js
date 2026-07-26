@@ -46,7 +46,19 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(PORT, () => {
+let currentPort = parseInt(process.env.PORT || 3000, 10);
+
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.log(`\n  ⚠️  Port ${currentPort} is already in use. Trying port ${currentPort + 1}...`);
+    currentPort++;
+    server.listen(currentPort);
+  } else {
+    console.error('Server error:', err);
+  }
+});
+
+server.listen(currentPort, () => {
   console.log(`\n  🏎️  APEX Sim Racing Coach dev server running at:\n`);
-  console.log(`  > Local:   http://localhost:${PORT}/\n`);
+  console.log(`  > Local:   http://localhost:${currentPort}/\n`);
 });

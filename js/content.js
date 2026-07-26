@@ -2219,39 +2219,66 @@ Changes in wing downforce and aerodynamic balance when air hits the car at an an
   ],
   guides: {
     mozaR3: {
-      title: 'Moza R3 Direct Drive for Xbox - Complete Beginner Guide',
-      subtitle: 'Master your Direct Drive wheelbase, optimize force feedback settings, and understand hardware physics.',
-      setupSteps: [
-        {
-          step: 1,
-          title: 'Xbox & PC Connection',
-          desc: 'Plug the power supply into the base. Connect the USB cable directly to a front or rear USB 3.0 port on your Xbox Series X|S or Xbox One. Ensure the ES Steering Wheel for Xbox is securely locked onto the QR (Quick Release) hub.'
-        },
-        {
-          step: 2,
-          title: 'Console Quick Resume Caution',
-          desc: 'Xbox Quick Resume often freezes USB FFB telemetry signals. Always fully quit Forza Motorsport from the Xbox Guide menu before launching to ensure FFB initialises cleanly.'
-        },
-        {
-          step: 3,
-          title: 'Xbox Mode Activation',
-          desc: 'Press and hold [S1 + S2] buttons on the ES Xbox wheel rim for 3 seconds until the RPM LED flashes to toggle between PC Mode and Xbox Mode.'
-        },
-        {
-          step: 4,
-          title: 'Moza Pit House Mobile Setup',
-          desc: 'Download Moza Pit House on iOS/Android. Enable Bluetooth on your phone and pair with the R3 base to adjust FFB curves, wheel rotation angles, and update firmware wirelessly.'
-        }
+      title: 'Moza R3 Bundle for Xbox: Beginner User Guide',
+      subtitle: "A Sim Racing Coach's Guide to Getting Started, Direct Drive Setup & Physics",
+      quote: '"The first step in your plan is to realize that you only have to go as fast as you want to go. Just because you are on a racetrack does not mean you should throw common sense out the window." — Going Faster!',
+      boxContents: [
+        { component: 'R3 Direct Drive Wheelbase', description: '3.9 Nm peak torque, aviation-grade aluminum construction' },
+        { component: 'ESX Steering Wheel', description: 'Officially licensed for Xbox, 22 programmable buttons, ISF PU grips' },
+        { component: 'SR-P Lite Pedals', description: 'Two-pedal set with Hall sensors, fully adjustable pedal spacing' },
+        { component: 'Table Clamp', description: 'Sturdy desk mount supporting desks up to 50mm thick' },
+        { component: 'Power Supply', description: '72W rated power adapter' },
+        { component: 'USB Cable', description: 'For connecting wheelbase to Xbox Series X|S, Xbox One, or PC' },
+        { component: 'Tools & Hardware', description: 'Assembly bolts and adjustment hex keys' },
+        { component: 'User Manual', description: 'Complete reference guide' }
+      ],
+      physicalSetup: {
+        mountingOptions: [
+          { title: 'Option A: Desk Mount (Beginners)', desc: 'Attach included table clamp using 4 mounting holes under R3 base. Secure firmly to desk (supports up to 50mm thick desk). Handles full 3.9 Nm torque cleanly.' },
+          { title: 'Option B: Sim Rig Mount', desc: 'Use 4-hole bottom mounting pattern. Fits most standard sim racing cockpits, wheel stands, and rigs.' }
+        ],
+        positioning: [
+          { title: 'Seating & Wheel Angle', desc: 'Sit so your arms are bent ~90° at 9 and 3 o\'clock. Relax shoulders. Angle wheel slightly upward like a real car. Eyes level with screen center.' },
+          { title: 'Pedal Setup', desc: 'Heels rest comfortably on floor. Adjust pedal spacing left/right by moving mounting bolts. Support pedals at back on hard floor/carpet to prevent sliding.' },
+          { title: 'Quick Release Attachment', desc: 'Align 6 steel balls on wheel QR with 6 grooves on base shaft. Push until it clicks into place. Squeeze black QR ring with MOZA logo towards wheel to release.' }
+        ]
+      },
+      xboxConnection: {
+        steps: [
+          { step: 1, title: 'Pedals to Base', desc: 'Connect SR-P Lite pedal set to PEDAL port on rear of R3 base using provided RJ45 cable.' },
+          { step: 2, title: 'Power Connection', desc: 'Plug power cord into power adapter, then insert power jack into R3 base.' },
+          { step: 3, title: 'Wall Outlet', desc: 'Plug power adapter into wall outlet.' },
+          { step: 4, title: 'USB Connection', desc: 'Connect USB-B end to R3 base USB-B port and USB-A end to Xbox USB port.' },
+          { step: 5, title: 'Power On Base', desc: 'Press power button on rear of R3 base to turn it on.' },
+          { step: 6, title: 'Power On Xbox', desc: 'Turn on your Xbox console and launch Forza Motorsport.' }
+        ],
+        indicators: [
+          { pattern: 'RPM light flows side-to-center', status: 'success', label: '✅ Successful Xbox Connection' },
+          { pattern: 'RPM light is flashing', status: 'warning', label: '⚠️ In PC Mode — Switch to Xbox Mode (Hold S1+S2 for 3s)' }
+        ]
+      },
+      modeSwitching: {
+        shortcut: 'Hold [S1 + S2] for 3 seconds on the ESX steering wheel',
+        desc: 'Toggles between Xbox Mode and PC Mode. RPM light pattern changes to confirm mode. Use if wheel is not recognized or FFB telemetry drops.',
+        mobileApp: 'Download MOZA Racing mobile app (iOS/Android) -> connect via Bluetooth -> calibrate pedals, tune steering angles, adjust FFB curves, and update firmware wirelessly.'
+      },
+      steeringAngles: [
+        { game: 'Forza Motorsport (2023)', recommended: '540° - 900°', notes: 'Match in-game angle (720° recommended)' },
+        { game: 'Forza Horizon 5', recommended: '540° - 720°', notes: 'Responsive road car steering' },
+        { game: 'F1 Series', recommended: '360° - 540°', notes: 'Quick formula rack rotation' },
+        { game: 'Assetto Corsa / ACC', recommended: '540° - 900°', notes: 'Matches real GT3/sports car rack' }
       ],
       ffbSliders: [
-        { name: 'Force Feedback Scale', value: '100%', description: 'Delivers full 3.9 Nm torque output from the game physics engine to your hands.' },
-        { name: 'Steering Axis Deadzone', value: '0% Inside / 100% Outside', description: 'Eliminates center slop for immediate steering rack response.' },
-        { name: 'Self Aligning Torque (SAT)', value: '100%', description: 'Pulls the wheel back toward center dynamically as front tire slip angle changes.' },
-        { name: 'Mechanical Trail Scale', value: '110%', description: 'Enhances self-centering force based on steering geometry, providing a clear feel of rear grip.' },
-        { name: 'Pneumatic Trail Scale', value: '90%', description: 'Communicates front tire slip angle. Decreases force smoothly when front tires lose grip.' },
-        { name: 'Road Feel Scale', value: '35% - 40%', description: 'Reduces excessive high-frequency curb chatter on a 3.9 Nm base to keep FFB clean.' },
-        { name: 'Wheel Damper Scale', value: '15%', description: 'Adds subtle fluid resistance to prevent hands-off oscillation on straightaways.' },
-        { name: 'Center Spring Scale', value: '0%', description: 'Must be 0% in sim racing—artificial spring interferes with true physics feedback.' }
+        { name: 'Maximum Torque Limit', value: '80% - 100%', description: 'Controls overall FFB strength from the 3.9 Nm motor.' },
+        { name: 'Force Feedback Reversal', value: 'Off', description: 'Prevents inverted steering forces.' },
+        { name: 'Hands-Off Protection', value: 'On', description: 'Prevents violent oscillation when releasing the wheel on straights.' },
+        { name: 'Maximum Steering Angle', value: '720°', description: 'Matches physical rotation to virtual steering rack.' },
+        { name: 'Steering Axis Deadzone', value: '0% Inside / 100% Outside', description: 'Eliminates center slop for immediate 1:1 steering rack response.' },
+        { name: 'Steering Axis Sensitivity', value: '50%', description: 'Linear response across the entire turning range.' },
+        { name: 'Mechanical Trail Scale', value: '100% - 140%', description: 'Communicates suspension geometry caster and rear grip load.' },
+        { name: 'Pneumatic Trail Scale', value: '90% - 100%', description: 'Communicates front tire slip angle; drops force when front tires lose grip.' },
+        { name: 'Road Feel Scale', value: '35% - 40%', description: 'Reduces excessive high-frequency curb chatter on a 3.9 Nm base.' },
+        { name: 'Wheel Damping Scale', value: '15% - 30%', description: 'Adds subtle fluid resistance to prevent hands-off oscillation.' }
       ],
       presets: [
         {
@@ -2264,7 +2291,7 @@ Changes in wing downforce and aerodynamic balance when air hits the car at an an
             { label: 'Mechanical Trail', val: '105%' },
             { label: 'Road Feel', val: '30%' },
             { label: 'Base Damping', val: '20%' },
-            { label: 'Maximum Angle', val: '900°' }
+            { label: 'Maximum Angle', val: '720°' }
           ]
         },
         {
@@ -2277,142 +2304,218 @@ Changes in wing downforce and aerodynamic balance when air hits the car at an an
             { label: 'Mechanical Trail', val: '120%' },
             { label: 'Road Feel', val: '45%' },
             { label: 'Base Damping', val: '10%' },
-            { label: 'Maximum Angle', val: '540° / 900°' }
+            { label: 'Maximum Angle', val: '540° / 720°' }
           ]
         }
       ],
+      ffbSensations: [
+        { sensation: 'Heavy wheel in corners', meaning: 'The car has high grip', action: 'Trust the car, maintain line' },
+        { sensation: 'Wheel goes light', meaning: 'Front tires losing grip (understeer)', action: 'Reduce steering input & speed smoothly' },
+        { sensation: 'Wheel pulls to one side', meaning: 'Uneven grip or track camber shift', action: 'Correct steering smoothly' },
+        { sensation: 'Rumble / vibration', meaning: 'Road surface, curbs, rumble strips', action: 'Keep wheel steady, hold reference line' }
+      ],
+      pedalCalibration: {
+        overview: 'SR-P Lite pedals use ultra-sensitive Hall sensors (no physical contact, lifetime durability).',
+        methods: [
+          { name: 'Method 1 (PC Mode)', desc: 'Connect to PC, enter PC mode in MOZA Pit House, calibrate min/max travel, switch back to Xbox.' },
+          { name: 'Method 2 (Mobile App)', desc: 'Open MOZA Racing App on smartphone, pair via Bluetooth, run pedal calibration directly in Xbox mode.' }
+        ],
+        upgradeKit: 'SR-P Lite Performance Kit ($45 CAD): Adds spring and elastomer for realistic progressive brake resistance. Highly recommended for cars without ABS.'
+      },
+      gameCompatibility: {
+        xbox: ['Forza Motorsport (2023) ✅', 'Forza Horizon 5 ✅', 'F1 Series ✅', 'Assetto Corsa ✅', 'Assetto Corsa Competizione ✅', 'DiRT Rally 2.0 ✅', 'Project CARS ✅', 'GRID (2019) ✅'],
+        pc: ['iRacing', 'Assetto Corsa / ACC', 'rFactor 2', 'Automobilista 2', 'RaceRoom'],
+        fm2023Settings: 'In FM2023: Settings -> Controls -> Wheel -> Set Steering Deadzone Inside = 0, Steering Sensitivity = 50%, Angle = 720°.'
+      },
+      learningProgression: [
+        { stage: 1, title: 'Hardware Familiarization', focus: 'Wheel, pedal spacing, and posture', goal: 'Setup feels natural' },
+        { stage: 2, title: 'Track Familiarization', focus: 'Learn layout at 50% pace', goal: '3 clean laps completed' },
+        { stage: 3, title: 'The Line', focus: 'Hit Outside-Inside-Outside apexes', goal: '80% of apexes hit accurately' },
+        { stage: 4, title: 'Braking', focus: 'Consistent brake markers & trail braking', goal: 'Same braking point every lap' },
+        { stage: 5, title: 'Exit Speed', focus: 'Smooth throttle squeeze out of turns', goal: 'Zero wheelspin on exit' },
+        { stage: 6, title: 'Full Laps', focus: 'Putting all skills together smoothly', goal: 'Repeatable lap times within 0.5s' }
+      ],
+      troubleshooting: [
+        { issue: 'Wheel not recognized on Xbox', fix: 'Check USB cable, restart Xbox console. Ensure Quick Resume is not freezing USB.' },
+        { issue: 'RPM light flashing', fix: 'Switch from PC mode to Xbox mode by holding [S1 + S2] for 3 seconds.' },
+        { issue: 'No force feedback', fix: 'Verify mode (Xbox mode), check in-game FFB settings, restart game from main menu.' },
+        { issue: 'Pedals not registering full travel', fix: 'Recalibrate via MOZA Mobile App or PC Pit House.' },
+        { issue: 'Wheel oscillates on straights', fix: 'Enable Hands-Off Protection and increase Wheel Damping Scale to 20-30%.' }
+      ],
+      maintenanceWarranty: {
+        warranty: [
+          { component: 'Wheelbase Body', period: '24 Months' },
+          { component: 'Steering Wheel Body', period: '12 Months' },
+          { component: 'Pedals Set', period: '12 Months' },
+          { component: 'Power Supply Adapter', period: '12 Months' },
+          { component: 'Data Cables', period: '6 Months' }
+        ],
+        upgrades: [
+          { upgrade: 'SR-P Lite Clutch Pedal', price: '$55 CAD', desc: 'Add 3rd pedal for manual clutch driving' },
+          { upgrade: 'Performance Kit', price: '$45 CAD', desc: 'Spring + elastomer progressive brake feel upgrade' },
+          { upgrade: 'MOZA QR Wheels', price: 'Varies', desc: 'Swap steering rims using Moza quick release' }
+        ]
+      },
       glossary: [
-        {
-          term: 'Direct Drive (DD)',
-          definition: 'A motor architecture where the steering wheel mounts directly to the electric motor shaft. Eliminates belts and gears for zero latency, silent operation, and ultra-crisp force feedback detail.'
-        },
-        {
-          term: 'Peak Torque (3.9 Nm)',
-          definition: 'The maximum rotational force the Moza R3 motor can generate. 3.9 Newton-meters offers high-fidelity detail suitable for desk and rig mounting without requiring heavy industrial clamps.'
-        },
-        {
-          term: 'FFB Clipping',
-          definition: 'Occurs when in-game physics forces request more torque than the wheelbase can output. The force output hits a flat 100% ceiling, causing detailed force variations to become indistinguishable.'
-        },
-        {
-          term: 'Mechanical vs Pneumatic Trail',
-          definition: 'Mechanical trail provides self-centering force based on suspension caster geometry. Pneumatic trail comes from tire rubber deformation under slip angle, dropping force when front grip vanishes.'
-        },
-        {
-          term: 'FFB Damping & Friction',
-          definition: 'Artificial resistance applied by the wheel software to simulate hydraulic steering rack weight or damp out unwanted oscillations when letting go of the steering wheel.'
-        },
-        {
-          term: 'Linearity & Deadzones',
-          definition: 'Linearity ensures 1:1 scaling between virtual steering column torque and physical wheel resistance. Zero deadzone ensures immediate response with no play at dead center.'
-        }
+        { term: 'Direct Drive (DD)', definition: 'Motor architecture where steering wheel mounts directly to motor shaft. Zero belts/gears = zero latency and crisp force feedback detail.' },
+        { term: 'Peak Torque (3.9 Nm)', definition: 'Maximum rotational force output of the Moza R3 motor. High-fidelity detail ideal for desk or rig mounting.' },
+        { term: 'FFB Clipping', definition: 'Occurs when physics force demand exceeds motor torque limit. Force hits 100% flat ceiling, drowning out tire detail.' },
+        { term: 'Mechanical Trail', definition: 'Self-centering steering force caused by suspension caster angle. Communicates rear grip loading.' },
+        { term: 'Pneumatic Trail', definition: 'Force generated by tire rubber contact patch slip angle. Drops smoothly when front tires lose grip.' },
+        { term: 'Hall Sensor Technology', definition: 'Magnetic position sensing without physical contact wear. Prevents pedal potentiometer wear and spiking.' }
       ]
     },
     forza2023: {
-      title: 'Forza Motorsport (2023) - Complete Racing & Game Guide',
-      subtitle: 'Master track anatomy, car classes & drivetrains, and core sim racing terminology.',
+      title: 'Forza Motorsport (2023): Beginner User Guide',
+      subtitle: "A Sim Racing Coach's Guide to Getting Started based on Skip Barber's Going Faster!",
+      quote: '"The first step in your plan is to realize that you only have to go as fast as you want to go. Just because you are on a racetrack does not mean you should throw common sense out the window." — Going Faster!',
+      gameModes: [
+        { mode: 'Builders Cup', purpose: 'Career mode with structured practice & race events', recommended: 'Learning the game & leveling cars' },
+        { mode: 'Free Play', purpose: 'Custom races & solo practice sessions with any car/track', recommended: 'Dedicated practice & setup tuning' },
+        { mode: 'Rivals', purpose: 'Hot-lapping against driver ghost data', recommended: 'Improving lap times & analyzing lines' },
+        { mode: 'Featured Multiplayer', purpose: 'Ranked online racing against real opponents', recommended: 'Once confident in racecraft & track limits' }
+      ],
+      practiceSessionInfo: {
+        title: 'Why Practice Sessions Matter',
+        benefits: [
+          'Learn track layout & visual reference points without pressure',
+          'Find consistent brake points and turn-in markers',
+          'Build muscle memory and steady rhythm',
+          'Earn Car XP (CXP) to level up car upgrades'
+        ]
+      },
+      essentialSettings: [
+        { setting: 'Drivatar Difficulty', recommendation: '3 - 4 / 10', why: 'Allows learning racecraft without frustrating AI aggression' },
+        { setting: 'Damage', recommendation: 'Cosmetic or Fuel & Tire', why: 'Learn realistic tire wear without game-ending repairs' },
+        { setting: 'Fuel & Tire Wear', recommendation: 'On', why: 'Build habits of managing tire grip and fuel load from day one' },
+        { setting: 'Track Limits', recommendation: 'On (Gameplay & HUD)', why: 'Visual boundary lines show legal track limits for clean lap times' },
+        { setting: 'Proximity Arrows', recommendation: 'On', why: 'Displays grey/yellow indicators when opponents are nearby' }
+      ],
+      drivingAssists: [
+        { assist: 'Suggested Line', beginner: 'Full or Braking Only', whenToChange: 'Turn off when track layout is memorized' },
+        { assist: 'Braking (ABS)', beginner: 'ABS On', whenToChange: 'Keep on until threshold braking is mastered' },
+        { assist: 'Steering', beginner: 'Normal or Partially Assisted', whenToChange: 'Switch to Simulation when comfortable with wheel control' },
+        { assist: 'Throttle', beginner: 'Unassisted', whenToChange: 'Learn throttle modulation from day one' },
+        { assist: 'Traction Control (TCS)', beginner: 'Sport or On', whenToChange: 'Reduce as throttle squeeze control improves' },
+        { assist: 'Stability Control (STM)', beginner: 'On', whenToChange: 'Turn off when car balance understeer/oversteer is understood' },
+        { assist: 'Shifting', beginner: 'Automatic', whenToChange: 'Switch to Manual when track focus becomes automatic' }
+      ],
+      assistMilestones: [
+        { milestone: '5 clean laps completed', remove: 'Suggested Line -> Braking Only' },
+        { milestone: 'Know track layout & brake markers', remove: 'Suggested Line -> Off' },
+        { milestone: 'Consistent braking without lockups', remove: 'ABS -> Off' },
+        { milestone: 'Smooth gear changes', remove: 'Automatic -> Manual' },
+        { milestone: 'Controlled throttle out of corners', remove: 'Traction Control -> Off' }
+      ],
+      ffbSettings: {
+        steeringMode: [
+          { mode: 'Normal', desc: 'Smooths out yaw inertia; more stable for beginners.' },
+          { mode: 'Simulation', desc: 'No smoothing filter; direct 1:1 steering rack precision.' }
+        ],
+        sliderValues: [
+          { setting: 'Vibration Scale', recommended: '50 - 60', why: 'Controls curb and road vibration intensity' },
+          { setting: 'Force Feedback Scale', recommended: '60 - 100', why: 'Controls overall FFB force output (60-80 for DD wheels)' },
+          { setting: 'Steering Self Alignment', recommended: '100', why: 'Wheel returns to center naturally based on tire physics' },
+          { setting: 'Mechanical Trail Scale', recommended: '100 - 140', why: 'Communicates suspension caster load & rear grip' },
+          { setting: 'Pneumatic Trail Scale', recommended: '100', why: 'Communicates tire slip angle; drops force at grip limit' },
+          { setting: 'Road Feel Scale', recommended: '130 - 140', why: 'Transmits track surface texture and bumps' },
+          { setting: 'Load Sensitivity', recommended: '100', why: 'Communicates weight transfer under braking and cornering' },
+          { setting: 'Wheel Damping Scale', recommended: '30 - 50', why: 'Smooths high-speed oscillation on straights' }
+        ],
+        deadzones: [
+          { input: 'Steering Deadzone Inside', value: '0', why: 'Immediate steering response at dead center' },
+          { input: 'Steering Deadzone Outside', value: '100', why: 'Full physical steering range utilized' },
+          { input: 'Acceleration Deadzone Inside', value: '0', why: 'Immediate throttle engagement' },
+          { input: 'Acceleration Deadzone Outside', value: '95 - 100', why: 'Full throttle pedal travel' },
+          { input: 'Deceleration Deadzone Inside', value: '0', why: 'Immediate brake pedal response' },
+          { input: 'Deceleration Deadzone Outside', value: '95 - 100', why: 'Full brake pedal travel' }
+        ]
+      },
+      carSetupBasics: {
+        path: 'Cars -> Upgrade & Tune -> Tuning',
+        simpleAdjustments: [
+          { adjustment: 'Fuel Load', effect: 'Less fuel = lighter car = faster acceleration & cornering', recommendation: 'Minimum fuel + 1 lap reserve' },
+          { adjustment: 'Tire Compound', effect: 'Soft = max grip/fast wear; Medium = balanced race tire', recommendation: 'Soft for qualifying, Medium for race' },
+          { adjustment: 'Final Drive Ratio', effect: 'Lower ratio = higher acceleration; Higher ratio = top speed', recommendation: 'Tune to hit rev limiter at end of longest straight' }
+        ]
+      },
+      practiceRoutine: {
+        steps: ['1. The Line (Where to drive)', '2. Corner Exit (Carrying speed)', '3. Braking & Entering (Slowing down efficiently)'],
+        sessionStructure: [
+          { phase: 'Warm-up', duration: '3 - 5 Laps', focus: 'Learn track layout & identify reference markers' },
+          { phase: 'Line Practice', duration: '5 - 10 Laps', focus: 'Hit every apex cleanly using full track width' },
+          { phase: 'Exit Practice', duration: '5 - 10 Laps', focus: 'Smooth throttle squeeze to maximize straightaway exit speed' },
+          { phase: 'Braking Practice', duration: '5 - 10 Laps', focus: 'Consistent brake markers & trail braking' },
+          { phase: 'Full Laps', duration: '5 - 10 Laps', focus: 'Combine all skills into repeatable lap times' }
+        ],
+        rivalsMode: 'Select track -> Pick ghost 0.5s faster -> Follow ghost line & braking points -> Beat ghost time.',
+        segmentSystem: 'FM2023 breaks tracks into sectors with target scores. Focus on mastering one segment at a time!'
+      },
+      apexApproach: {
+        fundamentals: [
+          { skill: 'The Line', practice: 'Outside-Inside-Outside path. Hit every apex.' },
+          { skill: 'Corner Exit', practice: 'Smooth throttle squeeze. Listen for tire squeal or wheelspin.' },
+          { skill: 'Braking & Entering', practice: 'Consistent brake markers. Trail braking into apex.' }
+        ],
+        referencePoints: ['Distance boards (150m, 100m, 50m)', 'Track curb start/finish lines', 'Paint stripes on asphalt', 'Bridge signs & grandstands'],
+        cornerPoints: ['1. Brake point', '2. Turn-in point', '3. Apex clip', '4. Track-out exit point']
+      },
+      beginnerMistakes: [
+        { mistake: 'Driving too fast too soon', cause: 'Over-driving before knowing the track', solution: 'Start at 70% pace, build speed gradually' },
+        { mistake: 'Ignoring practice sessions', cause: 'Rushing directly into races', solution: 'Use practice to earn CXP & learn brake markers' },
+        { mistake: 'Stabbing pedals abruptly', cause: 'Street driving habits', solution: 'Squeeze pedals over 2-3 seconds smoothly' },
+        { mistake: 'Braking too late', cause: 'Chasing late braking early', solution: 'Brake early & consistently; move brake point later slowly' },
+        { mistake: 'Looking right in front of bumper', cause: 'Wrong visual focal point', solution: 'Look ahead to apex before turn-in; look to exit before apex' }
+      ],
+      troubleshooting: {
+        understeer: [
+          { symptom: 'Car pushes wide of corner', likelyCause: 'Too much entry speed', solution: 'Brake earlier before turn-in' },
+          { symptom: 'Car refuses to turn into apex', likelyCause: 'On power too early', solution: 'Reduce throttle to transfer weight forward' },
+          { symptom: 'Front tires feel light on wheel', likelyCause: 'Front tire grip exceeded', solution: 'Unwind steering angle slightly to restore grip' }
+        ],
+        oversteer: [
+          { symptom: 'Rear slides outward on exit', likelyCause: 'Too much throttle stabbed', solution: 'Squeeze throttle smoothly' },
+          { symptom: 'Rear slides on entry lift-off', likelyCause: 'Abrupt throttle lift', solution: 'Lift throttle gradually' },
+          { symptom: 'Car spins coming out of turn', likelyCause: 'Power oversteer', solution: 'Countersteer gently and reduce throttle' }
+        ]
+      },
+      progressionPlan: [
+        { week: 'Week 1: Foundation', sessions: ['S1: Setup game & 5 laps at 50% speed', 'S2: Learn Laguna Seca reference points', 'S3: Practice hitting apexes consistently'] },
+        { week: 'Week 2: Building Skills', sessions: ['S1: Practice braking point consistency', 'S2: Practice smooth corner exits', 'S3: Combine braking + exit speed'] },
+        { week: 'Week 3: Integration', sessions: ['S1: Full laps with 1-skill focus', 'S2: Rivals mode ghost matching', 'S3: Full race simulation stint'] },
+        { week: 'Week 4: Refining Pace', sessions: ['S1: Identify weak corners & isolate practice', 'S2: Reduce assists (Line -> Braking only)', 'S3: Full race applying everything'] }
+      ],
       tracks: [
-        {
-          name: 'Track Categories & Surfaces',
-          desc: 'Permanent circuits (e.g., Silverstone, Laguna Seca) offer rubbered-in high grip lines. Street circuits feature lower grip and unforgiving concrete barriers. Ovals require high-speed draft management.'
-        },
-        {
-          name: 'Corner Anatomy (Entry, Apex, Exit)',
-          desc: 'Turn-in Point: Where you initial turn the wheel while trail braking. Geometric Apex: The midpoint of the inside kerb. Late Apex: Turning later to straighten corner exit for maximum straightaway acceleration.'
-        },
-        {
-          name: 'Forza Race Regulations (FRR) & Track Limits',
-          desc: 'Track limits are defined by white lines or outer kerb boundaries. Putting 4 wheels beyond track limits incurs time penalties (0.3s to 3.0s+) and dirties lap times in Rivals mode.'
-        },
-        {
-          name: 'Dynamic Track Evolution & Weather',
-          desc: 'Track rubbering increases grip on the racing line over race stints. Rain creates slick offline puddles and drastically shifts braking zones 20-30 meters earlier.'
-        }
+        { name: 'Track Categories & Surfaces', desc: 'Permanent circuits (e.g., Silverstone, Laguna Seca) offer rubbered-in high grip lines. Street circuits feature lower grip and unforgiving concrete barriers. Ovals require high-speed draft management.' },
+        { name: 'Corner Anatomy (Entry, Apex, Exit)', desc: 'Turn-in Point: Where you initial turn the wheel while trail braking. Geometric Apex: Midpoint of inside kerb. Late Apex: Turning later to straighten corner exit for maximum straightaway acceleration.' },
+        { name: 'Forza Race Regulations (FRR) & Track Limits', desc: 'Track limits are defined by white lines or outer kerb boundaries. Putting 4 wheels beyond track limits incurs time penalties (0.3s to 3.0s+) and dirties lap times in Rivals mode.' },
+        { name: 'Dynamic Track Evolution & Weather', desc: 'Track rubbering increases grip on the racing line over race stints. Rain creates slick offline puddles and drastically shifts braking zones 20-30 meters earlier.' }
       ],
       carClasses: [
-        {
-          class: 'E to B Class (100 - 600 PI)',
-          type: 'Production & Sport Cars',
-          desc: 'Low downforce, momentum driving. Focus on smooth weight transfer, maintaining corner exit speed, and trail braking.'
-        },
-        {
-          class: 'A to S Class (601 - 800 PI)',
-          type: 'Supercars & Track Toys',
-          desc: 'High horsepower to weight ratio. Throttle control out of slow corners becomes critical to prevent wheelspin.'
-        },
-        {
-          class: 'R to P & X Class (801 - 999 PI)',
-          type: 'Race Cars & Prototypes / Formula',
-          desc: 'High aerodynamic downforce. Higher cornering speeds require confidence in aero grip and fast reaction times.'
-        }
+        { class: 'E to B Class (100 - 600 PI)', type: 'Production & Sport Cars', desc: 'Low downforce, momentum driving. Focus on smooth weight transfer, maintaining corner exit speed, and trail braking.' },
+        { class: 'A to S Class (601 - 800 PI)', type: 'Supercars & Track Toys', desc: 'High horsepower to weight ratio. Throttle control out of slow corners becomes critical to prevent wheelspin.' },
+        { class: 'R to P & X Class (801 - 999 PI)', type: 'Race Cars & Prototypes / Formula', desc: 'High aerodynamic downforce. Higher cornering speeds require confidence in aero grip and fast reaction times.' }
       ],
       drivetrains: [
-        {
-          type: 'FWD (Front-Wheel Drive)',
-          characteristics: 'Front wheels steer and propel the vehicle.',
-          handling: 'Inherently stable; tends to understeer under heavy power. Brake early, turn in, and roll on power smoothly after apex.'
-        },
-        {
-          type: 'RWD (Rear-Wheel Drive)',
-          characteristics: 'Front wheels steer, rear wheels propel.',
-          handling: 'Maximum agility and accelerating traction. Susceptible to oversteer on exit if throttle is stomped aggressively.'
-        },
-        {
-          type: 'AWD (All-Wheel Drive)',
-          characteristics: 'Power distributed to all four wheels.',
-          handling: 'Massive exit traction out of slow corners. Requires trail braking to overcome initial turn-in power understeer.'
-        }
+        { type: 'FWD (Front-Wheel Drive)', characteristics: 'Front wheels steer and propel the vehicle.', handling: 'Inherently stable; tends to understeer under heavy power. Brake early, turn in, and roll on power smoothly after apex.' },
+        { type: 'RWD (Rear-Wheel Drive)', characteristics: 'Front wheels steer, rear wheels propel.', handling: 'Maximum agility and accelerating traction. Susceptible to oversteer on exit if throttle is stomped aggressively.' },
+        { type: 'AWD (All-Wheel Drive)', characteristics: 'Power distributed to all four wheels.', handling: 'Massive exit traction out of slow corners. Requires trail braking to overcome initial turn-in power understeer.' }
       ],
       glossary: [
-        {
-          category: 'Racing Line & Cornering',
-          term: 'Apex (Geometric vs Late)',
-          definition: 'The closest point to the inside of a corner. Geometric apex maintains constant radius; Late apex turns later to maximize straightaway exit speed.'
-        },
-        {
-          category: 'Pedal & Vehicle Control',
-          term: 'Trail Braking',
-          definition: 'Gradually tapering off brake pressure as you steer into a corner, transferring weight to front tires for sharper turn-in grip.'
-        },
-        {
-          category: 'Vehicle Handling Dynamics',
-          term: 'Understeer ("Push")',
-          definition: 'Front tires lose grip before rear tires, causing the car to plow wide of the intended corner arc despite turning the wheel.'
-        },
-        {
-          category: 'Vehicle Handling Dynamics',
-          term: 'Oversteer ("Loose")',
-          definition: 'Rear tires lose traction first, causing the rear end of the car to swing outward into a slide.'
-        },
-        {
-          category: 'Tire & Physics Science',
-          term: 'Slip Angle',
-          definition: 'The angle between the direction a tire is pointed and its actual path over the track. Maximum tire grip occurs at a subtle 4°-7° slip angle.'
-        },
-        {
-          category: 'Vehicle Handling Dynamics',
-          term: 'Weight Transfer',
-          definition: 'Shift of vehicle mass forward under braking (loading front tires), rearward under acceleration (loading rear tires), or laterally in turns.'
-        },
-        {
-          category: 'Telemetry & Electronics',
-          term: 'Telemetry Data Out (UDP)',
-          definition: 'A feature in Forza Motorsport settings that broadcasts live telemetry data (wheel speed, RPM, FFB slip, G-forces) over local network.'
-        },
-        {
-          category: 'Racing Rules & Strategy',
-          term: 'Drafting / Slipstreaming',
-          definition: 'Following closely behind a leading car to reduce aerodynamic drag, gaining top speed for an overtaking attempt down straights.'
-        },
-        {
-          category: 'Pedal & Vehicle Control',
-          term: 'Cadence / Threshold Braking',
-          definition: 'Modulating brake pedal pressure right at the verge of tire lockup (or ABS threshold) for shortest stopping distance.'
-        }
+        { category: 'Racing Line & Cornering', term: 'Apex (Geometric vs Late)', definition: 'The closest point to the inside of a corner. Geometric apex maintains constant radius; Late apex turns later to maximize straightaway exit speed.' },
+        { category: 'Pedal & Vehicle Control', term: 'Trail Braking', definition: 'Gradually tapering off brake pressure as you steer into a corner, transferring weight to front tires for sharper turn-in grip.' },
+        { category: 'Vehicle Handling Dynamics', term: 'Understeer ("Push")', definition: 'Front tires lose grip before rear tires, causing the car to plow wide of the intended corner arc despite turning the wheel.' },
+        { category: 'Vehicle Handling Dynamics', term: 'Oversteer ("Loose")', definition: 'Rear tires lose traction first, causing the rear end of the car to swing outward into a slide.' },
+        { category: 'Tire & Physics Science', term: 'Slip Angle', definition: 'The angle between the direction a tire is pointed and its actual path over the track. Maximum tire grip occurs at a subtle 4°-7° slip angle.' },
+        { category: 'Vehicle Handling Dynamics', term: 'Weight Transfer', definition: 'Shift of vehicle mass forward under braking (loading front tires), rearward under acceleration (loading rear tires), or laterally in turns.' },
+        { category: 'Telemetry & Electronics', term: 'Telemetry Data Out (UDP)', definition: 'A feature in Forza Motorsport settings that broadcasts live telemetry data (wheel speed, RPM, FFB slip, G-forces) over local network.' },
+        { category: 'Racing Rules & Strategy', term: 'Drafting / Slipstreaming', definition: 'Following closely behind a leading car to reduce aerodynamic drag, gaining top speed for an overtaking attempt down straights.' },
+        { category: 'Pedal & Vehicle Control', term: 'Cadence / Threshold Braking', definition: 'Modulating brake pedal pressure right at the verge of tire lockup (or ABS threshold) for shortest stopping distance.' }
       ]
     }
   }
 };
 
 window.APEX_CONTENT = APEX_CONTENT;
+
 

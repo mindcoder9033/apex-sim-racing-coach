@@ -60,12 +60,32 @@ class ApexApp {
     }
 
     this.updateActiveNavState(viewId);
+    this.updateMobileHeaderTitle(viewId);
     window.scrollTo(0, 0);
     window.renderLucideIcons();
 
     setTimeout(() => {
       targetEl.classList.remove('fade-in');
     }, 250);
+  }
+
+  updateMobileHeaderTitle(viewId) {
+    const headerTitleEl = document.getElementById('mobileHeaderTitle');
+    if (!headerTitleEl) return;
+
+    const titles = {
+      dashboard: 'Dashboard',
+      modules: 'Modules',
+      session: 'Active Session',
+      progress: 'Progress Analytics',
+      journal: 'Driver Journal',
+      psychology: 'Motor Psychology',
+      reference: 'Reference Library',
+      export: 'Export Backup',
+      import: 'Import Progress'
+    };
+
+    headerTitleEl.textContent = titles[viewId] || 'APEX Coach';
   }
 
   updateActiveNavState(viewId) {
@@ -105,9 +125,53 @@ class ApexApp {
     // Mobile Bottom Nav Items
     document.querySelectorAll('.mobile-nav .mobile-nav-item, .mobile-bottom-nav .mobile-nav-item').forEach(btn => {
       btn.addEventListener('click', (e) => {
+        const btnId = e.currentTarget.id;
+        if (btnId === 'mobileMoreBtn') {
+          this.toggleMobileSheet(true);
+          return;
+        }
         const targetPage = e.currentTarget.getAttribute('data-page');
         if (targetPage) {
           this.navigateTo(targetPage);
+        }
+      });
+    });
+
+    // Mobile Quick Actions Header Button & Brand Click
+    document.getElementById('mobileQuickActionsBtn')?.addEventListener('click', () => {
+      this.toggleMobileSheet(true);
+    });
+
+    document.getElementById('mobileHeaderBrand')?.addEventListener('click', () => {
+      this.navigateTo('dashboard');
+    });
+
+    // Mobile Sheet Actions & Close
+    document.getElementById('mobileSheetCloseBtn')?.addEventListener('click', () => {
+      this.toggleMobileSheet(false);
+    });
+
+    document.getElementById('mobileMoreOverlay')?.addEventListener('click', (e) => {
+      if (e.target.id === 'mobileMoreOverlay') {
+        this.toggleMobileSheet(false);
+      }
+    });
+
+    document.querySelectorAll('.sheet-menu-item').forEach(item => {
+      item.addEventListener('click', (e) => {
+        const targetPage = e.currentTarget.getAttribute('data-page');
+        const action = e.currentTarget.getAttribute('data-action');
+
+        this.toggleMobileSheet(false);
+
+        if (targetPage) {
+          this.navigateTo(targetPage);
+        } else if (action === 'export') {
+          window.apexExport.downloadBackup();
+        } else if (action === 'import') {
+          window.apexExport.showImportDialog();
+        } else if (action === 'equipment') {
+          this.showEquipmentModal();
         }
       });
     });
@@ -116,6 +180,24 @@ class ApexApp {
     document.querySelector('.logo-brand')?.addEventListener('click', () => {
       this.navigateTo('dashboard');
     });
+  }
+
+  toggleMobileSheet(show) {
+    const overlay = document.getElementById('mobileMoreOverlay');
+    if (!overlay) return;
+
+    if (show) {
+      overlay.style.display = 'flex';
+      overlay.offsetHeight; // trigger layout for CSS transition
+      overlay.classList.add('active');
+    } else {
+      overlay.classList.remove('active');
+      setTimeout(() => {
+        if (!overlay.classList.contains('active')) {
+          overlay.style.display = 'none';
+        }
+      }, 250);
+    }
   }
 
   bindSidebarToggle() {

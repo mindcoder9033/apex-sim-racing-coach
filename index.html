@@ -21,6 +21,22 @@
 </head>
 <body>
 
+  <!-- Mobile Top Header (Mobile < 768px) -->
+  <header class="mobile-top-header" role="banner">
+    <div class="mobile-header-brand" id="mobileHeaderBrand">
+      <span class="mobile-logo-icon"><i data-lucide="gauge"></i></span>
+      <span class="mobile-logo-title">APEX</span>
+    </div>
+    <div class="mobile-header-title-wrapper">
+      <span class="mobile-header-title" id="mobileHeaderTitle">Dashboard</span>
+    </div>
+    <div class="mobile-header-actions">
+      <button class="mobile-header-btn" id="mobileQuickActionsBtn" aria-label="Quick Actions & Tools">
+        <i data-lucide="sliders-horizontal"></i>
+      </button>
+    </div>
+  </header>
+
   <div class="app-wrapper">
     <!-- Desktop Sidebar Navigation -->
     <aside class="sidebar" role="navigation" aria-label="Main Navigation">
@@ -158,11 +174,56 @@
       <span class="icon"><i data-lucide="brain"></i></span>
       <span>Psychology</span>
     </button>
-    <button class="mobile-nav-item" data-page="reference">
-      <span class="icon"><i data-lucide="book-open"></i></span>
-      <span>Reference</span>
+    <button class="mobile-nav-item" id="mobileMoreBtn" aria-label="Open More Menu">
+      <span class="icon"><i data-lucide="more-horizontal"></i></span>
+      <span>More</span>
     </button>
   </nav>
+
+  <!-- Mobile More / Quick Actions Bottom Sheet -->
+  <div class="mobile-sheet-overlay" id="mobileMoreOverlay" style="display:none;">
+    <div class="mobile-bottom-sheet" id="mobileMoreSheet">
+      <div class="sheet-handle-bar"></div>
+      <div class="sheet-header">
+        <div class="sheet-title">
+          <i data-lucide="layers" class="icon-sm icon-accent"></i>
+          <span>Navigation & Tools</span>
+        </div>
+        <button class="sheet-close-btn" id="mobileSheetCloseBtn" aria-label="Close menu">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div class="sheet-body">
+        <div class="sheet-menu-group">
+          <div class="sheet-menu-label">Additional Views</div>
+          <button class="sheet-menu-item" data-page="reference">
+            <span class="icon"><i data-lucide="book-open"></i></span>
+            <span>Reference Library</span>
+          </button>
+        </div>
+
+        <div class="sheet-menu-group">
+          <div class="sheet-menu-label">Data & Backup</div>
+          <button class="sheet-menu-item" data-action="export">
+            <span class="icon"><i data-lucide="download"></i></span>
+            <span>Export Backup</span>
+          </button>
+          <button class="sheet-menu-item" data-action="import">
+            <span class="icon"><i data-lucide="upload"></i></span>
+            <span>Import Progress</span>
+          </button>
+        </div>
+
+        <div class="sheet-menu-group">
+          <div class="sheet-menu-label">Setup & Settings</div>
+          <button class="sheet-menu-item" data-action="equipment">
+            <span class="icon"><i data-lucide="gamepad-2"></i></span>
+            <span>Equipment Setup</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Global Modal Overlay -->
   <div class="modal-overlay" id="globalModalOverlay">

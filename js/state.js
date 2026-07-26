@@ -157,7 +157,7 @@ class ApexStore {
 
   // Check if a module is unlocked
   isModuleUnlocked(moduleId) {
-    if (moduleId === 0 || moduleId === 1) return true;
+    if (moduleId <= 2) return true;
     const prevModuleId = moduleId - 1;
     const prevModConfig = (typeof APEX_CONTENT !== 'undefined' && APEX_CONTENT.modules)
       ? APEX_CONTENT.modules.find(m => m.id === prevModuleId)
@@ -174,8 +174,6 @@ class ApexStore {
   // Check if a session is unlocked
   isSessionUnlocked(moduleId, sessionId) {
     if (!this.isModuleUnlocked(moduleId)) return false;
-    if ((moduleId === 0 || moduleId === 1) && sessionId === 1) return true;
-    
     if (sessionId === 1) {
       return this.isModuleUnlocked(moduleId);
     }

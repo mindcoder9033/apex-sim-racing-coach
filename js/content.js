@@ -726,7 +726,597 @@ Today is your final graduation stint: 10 full laps combining everything you have
       subtitle: 'Mastering Deceleration & Trail-Braking',
       description: 'Learn threshold braking, trail-braking, weight transfer control, and carrying maximum entry speed into corners without locking up.',
       duration: '12 Sessions (30 Days)',
-      sessions: [] // Skeleton array ready for future sessions
+      sessions: [
+        {
+          id: 1,
+          title: 'Throttle-to-Brake Transition',
+          focus: 'Smooth pedal transition',
+          car: 'Mazda MX-5',
+          track: 'Laguna Seca',
+          targetLapTime: 102.0,
+          difficulty: 1,
+          theory: {
+            title: 'The Art of Pedal Transition',
+            content: `The transition from throttle to brake is the first step in every corner entry. How you make this transition affects the car's balance and your ability to brake at the limit.
+
+### Two Approaches
+- **Quick Transition**: Fast lift → immediate brake (High speed corners, straight-line braking)
+- **Smooth Transition**: Gradual lift → progressive brake (Brake-turning, low grip, wet conditions)
+
+### Common Mistakes
+- **Coasting**: Off throttle, off brake. Lost time, unsettled chassis!
+- **Slamming**: Hitting brakes like a hammer, causing unstable weight transfer.
+- **Snap Lift**: Abrupt throttle lift causing trailing throttle oversteer (TTO).`,
+            keyTakeaways: [
+              'Quick transition = less coasting = faster lap time',
+              'Smooth transition = better car balance on corner entry',
+              'Zero coasting: You should always be either on throttle or on brake'
+            ],
+            diagramId: 'pedal-squeeze-diagram'
+          },
+          practice: {
+            focus: 'Pedal transition drills',
+            drills: [
+              { id: 'easy', level: '🟢 Easy', title: 'The Lift-Off', desc: 'Approach Turn 2 at 50 mph. Lift off throttle and observe deceleration without braking.', reps: 5, time: '5 min' },
+              { id: 'medium', level: '🟡 Medium', title: 'The Quick Transition', desc: 'Approach Turn 2 at 60 mph. Move from full throttle to brake in under 0.3 seconds.', reps: 5, time: '8 min' },
+              { id: 'hard', level: '🔴 Hard', title: 'The Smooth Transition', desc: 'Practice gradual lift and progressive brake application into Turn 6 to settle the chassis.', reps: 8, time: '10 min' }
+            ]
+          },
+          practical: {
+            title: 'Skill-First Focus: Pedal Transition',
+            focus: 'Eliminating coasting in braking zones',
+            laps: 5,
+            instructions: [
+              'Load Mazda MX-5 @ Laguna Seca for 5 focused laps.',
+              'Turn 2: Practice quick transition (lift → immediate brake).',
+              'Turn 6: Practice smooth transition (gradual lift → progressive brake).',
+              'Turn 11: Practice your preferred transition for maximum exit speed.',
+              'Ensure zero coasting moments across all braking zones.'
+            ]
+          },
+          challenge: {
+            title: 'Zero Coasting Challenge',
+            type: 'technique',
+            description: 'Complete a focused lap of Laguna Seca with zero coasting between throttle and brake in all braking zones.',
+            criteria: '0 coasting moments recorded.'
+          }
+        },
+        {
+          id: 2,
+          title: 'Threshold Braking',
+          focus: 'Finding the braking limit',
+          car: 'Mazda MX-5',
+          track: 'Laguna Seca',
+          targetLapTime: 101.0,
+          difficulty: 2,
+          theory: {
+            title: 'The Limit of Braking',
+            content: `Threshold braking is using 100% of your braking capability without locking the tires. It's where the fastest lap times are found.
+
+### Peak Grip vs Slip Ratio
+Peak braking force occurs when the tire is revolving ~15% slower than free-rolling. Exceeding this threshold locks the tire, dropping braking grip by 30% and flat-spotting tires.
+
+### Key Principles
+- **Squeeze**: Squeeze pedal rapidly, don't slam it.
+- **Feel**: Learn the pedal resistance and tire hum right before lock.
+- **Release**: Instantly ease pressure if a tire locks up.`,
+            keyTakeaways: [
+              'Threshold braking delivers maximum possible deceleration',
+              'Locking tires reduces grip by ~30% and increases stopping distance',
+              'Threshold braking requires pedal sensitivity, not brute force'
+            ],
+            diagramId: 'ffb-grip-diagram'
+          },
+          practice: {
+            focus: 'Threshold feel & lockup prevention',
+            drills: [
+              { id: 'easy', level: '🟢 Easy', title: 'Find the Lock Point', desc: 'Brake progressively harder on main straight until a tire locks. Release immediately.', reps: 5, time: '5 min' },
+              { id: 'medium', level: '🟡 Medium', title: 'Threshold Feel', desc: 'Hold brake pressure right at the threshold point just before lockup for 3 seconds.', reps: 5, time: '8 min' },
+              { id: 'hard', level: '🔴 Hard', title: 'Threshold Braking at Speed', desc: 'Approach Turn 2 at race speed and hold threshold pressure through full straight-line zone.', reps: 8, time: '10 min' }
+            ]
+          },
+          practical: {
+            title: 'Squeeze & Feel',
+            focus: 'Finding the deceleration limit',
+            laps: 6,
+            instructions: [
+              'Drive 6 laps at Laguna Seca in the Mazda MX-5.',
+              'Push to the threshold limit in Turns 2, 5, 6, and 11.',
+              'If a tire locks, release pedal slightly and re-apply at threshold.'
+            ]
+          },
+          challenge: {
+            title: 'Clean Threshold Challenge',
+            type: 'technique',
+            description: 'Execute threshold braking across 5 major braking zones without locking a tire.',
+            criteria: '5 clean threshold braking zones completed.'
+          }
+        },
+        {
+          id: 3,
+          title: 'Brake-Turning Fundamentals',
+          focus: 'Combining braking and turning',
+          car: 'Mazda MX-5',
+          track: 'Laguna Seca',
+          targetLapTime: 100.0,
+          difficulty: 2,
+          theory: {
+            title: 'The Lost Art of Brake-Turning',
+            content: `Many drivers believe braking must be done strictly in a straight line. The fastest drivers brake AND turn at the same time.
+
+### The Friction Circle Balance
+When you use 100% of tire grip for braking, you have 0% left for turning. If you reduce brake pressure to 80%, you unlock 20% cornering grip to turn into the corner!
+
+### Benefits
+- Brake later into corner entry
+- Carry higher speed past turn-in
+- Help rotate the car toward the apex`,
+            keyTakeaways: [
+              'Brake-turning combines braking and steering for later braking',
+              'As steering angle increases, brake pressure MUST decrease proportionally',
+              'Smooth progressive pressure bleed allows optimal car rotation'
+            ],
+            diagramId: 'weight-transfer-friction-circle'
+          },
+          practice: {
+            focus: 'Brake + Steering overlap',
+            drills: [
+              { id: 'easy', level: '🟢 Easy', title: 'Straight-Line Braking Only', desc: 'Brake strictly in straight line into Turn 2 and fully release before turning wheel.', reps: 3, time: '5 min' },
+              { id: 'medium', level: '🟡 Medium', title: 'Brake-Turning Intro', desc: 'Maintain 20% brake pressure as you turn wheel into Turn 2, observing car rotation.', reps: 5, time: '8 min' },
+              { id: 'hard', level: '🔴 Hard', title: 'Consistent Brake-Turning', desc: 'Brake-turn into every corner at Laguna Seca with progressive pressure reduction.', reps: 8, time: '10 min' }
+            ]
+          },
+          practical: {
+            title: 'Combining Brake and Steering',
+            focus: 'Rotation on corner entry',
+            laps: 6,
+            instructions: [
+              'Drive 6 laps practicing brake-turning into Turns 2, 3, 4, 6, and 11.',
+              'Ensure brake pressure bleeds down smoothly as steering angle increases.'
+            ]
+          },
+          challenge: {
+            title: 'Turn 6 Rotation Challenge',
+            type: 'technique',
+            description: 'Brake-turn into sweeping Turn 6 with smooth rotation and clean exit trajectory.',
+            criteria: 'Smooth rotation and clean exit logged.'
+          }
+        },
+        {
+          id: 4,
+          title: 'Trail-Braking Introduction',
+          focus: 'Carrying brakes into corners',
+          car: 'Mazda MX-5',
+          track: 'Laguna Seca',
+          targetLapTime: 99.0,
+          difficulty: 3,
+          theory: {
+            title: 'The Trail-Braking Technique',
+            content: `Trail-braking is the extension of brake-turning. You carry light, diminishing brake pressure deep into the corner, past turn-in, and all the way to the apex.
+
+### Why Trail-Braking Works
+- **Weight Transfer**: Keeps weight on front tires, increasing front grip for sharper turn-in.
+- **Car Rotation**: Light rear brake torque helps turn the car without steering wheel fight.
+- **Entry Speed**: Allows you to carry higher entry speed deep into cornering arc.`,
+            keyTakeaways: [
+              'Trail-braking carries brakes past turn-in all the way to the apex',
+              'Keeps front axle loaded for superior corner rotation',
+              'Essential for decreasing radius corners and passing maneuvers'
+            ],
+            diagramId: 'weight-transfer-friction-circle'
+          },
+          practice: {
+            focus: 'Trail-braking depth control',
+            drills: [
+              { id: 'easy', level: '🟢 Easy', title: 'Short Trail-Brake', desc: 'Carry light brake pressure 10 feet past turn-in into Turn 2.', reps: 5, time: '5 min' },
+              { id: 'medium', level: '🟡 Medium', title: 'Medium Trail-Brake', desc: 'Carry diminishing brake pressure 1/3 of the distance to apex in Turn 2.', reps: 5, time: '8 min' },
+              { id: 'hard', level: '🔴 Hard', title: 'Deep Trail-Brake', desc: 'Carry light trail-brake 2/3 of the distance to apex in Turn 11.', reps: 8, time: '10 min' }
+            ]
+          },
+          practical: {
+            title: 'Carrying Brakes to Apex',
+            focus: 'Trail-braking Turns 2, 6, and 11',
+            laps: 6,
+            instructions: [
+              'Drive 6 laps practicing trail-braking at Laguna Seca.',
+              'Focus on a smooth, linear pressure bleed ending right at the apex.'
+            ]
+          },
+          challenge: {
+            title: 'Turn 11 Entry Speed Challenge',
+            type: 'mechanical',
+            description: 'Trail-brake deep into Turn 11 to carry 3+ mph higher entry speed while hitting target lap time under 1:39.0.',
+            criteria: 'Target entry speed and lap time under 1:39.0 met.'
+          }
+        },
+        {
+          id: 5,
+          title: 'Trail-Braking Application',
+          focus: 'Using trail-braking effectively',
+          car: 'Mazda MX-5',
+          track: 'Laguna Seca',
+          targetLapTime: 98.5,
+          difficulty: 3,
+          theory: {
+            title: 'Mastering the Trail-Brake',
+            content: `Trail-braking isn't just about carrying brakes—it's about controlling rotation and car balance across different corner shapes.
+
+### Avoiding Mistakes
+- **Too much brake**: Overloads front tires, causing severe understeer.
+- **Too little brake**: Leaves front unloaded, causing car to push wide.
+- **Abrupt release**: Causes sudden weight shift back to rear, resulting in snap oversteer!`,
+            keyTakeaways: [
+              'Progressive brake release is essential for chassis stability',
+              'Match trail-braking depth to corner geometry (hairpin vs sweeping turn)',
+              'Sensitivity on pedal release separates amateur drivers from masters'
+            ],
+            diagramId: 'weight-transfer-friction-circle'
+          },
+          practice: {
+            focus: 'Trail-brake balance & precision',
+            drills: [
+              { id: 'easy', level: '🟢 Easy', title: 'Consistent Trail-Brake', desc: 'Trail-brake to the exact same release point every lap in Turn 2.', reps: 5, time: '5 min' },
+              { id: 'medium', level: '🟡 Medium', title: 'Trail-Brake Balance', desc: 'Adjust pedal release speed in Turn 6 to eliminate understeer or oversteer.', reps: 5, time: '8 min' },
+              { id: 'hard', level: '🔴 Hard', title: 'All-Corner Trail-Braking', desc: 'Execute tailored trail-braking across every corner on the track.', reps: 8, time: '10 min' }
+            ]
+          },
+          practical: {
+            title: 'Corner Entry Precision',
+            focus: 'Chassis balance and linear bleed',
+            laps: 7,
+            instructions: [
+              'Drive 7 laps fine-tuning trail-braking release.',
+              'Ensure smooth chassis balance without twitching or understeer push.'
+            ]
+          },
+          challenge: {
+            title: 'Perfect Balance Challenge',
+            type: 'technique',
+            description: 'Execute balanced trail-braking across 5 major corners with smooth rotation and zero steering corrections.',
+            criteria: '5 balanced corner entries logged.'
+          }
+        },
+        {
+          id: 6,
+          title: 'The Friction Circle',
+          focus: 'Understanding grip limits',
+          car: 'Mazda MX-5',
+          track: 'Laguna Seca',
+          targetLapTime: 98.0,
+          difficulty: 3,
+          theory: {
+            title: 'The Circle of Grip',
+            content: `The friction circle represents the total maximum traction available from your tires in any combined direction (braking, cornering, acceleration).
+
+### Vector Combination
+- **100% Braking / 0% Cornering**: Straight-line threshold braking.
+- **80% Braking / 20% Cornering**: Initial turn-in transition.
+- **60% Braking / 40% Cornering**: Mid-trail-braking phase.
+- **0% Braking / 100% Cornering**: Pure lateral mid-corner apex.`,
+            keyTakeaways: [
+              'Tire traction is a finite pool shared between longitudinal and lateral forces',
+              'Operating along the perimeter of the friction circle maximizes speed',
+              'Smooth vector transitions prevent sudden loss of control'
+            ],
+            diagramId: 'weight-transfer-friction-circle'
+          },
+          practice: {
+            focus: 'Friction circle vector management',
+            drills: [
+              { id: 'easy', level: '🟢 Easy', title: '100% Straight-Line Braking', desc: 'Brake at 100% threshold in straight line, fully releasing before turning.', reps: 3, time: '5 min' },
+              { id: 'medium', level: '🟡 Medium', title: 'Brake-Turning (80/20 Vector)', desc: 'Transition from 80% brake to 20% steering smoothly at Turn 2.', reps: 5, time: '8 min' },
+              { id: 'hard', level: '🔴 Hard', title: 'Trail-Braking (60/40 Vector)', desc: 'Operate right on 60% brake / 40% steering friction circle boundary.', reps: 8, time: '10 min' }
+            ]
+          },
+          practice: {
+            focus: 'Friction circle vector management',
+            drills: [
+              { id: 'easy', level: '🟢 Easy', title: '100% Straight-Line Braking', desc: 'Brake at 100% threshold in straight line, fully releasing before turning.', reps: 3, time: '5 min' },
+              { id: 'medium', level: '🟡 Medium', title: 'Brake-Turning (80/20 Vector)', desc: 'Transition from 80% brake to 20% steering smoothly at Turn 2.', reps: 5, time: '8 min' },
+              { id: 'hard', level: '🔴 Hard', title: 'Trail-Braking (60/40 Vector)', desc: 'Operate right on 60% brake / 40% steering friction circle boundary.', reps: 8, time: '10 min' }
+            ]
+          },
+          practical: {
+            title: 'Operating on the Limit Circle',
+            focus: 'Smooth friction vector transitions',
+            laps: 6,
+            instructions: [
+              'Drive 6 laps visualizing the friction circle boundary.',
+              'Smoothly trade longitudinal braking force for lateral cornering force.'
+            ]
+          },
+          challenge: {
+            title: 'Circle Boundary Challenge',
+            type: 'technique',
+            description: 'Complete a full lap keeping tire grip right at the friction circle boundary without exceeding total traction.',
+            criteria: 'Full lap completed within friction limits.'
+          }
+        },
+        {
+          id: 7,
+          title: 'Practice + New Track',
+          focus: 'Applying skills to Road Atlanta',
+          car: 'Mazda MX-5',
+          track: 'Road Atlanta',
+          targetLapTime: 100.0,
+          difficulty: 3,
+          theory: {
+            title: 'Braking on a New Track',
+            content: `You have mastered braking at Laguna Seca. Now apply those core skills to Road Atlanta's high-speed, elevation-heavy layout.
+
+### Key Differences at Road Atlanta
+- **Turn 1**: High speed entry with heavy compression.
+- **Turn 6**: Downhill trail-braking entry where rear unloads.
+- **Turn 10a/10b**: Severe downhill threshold braking into tight chicane.`,
+            keyTakeaways: [
+              'Core braking principles apply universally across all tracks',
+              'Elevation drops unweight tires; elevation compressions increase grip',
+              'Establish visual brake boards (100m, 50m) before pushing for lap times'
+            ],
+            diagramId: 'corner-path-comparison'
+          },
+          practice: {
+            focus: 'Road Atlanta braking zone mapping',
+            drills: [
+              { id: 'easy', level: '🟢 Easy', title: 'Identify Braking Zones', desc: 'Drive 3 slow laps at Road Atlanta, identifying all 6 braking zones.', reps: 3, time: '6 min' },
+              { id: 'medium', level: '🟡 Medium', title: 'Find Brake Board References', desc: 'Establish 100m/50m reference markers for Turn 1, 6, and 10a.', reps: 5, time: '8 min' },
+              { id: 'hard', level: '🔴 Hard', title: 'Braking Technique Application', desc: 'Apply threshold braking in Turn 1 and deep trail-braking in Turn 6.', reps: 8, time: '10 min' }
+            ]
+          },
+          practical: {
+            title: 'Road Atlanta Braking Exploration',
+            focus: 'Braking reference points at Road Atlanta',
+            laps: 7,
+            instructions: [
+              'Drive 7 laps learning Road Atlanta braking zones.',
+              'Establish reliable visual brake reference points for every corner.'
+            ]
+          },
+          challenge: {
+            title: 'Clean Atlanta Lap Challenge',
+            type: 'mechanical',
+            description: 'Complete a clean lap of Road Atlanta using proper threshold and trail-braking with target time under 1:40.0.',
+            criteria: 'Target lap time 1:40.0 met.'
+          }
+        },
+        {
+          id: 8,
+          title: 'Road Atlanta Braking',
+          focus: 'Braking on a new track',
+          car: 'Mazda MX-5',
+          track: 'Road Atlanta',
+          targetLapTime: 99.0,
+          difficulty: 3,
+          theory: {
+            title: 'Mastering Road Atlanta\'s Braking',
+            content: `Road Atlanta features some of the most technical braking zones in sim racing. Mastering them requires tailored techniques.
+
+### Corner Breakdown
+- **Turn 1**: Threshold braking down straightaway into sweeping right.
+- **Turn 3**: Light trail-braking to tuck front end into the hill.
+- **Turn 6**: Heavy trail-braking past downhill crest to rotate chassis.
+- **Turn 12**: Downhill threshold braking into final straightaway launch.`,
+            keyTakeaways: [
+              'Brake before crests when chassis unweights to prevent wheel lockup',
+              'Trail-braking in Turn 6 is critical for getting car rotated early',
+              'Turn 12 late apex and smooth brake release determine front-straight top speed'
+            ],
+            diagramId: 'corner-path-comparison'
+          },
+          practice: {
+            focus: 'Challenging braking zones at Road Atlanta',
+            drills: [
+              { id: 'easy', level: '🟢 Easy', title: 'Turn 1 Threshold Braking', desc: 'Brake at 100m board with 95% threshold pressure.', reps: 5, time: '5 min' },
+              { id: 'medium', level: '🟡 Medium', title: 'Turn 6 Downhill Trail-Brake', desc: 'Trail-brake downhill into Turn 6 without locking inner front tire.', reps: 5, time: '8 min' },
+              { id: 'hard', level: '🔴 Hard', title: 'Full Atlanta Attack', desc: 'Connect all braking zones at race pace in the Mazda MX-5.', reps: 8, time: '10 min' }
+            ]
+          },
+          practical: {
+            title: 'Atlanta Braking Attack',
+            focus: 'Turn 1, 6, 10a, and 12 execution',
+            laps: 7,
+            instructions: [
+              'Drive 7 focused laps at Road Atlanta.',
+              'Master the downhill weight transfer in Turn 6 and Turn 10a.'
+            ]
+          },
+          challenge: {
+            title: 'Turn 12 Straightaway Launch',
+            type: 'mechanical',
+            description: 'Brake 10m later at Turn 12 while maintaining exit trajectory to achieve target lap time under 1:39.0.',
+            criteria: 'Target lap time 1:39.0 met.'
+          }
+        },
+        {
+          id: 9,
+          title: 'Brake Point Consistency',
+          focus: 'Braking at the same point every lap',
+          car: 'Subaru BRZ',
+          track: 'Road Atlanta',
+          targetLapTime: 98.0,
+          difficulty: 4,
+          theory: {
+            title: 'The Power of Consistency',
+            content: `Braking at the exact same point every lap is the foundation of race pace and consistency. Varied brake points create erratic entry speeds and mistakes.
+
+### The Rule of Reference Markers
+- Pick fixed, unmoving visual landmarks (brake boards, start of curb, overhead banner).
+- Never use shadows, moving cars, or tire marks as primary references!
+- Commit to braking the instant your eyes reach your visual marker.`,
+            keyTakeaways: [
+              'Identical brake points yield predictable corner entry speeds',
+              'Use fixed visual landmarks like 100m boards and curb origins',
+              'Consistency creates a stable platform for improving lap times'
+            ],
+            diagramId: 'pedal-squeeze-diagram'
+          },
+          practice: {
+            focus: 'Brake point precision & repeatability',
+            drills: [
+              { id: 'easy', level: '🟢 Easy', title: 'Single Marker Commitment', desc: 'Brake at exact 100m board in Turn 1 for 5 consecutive laps.', reps: 5, time: '5 min' },
+              { id: 'medium', level: '🟡 Medium', title: 'Multi-Corner Marker Precision', desc: 'Hit exact brake markers for Turn 1, 6, and 12 without variance.', reps: 5, time: '8 min' },
+              { id: 'hard', level: '🔴 Hard', title: 'Sub-1 Meter Variance Stint', desc: 'Drive 8 laps maintaining less than 1 meter variance in all braking points.', reps: 8, time: '12 min' }
+            ]
+          },
+          practical: {
+            title: 'Brake Point Precision Stint',
+            focus: 'Repeatable braking application',
+            laps: 8,
+            instructions: [
+              'Drive 8 continuous laps in the Subaru BRZ at Road Atlanta.',
+              'Focus on zero brake point variance across all 8 laps.'
+            ]
+          },
+          challenge: {
+            title: 'Zero Variance Challenge',
+            type: 'mechanical',
+            description: 'Complete 5 consecutive laps with less than 1 meter variation in brake initial application points.',
+            criteria: 'Consistency metrics verified.'
+          }
+        },
+        {
+          id: 10,
+          title: 'Self-Diagnosis',
+          focus: 'Critical self-evaluation',
+          car: 'Subaru BRZ',
+          track: 'Laguna Seca',
+          targetLapTime: 97.5,
+          difficulty: 4,
+          theory: {
+            title: 'Diagnosing Braking Problems',
+            content: `Top drivers can instantly diagnose why a corner entry felt bad and correct it on the very next lap.
+
+### Diagnostic Matrix
+- **Front Tire Lockup**: Excess initial brake pressure or braking while turning too hard.
+- **Entry Understeer**: Insufficient trail-braking or entering corner too fast.
+- **Entry Oversteer**: Abrupt pedal lift-off or over-aggressive trail-braking.
+- **Long Stopping Distance**: Failing to reach true threshold pressure.`,
+            keyTakeaways: [
+              'Diagnose the root physical cause, not just the symptom',
+              'Understeer = inadequate front weight transfer or excessive entry speed',
+              'Oversteer = abrupt brake release or sudden weight shift'
+            ],
+            diagramId: 'pedal-squeeze-diagram'
+          },
+          practice: {
+            focus: 'Self-assessment and issue correction',
+            drills: [
+              { id: 'easy', level: '🟢 Easy', title: 'Lap Telemetry Review', desc: 'Drive 1 lap, self-assess braking errors in Turn 2 and 6.', reps: 1, time: '5 min' },
+              { id: 'medium', level: '🟡 Medium', title: 'Diagnose & Fix', desc: 'Identify 1 braking issue on lap 1, correct it on lap 2.', reps: 5, time: '8 min' },
+              { id: 'hard', level: '🔴 Hard', title: 'Full Corner Self-Audit', desc: 'Audit all 11 corners of Laguna Seca during an 8-lap stint.', reps: 8, time: '12 min' }
+            ]
+          },
+          practical: {
+            title: 'Driver Self-Correction',
+            focus: 'Identifying and fixing braking flaws',
+            laps: 7,
+            instructions: [
+              'Drive 7 laps self-diagnosing telemetry feel after every corner.',
+              'Adjust pressure build, hold, and release based on car feedback.'
+            ]
+          },
+          challenge: {
+            title: 'Braking Audit Challenge',
+            type: 'technique',
+            description: 'Identify and correct a braking flaw during a 5-lap stint, improving lap time by 0.5+ seconds.',
+            criteria: 'Target lap time 1:37.5 met.'
+          }
+        },
+        {
+          id: 11,
+          title: 'Putting It Together',
+          focus: 'All skills combined, faster car',
+          car: 'Porsche Cayman GT4',
+          track: 'Laguna Seca',
+          targetLapTime: 97.0,
+          difficulty: 4,
+          theory: {
+            title: 'The Complete Braking Picture',
+            content: `Step up to the high-performance Porsche Cayman GT4! Mid-engine layout and high-downforce brakes demand smooth, decisive pedal modulation.
+
+### The Complete Corner Entry Chain
+1. Spot visual brake reference
+2. Rapid transition from throttle to brake (no coasting)
+3. Hold threshold deceleration in straight line
+4. Bleed brake pressure as steering turns in
+5. Trail-brake to apex for mid-engine rotation
+6. Smooth release to zero brake at apex and pick up throttle`,
+            keyTakeaways: [
+              'The Cayman GT4 has immense stopping power but requires smooth pedal release',
+              'Mid-engine weight bias amplifies rotation under trail-braking',
+              'Combine all 5 braking skills into one fluid entry movement'
+            ],
+            diagramId: 'weight-transfer-friction-circle'
+          },
+          practice: {
+            focus: 'Cayman GT4 high-performance braking',
+            drills: [
+              { id: 'easy', level: '🟢 Easy', title: 'Cayman Braking Feel', desc: 'Feel GT4 stopping power and mid-engine rotation at Turn 2.', reps: 3, time: '5 min' },
+              { id: 'medium', level: '🟡 Medium', title: 'Complete Sequence Execution', desc: 'Execute full transition → threshold → trail-brake → throttle sequence.', reps: 5, time: '8 min' },
+              { id: 'hard', level: '🔴 Hard', title: 'Cayman Speed Attack', desc: 'Push GT4 to braking limit across all corners at Laguna Seca.', reps: 8, time: '10 min' }
+            ]
+          },
+          practical: {
+            title: 'Mastering High-Performance Braking',
+            focus: 'GT4 stopping power & rotation',
+            laps: 8,
+            instructions: [
+              'Drive 8 focused laps in the Porsche Cayman GT4.',
+              'Apply every braking skill seamlessly at higher speeds.'
+            ]
+          },
+          challenge: {
+            title: 'GT4 High Score Challenge',
+            type: 'mechanical',
+            description: 'Achieve an overall braking execution score of 8/10+ across 3 consecutive laps in the Cayman GT4.',
+            criteria: 'Target lap time 1:37.0 met.'
+          }
+        },
+        {
+          id: 12,
+          title: 'Module Mastery',
+          focus: 'Module assessment and achievement',
+          car: 'Porsche Cayman GT4',
+          track: 'Laguna Seca',
+          targetLapTime: 96.5,
+          difficulty: 5,
+          theory: {
+            title: 'Module 2 Graduation: The Braking Master',
+            content: `Congratulations on reaching Session 12 of Module 2! You have spent 30 days mastering pedal transitions, threshold braking, brake-turning, trail-braking, friction circle management, and driver self-diagnosis.
+
+Today is your final 10-lap graduation stint!`,
+            keyTakeaways: [
+              'Brakes are a tool for car positioning and rotation, not just slowing down',
+              'Trail-braking is the key to elite corner entry speed',
+              'You are ready for Module 3: Corner Exit & Car Control!'
+            ],
+            diagramId: 'weight-transfer-friction-circle'
+          },
+          practice: {
+            focus: 'Module 2 Final Assessment',
+            drills: [
+              { id: 'easy', level: '🟢 Easy', title: 'Warm-Up Lap', desc: '1 slow lap feeling brake pedal modulation and car balance.', reps: 1, time: '4 min' },
+              { id: 'medium', level: '🟡 Medium', title: 'Assessment Stint', desc: '5 laps at race pace refining trail-braking depth.', reps: 5, time: '8 min' },
+              { id: 'hard', level: '🔴 Hard', title: '10-Lap Graduation Stint', desc: 'Complete 10 continuous clean laps for Module 2 graduation.', reps: 10, time: '18 min' }
+            ]
+          },
+          practical: {
+            title: 'Module 2 Graduation Stint',
+            focus: '10 continuous clean laps',
+            laps: 10,
+            instructions: [
+              'Drive 10 continuous clean laps in the Porsche Cayman GT4.',
+              'Demonstrate complete mastery of threshold and trail-braking.'
+            ]
+          },
+          challenge: {
+            title: 'Module 2 Graduation',
+            type: 'mechanical',
+            description: 'Set a lap time under 1:36.5 in the Porsche Cayman GT4 at Laguna Seca while maintaining 10 clean laps.',
+            criteria: 'Module 2 Completed!'
+          }
+        }
+      ]
     },
     {
       id: 3,

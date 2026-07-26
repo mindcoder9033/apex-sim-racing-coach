@@ -263,6 +263,41 @@ class ApexStore {
     this.saveProgress();
   }
 
+  // Reset a specific session's progress
+  resetSessionProgress(moduleId, sessionId) {
+    const key = `${moduleId}-${sessionId}`;
+
+    // Remove key from completedSessions
+    const compIdx = this.data.completedSessions.indexOf(key);
+    if (compIdx >= 0) {
+      this.data.completedSessions.splice(compIdx, 1);
+    }
+
+    // Remove session detailed telemetry record
+    if (this.data.sessions && this.data.sessions[key]) {
+      delete this.data.sessions[key];
+    }
+
+    // Remove corresponding journal entries
+    if (this.journal && this.journal.entries) {
+      this.journal.entries = this.journal.entries.filter(e => e.sessionId !== key);
+    }
+
+    // Update completedModules status if module is no longer fully completed
+    const modIdx = this.data.completedModules.indexOf(moduleId);
+    if (modIdx >= 0) {
+      this.data.completedModules.splice(modIdx, 1);
+    }
+
+    // Update currentSession pointer if the reset session is earlier
+    if (this.data.currentModule === moduleId && this.data.currentSession > sessionId) {
+      this.data.currentSession = sessionId;
+    }
+
+    this.saveProgress();
+    this.saveJournal();
+  }
+
   // Update streak counter
   updateStreak() {
     const now = new Date();

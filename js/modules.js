@@ -283,10 +283,13 @@ class ModulesController {
             </div>
           ` : ''}
 
-          <div class="session-card-actions">
+          <div class="session-card-actions flex flex-col gap-2">
             ${isCompleted ? `
               <button class="btn btn-outline w-full btn-session-action flex items-center justify-center gap-2" data-action="review" data-module="${moduleId}" data-session="${session.id}">
-                <i data-lucide="rotate-ccw" class="icon-sm"></i> Review Session Telemetry
+                <i data-lucide="eye" class="icon-sm"></i> Review Session Telemetry
+              </button>
+              <button class="btn btn-danger-ghost w-full btn-session-reset flex items-center justify-center gap-2" data-action="reset" data-module="${moduleId}" data-session="${session.id}">
+                <i data-lucide="rotate-ccw" class="icon-sm"></i> Reset Progress
               </button>
             ` : isUnlocked ? `
               <button class="btn btn-primary w-full btn-session-action flex items-center justify-center gap-2" data-action="start" data-module="${moduleId}" data-session="${session.id}">
@@ -344,16 +347,69 @@ class ModulesController {
       });
     });
 
+    // Reset Progress Action Buttons (Level 2)
+    container.querySelectorAll('.btn-session-reset').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const modId = parseInt(e.currentTarget.getAttribute('data-module'));
+        const sessId = parseInt(e.currentTarget.getAttribute('data-session'));
+        this.showResetConfirmationModal(modId, sessId);
+      });
+    });
+
     // Clicking locked timeline node triggers alert
     container.querySelectorAll('.timeline-step-node.locked').forEach(node => {
       node.addEventListener('click', (e) => {
-        if (e.target.closest('.btn-session-action')) return;
+        if (e.target.closest('.btn-session-action') || e.target.closest('.btn-session-reset')) return;
         const modId = parseInt(node.getAttribute('data-module'));
         const sessId = parseInt(node.getAttribute('data-session'));
         this.showLockedAlert(modId, sessId);
       });
     });
   }
+
+  showResetConfirmationModal(moduleId, sessionId) {
+    const modConfig = APEX_CONTENT.modules.find(m => m.id === moduleId);
+    const sessionConfig = modConfig && modConfig.sessions ? modConfig.sessions.find(s => s.id === sessionId) : null;
+    const sessionTitle = sessionConfig ? sessionConfig.title : `Session ${sessionId}`;
+
+    window.apexApp.showModal(
+      '<i data-lucide="alert-triangle" class="icon-md icon-accent me-2"></i> Reset Session Progress',
+      `
+        <div class="p-1 text-center">
+          <div class="mb-3 text-accent flex justify-center">
+            <i data-lucide="rotate-ccw" style="width:44px; height:44px;" class="icon-accent"></i>
+          </div>
+          <h3 class="font-menu mb-2" style="font-size:1.2rem;">Reset Session ${moduleId}-${sessionId}?</h3>
+          <p class="text-tertiary mb-4" style="font-size:0.9rem; line-height:1.5;">
+            Are you sure you want to reset progress for <strong>Session ${moduleId}-${sessionId}: ${sessionTitle}</strong>? All recorded telemetry, ratings, notes, and reflection journal entries for this session will be cleared.
+          </p>
+          <div class="p-3 mb-4 text-left" style="background:rgba(230,57,70,0.08); border:1px solid rgba(230,57,70,0.25); border-radius:var(--radius-sm); font-size:0.82rem; color:var(--color-text-muted);">
+            <strong style="color:var(--color-accent-red);">Note:</strong> This isolated reset clears Session ${moduleId}-${sessionId} progress. Subsequent completed sessions will retain their completed status.
+          </div>
+          <div class="flex justify-end gap-3 mt-4">
+            <button class="btn btn-secondary" id="btnCancelResetSession" style="min-width:100px;">Cancel</button>
+            <button class="btn btn-danger-ghost" id="btnConfirmResetSession" style="min-width:140px; background:var(--color-accent-red); color:#fff; border:none;">
+              <i data-lucide="rotate-ccw" class="icon-sm"></i> Confirm Reset
+            </button>
+          </div>
+        </div>
+      `
+    );
+
+    setTimeout(() => {
+      document.getElementById('btnCancelResetSession')?.addEventListener('click', () => {
+        window.apexApp.closeModal();
+      });
+
+      document.getElementById('btnConfirmResetSession')?.addEventListener('click', () => {
+        window.apexStore.resetSessionProgress(moduleId, sessionId);
+        window.apexApp.closeModal();
+        this.render();
+      });
+    }, 50);
+  }
+
 
   showLockedAlert(moduleId, sessionId) {
     const text = window.apexStore.getUnlockRequirementText(moduleId, sessionId || 1);

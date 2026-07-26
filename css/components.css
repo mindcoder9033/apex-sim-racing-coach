@@ -1689,6 +1689,515 @@ textarea.form-control {
   gap: 0.75rem;
 }
 
+/* ==========================================================================
+   Guide View Components (Moza R3 & Forza Motorsport 2023)
+   ========================================================================== */
+
+.guide-nav-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.guide-segmented-control {
+  display: inline-flex;
+  background: rgba(10, 14, 22, 0.85);
+  border: 1px solid var(--color-border);
+  padding: 0.35rem;
+  border-radius: var(--radius-full, 9999px);
+  gap: 0.35rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+}
+
+.guide-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1.4rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-full, 9999px);
+  background: transparent;
+  color: var(--color-text-muted);
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.guide-tab-btn:hover {
+  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.guide-tab-btn.active {
+  background: var(--gradient-primary, linear-gradient(135deg, #ff1e00 0%, #d01400 100%));
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 16px var(--color-f1-red-glow, rgba(255, 30, 0, 0.4));
+}
+
+.guide-tab-btn i {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+/* Hero Cards */
+.guide-hero-card {
+  background: linear-gradient(135deg, rgba(30, 12, 12, 0.85) 0%, rgba(16, 20, 30, 0.95) 100%);
+  border: 1px solid rgba(255, 30, 0, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.guide-hero-card.hero-forza {
+  background: linear-gradient(135deg, rgba(12, 26, 38, 0.85) 0%, rgba(16, 20, 30, 0.95) 100%);
+  border-color: rgba(0, 210, 255, 0.3);
+}
+
+.guide-hero-card h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0.4rem 0 0.3rem 0;
+  color: var(--color-text);
+}
+
+.guide-hero-card p {
+  color: var(--color-text-muted);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full, 9999px);
+  background: rgba(255, 30, 0, 0.15);
+  color: #ff4d36;
+  border: 1px solid rgba(255, 30, 0, 0.3);
+  font-family: var(--font-menu);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hero-forza .hero-badge {
+  background: rgba(0, 210, 255, 0.15);
+  color: #00d2ff;
+  border-color: rgba(0, 210, 255, 0.3);
+}
+
+/* Setup Steps Grid */
+.setup-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.setup-step-item {
+  display: flex;
+  gap: 1rem;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.step-number {
+  flex-shrink: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: rgba(255, 30, 0, 0.2);
+  border: 1px solid rgba(255, 30, 0, 0.4);
+  color: var(--color-f1-red, #ff1e00);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-info h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.35rem 0;
+  color: var(--color-text);
+}
+
+.step-info p {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* FFB Sliders Table */
+.ffb-sliders-table {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.ffb-table-header {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 2fr;
+  padding: 0.75rem 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid var(--color-border);
+  font-family: var(--font-menu);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+}
+
+.ffb-table-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 2fr;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  align-items: center;
+}
+
+.ffb-table-row:last-child {
+  border-bottom: none;
+}
+
+.ffb-param-name {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--color-text);
+}
+
+.ffb-param-desc {
+  font-size: 0.86rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+/* Interactive FFB Presets */
+.preset-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.ffb-preset-switcher {
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.ffb-preset-toggle-btn {
+  padding: 0.45rem 1rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text-muted);
+  font-family: var(--font-menu);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.ffb-preset-toggle-btn.active {
+  background: rgba(255, 30, 0, 0.2);
+  color: #ff4d36;
+  border-color: rgba(255, 30, 0, 0.4);
+}
+
+.preset-summary-box {
+  background: rgba(255, 30, 0, 0.06);
+  border-left: 3px solid #ff1e00;
+  padding: 0.85rem 1.25rem;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.preset-badge {
+  font-family: var(--font-menu);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #ff4d36;
+  font-weight: 700;
+}
+
+.preset-desc {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.preset-sliders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.preset-slider-item {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+}
+
+.slider-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.slider-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.slider-val-badge {
+  font-family: var(--font-telemetry, monospace);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-f1-red, #ff1e00);
+}
+
+.slider-track-bg {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.slider-fill-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #ff1e00, #ff5e00);
+  border-radius: 3px;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Forza Search & Filters */
+.guide-search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.guide-search-wrapper .search-icon {
+  position: absolute;
+  left: 1rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.guide-search-input {
+  width: 100%;
+  padding: 0.85rem 1rem 0.85rem 2.8rem;
+  background: rgba(10, 14, 22, 0.8);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.guide-search-input:focus {
+  outline: none;
+  border-color: rgba(0, 210, 255, 0.5);
+  box-shadow: 0 0 12px rgba(0, 210, 255, 0.2);
+}
+
+.category-pills-bar {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.glossary-category-pill {
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full, 9999px);
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--color-text-muted);
+  font-family: var(--font-menu);
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.glossary-category-pill:hover {
+  color: var(--color-text);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.glossary-category-pill.active {
+  background: rgba(0, 210, 255, 0.15);
+  color: #00d2ff;
+  border-color: rgba(0, 210, 255, 0.4);
+}
+
+/* Grids & Cards */
+.tracks-grid, .drivetrains-grid, .terms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.track-info-card, .drivetrain-card, .term-card {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.track-info-card:hover, .drivetrain-card:hover, .term-card:hover {
+  border-color: rgba(0, 210, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.track-info-card h4, .term-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.35rem 0;
+  color: var(--color-text);
+}
+
+.track-info-card p, .term-def {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.car-classes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.car-class-card {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+}
+
+.class-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.class-badge {
+  font-family: var(--font-telemetry, monospace);
+  font-weight: 700;
+  color: #00d2ff;
+  font-size: 0.9rem;
+}
+
+.class-type-tag {
+  font-family: var(--font-menu);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.drivetrain-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.dt-badge {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--color-text);
+}
+
+.dt-char {
+  font-size: 0.8rem;
+  color: #00d2ff;
+  font-weight: 500;
+}
+
+.dt-handling {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.45;
+}
+
+.term-cat-tag {
+  display: inline-block;
+  font-family: var(--font-menu);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-sm);
+}
+
+.empty-glossary-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+}
+
+.empty-glossary-state i {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 0.75rem;
+  opacity: 0.5;
+}
+
+/* Mobile Responsiveness for Guide */
+@media (max-width: 768px) {
+  .ffb-table-header, .ffb-table-row {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+  
+  .guide-tab-btn {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.85rem;
+  }
+
+  .preset-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
 
 
 

@@ -2216,7 +2216,203 @@ Maintaining optimal pitch and heave stance to keep underbody diffusers operating
       content: `### Definition
 Changes in wing downforce and aerodynamic balance when air hits the car at an angle during corner sliding.`
     }
-  ]
+  ],
+  guides: {
+    mozaR3: {
+      title: 'Moza R3 Direct Drive for Xbox - Complete Beginner Guide',
+      subtitle: 'Master your Direct Drive wheelbase, optimize force feedback settings, and understand hardware physics.',
+      setupSteps: [
+        {
+          step: 1,
+          title: 'Xbox & PC Connection',
+          desc: 'Plug the power supply into the base. Connect the USB cable directly to a front or rear USB 3.0 port on your Xbox Series X|S or Xbox One. Ensure the ES Steering Wheel for Xbox is securely locked onto the QR (Quick Release) hub.'
+        },
+        {
+          step: 2,
+          title: 'Console Quick Resume Caution',
+          desc: 'Xbox Quick Resume often freezes USB FFB telemetry signals. Always fully quit Forza Motorsport from the Xbox Guide menu before launching to ensure FFB initialises cleanly.'
+        },
+        {
+          step: 3,
+          title: 'Xbox Mode Activation',
+          desc: 'Press and hold [S1 + S2] buttons on the ES Xbox wheel rim for 3 seconds until the RPM LED flashes to toggle between PC Mode and Xbox Mode.'
+        },
+        {
+          step: 4,
+          title: 'Moza Pit House Mobile Setup',
+          desc: 'Download Moza Pit House on iOS/Android. Enable Bluetooth on your phone and pair with the R3 base to adjust FFB curves, wheel rotation angles, and update firmware wirelessly.'
+        }
+      ],
+      ffbSliders: [
+        { name: 'Force Feedback Scale', value: '100%', description: 'Delivers full 3.9 Nm torque output from the game physics engine to your hands.' },
+        { name: 'Steering Axis Deadzone', value: '0% Inside / 100% Outside', description: 'Eliminates center slop for immediate steering rack response.' },
+        { name: 'Self Aligning Torque (SAT)', value: '100%', description: 'Pulls the wheel back toward center dynamically as front tire slip angle changes.' },
+        { name: 'Mechanical Trail Scale', value: '110%', description: 'Enhances self-centering force based on steering geometry, providing a clear feel of rear grip.' },
+        { name: 'Pneumatic Trail Scale', value: '90%', description: 'Communicates front tire slip angle. Decreases force smoothly when front tires lose grip.' },
+        { name: 'Road Feel Scale', value: '35% - 40%', description: 'Reduces excessive high-frequency curb chatter on a 3.9 Nm base to keep FFB clean.' },
+        { name: 'Wheel Damper Scale', value: '15%', description: 'Adds subtle fluid resistance to prevent hands-off oscillation on straightaways.' },
+        { name: 'Center Spring Scale', value: '0%', description: 'Must be 0% in sim racing—artificial spring interferes with true physics feedback.' }
+      ],
+      presets: [
+        {
+          id: 'smooth',
+          name: 'Beginner Smooth Control',
+          badge: 'Recommended for Beginners',
+          desc: 'Smooth force delivery designed to build muscle memory without arm fatigue or sudden snapping forces.',
+          sliders: [
+            { label: 'FFB Scale', val: '85%' },
+            { label: 'Mechanical Trail', val: '105%' },
+            { label: 'Road Feel', val: '30%' },
+            { label: 'Base Damping', val: '20%' },
+            { label: 'Maximum Angle', val: '900°' }
+          ]
+        },
+        {
+          id: 'raw',
+          name: 'Pro Direct Raw Feedback',
+          badge: 'Maximum Detail',
+          desc: 'Unfiltered 3.9 Nm dynamic force range with razor-sharp tire slip communication and minimal damping.',
+          sliders: [
+            { label: 'FFB Scale', val: '100%' },
+            { label: 'Mechanical Trail', val: '120%' },
+            { label: 'Road Feel', val: '45%' },
+            { label: 'Base Damping', val: '10%' },
+            { label: 'Maximum Angle', val: '540° / 900°' }
+          ]
+        }
+      ],
+      glossary: [
+        {
+          term: 'Direct Drive (DD)',
+          definition: 'A motor architecture where the steering wheel mounts directly to the electric motor shaft. Eliminates belts and gears for zero latency, silent operation, and ultra-crisp force feedback detail.'
+        },
+        {
+          term: 'Peak Torque (3.9 Nm)',
+          definition: 'The maximum rotational force the Moza R3 motor can generate. 3.9 Newton-meters offers high-fidelity detail suitable for desk and rig mounting without requiring heavy industrial clamps.'
+        },
+        {
+          term: 'FFB Clipping',
+          definition: 'Occurs when in-game physics forces request more torque than the wheelbase can output. The force output hits a flat 100% ceiling, causing detailed force variations to become indistinguishable.'
+        },
+        {
+          term: 'Mechanical vs Pneumatic Trail',
+          definition: 'Mechanical trail provides self-centering force based on suspension caster geometry. Pneumatic trail comes from tire rubber deformation under slip angle, dropping force when front grip vanishes.'
+        },
+        {
+          term: 'FFB Damping & Friction',
+          definition: 'Artificial resistance applied by the wheel software to simulate hydraulic steering rack weight or damp out unwanted oscillations when letting go of the steering wheel.'
+        },
+        {
+          term: 'Linearity & Deadzones',
+          definition: 'Linearity ensures 1:1 scaling between virtual steering column torque and physical wheel resistance. Zero deadzone ensures immediate response with no play at dead center.'
+        }
+      ]
+    },
+    forza2023: {
+      title: 'Forza Motorsport (2023) - Complete Racing & Game Guide',
+      subtitle: 'Master track anatomy, car classes & drivetrains, and core sim racing terminology.',
+      tracks: [
+        {
+          name: 'Track Categories & Surfaces',
+          desc: 'Permanent circuits (e.g., Silverstone, Laguna Seca) offer rubbered-in high grip lines. Street circuits feature lower grip and unforgiving concrete barriers. Ovals require high-speed draft management.'
+        },
+        {
+          name: 'Corner Anatomy (Entry, Apex, Exit)',
+          desc: 'Turn-in Point: Where you initial turn the wheel while trail braking. Geometric Apex: The midpoint of the inside kerb. Late Apex: Turning later to straighten corner exit for maximum straightaway acceleration.'
+        },
+        {
+          name: 'Forza Race Regulations (FRR) & Track Limits',
+          desc: 'Track limits are defined by white lines or outer kerb boundaries. Putting 4 wheels beyond track limits incurs time penalties (0.3s to 3.0s+) and dirties lap times in Rivals mode.'
+        },
+        {
+          name: 'Dynamic Track Evolution & Weather',
+          desc: 'Track rubbering increases grip on the racing line over race stints. Rain creates slick offline puddles and drastically shifts braking zones 20-30 meters earlier.'
+        }
+      ],
+      carClasses: [
+        {
+          class: 'E to B Class (100 - 600 PI)',
+          type: 'Production & Sport Cars',
+          desc: 'Low downforce, momentum driving. Focus on smooth weight transfer, maintaining corner exit speed, and trail braking.'
+        },
+        {
+          class: 'A to S Class (601 - 800 PI)',
+          type: 'Supercars & Track Toys',
+          desc: 'High horsepower to weight ratio. Throttle control out of slow corners becomes critical to prevent wheelspin.'
+        },
+        {
+          class: 'R to P & X Class (801 - 999 PI)',
+          type: 'Race Cars & Prototypes / Formula',
+          desc: 'High aerodynamic downforce. Higher cornering speeds require confidence in aero grip and fast reaction times.'
+        }
+      ],
+      drivetrains: [
+        {
+          type: 'FWD (Front-Wheel Drive)',
+          characteristics: 'Front wheels steer and propel the vehicle.',
+          handling: 'Inherently stable; tends to understeer under heavy power. Brake early, turn in, and roll on power smoothly after apex.'
+        },
+        {
+          type: 'RWD (Rear-Wheel Drive)',
+          characteristics: 'Front wheels steer, rear wheels propel.',
+          handling: 'Maximum agility and accelerating traction. Susceptible to oversteer on exit if throttle is stomped aggressively.'
+        },
+        {
+          type: 'AWD (All-Wheel Drive)',
+          characteristics: 'Power distributed to all four wheels.',
+          handling: 'Massive exit traction out of slow corners. Requires trail braking to overcome initial turn-in power understeer.'
+        }
+      ],
+      glossary: [
+        {
+          category: 'Racing Line & Cornering',
+          term: 'Apex (Geometric vs Late)',
+          definition: 'The closest point to the inside of a corner. Geometric apex maintains constant radius; Late apex turns later to maximize straightaway exit speed.'
+        },
+        {
+          category: 'Pedal & Vehicle Control',
+          term: 'Trail Braking',
+          definition: 'Gradually tapering off brake pressure as you steer into a corner, transferring weight to front tires for sharper turn-in grip.'
+        },
+        {
+          category: 'Vehicle Handling Dynamics',
+          term: 'Understeer ("Push")',
+          definition: 'Front tires lose grip before rear tires, causing the car to plow wide of the intended corner arc despite turning the wheel.'
+        },
+        {
+          category: 'Vehicle Handling Dynamics',
+          term: 'Oversteer ("Loose")',
+          definition: 'Rear tires lose traction first, causing the rear end of the car to swing outward into a slide.'
+        },
+        {
+          category: 'Tire & Physics Science',
+          term: 'Slip Angle',
+          definition: 'The angle between the direction a tire is pointed and its actual path over the track. Maximum tire grip occurs at a subtle 4°-7° slip angle.'
+        },
+        {
+          category: 'Vehicle Handling Dynamics',
+          term: 'Weight Transfer',
+          definition: 'Shift of vehicle mass forward under braking (loading front tires), rearward under acceleration (loading rear tires), or laterally in turns.'
+        },
+        {
+          category: 'Telemetry & Electronics',
+          term: 'Telemetry Data Out (UDP)',
+          definition: 'A feature in Forza Motorsport settings that broadcasts live telemetry data (wheel speed, RPM, FFB slip, G-forces) over local network.'
+        },
+        {
+          category: 'Racing Rules & Strategy',
+          term: 'Drafting / Slipstreaming',
+          definition: 'Following closely behind a leading car to reduce aerodynamic drag, gaining top speed for an overtaking attempt down straights.'
+        },
+        {
+          category: 'Pedal & Vehicle Control',
+          term: 'Cadence / Threshold Braking',
+          definition: 'Modulating brake pedal pressure right at the verge of tire lockup (or ABS threshold) for shortest stopping distance.'
+        }
+      ]
+    }
+  }
 };
 
 window.APEX_CONTENT = APEX_CONTENT;
+

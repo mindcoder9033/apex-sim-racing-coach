@@ -49,6 +49,8 @@ class ApexApp {
       window.dashboardController.render();
     } else if (viewId === 'modules') {
       window.modulesController.render();
+    } else if (viewId === 'guide') {
+      if (window.guideController) window.guideController.render();
     } else if (viewId === 'progress') {
       window.progressController.render();
     } else if (viewId === 'journal') {
@@ -76,6 +78,7 @@ class ApexApp {
     const titles = {
       dashboard: 'Dashboard',
       modules: 'Modules',
+      guide: 'Driver Guides',
       session: 'Active Session',
       progress: 'Progress Analytics',
       journal: 'Driver Journal',

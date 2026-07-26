@@ -1,0 +1,19 @@
+{
+  "name": "apex-sim-racing-coach",
+  "version": "1.3.0",
+  "description": "Client-only static web application serving as a structured sim racing coach for Forza Motorsport 2023",
+  "main": "index.html",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "serve": "npx -y serve .",
+    "deploy": "npx gh-pages -d ."
+  },
+  "keywords": [
+    "sim-racing",
+    "coaching",
+    "forza-motorsport"
+  ],
+  "author": "",
+  "license": "ISC"
+}

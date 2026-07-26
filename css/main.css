@@ -1,0 +1,306 @@
+/* CSS Reset & Variables */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Rajdhani:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Titillium+Web:ital,wght@0,600;0,700;1,600;1,700;1,900&display=swap');
+
+:root {
+  /* Base Colors (Backgrounds) */
+  --color-bg: #0A0A0C;            /* Primary Base (Deep Obsidian) - Main app background */
+  --color-bg-secondary: #111114;  /* Secondary Base (Carbon) - Secondary pages or distinct sections */
+  
+  /* Surface Colors (Containers) */
+  --color-surface: #18181C;       /* Surface 1 / Default (Gunmetal) - Standard cards, sidebars, data rows */
+  --color-surface-1: #18181C;
+  --color-surface-light: #222228; /* Surface 2 / Elevated (Dark Slate) - Dropdowns, nested cards */
+  --color-surface-2: #222228;
+  --color-surface-hover: #222228; /* Surface 2 Hover State */
+  --color-surface-highest: #2C2C34; /* Surface 3 / Highest (Titanium) - Modals, pop-ups, tooltips, active states */
+  --color-surface-3: #2C2C34;
+  
+  --color-text: #FFFFFF;          /* Primary Text / Action (Pure White) - highest contrast */
+  --color-text-muted: #6C757D;    /* Tertiary Data (Cool Grey) - non-critical telemetry */
+  --color-text-dim: #495057;      /* Muted metadata */
+  
+  --color-primary: #FFFFFF;       /* Primary Text & Action */
+  --color-primary-hover: #E0E0E0;
+  --color-primary-glow: rgba(255, 255, 255, 0.2);
+  
+  /* Official F1 Telemetry Color Palette */
+  --color-f1-purple: #FF1E00;      /* Personal Best (PB) / Active Focus Accent (Warm Red) */
+  --color-f1-purple-glow: rgba(255, 30, 0, 0.25);
+  
+  --color-f1-green: #22C55E;       /* Track Green - Completed / Mastered / Delta Gain */
+  --color-f1-green-glow: rgba(34, 197, 94, 0.25);
+  
+  --color-f1-amber: #EAB308;       /* Caution Amber - In Progress / Pending Challenge */
+  --color-f1-amber-glow: rgba(234, 179, 8, 0.25);
+  
+  --color-f1-red: #FF1E00;         /* Warm Red - Pit Limiter / Alerts / Danger */
+  --color-f1-red-glow: rgba(255, 30, 0, 0.25);
+  
+  --color-accent-red: var(--color-f1-red);
+  --color-secondary-accent: var(--color-f1-red);
+  --color-danger: var(--color-f1-red);
+  --color-danger-glow: var(--color-f1-red-glow);
+  
+  --color-tertiary-data: #6C757D; /* Tertiary Data (Cool Grey) */
+  
+  --color-success: var(--color-f1-green);
+  --color-success-hover: #16a34a;
+  --color-success-glow: var(--color-f1-green-glow);
+  
+  --color-warning: var(--color-f1-amber);
+  --color-warning-glow: var(--color-f1-amber-glow);
+  
+  /* Boundaries & Dividers */
+  --color-border-raw: #3A3A45;
+  --color-border: rgba(58, 58, 69, 0.2);       /* Subtle Border (#3A3A45 at 20% opacity) - sleek flat-tech look */
+  --color-border-subtle: rgba(58, 58, 69, 0.1);/* Subtle Border (10% opacity) */
+  --color-border-light: rgba(58, 58, 69, 0.25);/* Boundaries & dividers */
+
+  /* Font Strategy */
+  --font-heading: 'Rajdhani', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-menu: var(--font-heading);
+  --font-gear-speed: 'Titillium Web', sans-serif;
+  --font-telemetry: 'JetBrains Mono', monospace;
+  --font-family: var(--font-body);
+  
+  /* Radii & Shadows - Strict Motorsport Geometry */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-full: 9999px;
+  
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 24px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 24px var(--color-primary-glow);
+  --shadow-purple-glow: 0 0 20px var(--color-f1-purple-glow);
+  --shadow-green-glow: 0 0 20px var(--color-f1-green-glow);
+  
+  /* Layout Dimensions */
+  --sidebar-width: 240px;
+  --sidebar-width-collapsed: 64px;
+  --max-content-width: 960px;
+  
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Light Theme Override */
+body.light-theme {
+  --color-bg: #f0f0f5;
+  --color-surface: #ffffff;
+  --color-surface-light: #f5f5fa;
+  --color-surface-hover: #e8e8f2;
+  --color-text: #1a1a2e;
+  --color-text-muted: #666688;
+  --color-text-dim: #9999bb;
+  --color-border: #d0d0e0;
+  --color-border-light: #b0b0c5;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  word-spacing: 0.02em;
+  font-variant-numeric: tabular-nums lining-nums;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-light);
+}
+
+/* Typography elements - Strict Motorsport Terminal Authority */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  word-spacing: 0.06em;
+  line-height: 1.28;
+}
+
+h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  word-spacing: 0.07em;
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  word-spacing: 0.06em;
+  line-height: 1.28;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  word-spacing: 0.05em;
+  line-height: 1.3;
+}
+
+p {
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  word-spacing: 0.02em;
+  margin-bottom: 0.85rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+ul, ol {
+  padding-left: 1.25rem;
+  margin-bottom: 0.85rem;
+  line-height: 1.6;
+}
+
+li {
+  margin-bottom: 0.35rem;
+  letter-spacing: 0.01em;
+  word-spacing: 0.02em;
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-muted { color: var(--color-text-muted); }
+.text-tertiary { color: var(--color-tertiary-data) !important; }
+.text-primary { color: var(--color-primary); }
+.text-success { color: var(--color-success); }
+.text-warning { color: var(--color-warning); }
+.text-danger { color: var(--color-danger); }
+.accent-racing-red { color: var(--color-accent-red) !important; }
+
+/* F1 Telemetry Utility Classes */
+.text-f1-purple { color: var(--color-f1-purple) !important; }
+.text-f1-green { color: var(--color-f1-green) !important; }
+.text-f1-amber { color: var(--color-f1-amber) !important; }
+.text-f1-red { color: var(--color-f1-red) !important; }
+
+.bg-f1-purple { background-color: rgba(255, 30, 0, 0.15) !important; color: var(--color-f1-purple) !important; border: 1px solid rgba(255, 30, 0, 0.3) !important; }
+.bg-f1-green { background-color: rgba(34, 197, 94, 0.15) !important; color: var(--color-f1-green) !important; border: 1px solid rgba(34, 197, 94, 0.3) !important; }
+.bg-f1-amber { background-color: rgba(234, 179, 8, 0.15) !important; color: var(--color-f1-amber) !important; border: 1px solid rgba(234, 179, 8, 0.3) !important; }
+.bg-f1-red { background-color: rgba(255, 30, 0, 0.15) !important; color: var(--color-f1-red) !important; border: 1px solid rgba(255, 30, 0, 0.3) !important; }
+
+.border-f1-purple { border-color: rgba(255, 30, 0, 0.5) !important; box-shadow: var(--shadow-purple-glow); }
+.border-f1-green { border-color: rgba(34, 197, 94, 0.5) !important; box-shadow: var(--shadow-green-glow); }
+.border-f1-amber { border-color: rgba(234, 179, 8, 0.5) !important; }
+.border-f1-red { border-color: rgba(255, 30, 0, 0.5) !important; }
+
+/* Font Tier Utility Classes */
+.font-heading {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  word-spacing: 0.06em;
+  line-height: 1.28;
+}
+
+.font-body {
+  font-family: var(--font-body);
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  word-spacing: 0.02em;
+}
+
+.font-menu {
+  font-family: var(--font-menu);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  word-spacing: 0.05em;
+  line-height: 1.3;
+}
+
+.font-gear-speed {
+  font-family: var(--font-gear-speed);
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: 0.03em;
+  word-spacing: 0.04em;
+  line-height: 1.15;
+}
+
+.font-telemetry {
+  font-family: var(--font-telemetry);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  word-spacing: 0.035em;
+  line-height: 1.4;
+}
+
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 0.75rem; }
+.gap-4 { gap: 1rem; }
+.gap-6 { gap: 1.5rem; }
+
+.mt-2 { margin-top: 0.5rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-6 { margin-top: 1.5rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+
+.hidden { display: none !important; }
+

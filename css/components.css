@@ -2058,6 +2058,218 @@ textarea.form-control {
   border-color: rgba(0, 210, 255, 0.4);
 }
 
+/* Guide Category Navigation & Cards */
+.guide-category-filter-bar {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.guide-cat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full, 9999px);
+  background: rgba(10, 14, 22, 0.6);
+  color: var(--color-text-muted);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.guide-cat-pill i {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+.guide-cat-pill:hover {
+  color: var(--color-text);
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.moza-guide-section .guide-cat-pill.active {
+  background: rgba(255, 30, 0, 0.15);
+  color: #ff4d36;
+  border-color: rgba(255, 30, 0, 0.4);
+  box-shadow: 0 0 12px rgba(255, 30, 0, 0.25);
+}
+
+.forza-guide-section .guide-cat-pill.active {
+  background: rgba(0, 210, 255, 0.15);
+  color: #00d2ff;
+  border-color: rgba(0, 210, 255, 0.4);
+  box-shadow: 0 0 12px rgba(0, 210, 255, 0.25);
+}
+
+.guide-category-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.guide-cat-card {
+  background: rgba(12, 16, 24, 0.7);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.15rem;
+  cursor: pointer;
+  position: relative;
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.guide-cat-card:hover {
+  transform: translateY(-3px);
+  background: rgba(18, 24, 36, 0.85);
+}
+
+.moza-guide-section .guide-cat-card:hover {
+  border-color: rgba(255, 30, 0, 0.4);
+  box-shadow: 0 6px 20px rgba(255, 30, 0, 0.15);
+}
+
+.forza-guide-section .guide-cat-card:hover {
+  border-color: rgba(0, 210, 255, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 210, 255, 0.15);
+}
+
+.guide-cat-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+}
+
+.guide-cat-card-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.moza-guide-section .guide-cat-card-icon {
+  background: rgba(255, 30, 0, 0.15);
+  color: #ff4d36;
+  border: 1px solid rgba(255, 30, 0, 0.3);
+}
+
+.forza-guide-section .guide-cat-card-icon {
+  background: rgba(0, 210, 255, 0.15);
+  color: #00d2ff;
+  border: 1px solid rgba(0, 210, 255, 0.3);
+}
+
+.guide-cat-card-icon i {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.guide-cat-card-count {
+  font-family: var(--font-menu);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full, 9999px);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.guide-cat-card-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 0.35rem 0;
+}
+
+.guide-cat-card-desc {
+  font-size: 0.84rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.guide-category-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-menu);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full, 9999px);
+  margin-bottom: 0.75rem;
+}
+
+.moza-guide-section .guide-category-badge {
+  background: rgba(255, 30, 0, 0.12);
+  color: #ff4d36;
+  border: 1px solid rgba(255, 30, 0, 0.25);
+}
+
+.forza-guide-section .guide-category-badge {
+  background: rgba(0, 210, 255, 0.12);
+  color: #00d2ff;
+  border: 1px solid rgba(0, 210, 255, 0.25);
+}
+
+.guide-category-badge i {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.guide-group-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.25rem;
+  background: rgba(15, 20, 30, 0.6);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-f1-red, #ff1e00);
+  border-radius: var(--radius-md);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.forza-guide-section .guide-group-header {
+  border-left-color: #00d2ff;
+}
+
+.guide-group-header h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.guide-group-header i {
+  width: 1.2rem;
+  height: 1.2rem;
+  color: #ff4d36;
+}
+
+.forza-guide-section .guide-group-header i {
+  color: #00d2ff;
+}
+
 /* Grids & Cards */
 .tracks-grid, .drivetrains-grid, .terms-grid {
   display: grid;

@@ -5,24 +5,11 @@
 
 class PsychologyController {
   constructor() {
-    this.activeCategory = 'All';
     this.searchQuery = '';
     this.breathingTimer = null;
     this.breathingPhaseIndex = 0;
     this.breathingCount = 4;
     this.isBreathingActive = false;
-
-    this.categories = [
-      'All',
-      'Quick Mindset',
-      'Flow & Yerkes-Dodson',
-      'Core Mental Skills',
-      'Emotional Control & Tilt',
-      'Confidence & Resilience',
-      'Practice & Race Day',
-      'Sim Racing Psychology',
-      'Mental Drills'
-    ];
 
     this.initData();
   }
@@ -341,20 +328,11 @@ For 5 consecutive laps, call out loud every brake point, turn-in point, and exit
           </div>
         </div>
 
-        <!-- Search & Filter Controls -->
+        <!-- Search Controls -->
         <div class="card mb-4">
           <div class="form-group mb-0">
             <input type="text" class="form-control" id="txtPsychSearch" value="${this.escapeHtml(this.searchQuery)}" placeholder="Search mental techniques (e.g. Red Mist, Flow State, Choking, Self-Talk, Breathing)...">
           </div>
-        </div>
-
-        <!-- Category Pills -->
-        <div class="ref-pills-bar mb-4" style="display:flex; gap:0.5rem; overflow-x:auto; padding-bottom:0.5rem;">
-          ${this.categories.map(cat => `
-            <button class="btn ${this.activeCategory === cat ? 'btn-primary' : 'btn-secondary'}" data-category="${cat}" style="font-size:0.8rem; padding:0.4rem 0.85rem; white-space:nowrap;">
-              ${cat}
-            </button>
-          `).join('')}
         </div>
 
         <!-- Cards Grid -->
@@ -370,17 +348,13 @@ For 5 consecutive laps, call out loud every brake point, turn-in point, and exit
 
   getFilteredItems() {
     const q = this.searchQuery.toLowerCase().trim();
-    return this.items.filter(item => {
-      const matchCategory = (this.activeCategory === 'All') || (item.category === this.activeCategory);
-      const matchSearch = !q ||
-        item.title.toLowerCase().includes(q) ||
-        item.summary.toLowerCase().includes(q) ||
-        item.category.toLowerCase().includes(q) ||
-        item.takeaways.some(t => t.toLowerCase().includes(q)) ||
-        item.content.toLowerCase().includes(q);
-
-      return matchCategory && matchSearch;
-    });
+    if (!q) return this.items;
+    return this.items.filter(item =>
+      item.title.toLowerCase().includes(q) ||
+      item.summary.toLowerCase().includes(q) ||
+      item.takeaways.some(t => t.toLowerCase().includes(q)) ||
+      item.content.toLowerCase().includes(q)
+    );
   }
 
   renderCards(items) {
@@ -389,7 +363,7 @@ For 5 consecutive laps, call out loud every brake point, turn-in point, and exit
         <div class="card text-center py-8" style="grid-column: 1 / -1;">
           <div class="mb-3 text-muted flex justify-center"><i data-lucide="search-x" style="width:48px; height:48px;"></i></div>
           <h3 class="mt-2">No Psychology Modules Found</h3>
-          <p class="text-muted mt-1" style="font-size:0.9rem;">Try resetting your search query or selecting another filter pill above.</p>
+          <p class="text-muted mt-1" style="font-size:0.9rem;">Try resetting your search query.</p>
         </div>
       `;
     }
@@ -428,15 +402,6 @@ For 5 consecutive laps, call out loud every brake point, turn-in point, and exit
       this.updateView();
     });
 
-    // Filter Pills
-    document.querySelectorAll('.ref-pills-bar button').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const cat = e.currentTarget.getAttribute('data-category');
-        this.activeCategory = cat;
-        this.updateView();
-      });
-    });
-
     // Card Clicks
     document.querySelectorAll('.psych-card').forEach(card => {
       card.addEventListener('click', (e) => {
@@ -473,7 +438,6 @@ For 5 consecutive laps, call out loud every brake point, turn-in point, and exit
       <div class="flex items-center gap-2 mb-4">
         <span class="icon-lg text-accent flex items-center">${window.getIconSvg(item.icon, 'icon-lg')}</span>
         <span class="badge badge-f1-amber">${item.badge}</span>
-        <span class="badge" style="background:var(--color-surface-light);">${item.category}</span>
       </div>
 
       <div class="psych-modal-body" style="font-size:0.95rem; line-height:1.6;">

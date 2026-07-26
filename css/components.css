@@ -910,22 +910,82 @@ textarea.form-control {
 }
 
 /* Reference Library Category Pills & Reader Formatting */
+.ref-pills-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 1.25rem;
+}
+
 .ref-pills-bar {
   display: flex;
   gap: 0.5rem;
   overflow-x: auto;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.25rem;
+  padding-bottom: 0.65rem;
+  margin-bottom: 0;
+  width: 100%;
   scrollbar-width: thin;
+  scrollbar-color: var(--color-f1-red) rgba(255, 30, 0, 0.1);
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
+/* Formula 1 Red Horizontal Scrollbar */
 .ref-pills-bar::-webkit-scrollbar {
-  height: 4px;
+  height: 6px;
+}
+
+.ref-pills-bar::-webkit-scrollbar-track {
+  background: rgba(18, 18, 26, 0.7);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 30, 0, 0.18);
 }
 
 .ref-pills-bar::-webkit-scrollbar-thumb {
-  background: var(--color-border);
-  border-radius: 2px;
+  background: var(--color-f1-red);
+  border-radius: 4px;
+  box-shadow: 0 0 10px var(--color-f1-red-glow), 0 0 4px var(--color-f1-red);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ref-pills-bar::-webkit-scrollbar-thumb:hover {
+  background: #FF3B1E;
+  box-shadow: 0 0 14px rgba(255, 30, 0, 0.85), 0 0 6px var(--color-f1-red);
+  cursor: pointer;
+}
+
+.ref-pills-bar::-webkit-scrollbar-thumb:active {
+  background: #D61800;
+  box-shadow: 0 0 16px rgba(255, 30, 0, 1);
+}
+
+.ref-scroll-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  background: var(--color-surface-light);
+  border: 1px solid rgba(255, 30, 0, 0.35);
+  color: var(--color-f1-red);
+  border-radius: 50%;
+  font-size: 1.1rem;
+  line-height: 1;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 0.65rem;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.ref-scroll-btn:hover {
+  background: var(--color-f1-red);
+  color: #FFFFFF;
+  border-color: var(--color-f1-red);
+  box-shadow: 0 0 10px var(--color-f1-red-glow);
 }
 
 .ref-pill {
@@ -942,17 +1002,17 @@ textarea.form-control {
 }
 
 .ref-pill:hover {
-  border-color: var(--color-primary);
+  border-color: var(--color-f1-red);
   color: var(--color-text);
   background: var(--color-surface-hover);
 }
 
 .ref-pill.active {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
-  color: #15151E;
+  background: var(--color-f1-red);
+  border-color: var(--color-f1-red);
+  color: #FFFFFF;
   font-weight: 700;
-  box-shadow: 0 2px 10px var(--color-primary-glow);
+  box-shadow: 0 2px 12px var(--color-f1-red-glow);
 }
 
 .ref-modal-content h3 {

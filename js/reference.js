@@ -47,12 +47,16 @@ class ReferenceController {
           </div>
         </div>
 
-        <div class="ref-pills-bar">
-          ${this.categories.map(cat => `
-            <button class="ref-pill ${this.activeCategory === cat ? 'active' : ''}" data-category="${cat}">
-              ${cat}
-            </button>
-          `).join('')}
+        <div class="ref-pills-container">
+          <button class="ref-scroll-btn" id="refScrollLeft" title="Scroll left" aria-label="Scroll left">‹</button>
+          <div class="ref-pills-bar" id="refPillsBar">
+            ${this.categories.map(cat => `
+              <button class="ref-pill ${this.activeCategory === cat ? 'active' : ''}" data-category="${cat}">
+                ${cat}
+              </button>
+            `).join('')}
+          </div>
+          <button class="ref-scroll-btn" id="refScrollRight" title="Scroll right" aria-label="Scroll right">›</button>
         </div>
 
         <div class="grid-2" id="refCardsContainer">
@@ -114,6 +118,32 @@ class ReferenceController {
       });
     }
 
+    const pillsBar = document.getElementById('refPillsBar');
+
+    // Horizontal wheel scroll for category pills bar
+    if (pillsBar) {
+      pillsBar.addEventListener('wheel', (e) => {
+        if (e.deltaY !== 0) {
+          e.preventDefault();
+          pillsBar.scrollLeft += e.deltaY;
+        }
+      }, { passive: false });
+    }
+
+    // Left / Right scroll buttons
+    const btnLeft = document.getElementById('refScrollLeft');
+    const btnRight = document.getElementById('refScrollRight');
+    if (btnLeft && pillsBar) {
+      btnLeft.addEventListener('click', () => {
+        pillsBar.scrollBy({ left: -220, behavior: 'smooth' });
+      });
+    }
+    if (btnRight && pillsBar) {
+      btnRight.addEventListener('click', () => {
+        pillsBar.scrollBy({ left: 220, behavior: 'smooth' });
+      });
+    }
+
     // Category pills click events
     document.querySelectorAll('.ref-pill').forEach(pill => {
       pill.addEventListener('click', (e) => {
@@ -122,6 +152,9 @@ class ReferenceController {
         
         document.querySelectorAll('.ref-pill').forEach(p => p.classList.remove('active'));
         e.currentTarget.classList.add('active');
+
+        // Smoothly bring selected pill into view
+        e.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
 
         this.updateFilteredView();
       });

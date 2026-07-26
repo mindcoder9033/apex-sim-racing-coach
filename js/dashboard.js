@@ -87,15 +87,15 @@ class DashboardController {
             ${recentKeys.length > 0 ? `
               <div class="stint-list flex flex-col gap-3">
                 ${recentKeys.map(key => {
-                  const sessionData = data.sessions[key] || {};
-                  const formattedLap = sessionData.lapTime 
-                    ? (sessionData.lapTime < 60 
-                        ? `${sessionData.lapTime.toFixed(3)}s` 
-                        : `${Math.floor(sessionData.lapTime / 60)}:${(sessionData.lapTime % 60).toFixed(3).padStart(6, '0')}`)
-                    : 'N/A';
-                  const confidenceStars = sessionData.ratings?.confidence ? '★'.repeat(sessionData.ratings.confidence) : '★★★';
-                  
-                  return `
+      const sessionData = data.sessions[key] || {};
+      const formattedLap = sessionData.lapTime
+        ? (sessionData.lapTime < 60
+          ? `${sessionData.lapTime.toFixed(3)}s`
+          : `${Math.floor(sessionData.lapTime / 60)}:${(sessionData.lapTime % 60).toFixed(3).padStart(6, '0')}`)
+        : 'N/A';
+      const confidenceStars = sessionData.ratings?.confidence ? '★'.repeat(sessionData.ratings.confidence) : '★★★';
+
+      return `
                     <div class="stint-history-item" data-session-key="${key}">
                       <div class="flex flex-col gap-1">
                         <div class="flex items-center gap-2">
@@ -113,7 +113,7 @@ class DashboardController {
                       </div>
                     </div>
                   `;
-                }).join('')}
+    }).join('')}
               </div>
             ` : `
               <div class="text-center py-10 text-tertiary">
@@ -126,7 +126,6 @@ class DashboardController {
 
           <div class="mt-5 pt-4 text-center" style="border-top:1px solid var(--color-border);">
             <span class="text-tertiary" style="font-size:0.8rem;">
-              Looking for telemetry scores & detailed stats? Visit the <a href="#" id="linkToProgressTab" style="color:var(--color-f1-purple); text-decoration:underline; font-weight:600;">Progress Tab</a>.
             </span>
           </div>
         </div>

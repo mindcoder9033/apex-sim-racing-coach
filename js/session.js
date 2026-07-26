@@ -23,6 +23,14 @@ class SessionController {
   }
 
   loadSession(moduleId, sessionId) {
+    // Verify Challenge Prerequisites
+    if (!window.apexStore.isSessionUnlocked(moduleId, sessionId)) {
+      if (window.modulesController) {
+        window.modulesController.showLockedAlert(moduleId, sessionId);
+      }
+      return false;
+    }
+
     this.currentModuleId = moduleId;
     this.currentSessionId = sessionId;
     this.currentStepIndex = 0;

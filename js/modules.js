@@ -90,7 +90,7 @@ class ModulesController {
           <div class="flex justify-between items-center mt-auto text-tertiary" style="font-size:0.82rem;">
             <span class="flex items-center gap-1"><i data-lucide="clock" class="icon-sm text-muted"></i> ${mod.duration}</span>
             <span class="accent-racing-red font-menu flex items-center gap-1" style="font-weight:700;">
-              ${isUnlocked ? 'Explore Sessions <i data-lucide="arrow-right" class="icon-sm"></i>' : '<i data-lucide="lock" class="icon-sm"></i> View Requirements'}
+              Explore Sessions <i data-lucide="arrow-right" class="icon-sm"></i>
             </span>
           </div>
         </div>
@@ -162,26 +162,26 @@ class ModulesController {
         ${!isUnlocked ? `
           <div class="locked-banner card p-5 mb-6 text-center" style="background:rgba(230,57,70,0.08); border:1px solid rgba(230,57,70,0.3);">
             <div class="mb-3 text-accent flex justify-center"><i data-lucide="lock" style="width:48px; height:48px;"></i></div>
-            <h3 class="mt-2 font-menu accent-racing-red">Module ${mod.id} Currently Gated</h3>
-            <p class="text-tertiary mt-2" style="font-size:0.95rem; max-width:600px; margin-left:auto; margin-right:auto;">
-              ${window.apexStore.getUnlockRequirementText(mod.id, 1)}
+            <h3 class="mt-2 font-menu accent-racing-red">Module ${mod.id} Challenge Prerequisites Required</h3>
+            <p class="text-tertiary mt-2" style="font-size:0.95rem; max-width:650px; margin-left:auto; margin-right:auto;">
+              ${window.apexStore.getUnlockRequirementText(mod.id, 1)} You may explore all session details below, but prerequisites must be cleared to launch telemetry.
             </p>
           </div>
         ` : ''}
 
         <!-- Empty Sessions Placeholder -->
-        ${isUnlocked && (!mod.sessions || mod.sessions.length === 0) ? `
+        ${(!mod.sessions || mod.sessions.length === 0) ? `
           <div class="card p-6 text-center" style="background:var(--color-bg); border-style:dashed;">
             <div class="mb-3 text-muted flex justify-center"><i data-lucide="wrench" style="width:48px; height:48px;"></i></div>
             <h3 class="mt-2">Sessions Being Calibrated</h3>
             <p class="text-muted mt-1" style="font-size:0.95rem; max-width:550px; margin:0.5rem auto 0 auto;">
-              The 12 telemetry-driven coaching sessions for <strong>Module ${mod.id}: ${mod.title}</strong> are undergoing final track testing. Complete Module 1 to gain priority access!
+              The 12 telemetry-driven coaching sessions for <strong>Module ${mod.id}: ${mod.title}</strong> are undergoing final track testing. Complete previous modules to gain priority access!
             </p>
           </div>
         ` : ''}
 
         <!-- Sequential Session Timeline Track -->
-        ${isUnlocked && mod.sessions && mod.sessions.length > 0 ? `
+        ${mod.sessions && mod.sessions.length > 0 ? `
           <div class="sessions-timeline-container">
             <h3 class="font-menu mb-4" style="font-size:1.1rem; color:var(--color-text-dim);">Sequential Session Roadmap</h3>
             <div class="sessions-timeline">
@@ -320,15 +320,9 @@ class ModulesController {
     container.querySelectorAll('[data-action="open-module"]').forEach(card => {
       card.addEventListener('click', () => {
         const modId = parseInt(card.getAttribute('data-module-id'));
-        const isUnlocked = window.apexStore.isModuleUnlocked(modId);
-
-        if (isUnlocked) {
-          this.activeModuleId = modId;
-          this.render();
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        } else {
-          this.showLockedAlert(modId, 1);
-        }
+        this.activeModuleId = modId;
+        this.render();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     });
 

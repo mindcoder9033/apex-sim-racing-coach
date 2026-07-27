@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Apex - Sim Racing Coach</title>
-  <meta name="description" content="Client-only static web application serving as a structured sim racing coach for Forza Motorsport 2023 with Moza R3 wheel based on Going Faster!">
-  
+  <title>APEX - Faster Together!</title>
+  <meta name="description"
+    content="Client-only static web application serving as a structured sim racing coach for Forza Motorsport 2023 with Moza R3 wheel based on Going Faster!">
+
   <!-- Google Fonts: Rajdhani (Headings/Brand), Space Grotesk (Body/UI), JetBrains Mono (Telemetry), Titillium Web (Gear/Speed) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Titillium+Web:ital,wght@0,600;0,700;1,600;1,700;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Titillium+Web:ital,wght@0,600;0,700;1,600;1,700;1,900&display=swap"
+    rel="stylesheet">
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -19,6 +23,7 @@
   <link rel="stylesheet" href="css/shell.css">
   <link rel="stylesheet" href="css/components.css">
 </head>
+
 <body>
 
   <!-- Mobile Top Header (Mobile < 768px) -->
@@ -46,7 +51,7 @@
             <span class="logo-icon"><i data-lucide="gauge"></i></span>
             <div class="logo-text-wrapper">
               <span class="logo-title">APEX</span>
-              <span class="logo-tagline">Sim Racing Coach</span>
+              <span class="logo-tagline">Faster Together!</span>
             </div>
           </div>
         </div>
@@ -54,7 +59,7 @@
         <nav class="sidebar-nav">
           <a href="#" class="nav-link active" data-page="dashboard">
             <span class="icon"><i data-lucide="layout-dashboard"></i></span>
-            <span class="nav-label">Dashboard</span>
+            <span class="nav-label">Home</span>
           </a>
           <a href="#" class="nav-link" data-page="modules">
             <span class="icon"><i data-lucide="layers"></i></span>
@@ -62,19 +67,19 @@
           </a>
           <a href="#" class="nav-link" data-page="guide">
             <span class="icon"><i data-lucide="compass"></i></span>
-            <span class="nav-label">Guide</span>
+            <span class="nav-label">Coach</span>
           </a>
           <a href="#" class="nav-link" data-page="progress">
             <span class="icon"><i data-lucide="line-chart"></i></span>
-            <span class="nav-label">Progress</span>
+            <span class="nav-label">Telemetry</span>
           </a>
           <a href="#" class="nav-link" data-page="journal">
             <span class="icon"><i data-lucide="notebook-pen"></i></span>
-            <span class="nav-label">Journal</span>
+            <span class="nav-label">Notes</span>
           </a>
           <a href="#" class="nav-link" data-page="psychology">
             <span class="icon"><i data-lucide="brain"></i></span>
-            <span class="nav-label">Psychology</span>
+            <span class="nav-label">Mindset</span>
           </a>
           <a href="#" class="nav-link" data-page="reference">
             <span class="icon"><i data-lucide="book-open"></i></span>
@@ -92,12 +97,13 @@
           <span class="icon"><i data-lucide="upload"></i></span>
           <span class="nav-label">Import Progress</span>
         </a>
-        
-        <button class="sidebar-toggle-btn mt-2" id="sidebarToggleBtn" aria-label="Toggle Sidebar" title="Toggle Sidebar">
+
+        <button class="sidebar-toggle-btn mt-2" id="sidebarToggleBtn" aria-label="Toggle Sidebar"
+          title="Toggle Sidebar">
           <span class="icon"><i data-lucide="chevrons-left"></i></span>
           <span class="nav-label">Collapse Sidebar</span>
         </button>
-        
+
         <div class="sidebar-footer-info mt-2">
           <span>v1.0.0 • Client-Only</span>
         </div>
@@ -106,7 +112,7 @@
 
     <!-- Main Content Container -->
     <main class="main-content" id="mainContent">
-      
+
       <!-- Dashboard View -->
       <div class="page-view active" id="dashboard">
         <!-- Rendered dynamically by dashboardController -->
@@ -259,4 +265,5 @@
   <script src="js/export.js"></script>
   <script src="js/app.js"></script>
 </body>
+
 </html>

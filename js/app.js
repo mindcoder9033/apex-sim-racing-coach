@@ -10,13 +10,19 @@ class ApexApp {
   }
 
   init() {
-    document.addEventListener('DOMContentLoaded', () => {
+    const start = () => {
       this.bindNavigation();
       this.bindSidebarToggle();
       this.checkFirstVisit();
       this.navigateTo('dashboard');
       window.renderLucideIcons();
-    });
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', start);
+    } else {
+      start();
+    }
   }
 
   // SPA View Switcher with Smooth Fade

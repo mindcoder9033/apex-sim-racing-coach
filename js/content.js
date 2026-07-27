@@ -2419,7 +2419,7 @@ As steering angle increases from 0° → 30° → 60°, brake pedal pressure MUS
 
 Today we integrate Skip Barber's **Four Blocks of Cornering**:
 
-```
+\`\`\`
 [BLOCK 1: Throttle-to-Brake Transition]
    ↓ Rapid lift off throttle → immediate squeeze to threshold (zero coasting)
 [BLOCK 2: Straight-Line Deceleration]
@@ -2428,7 +2428,7 @@ Today we integrate Skip Barber's **Four Blocks of Cornering**:
    ↓ Bleed brake pressure down linearly as steering turns in toward apex
 [BLOCK 4: Brake-to-Throttle Transition]
    ↓ Complete brake release at apex → squeeze 100% throttle as steering unwinds
-```
+\`\`\`
 
 Every single corner on every racetrack is built from these 4 blocks. Operating with zero assists lets you feel all 4 blocks in pure physical harmony!`,
             keyTakeaways: [

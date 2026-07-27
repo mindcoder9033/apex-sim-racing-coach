@@ -1588,598 +1588,1071 @@ Tires have a maximum grip budget. If you use 100% of grip for braking, you have 
 },
     {
       id: 2,
-      title: 'Braking & Entering',
-      subtitle: 'Mastering Deceleration & Trail-Braking',
-      description: 'Learn threshold braking, trail-braking, weight transfer control, and carrying maximum entry speed into corners without locking up.',
+      title: 'The 3 Basics: Line, Exit Speed & Braking',
+      subtitle: 'Skip Barber Chapter 2: Raw Car Control Masterclass',
+      description: 'Master the racing line, corner exit speed, threshold braking, and weight transfer in the Mazda MX-5 Cup at Lime Rock Park with progressive assist removal.',
       duration: '12 Sessions (30 Days)',
       sessions: [
         {
           id: 1,
-          title: 'Throttle-to-Brake Transition',
-          focus: 'Smooth pedal transition',
-          car: 'Mazda MX-5',
-          track: 'Laguna Seca',
-          targetLapTime: 102.0,
+          title: 'Line Fundamentals & Arc Maximization',
+          focus: 'Corner radius math (15GR = m.p.h.²) & turning OFF Driving Line',
+          car: 'Mazda MX-5 Cup',
+          track: 'Lime Rock Park (Full Circuit)',
+          targetLapTime: 62.5,
           difficulty: 1,
+          assistsConfig: {
+            transmission: 'Automatic (No Clutch)',
+            drivingLine: 'Off',
+            tcs: 'On',
+            stm: 'On',
+            abs: 'On',
+            steering: 'Normal'
+          },
           theory: {
-            title: 'The Art of Pedal Transition',
-            content: `The transition from throttle to brake is the first step in every corner entry. How you make this transition affects the car's balance and your ability to brake at the limit.
+            title: 'Line Fundamentals & Corner Radius Math',
+            content: `Welcome to Module 2! Today we begin **Skip Barber Chapter 2: The Three Basics**. Our first goal is mastering the **Racing Line** and turning off the **Driving Line Assist**.
 
-### Two Approaches
-- **Quick Transition**: Fast lift → immediate brake (High speed corners, straight-line braking)
-- **Smooth Transition**: Gradual lift → progressive brake (Brake-turning, low grip, wet conditions)
+### The Physics of Corner Radius
+The fundamental aim of driving a corner is to travel on an arc with the largest possible radius. The physics equation governing cornering speed is:
+**15 × G × R = m.p.h.²**
+*(where G is available tire cornering force, and R is corner radius in feet)*
 
-### Common Mistakes
-- **Coasting**: Off throttle, off brake. Lost time, unsettled chassis!
-- **Slamming**: Hitting brakes like a hammer, causing unstable weight transfer.
-- **Snap Lift**: Abrupt throttle lift causing trailing throttle oversteer (TTO).`,
+### Why "The Line" Is 89% Faster
+In a standard 90-degree corner (like Sebring T7 or Lime Rock T1):
+- **Inside Curb Path**: Radius = 103 ft → Max speed = **39.3 m.p.h.**
+- **Outside Edge Path**: Radius = 130 ft → Max speed = **44.1 m.p.h.**
+- **The Racing Line (Outside → Inside → Outside)**: Radius = 195 ft → Max speed = **54.0 m.p.h.**
+
+Driving the proper line increases your corner arc radius by **89%**, giving you a **37% speed advantage** for only 4.8% extra distance traveled!
+
+### Today's Action: Driving Line OFF
+Turn off Forza's Driving Line assist. Instead of following glowing green arrows on the track surface, look ahead for physical track reference points: Turn-in marker, Apex curb, and Track-out edge.`,
             keyTakeaways: [
-              'Quick transition = less coasting = faster lap time',
-              'Smooth transition = better car balance on corner entry',
-              'Zero coasting: You should always be either on throttle or on brake'
+              'Maximizing corner arc radius increases maximum achievable cornering speed',
+              'The racing line turns tight corners into sweeping arcs using the full width of the track',
+              'Without the driving line guide, your eyes must look ahead to find natural track reference markers'
             ],
-            diagramId: 'pedal-squeeze-diagram'
+            diagramId: 'corner-path-comparison'
           },
           practice: {
-            focus: 'Pedal transition drills',
+            focus: 'Corner radius feel & driving line removal',
             drills: [
-              { id: 'easy', level: '🟢 Easy', title: 'The Lift-Off', desc: 'Approach Turn 2 at 80 km/h. Lift off throttle and observe deceleration without braking.', reps: 5, time: '5 min' },
-              { id: 'medium', level: '🟡 Medium', title: 'The Quick Transition', desc: 'Approach Turn 2 at 100 km/h. Move from full throttle to brake in under 0.3 seconds.', reps: 5, time: '8 min' },
-              { id: 'hard', level: '🔴 Hard', title: 'The Smooth Transition', desc: 'Practice gradual lift and progressive brake application into Turn 6 to settle the chassis.', reps: 8, time: '10 min' }
+              { id: 'easy', level: '🟢 Easy', title: 'Turn 1 Arc Feel', desc: 'Drive Turn 1 at 70 km/h using inside path vs full outside-inside-outside arc to feel radius difference.', reps: 4, time: '5 min' },
+              { id: 'medium', level: '🟡 Medium', title: 'Visual Reference Spotting', desc: 'Identify turn-in point, apex curb, and track-out point for all 7 corners of Lime Rock Park.', reps: 3, time: '8 min' },
+              { id: 'hard', level: '🔴 Hard', title: 'Line Arc Sweep (No Line Guide)', desc: 'Drive 4 clean laps using maximum road width with Driving Line OFF.', reps: 4, time: '10 min' }
             ]
           },
           practical: {
-            title: 'Skill-First Focus: Pedal Transition',
-            focus: 'Eliminating coasting in braking zones',
+            title: 'Driving Line-Free Stint',
+            focus: 'Using full road width without visual line guide',
             laps: 5,
             instructions: [
-              'Load Mazda MX-5 @ Laguna Seca for 5 focused laps.',
-              'Turn 2: Practice quick transition (lift → immediate brake).',
-              'Turn 6: Practice smooth transition (gradual lift → progressive brake).',
-              'Turn 11: Practice your preferred transition for maximum exit speed.',
-              'Ensure zero coasting moments across all braking zones.'
+              'Verify Driving Line assist is set to OFF in Forza Motorsport settings.',
+              'Drive 5 focused laps at Lime Rock Park in the Mazda MX-5 Cup.',
+              'Position your tires right at the outside track edge on entry, clip the inside apex curb, and track out fully to the outside edge.'
             ]
           },
           challenge: {
-            title: 'Zero Coasting Challenge',
+            title: 'Apex Curb Precision Challenge',
             type: 'technique',
-            description: 'Complete a focused lap of Laguna Seca with zero coasting between throttle and brake in all braking zones.',
-            criteria: '0 coasting moments recorded.'
+            description: 'Complete 5 consecutive laps clipping within 1 foot of the apex curbs on Turn 1, Turn 3, and Turn 7 without the driving line guide.',
+            criteria: '5 clean laps with precise apex clipping logged.'
+          },
+          assessment: {
+            title: 'Driving Line Removal Assessment',
+            criteria: 'Demonstrated precise corner radius maximization and visual reference identification without driving line assist.',
+            passingScore: 80
+          },
+          telemetryReflection: {
+            title: 'Visual Replay Line Inspection',
+            prompts: [
+              { key: 'trackWidthUsage', label: 'Track Width Usage', question: 'In replay camera view, were your outside tires within 1 foot of the track edge at turn-in and track-out?' },
+              { key: 'lineConsistency', label: 'Line Repeatability', question: 'Did your corner entry arc look identical on every lap without the visual line guide?' }
+            ]
+          },
+          psychologicalCheckIn: {
+            defaultFocus: 4,
+            defaultFrustration: 1,
+            defaultConfidence: 3,
+            resetPrompt: 'Driving without the green line guide feels unfamiliar at first. Trust your eyes looking far ahead down the track.'
+          },
+          sessionReflection: {
+            questions: [
+              'How did driving the outside-inside-outside line change the stability and speed of the car through Turn 1?',
+              'Which corner at Lime Rock was hardest to visually judge without the driving line guide?',
+              'What physical landmark did you use as your turn-in reference for Turn 7 (Downhill)?'
+            ]
           }
         },
         {
           id: 2,
-          title: 'Threshold Braking',
-          focus: 'Finding the braking limit',
-          car: 'Mazda MX-5',
-          track: 'Laguna Seca',
-          targetLapTime: 101.0,
-          difficulty: 2,
+          title: 'The Apex Spectrum: Early vs Late Apex',
+          focus: 'Understanding line errors & late apex safety',
+          car: 'Mazda MX-5 Cup',
+          track: 'Lime Rock Park (Full Circuit)',
+          targetLapTime: 62.0,
+          difficulty: 1,
+          assistsConfig: {
+            transmission: 'Automatic (No Clutch)',
+            drivingLine: 'Off',
+            tcs: 'On',
+            stm: 'On',
+            abs: 'On',
+            steering: 'Normal'
+          },
           theory: {
-            title: 'The Limit of Braking',
-            content: `Threshold braking is using 100% of your braking capability without locking the tires. It's where the fastest lap times are found.
+            title: 'Early vs. Late Apexing & Common Line Errors',
+            content: `Today we examine the single most common mistake made by both novice and experienced racers: **Turning In Too Early**.
 
-### Peak Grip vs Slip Ratio
-Peak braking force occurs when the tire is revolving ~15% slower than free-rolling. Exceeding this threshold locks the tire, dropping braking grip by 30% and flat-spotting tires.
+### The Anatomy of an Early Apex
+When you turn into a corner too early:
+1. You enter on a very large, comfortable radius.
+2. But late in the corner, your car is forced onto a **tighter arc** (e.g. radius shrinks from 300 ft down to 75 ft!).
+3. To stay on the track, you must either turn the wheel violently past the tire grip limit OR lift off throttle and lose massive exit speed.
 
-### Key Principles
-- **Squeeze**: Squeeze pedal rapidly, don't slam it.
-- **Feel**: Learn the pedal resistance and tire hum right before lock.
-- **Release**: Instantly ease pressure if a tire locks up.`,
+### Primary Symptom of Early Apexing
+If you feel the need to **increase your steering angle past the apex**, you turned in too early!
+
+### The Late Apex Solution
+Turning in slightly later than the geometric center creates a **late apex**. This leaves extra road at corner exit, allowing you to unwind steering early and squeeze full throttle sooner onto following straights.
+
+Skip Barber advice: *"When learning a new track, intentionally turn in later than you think you should. Erring on the side of a late apex is always safer and faster."*`,
             keyTakeaways: [
-              'Threshold braking delivers maximum possible deceleration',
-              'Locking tires reduces grip by ~30% and increases stopping distance',
-              'Threshold braking requires pedal sensitivity, not brute force'
+              'Turning in too early forces a tight radius at corner exit, leading to running off track or losing speed',
+              'If you have to turn the wheel harder AFTER the apex, you apexed too early',
+              'A late apex is safer, opens up the corner exit, and lets you get on throttle sooner'
+            ],
+            diagramId: 'corner-path-comparison'
+          },
+          practice: {
+            focus: 'Early vs late apex entry comparison',
+            drills: [
+              { id: 'easy', level: '🟢 Easy', title: 'Early Apex Pinch Feel', desc: 'Intentionally turn in early at Turn 3 (Left-hander) to feel how the exit radius pinches your trajectory.', reps: 3, time: '5 min' },
+              { id: 'medium', level: '🟡 Medium', title: 'Late Apex Exit Squeeze', desc: 'Turn in 3 meters later at Turn 3, clipping late apex and unwinding wheel smoothly onto short straight.', reps: 5, time: '8 min' },
+              { id: 'hard', level: '🔴 Hard', title: 'Late Apex Precision Sweep', desc: 'Execute late apex lines across all 7 corners of Lime Rock Park.', reps: 4, time: '10 min' }
+            ]
+          },
+          practical: {
+            title: 'Late Apex Stint',
+            focus: 'Eliminating early turn-in errors',
+            laps: 5,
+            instructions: [
+              'Drive 5 laps at Lime Rock Park focusing on late turn-in points.',
+              'Pay special attention to Turn 3 (Left-hander) and Turn 7 (Downhill)—delay turn-in by 2-3 meters to open up corner exit.'
+            ]
+          },
+          challenge: {
+            title: 'Late Apex Consistency Challenge',
+            type: 'technique',
+            description: 'Complete 4 consecutive laps with late apex placement on Turn 3 and Turn 7, exiting with zero post-apex steering increases.',
+            criteria: '4 clean late-apex laps logged.'
+          },
+          assessment: {
+            title: 'Apex Placement Assessment',
+            criteria: 'Demonstrated ability to delay turn-in and achieve late apexing on key corners.',
+            passingScore: 80
+          },
+          telemetryReflection: {
+            title: 'Replay Apex Placement Audit',
+            prompts: [
+              { key: 'apexPoint', label: 'Apex Touchpoint', question: 'Did your inside tire touch the apex curb at the midpoint or late-point of the corner?' },
+              { key: 'exitSteeringUnwind', label: 'Steering Unwind', question: 'Were you able to unwind steering smoothly as you passed the apex without adding extra lock?' }
+            ]
+          },
+          psychologicalCheckIn: {
+            defaultFocus: 4,
+            defaultFrustration: 1,
+            defaultConfidence: 3,
+            resetPrompt: 'Waiting that extra fraction of a second before turn-in requires patience. Remind yourself: late turn-in equals fast exit!'
+          },
+          sessionReflection: {
+            questions: [
+              'What physical difference did you feel in car stability when switching from early turn-in to late turn-in?',
+              'Did you notice higher exit speeds leading onto the main straight after late-apexing Turn 7?',
+              'How will you adjust your turn-in visual markers for Session 3?'
+            ]
+          }
+        },
+        {
+          id: 3,
+          title: 'Visual Reference Point Mastery',
+          focus: 'Building consistent turn-in, apex & track-out reference markers',
+          car: 'Mazda MX-5 Cup',
+          track: 'Lime Rock Park (Full Circuit)',
+          targetLapTime: 61.5,
+          difficulty: 2,
+          assistsConfig: {
+            transmission: 'Automatic (No Clutch)',
+            drivingLine: 'Off',
+            tcs: 'On',
+            stm: 'On',
+            abs: 'On',
+            steering: 'Normal'
+          },
+          theory: {
+            title: 'Building Permanent Track Reference Points',
+            content: `Skip Barber quote: *"I absolutely use reference points around the track to keep on the line. If they're there, by God, I'll find them. It gives you consistency."* — Robbie Buhl
+
+### Why Reference Points Are Mandatory
+Without fixed visual reference points, your brain is guessing turn-in and braking spots on every lap. Guessing leads to erratic entry speeds, missed apexes, and inconsistent lap times.
+
+### Three Essential References Per Corner
+1. **TURN-IN MARKER**: A concrete patch, grass seam, brake board, or curbing start where you initiate steering turn.
+2. **APEX MARKER**: The exact point on the inside curb where your tires come closest to the edge.
+3. **TRACK-OUT MARKER**: The painted line or curb edge where your car reaches the outside boundary under full acceleration.
+
+### Eyes-Up Vision Rule
+Your eyes must always look **one step ahead** of where your car currently is:
+- While on the straight → Look for Turn-In Marker
+- At Turn-In → Shift eyes to Apex Marker
+- At Apex → Shift eyes to Track-Out Marker & distant straightaway`,
+            keyTakeaways: [
+              'Fixed visual landmarks eliminate guessing and create sub-second lap consistency',
+              'Every corner requires three distinct reference points: Turn-In, Apex, and Track-Out',
+              'Keep your eyes scanning ahead to your next reference point before the car arrives there'
+            ],
+            diagramId: 'corner-path-comparison'
+          },
+          practice: {
+            focus: 'Reference point identification & vision scanning',
+            drills: [
+              { id: 'easy', level: '🟢 Easy', title: 'Turn-In Call-Out', desc: 'Drive 2 slow laps calling out your turn-in reference points aloud as you pass them.', reps: 2, time: '5 min' },
+              { id: 'medium', level: '🟡 Medium', title: 'Eyes-Up Vision Scanning', desc: 'Practice shifting eyes to apex before turning wheel in Turns 1, 3, 5, and 7.', reps: 4, time: '8 min' },
+              { id: 'hard', level: '🔴 Hard', title: '3-Lap Consistency Benchmark', desc: 'Drive 3 continuous laps aiming for minimum lap time variance using fixed markers.', reps: 3, time: '10 min' }
+            ]
+          },
+          practical: {
+            title: 'Reference Point Commitment Stint',
+            focus: 'Repeatable visual execution',
+            laps: 6,
+            instructions: [
+              'Drive 6 laps at Lime Rock Park hitting your chosen visual markers on every single lap.',
+              'Log your lap times and aim for sub-0.5s variance between laps.'
+            ]
+          },
+          challenge: {
+            title: 'Lap Time Consistency Challenge',
+            type: 'laptime',
+            description: 'Complete 3 consecutive laps with lap time variance under 0.4 seconds using fixed visual reference points.',
+            criteria: 'Lap time variance < 0.4s achieved.'
+          },
+          assessment: {
+            title: 'Visual Reference Assessment',
+            criteria: 'Achieved consistent lap times by executing fixed turn-in, apex, and track-out reference markers.',
+            passingScore: 80
+          },
+          telemetryReflection: {
+            title: 'Replay Consistency Review',
+            prompts: [
+              { key: 'turnInMarkerConsistency', label: 'Turn-In Consistency', question: 'Did your car initiate turn-in at the exact same physical spot on all 3 benchmark laps?' },
+              { key: 'apexPrecision', label: 'Apex Touch Point', question: 'Did the car hit the apex curb within 3 inches on consecutive laps?' }
+            ]
+          },
+          psychologicalCheckIn: {
+            defaultFocus: 4,
+            defaultFrustration: 1,
+            defaultConfidence: 4,
+            resetPrompt: 'Consistency comes from clarity. If you miss a marker, pick a clearer visual landmark on the next lap.'
+          },
+          sessionReflection: {
+            questions: [
+              'What specific reference points did you use for Turn 1 (Big Bend) and Turn 5 (West Bend)?',
+              'Did shifting your vision ahead to the apex early help smooth out your steering inputs?',
+              'How confident do you feel in your racing line as we prepare to turn OFF Traction Control in Week 2?'
+            ]
+          }
+        },
+        {
+          id: 4,
+          title: 'Corner Exit Speed & Disabling TCS / STM',
+          focus: 'Friction circle, longitudinal weight transfer & turning OFF TCS & STM',
+          car: 'Mazda MX-5 Cup',
+          track: 'Lime Rock Park (Full Circuit)',
+          targetLapTime: 61.0,
+          difficulty: 2,
+          assistsConfig: {
+            transmission: 'Automatic (No Clutch)',
+            drivingLine: 'Off',
+            tcs: 'Off',
+            stm: 'Off',
+            abs: 'On',
+            steering: 'Simulation'
+          },
+          theory: {
+            title: 'Corner Exit Speed & Disabling Traction Control (TCS & STM)',
+            content: `Welcome to Week 2! Today we take a major step toward raw car control: **Traction Control (TCS) and Stability Management (STM) are OFF**, and **Steering is set to Simulation**.
+
+### Why Exit Speed Is King
+Once you master the line, carrying exit speed onto straightaways is the primary way to lower lap times. Carrying just 1 m.p.h. extra speed out of Turn 7 gains you car lengths down the entire main straight!
+
+### Throttle & Weight Transfer Dynamics
+When you accelerate, weight shifts **REARWARD**:
+- Squeezing throttle transfers weight to the rear tires, increasing rear grip.
+- **Abrupt throttle stabs**: Unloads front tires violently, causing front understeer push OR breaking rear traction into a spin!
+- **Smooth progressive throttle**: Squeezing pedal over 2 seconds matches steering unwind, delivering maximum rear drive without wheelspin.
+
+### TCS OFF Golden Rule
+*A gradual increase in throttle will tend to create understeer. An abrupt application of throttle will tend to create oversteer.*`,
+            keyTakeaways: [
+              'With TCS and STM OFF, rear wheel traction is 100% dependent on your pedal squeeze',
+              'Squeeze throttle progressively as steering unwinds—never slam the pedal while steering wheel is turned',
+              'Simulation steering delivers raw, direct force feedback from the tires'
+            ],
+            diagramId: 'weight-transfer-friction-circle'
+          },
+          practice: {
+            focus: 'Throttle squeeze & rear traction control',
+            drills: [
+              { id: 'easy', level: '🟢 Easy', title: 'Standing Start Throttle Squeeze', desc: 'From 2nd gear standstill, compare slamming throttle vs squeezing over 2 seconds to feel rear tire spin.', reps: 4, time: '5 min' },
+              { id: 'medium', level: '🟡 Medium', title: 'Steering Unwind & Throttle Sync', desc: 'Practice squeezing throttle in sync with unwinding steering at Turn 7 exit.', reps: 5, time: '8 min' },
+              { id: 'hard', level: '🔴 Hard', title: 'TCS-Free Clean Lap Sweep', desc: 'Drive 4 clean laps managing rear traction without TCS intervention.', reps: 4, time: '10 min' }
+            ]
+          },
+          practical: {
+            title: 'TCS-Free Weight Transfer Stint',
+            focus: 'Pedal modulation with Traction Control OFF',
+            laps: 5,
+            instructions: [
+              'Verify Traction Control (TCS) and Stability Control (STM) are set to OFF in Forza settings.',
+              'Drive 5 clean laps at Lime Rock Park in the Mazda MX-5 Cup.',
+              'Focus on squeezing throttle smoothly as you unwind the wheel out of Turn 3, Turn 5, and Turn 7.'
+            ]
+          },
+          challenge: {
+            title: 'TCS-Free Control Challenge',
+            type: 'technique',
+            description: 'Complete 4 consecutive clean laps with TCS and STM OFF without triggering rear wheelspin or spinning out.',
+            criteria: '4 clean TCS-free laps completed.'
+          },
+          assessment: {
+            title: 'TCS/STM Removal Assessment',
+            criteria: 'Successfully controlled rear wheel traction and chassis stability with TCS and STM disabled.',
+            passingScore: 80
+          },
+          telemetryReflection: {
+            title: 'Replay Traction Audit',
+            prompts: [
+              { key: 'wheelspinCheck', label: 'Rear Tire Spin', question: 'Did you hear tire squeal or see rear fishtailing on corner exit?' },
+              { key: 'throttleSqueezeRamp', label: 'Pedal Application Rate', question: 'Was throttle applied linearly over 2 seconds as steering unwound?' }
+            ]
+          },
+          psychologicalCheckIn: {
+            defaultFocus: 4,
+            defaultFrustration: 2,
+            defaultConfidence: 3,
+            resetPrompt: 'With TCS OFF, your foot is the traction control computer. If the rear steps out, breathe out and ease off throttle slightly.'
+          },
+          sessionReflection: {
+            questions: [
+              'How did the car feel more alive or responsive with Traction Control and Stability Control OFF?',
+              'Did you experience any rear wheelspin or understeer push when accelerating out of Turn 3?',
+              'What throttle pedal technique will you practice in Session 5 to handle oversteer?'
+            ]
+          }
+        },
+        {
+          id: 5,
+          title: 'Oversteer & Trailing Throttle Balance',
+          focus: 'Lift-off oversteer mechanics & throttle corrections',
+          car: 'Mazda MX-5 Cup',
+          track: 'Lime Rock Park (Full Circuit)',
+          targetLapTime: 60.5,
+          difficulty: 3,
+          assistsConfig: {
+            transmission: 'Automatic (No Clutch)',
+            drivingLine: 'Off',
+            tcs: 'Off',
+            stm: 'Off',
+            abs: 'On',
+            steering: 'Simulation'
+          },
+          theory: {
+            title: 'Oversteer, Understeer, & Trailing Throttle Oversteer (TTO)',
+            content: `Today we master chassis balance and oversteer recovery.
+
+### Defining Cornering Balance
+- **UNDERSTEER**: Front tires reach grip limit first → Car slides nose-first away from turn-in.
+- **OVERSTEER**: Rear tires reach grip limit first → Rear end slides wider than front tires.
+
+### Trailing Throttle Oversteer (TTO)
+When you are cornering near the limit and suddenly **release (lift off) the throttle**:
+1. Engine deceleration shifts weight off the rear tires onto the front.
+2. The rear tires lose traction, causing the rear end to swing outward.
+
+### The 3-Step Oversteer Recovery Sequence
+From Skip Barber:
+1. **CORRECTION**: Turn the steering wheel toward the direction the rear end is sliding (opposite lock).
+2. **PAUSE**: Momentarily hold the correction steering angle while rear slide decelerates and halts.
+3. **RECOVERY**: Rapidly unwind the wheel back to straight *before* momentum snaps the car back in the opposite direction!
+
+*Key Rule: Use maintenance throttle (light touch) to restore rear tire traction during the slide.*`,
+            keyTakeaways: [
+              'Lifting off throttle mid-corner shifts weight forward, inducing trailing throttle oversteer',
+              'Oversteer recovery requires: Correction (opposite lock) → Pause → Recovery (unwind)',
+              'Maintain light throttle to keep rear tires loaded during slide recovery'
+            ],
+            diagramId: 'weight-transfer-friction-circle'
+          },
+          practice: {
+            focus: 'Trailing throttle rotation & slide correction',
+            drills: [
+              { id: 'easy', level: '🟢 Easy', title: 'Intentional Throttle Lift Rotation', desc: 'At Turn 3 entry, breathe off throttle to feel rear end rotate subtly into the corner.', reps: 4, time: '5 min' },
+              { id: 'medium', level: '🟡 Medium', title: 'Correction-Pause-Recovery Feel', desc: 'Induce a mild tail slide and practice opposite lock + pause + unwind sequence.', reps: 5, time: '8 min' },
+              { id: 'hard', level: '🔴 Hard', title: 'Oversteer Control Stint', desc: 'Drive 4 clean laps actively managing chassis rotation through throttle balance.', reps: 4, time: '10 min' }
+            ]
+          },
+          practical: {
+            title: 'Chassis Balance & Slide Recovery Stint',
+            focus: 'Controlling oversteer and trailing throttle balance',
+            laps: 6,
+            instructions: [
+              'Drive 6 laps at Lime Rock Park.',
+              'Use subtle throttle lifts to help rotate the car into Turn 1 and Turn 5.',
+              'If the rear steps out, apply quick opposite lock steering, pause, and unwind smoothly.'
+            ]
+          },
+          challenge: {
+            title: 'Slide Recovery Challenge',
+            type: 'technique',
+            description: 'Catch and recover from 3 minor rear tire slides using opposite lock and maintenance throttle without spinning or leaving the track.',
+            criteria: '3 clean slide recoveries completed.'
+          },
+          assessment: {
+            title: 'Oversteer Recovery Assessment',
+            criteria: 'Demonstrated proper Correction-Pause-Recovery steering sequence and throttle balance during rear rotation.',
+            passingScore: 80
+          },
+          telemetryReflection: {
+            title: 'Replay Oversteer Audit',
+            prompts: [
+              { key: 'oppositeLockAngle', label: 'Counter-Steer Angle', question: 'Did your steering wheel turn into the slide smoothly without over-correcting?' },
+              { key: 'snapOversteerAvoidance', label: 'Recovery Timing', question: 'Did you unwind steering fast enough at the pause to prevent a secondary snap slide?' }
+            ]
+          },
+          psychologicalCheckIn: {
+            defaultFocus: 4,
+            defaultFrustration: 2,
+            defaultConfidence: 3,
+            resetPrompt: 'Oversteer is not a failure—it is feedback from the chassis. Stay relaxed in your shoulders and react calmly.'
+          },
+          sessionReflection: {
+            questions: [
+              'Were you able to feel the moment the rear tires lost traction during throttle lift?',
+              'Did you successfully execute the Pause phase before unwinding your steering correction?',
+              'How will you apply throttle balance to carry higher exit speed in Session 6?'
+            ]
+          }
+        },
+        {
+          id: 6,
+          title: 'Maximizing Straightaway Speed (Exit Priority)',
+          focus: 'Exit speed compounding & the Slow-In / Fast-Out philosophy',
+          car: 'Mazda MX-5 Cup',
+          track: 'Lime Rock Park (Full Circuit)',
+          targetLapTime: 60.0,
+          difficulty: 3,
+          assistsConfig: {
+            transmission: 'Automatic (No Clutch)',
+            drivingLine: 'Off',
+            tcs: 'Off',
+            stm: 'Off',
+            abs: 'On',
+            steering: 'Simulation'
+          },
+          theory: {
+            title: 'Exit Speed Compounding & Slow-In / Fast-Out',
+            content: `Today we conclude Week 2 by linking corner exit speed directly to straightaway performance.
+
+### The Compounding Effect of Exit Speed
+If Driver A exits Turn 7 onto the Sam Pose Straight at **52 m.p.h.** and Driver B exits at **50 m.p.h.**:
+- Driver A maintains that 2 m.p.h. advantage down the entire 0.5-mile straightaway.
+- Driver A arrives at Turn 1 **several car lengths ahead**, even if both cars have identical engine power!
+
+### The "Slow-In, Fast-Out" Paradigm
+- **Over-charging corner entry**: Overshooting brake point forces you to fight for control at the apex, delaying throttle application. You enter fast, but exit SLOW.
+- **Slow-In, Fast-Out**: Sacrificing 1 m.p.h. at entry lets you get the car rotated early, pick up full throttle at the apex, and carry maximum speed down the following straight.
+
+### The Golden Rule of Exit Speed
+*The earlier you can get to 100% throttle at or near the apex, the faster your lap time will be.*`,
+            keyTakeaways: [
+              'Exit speed compounds over the entire length of the following straightaway',
+              'Slow-in, fast-out entry strategy yields faster lap times than over-charging corner entry',
+              'Unwind steering aggressively to get the car straight and achieve 100% throttle as early as possible'
+            ],
+            diagramId: 'corner-path-comparison'
+          },
+          practice: {
+            focus: 'Exit speed prioritization & straightaway launch',
+            drills: [
+              { id: 'easy', level: '🟢 Easy', title: 'Slow-In / Fast-Out Entry', desc: 'Brake 5 meters earlier into Turn 7 to focus entirely on getting 100% throttle at the apex.', reps: 4, time: '5 min' },
+              { id: 'medium', level: '🟡 Medium', title: 'Downhill Exit Launch', desc: 'Maximize exit speed out of Turn 7 (Downhill) onto main straight across 5 attempts.', reps: 5, time: '8 min' },
+              { id: 'hard', level: '🔴 Hard', title: 'Main Straight Top Speed Sweep', desc: 'Drive 4 clean laps targeting maximum top speed at the Turn 1 brake board.', reps: 4, time: '10 min' }
+            ]
+          },
+          practical: {
+            title: 'Exit Speed Optimization Stint',
+            focus: 'Maximizing top speed on Sam Pose Straight',
+            laps: 6,
+            instructions: [
+              'Drive 6 laps at Lime Rock Park.',
+              'Focus on Turn 7 (Downhill exit): Get the car turned early, unwind steering, and squeeze 100% throttle before the apex curb.'
+            ]
+          },
+          challenge: {
+            title: 'Straightaway Top Speed Challenge',
+            type: 'mechanical',
+            description: 'Achieve a top speed of 155+ km/h at the Turn 1 braking marker while setting lap time under 1:00.0 with TCS OFF.',
+            criteria: 'Top speed 155+ km/h and lap time under 1:00.0 achieved.'
+          },
+          assessment: {
+            title: 'Exit Speed Mastery Assessment',
+            criteria: 'Demonstrated early 100% throttle application and maximum straightaway speed compounding.',
+            passingScore: 80
+          },
+          telemetryReflection: {
+            title: 'Replay Speed Trace Review',
+            prompts: [
+              { key: 'fullThrottlePoint', label: '100% Throttle Location', question: 'Did 100% throttle application occur at or right before the apex curb of Turn 7?' },
+              { key: 'topSpeedDelta', label: 'Straightaway Speed', question: 'What was your highest recorded top speed before Turn 1 braking?' }
+            ]
+          },
+          psychologicalCheckIn: {
+            defaultFocus: 5,
+            defaultFrustration: 1,
+            defaultConfidence: 4,
+            resetPrompt: 'Patience on entry pays massive dividends down the straight. Squeeze the exit!'
+          },
+          sessionReflection: {
+            questions: [
+              'Did braking slightly earlier into Turn 7 allow you to pick up full throttle earlier on exit?',
+              'What was your top speed at Turn 1 when executing a clean slow-in/fast-out line?',
+              'Are you ready for Week 3 where we turn OFF Anti-Lock Brakes (ABS)?'
+            ]
+          }
+        },
+        {
+          id: 7,
+          title: 'Braking Fundamentals & Disabling ABS',
+          focus: 'Threshold braking mechanics & turning OFF ABS',
+          car: 'Mazda MX-5 Cup',
+          track: 'Lime Rock Park (Full Circuit)',
+          targetLapTime: 59.8,
+          difficulty: 3,
+          assistsConfig: {
+            transmission: 'Automatic (No Clutch)',
+            drivingLine: 'Off',
+            tcs: 'Off',
+            stm: 'Off',
+            abs: 'Off',
+            steering: 'Simulation'
+          },
+          theory: {
+            title: 'Braking Fundamentals & Disabling ABS',
+            content: `Welcome to Week 3! Today we disable **Anti-Lock Brakes (ABS)**.
+
+### The Physics of Threshold Braking
+Maximum stopping force occurs when the tires are revolving approximately **15% slower** than the actual car speed (the optimal slip ratio).
+- **Below 15% slip**: Not using full available tire friction.
+- **Above 15% slip**: Tire locks up! Static friction becomes sliding kinetic friction, **reducing stopping power by 30%** and causing flat spots.
+
+### Hydraulic Pressure vs Grip
+Pressing the brake pedal forces brake pads against brake rotors.
+- Squeezing to **80-85% pedal pressure** matches maximum tire grip for threshold stopping.
+- Stabbing to **100% pedal pressure** instantly locks the wheels without ABS!
+
+### Moza R3 Pedal Technique
+Without ABS, treat your brake pedal like a pressure scale. Squeeze hard and fast to initial threshold (~80%), then hold steady in straight-line decel.`,
+            keyTakeaways: [
+              'With ABS OFF, pressing the brake pedal to 100% will lock the front/rear tires',
+              'Threshold braking occurs at ~15% wheel slip (roughly 80-85% pedal pressure)',
+              'Locking tires reduces stopping force by 30% and destroys steering authority'
             ],
             diagramId: 'ffb-grip-diagram'
           },
           practice: {
-            focus: 'Threshold feel & lockup prevention',
+            focus: 'Threshold brake pedal feel with ABS OFF',
             drills: [
-              { id: 'easy', level: '🟢 Easy', title: 'Find the Lock Point', desc: 'Brake progressively harder on main straight until a tire locks. Release immediately.', reps: 5, time: '5 min' },
-              { id: 'medium', level: '🟡 Medium', title: 'Threshold Feel', desc: 'Hold brake pressure right at the threshold point just before lockup for 3 seconds.', reps: 5, time: '8 min' },
-              { id: 'hard', level: '🔴 Hard', title: 'Threshold Braking at Speed', desc: 'Approach Turn 2 at race speed and hold threshold pressure through full straight-line zone.', reps: 8, time: '10 min' }
+              { id: 'easy', level: '🟢 Easy', title: 'Find Lockup Pressure', desc: 'On main straight at 120 km/h, squeeze brake progressively until tires chirp/lock. Note pedal distance.', reps: 4, time: '5 min' },
+              { id: 'medium', level: '🟡 Medium', title: '80% Threshold Squeeze', desc: 'Practice squeezing rapidly to 80% pressure without exceeding threshold or locking.', reps: 5, time: '8 min' },
+              { id: 'hard', level: '🔴 Hard', title: 'ABS-Free Turn 1 Braking', desc: 'Brake from top speed into Turn 1 using clean threshold pressure without ABS.', reps: 4, time: '10 min' }
             ]
           },
           practical: {
-            title: 'Squeeze & Feel',
-            focus: 'Finding the deceleration limit',
+            title: 'ABS-Free Threshold Stint',
+            focus: 'Threshold braking without tire lockups',
             laps: 6,
             instructions: [
-              'Drive 6 laps at Laguna Seca in the Mazda MX-5.',
-              'Push to the threshold limit in Turns 2, 5, 6, and 11.',
-              'If a tire locks, release pedal slightly and re-apply at threshold.'
+              'Verify Anti-Lock Brakes (ABS) are set to OFF in Forza settings.',
+              'Drive 6 laps at Lime Rock Park.',
+              'Focus on Turn 1 and Turn 5 braking zones: Squeeze brake rapidly to 80% threshold without slamming to 100%.'
             ]
           },
           challenge: {
             title: 'Clean Threshold Challenge',
             type: 'technique',
-            description: 'Execute threshold braking across 5 major braking zones without locking a tire.',
-            criteria: '5 clean threshold braking zones completed.'
-          }
-        },
-        {
-          id: 3,
-          title: 'Brake-Turning Fundamentals',
-          focus: 'Combining braking and turning',
-          car: 'Mazda MX-5',
-          track: 'Laguna Seca',
-          targetLapTime: 100.0,
-          difficulty: 2,
-          theory: {
-            title: 'The Lost Art of Brake-Turning',
-            content: `Many drivers believe braking must be done strictly in a straight line. The fastest drivers brake AND turn at the same time.
-
-### The Friction Circle Balance
-When you use 100% of tire grip for braking, you have 0% left for turning. If you reduce brake pressure to 80%, you unlock 20% cornering grip to turn into the corner!
-
-### Benefits
-- Brake later into corner entry
-- Carry higher speed past turn-in
-- Help rotate the car toward the apex`,
-            keyTakeaways: [
-              'Brake-turning combines braking and steering for later braking',
-              'As steering angle increases, brake pressure MUST decrease proportionally',
-              'Smooth progressive pressure bleed allows optimal car rotation'
-            ],
-            diagramId: 'weight-transfer-friction-circle'
+            description: 'Complete 5 consecutive major braking entries into Turn 1 without locking a tire or flat-spotting.',
+            criteria: '5 clean non-locking threshold braking entries logged.'
           },
-          practice: {
-            focus: 'Brake + Steering overlap',
-            drills: [
-              { id: 'easy', level: '🟢 Easy', title: 'Straight-Line Braking Only', desc: 'Brake strictly in straight line into Turn 2 and fully release before turning wheel.', reps: 3, time: '5 min' },
-              { id: 'medium', level: '🟡 Medium', title: 'Brake-Turning Intro', desc: 'Maintain 20% brake pressure as you turn wheel into Turn 2, observing car rotation.', reps: 5, time: '8 min' },
-              { id: 'hard', level: '🔴 Hard', title: 'Consistent Brake-Turning', desc: 'Brake-turn into every corner at Laguna Seca with progressive pressure reduction.', reps: 8, time: '10 min' }
+          assessment: {
+            title: 'ABS Removal Assessment',
+            criteria: 'Demonstrated precise threshold brake pedal pressure control without ABS intervention.',
+            passingScore: 80
+          },
+          telemetryReflection: {
+            title: 'Replay Lockup Inspection',
+            prompts: [
+              { key: 'tireSmokeCheck', label: 'Tire Lockup Check', question: 'Did you observe tire smoke or lockup chatter in replay view into Turn 1?' },
+              { key: 'stoppingDistance', label: 'Deceleration Rate', question: 'Was your stopping distance short and controlled without locking up?' }
             ]
           },
-          practical: {
-            title: 'Combining Brake and Steering',
-            focus: 'Rotation on corner entry',
-            laps: 6,
-            instructions: [
-              'Drive 6 laps practicing brake-turning into Turns 2, 3, 4, 6, and 11.',
-              'Ensure brake pressure bleeds down smoothly as steering angle increases.'
+          psychologicalCheckIn: {
+            defaultFocus: 4,
+            defaultFrustration: 2,
+            defaultConfidence: 3,
+            resetPrompt: 'Locking up without ABS is normal when learning. If you lock, ease off pedal pressure immediately.'
+          },
+          sessionReflection: {
+            questions: [
+              'Where is the physical threshold on your Moza R3 brake pedal before lockup occurs?',
+              'What sound or FFB cue told you the tires were right at the threshold limit?',
+              'How will you adjust lockup recovery in Session 8?'
             ]
-          },
-          challenge: {
-            title: 'Turn 6 Rotation Challenge',
-            type: 'technique',
-            description: 'Brake-turn into sweeping Turn 6 with smooth rotation and clean exit trajectory.',
-            criteria: 'Smooth rotation and clean exit logged.'
-          }
-        },
-        {
-          id: 4,
-          title: 'Trail-Braking Introduction',
-          focus: 'Carrying brakes into corners',
-          car: 'Mazda MX-5',
-          track: 'Laguna Seca',
-          targetLapTime: 99.0,
-          difficulty: 3,
-          theory: {
-            title: 'The Trail-Braking Technique',
-            content: `Trail-braking is the extension of brake-turning. You carry light, diminishing brake pressure deep into the corner, past turn-in, and all the way to the apex.
-
-### Why Trail-Braking Works
-- **Weight Transfer**: Keeps weight on front tires, increasing front grip for sharper turn-in.
-- **Car Rotation**: Light rear brake torque helps turn the car without steering wheel fight.
-- **Entry Speed**: Allows you to carry higher entry speed deep into cornering arc.`,
-            keyTakeaways: [
-              'Trail-braking carries brakes past turn-in all the way to the apex',
-              'Keeps front axle loaded for superior corner rotation',
-              'Essential for decreasing radius corners and passing maneuvers'
-            ],
-            diagramId: 'weight-transfer-friction-circle'
-          },
-          practice: {
-            focus: 'Trail-braking depth control',
-            drills: [
-              { id: 'easy', level: '🟢 Easy', title: 'Short Trail-Brake', desc: 'Carry light brake pressure 3 meters past turn-in into Turn 2.', reps: 5, time: '5 min' },
-              { id: 'medium', level: '🟡 Medium', title: 'Medium Trail-Brake', desc: 'Carry diminishing brake pressure 1/3 of the distance to apex in Turn 2.', reps: 5, time: '8 min' },
-              { id: 'hard', level: '🔴 Hard', title: 'Deep Trail-Brake', desc: 'Carry light trail-brake 2/3 of the distance to apex in Turn 11.', reps: 8, time: '10 min' }
-            ]
-          },
-          practical: {
-            title: 'Carrying Brakes to Apex',
-            focus: 'Trail-braking Turns 2, 6, and 11',
-            laps: 6,
-            instructions: [
-              'Drive 6 laps practicing trail-braking at Laguna Seca.',
-              'Focus on a smooth, linear pressure bleed ending right at the apex.'
-            ]
-          },
-          challenge: {
-            title: 'Turn 11 Entry Speed Challenge',
-            type: 'mechanical',
-            description: 'Trail-brake deep into Turn 11 to carry 5+ km/h higher entry speed while hitting target lap time under 1:39.0.',
-            criteria: 'Target entry speed and lap time under 1:39.0 met.'
-          }
-        },
-        {
-          id: 5,
-          title: 'Trail-Braking Application',
-          focus: 'Using trail-braking effectively',
-          car: 'Mazda MX-5',
-          track: 'Laguna Seca',
-          targetLapTime: 98.5,
-          difficulty: 3,
-          theory: {
-            title: 'Mastering the Trail-Brake',
-            content: `Trail-braking isn't just about carrying brakes—it's about controlling rotation and car balance across different corner shapes.
-
-### Avoiding Mistakes
-- **Too much brake**: Overloads front tires, causing severe understeer.
-- **Too little brake**: Leaves front unloaded, causing car to push wide.
-- **Abrupt release**: Causes sudden weight shift back to rear, resulting in snap oversteer!`,
-            keyTakeaways: [
-              'Progressive brake release is essential for chassis stability',
-              'Match trail-braking depth to corner geometry (hairpin vs sweeping turn)',
-              'Sensitivity on pedal release separates amateur drivers from masters'
-            ],
-            diagramId: 'weight-transfer-friction-circle'
-          },
-          practice: {
-            focus: 'Trail-brake balance & precision',
-            drills: [
-              { id: 'easy', level: '🟢 Easy', title: 'Consistent Trail-Brake', desc: 'Trail-brake to the exact same release point every lap in Turn 2.', reps: 5, time: '5 min' },
-              { id: 'medium', level: '🟡 Medium', title: 'Trail-Brake Balance', desc: 'Adjust pedal release speed in Turn 6 to eliminate understeer or oversteer.', reps: 5, time: '8 min' },
-              { id: 'hard', level: '🔴 Hard', title: 'All-Corner Trail-Braking', desc: 'Execute tailored trail-braking across every corner on the track.', reps: 8, time: '10 min' }
-            ]
-          },
-          practical: {
-            title: 'Corner Entry Precision',
-            focus: 'Chassis balance and linear bleed',
-            laps: 7,
-            instructions: [
-              'Drive 7 laps fine-tuning trail-braking release.',
-              'Ensure smooth chassis balance without twitching or understeer push.'
-            ]
-          },
-          challenge: {
-            title: 'Perfect Balance Challenge',
-            type: 'technique',
-            description: 'Execute balanced trail-braking across 5 major corners with smooth rotation and zero steering corrections.',
-            criteria: '5 balanced corner entries logged.'
-          }
-        },
-        {
-          id: 6,
-          title: 'The Friction Circle',
-          focus: 'Understanding grip limits',
-          car: 'Mazda MX-5',
-          track: 'Laguna Seca',
-          targetLapTime: 98.0,
-          difficulty: 3,
-          theory: {
-            title: 'The Circle of Grip',
-            content: `The friction circle represents the total maximum traction available from your tires in any combined direction (braking, cornering, acceleration).
-
-### Vector Combination
-- **100% Braking / 0% Cornering**: Straight-line threshold braking.
-- **80% Braking / 20% Cornering**: Initial turn-in transition.
-- **60% Braking / 40% Cornering**: Mid-trail-braking phase.
-- **0% Braking / 100% Cornering**: Pure lateral mid-corner apex.`,
-            keyTakeaways: [
-              'Tire traction is a finite pool shared between longitudinal and lateral forces',
-              'Operating along the perimeter of the friction circle maximizes speed',
-              'Smooth vector transitions prevent sudden loss of control'
-            ],
-            diagramId: 'weight-transfer-friction-circle'
-          },
-          practice: {
-            focus: 'Friction circle vector management',
-            drills: [
-              { id: 'easy', level: '🟢 Easy', title: '100% Straight-Line Braking', desc: 'Brake at 100% threshold in straight line, fully releasing before turning.', reps: 3, time: '5 min' },
-              { id: 'medium', level: '🟡 Medium', title: 'Brake-Turning (80/20 Vector)', desc: 'Transition from 80% brake to 20% steering smoothly at Turn 2.', reps: 5, time: '8 min' },
-              { id: 'hard', level: '🔴 Hard', title: 'Trail-Braking (60/40 Vector)', desc: 'Operate right on 60% brake / 40% steering friction circle boundary.', reps: 8, time: '10 min' }
-            ]
-          },
-          practice: {
-            focus: 'Friction circle vector management',
-            drills: [
-              { id: 'easy', level: '🟢 Easy', title: '100% Straight-Line Braking', desc: 'Brake at 100% threshold in straight line, fully releasing before turning.', reps: 3, time: '5 min' },
-              { id: 'medium', level: '🟡 Medium', title: 'Brake-Turning (80/20 Vector)', desc: 'Transition from 80% brake to 20% steering smoothly at Turn 2.', reps: 5, time: '8 min' },
-              { id: 'hard', level: '🔴 Hard', title: 'Trail-Braking (60/40 Vector)', desc: 'Operate right on 60% brake / 40% steering friction circle boundary.', reps: 8, time: '10 min' }
-            ]
-          },
-          practical: {
-            title: 'Operating on the Limit Circle',
-            focus: 'Smooth friction vector transitions',
-            laps: 6,
-            instructions: [
-              'Drive 6 laps visualizing the friction circle boundary.',
-              'Smoothly trade longitudinal braking force for lateral cornering force.'
-            ]
-          },
-          challenge: {
-            title: 'Circle Boundary Challenge',
-            type: 'technique',
-            description: 'Complete a full lap keeping tire grip right at the friction circle boundary without exceeding total traction.',
-            criteria: 'Full lap completed within friction limits.'
-          }
-        },
-        {
-          id: 7,
-          title: 'Practice + New Track',
-          focus: 'Applying skills to Road Atlanta',
-          car: 'Mazda MX-5',
-          track: 'Road Atlanta',
-          targetLapTime: 100.0,
-          difficulty: 3,
-          theory: {
-            title: 'Braking on a New Track',
-            content: `You have mastered braking at Laguna Seca. Now apply those core skills to Road Atlanta's high-speed, elevation-heavy layout.
-
-### Key Differences at Road Atlanta
-- **Turn 1**: High speed entry with heavy compression.
-- **Turn 6**: Downhill trail-braking entry where rear unloads.
-- **Turn 10a/10b**: Severe downhill threshold braking into tight chicane.`,
-            keyTakeaways: [
-              'Core braking principles apply universally across all tracks',
-              'Elevation drops unweight tires; elevation compressions increase grip',
-              'Establish visual brake boards (100m, 50m) before pushing for lap times'
-            ],
-            diagramId: 'corner-path-comparison'
-          },
-          practice: {
-            focus: 'Road Atlanta braking zone mapping',
-            drills: [
-              { id: 'easy', level: '🟢 Easy', title: 'Identify Braking Zones', desc: 'Drive 3 slow laps at Road Atlanta, identifying all 6 braking zones.', reps: 3, time: '6 min' },
-              { id: 'medium', level: '🟡 Medium', title: 'Find Brake Board References', desc: 'Establish 100m/50m reference markers for Turn 1, 6, and 10a.', reps: 5, time: '8 min' },
-              { id: 'hard', level: '🔴 Hard', title: 'Braking Technique Application', desc: 'Apply threshold braking in Turn 1 and deep trail-braking in Turn 6.', reps: 8, time: '10 min' }
-            ]
-          },
-          practical: {
-            title: 'Road Atlanta Braking Exploration',
-            focus: 'Braking reference points at Road Atlanta',
-            laps: 7,
-            instructions: [
-              'Drive 7 laps learning Road Atlanta braking zones.',
-              'Establish reliable visual brake reference points for every corner.'
-            ]
-          },
-          challenge: {
-            title: 'Clean Atlanta Lap Challenge',
-            type: 'mechanical',
-            description: 'Complete a clean lap of Road Atlanta using proper threshold and trail-braking with target time under 1:40.0.',
-            criteria: 'Target lap time 1:40.0 met.'
           }
         },
         {
           id: 8,
-          title: 'Road Atlanta Braking',
-          focus: 'Braking on a new track',
-          car: 'Mazda MX-5',
-          track: 'Road Atlanta',
-          targetLapTime: 99.0,
-          difficulty: 3,
+          title: 'Brake Lockup Recovery & Modulation',
+          focus: 'Feathering pedal to restore tire rotation & steering authority',
+          car: 'Mazda MX-5 Cup',
+          track: 'Lime Rock Park (Full Circuit)',
+          targetLapTime: 59.5,
+          difficulty: 4,
+          assistsConfig: {
+            transmission: 'Automatic (No Clutch)',
+            drivingLine: 'Off',
+            tcs: 'Off',
+            stm: 'Off',
+            abs: 'Off',
+            steering: 'Simulation'
+          },
           theory: {
-            title: 'Mastering Road Atlanta\'s Braking',
-            content: `Road Atlanta features some of the most technical braking zones in sim racing. Mastering them requires tailored techniques.
+            title: 'Lockup Recovery & Brake Modulation',
+            content: `Today we focus on what to do when a tire locks up: **Brake Modulation**.
 
-### Corner Breakdown
-- **Turn 1**: Threshold braking down straightaway into sweeping right.
-- **Turn 3**: Light trail-braking to tuck front end into the hill.
-- **Turn 6**: Heavy trail-braking past downhill crest to rotate chassis.
-- **Turn 12**: Downhill threshold braking into final straightaway launch.`,
+### What Happens During a Lockup
+When brake resistance exceeds maximum tire grip, the wheel stops rotating.
+- Steering wheel input becomes completely useless (locked front tires cannot steer).
+- Stopping distance increases drastically.
+
+### The Most Common Beginner Mistake
+When a novice locks up, their instinct is to **press the brake pedal harder**! This locks the tires further.
+
+### The Modulation Rule
+To restore tire rotation and steering control:
+1. **RELEASE**: Instantly ease brake pressure off by 15-20% (feathering the pedal).
+2. **RE-ROTATE**: The locked tire begins rolling again, restoring 100% full traction.
+3. **RE-APPLY**: Gently squeeze back to the 80% threshold level.
+
+*Do not take your foot completely off the brake—just breathe off the pressure enough to let the tire roll!*`,
             keyTakeaways: [
-              'Brake before crests when chassis unweights to prevent wheel lockup',
-              'Trail-braking in Turn 6 is critical for getting car rotated early',
-              'Turn 12 late apex and smooth brake release determine front-straight top speed'
+              'Pressing harder during a lockup makes the slide worse; you must release pedal pressure slightly',
+              'Feathering brake pressure off by 15-20% restarts tire rotation instantly',
+              'Once rotation is restored, re-apply pedal pressure back at the 80% threshold'
             ],
-            diagramId: 'corner-path-comparison'
+            diagramId: 'ffb-grip-diagram'
           },
           practice: {
-            focus: 'Challenging braking zones at Road Atlanta',
+            focus: 'Lockup detection & pedal relief modulation',
             drills: [
-              { id: 'easy', level: '🟢 Easy', title: 'Turn 1 Threshold Braking', desc: 'Brake at 100m board with 95% threshold pressure.', reps: 5, time: '5 min' },
-              { id: 'medium', level: '🟡 Medium', title: 'Turn 6 Downhill Trail-Brake', desc: 'Trail-brake downhill into Turn 6 without locking inner front tire.', reps: 5, time: '8 min' },
-              { id: 'hard', level: '🔴 Hard', title: 'Full Atlanta Attack', desc: 'Connect all braking zones at race pace in the Mazda MX-5.', reps: 8, time: '10 min' }
+              { id: 'easy', level: '🟢 Easy', title: 'Intentional Lockup & Release', desc: 'Induce a front lockup intentionally on straightaway, then release pedal 20% to feel tire re-spin.', reps: 4, time: '5 min' },
+              { id: 'medium', level: '🟡 Medium', title: 'Feather Modulation Drill', desc: 'Practice rapid 15% pressure release upon hearing tire lock squeal.', reps: 5, time: '8 min' },
+              { id: 'hard', level: '🔴 Hard', title: 'Lockup-Free Turn 1 & Turn 5 Sweep', desc: 'Drive 4 clean laps modulating brakes cleanly across all braking zones.', reps: 4, time: '10 min' }
             ]
           },
           practical: {
-            title: 'Atlanta Braking Attack',
-            focus: 'Turn 1, 6, 10a, and 12 execution',
-            laps: 7,
+            title: 'Brake Modulation & Lockup Relief Stint',
+            focus: 'Rapid lockup recovery during heavy deceleration',
+            laps: 6,
             instructions: [
-              'Drive 7 focused laps at Road Atlanta.',
-              'Master the downhill weight transfer in Turn 6 and Turn 10a.'
+              'Drive 6 laps at Lime Rock Park with ABS OFF.',
+              'If front wheels lock into Turn 1 or Turn 5, instantly feather brake pedal pressure to re-start tire rotation before turning into the corner.'
             ]
           },
           challenge: {
-            title: 'Turn 12 Straightaway Launch',
-            type: 'mechanical',
-            description: 'Brake 10m later at Turn 12 while maintaining exit trajectory to achieve target lap time under 1:39.0.',
-            criteria: 'Target lap time 1:39.0 met.'
+            title: 'Lockup Recovery Challenge',
+            type: 'technique',
+            description: 'Execute 5 clean corner entries where any tire lockup is modulated and resolved within 0.5 seconds without missing the apex.',
+            criteria: '5 clean modulated entries logged.'
+          },
+          assessment: {
+            title: 'Lockup Modulation Assessment',
+            criteria: 'Demonstrated immediate pedal pressure modulation to re-start locked tires and maintain steering control.',
+            passingScore: 80
+          },
+          telemetryReflection: {
+            title: 'Replay Modulation Audit',
+            prompts: [
+              { key: 'lockupDuration', label: 'Lockup Duration', question: 'Were tire lockups resolved instantly via pedal release, or did tires slide continuously?' },
+              { key: 'turnInControl', label: 'Steering at Entry', question: 'Did the car turn into the apex cleanly after releasing lockup pressure?' }
+            ]
+          },
+          psychologicalCheckIn: {
+            defaultFocus: 4,
+            defaultFrustration: 2,
+            defaultConfidence: 4,
+            resetPrompt: 'Relieving brake pressure takes discipline. Stay sensitive in your left/right foot.'
+          },
+          sessionReflection: {
+            questions: [
+              'Did feathering the brake pedal 15-20% restore steering authority when front tires locked?',
+              'Were you able to re-apply threshold pressure smoothly after restoring tire rotation?',
+              'How will you combine brake release with steering turn-in for Session 9 (Trail-Braking)?'
+            ]
           }
         },
         {
           id: 9,
-          title: 'Brake Point Consistency',
-          focus: 'Braking at the same point every lap',
-          car: 'Subaru BRZ',
-          track: 'Road Atlanta',
-          targetLapTime: 98.0,
+          title: 'Trail-Braking & Weight Transfer Entry',
+          focus: 'Blending brake release with turn-in to load front tires',
+          car: 'Mazda MX-5 Cup',
+          track: 'Lime Rock Park (Full Circuit)',
+          targetLapTime: 59.2,
           difficulty: 4,
+          assistsConfig: {
+            transmission: 'Automatic (No Clutch)',
+            drivingLine: 'Off',
+            tcs: 'Off',
+            stm: 'Off',
+            abs: 'Off',
+            steering: 'Simulation'
+          },
           theory: {
-            title: 'The Power of Consistency',
-            content: `Braking at the exact same point every lap is the foundation of race pace and consistency. Varied brake points create erratic entry speeds and mistakes.
+            title: 'Trail-Braking & Weight Transfer Entry',
+            content: `Today we conclude Week 3 with the ultimate braking technique: **Trail-Braking**.
 
-### The Rule of Reference Markers
-- Pick fixed, unmoving visual landmarks (brake boards, start of curb, overhead banner).
-- Never use shadows, moving cars, or tire marks as primary references!
-- Commit to braking the instant your eyes reach your visual marker.`,
+### What Is Trail-Braking?
+Trail-braking is carrying light, diminishing brake pressure past the turn-in point and all the way to the apex.
+
+### Why Trail-Braking Is Essential
+1. **Front Weight Loading**: Braking transfers 250+ lbs of weight to the front tires. Keeping light brake pressure applied as you turn keeps front tires loaded, giving immense front steering grip!
+2. **Chassis Rotation**: Light trailing brake torque helps rotate the car toward the apex naturally, reducing steering wheel fight.
+3. **Later Braking**: Allows you to brake later because part of your deceleration happens during corner entry arc.
+
+### The Friction Circle Balance
+As steering angle increases from 0° → 30° → 60°, brake pedal pressure MUST diminish proportionally from 80% → 40% → 10% → 0% right at the apex curb.`,
             keyTakeaways: [
-              'Identical brake points yield predictable corner entry speeds',
-              'Use fixed visual landmarks like 100m boards and curb origins',
-              'Consistency creates a stable platform for improving lap times'
+              'Trail-braking carries light, diminishing brake pressure past turn-in to the apex',
+              'Keeps weight on front tires for superior turn-in grip and natural car rotation',
+              'Brake pressure must bleed down linearly as steering wheel angle increases'
             ],
-            diagramId: 'pedal-squeeze-diagram'
+            diagramId: 'weight-transfer-friction-circle'
           },
           practice: {
-            focus: 'Brake point precision & repeatability',
+            focus: 'Trailing brake bleed & steering angle sync',
             drills: [
-              { id: 'easy', level: '🟢 Easy', title: 'Single Marker Commitment', desc: 'Brake at exact 100m board in Turn 1 for 5 consecutive laps.', reps: 5, time: '5 min' },
-              { id: 'medium', level: '🟡 Medium', title: 'Multi-Corner Marker Precision', desc: 'Hit exact brake markers for Turn 1, 6, and 12 without variance.', reps: 5, time: '8 min' },
-              { id: 'hard', level: '🔴 Hard', title: 'Sub-1 Meter Variance Stint', desc: 'Drive 8 laps maintaining less than 1 meter variance in all braking points.', reps: 8, time: '12 min' }
+              { id: 'easy', level: '🟢 Easy', title: 'Straight-Line vs Trail-Brake Comparison', desc: 'Compare fully releasing brakes before turn-in vs trailing 15% brake into Turn 1.', reps: 4, time: '5 min' },
+              { id: 'medium', level: '🟡 Medium', title: 'Linear Pressure Bleed', desc: 'Practice trailing brake pressure from 80% down to 0% right at Turn 1 apex curb.', reps: 5, time: '8 min' },
+              { id: 'hard', level: '🔴 Hard', title: 'Trail-Braking Sweep', desc: 'Execute trail-braking across Turn 1 (Big Bend), Turn 5 (West Bend), and Turn 6.', reps: 5, time: '10 min' }
             ]
           },
           practical: {
-            title: 'Brake Point Precision Stint',
-            focus: 'Repeatable braking application',
-            laps: 8,
+            title: 'Trail-Braking Master Stint',
+            focus: 'Carrying diminishing brakes to the apex',
+            laps: 7,
             instructions: [
-              'Drive 8 continuous laps in the Subaru BRZ at Road Atlanta.',
-              'Focus on zero brake point variance across all 8 laps.'
+              'Drive 7 laps at Lime Rock Park with ABS OFF.',
+              'Practice smooth trail-braking into Turn 1 and Turn 5: Bleed brake pressure down linearly as you increase steering lock toward the apex curb.'
             ]
           },
           challenge: {
-            title: 'Zero Variance Challenge',
-            type: 'mechanical',
-            description: 'Complete 5 consecutive laps with less than 1 meter variation in brake initial application points.',
-            criteria: 'Consistency metrics verified.'
+            title: 'Trail-Braking Rotation Challenge',
+            type: 'technique',
+            description: 'Execute smooth trail-braking into Turn 1 and Turn 5 across 5 consecutive laps without locking tires or understeering wide.',
+            criteria: '5 clean trail-braked laps logged.'
+          },
+          assessment: {
+            title: 'Trail-Braking Assessment',
+            criteria: 'Demonstrated linear brake pressure release synchronized with steering turn-in to achieve apex rotation.',
+            passingScore: 85
+          },
+          telemetryReflection: {
+            title: 'Replay Trail-Brake Inspection',
+            prompts: [
+              { key: 'trailBrakeDepth', label: 'Brake Release Point', question: 'Did brake tail-off reach zero exactly as your inside tire clipped the apex curb?' },
+              { key: 'chassisRotation', label: 'Turn-In Responsiveness', question: 'Did the front end turn crisply into the corner without pushing wide?' }
+            ]
+          },
+          psychologicalCheckIn: {
+            defaultFocus: 5,
+            defaultFrustration: 1,
+            defaultConfidence: 4,
+            resetPrompt: 'Trail-braking is an art of finesse. Feel the weight on the front tires through your Moza R3 wheel.'
+          },
+          sessionReflection: {
+            questions: [
+              'How did trail-braking change front tire turn-in grip compared to straight-line braking alone?',
+              'Did you feel the car rotate more easily toward the apex with light brake pressure applied?',
+              'Are you ready for Week 4 where ALL ASSISTS ARE REMOVED for 100% Raw Control?'
+            ]
           }
         },
         {
           id: 10,
-          title: 'Self-Diagnosis',
-          focus: 'Critical self-evaluation',
-          car: 'Subaru BRZ',
-          track: 'Laguna Seca',
-          targetLapTime: 97.5,
+          title: 'The Four Blocks of Cornering (100% Raw Control)',
+          focus: 'Integrating Block 1 (Transition), Block 2 (Decel), Block 3 (Brake-Turn), Block 4 (Exit)',
+          car: 'Mazda MX-5 Cup',
+          track: 'Lime Rock Park (Full Circuit)',
+          targetLapTime: 59.0,
           difficulty: 4,
+          assistsConfig: {
+            transmission: 'Automatic (No Clutch)',
+            drivingLine: 'Off',
+            tcs: 'Off',
+            stm: 'Off',
+            abs: 'Off',
+            steering: 'Simulation'
+          },
           theory: {
-            title: 'Diagnosing Braking Problems',
-            content: `Top drivers can instantly diagnose why a corner entry felt bad and correct it on the very next lap.
+            title: 'The Four Blocks of Cornering & 100% Raw Control',
+            content: `Welcome to Week 4! **ALL ASSISTS ARE OFF** (No Driving Line, No TCS, No STM, No ABS, Simulation Steering ON).
 
-### Diagnostic Matrix
-- **Front Tire Lockup**: Excess initial brake pressure or braking while turning too hard.
-- **Entry Understeer**: Insufficient trail-braking or entering corner too fast.
-- **Entry Oversteer**: Abrupt pedal lift-off or over-aggressive trail-braking.
-- **Long Stopping Distance**: Failing to reach true threshold pressure.`,
+Today we integrate Skip Barber's **Four Blocks of Cornering**:
+
+```
+[BLOCK 1: Throttle-to-Brake Transition]
+   ↓ Rapid lift off throttle → immediate squeeze to threshold (zero coasting)
+[BLOCK 2: Straight-Line Deceleration]
+   ↓ Hold 80-85% threshold pressure in straight line to shed maximum speed
+[BLOCK 3: Brake-Turn & Trail-Brake]
+   ↓ Bleed brake pressure down linearly as steering turns in toward apex
+[BLOCK 4: Brake-to-Throttle Transition]
+   ↓ Complete brake release at apex → squeeze 100% throttle as steering unwinds
+```
+
+Every single corner on every racetrack is built from these 4 blocks. Operating with zero assists lets you feel all 4 blocks in pure physical harmony!`,
             keyTakeaways: [
-              'Diagnose the root physical cause, not just the symptom',
-              'Understeer = inadequate front weight transfer or excessive entry speed',
-              'Oversteer = abrupt brake release or sudden weight shift'
+              'You are now driving with 100% zero electronic aids—pure raw car control',
+              'The 4 Blocks connect straightaway speed, threshold braking, trail-braking, and exit launch into one fluid cycle',
+              'Smooth transitions between the 4 blocks eliminate chassis destabilization'
             ],
-            diagramId: 'pedal-squeeze-diagram'
+            diagramId: 'weight-transfer-friction-circle'
           },
           practice: {
-            focus: 'Self-assessment and issue correction',
+            focus: 'Connecting the 4 blocks of corner entry and exit',
             drills: [
-              { id: 'easy', level: '🟢 Easy', title: 'Lap Telemetry Review', desc: 'Drive 1 lap, self-assess braking errors in Turn 2 and 6.', reps: 1, time: '5 min' },
-              { id: 'medium', level: '🟡 Medium', title: 'Diagnose & Fix', desc: 'Identify 1 braking issue on lap 1, correct it on lap 2.', reps: 5, time: '8 min' },
-              { id: 'hard', level: '🔴 Hard', title: 'Full Corner Self-Audit', desc: 'Audit all 11 corners of Laguna Seca during an 8-lap stint.', reps: 8, time: '12 min' }
+              { id: 'easy', level: '🟢 Easy', title: 'Four Blocks Mental Call-Out', desc: 'Drive 2 laps calling out "Block 1, Block 2, Block 3, Block 4" at Turn 1.', reps: 2, time: '5 min' },
+              { id: 'medium', level: '🟡 Medium', title: 'Block 3 to Block 4 Overlap', desc: 'Focus on seamless transition from trailing brake release to initial throttle squeeze at apex.', reps: 5, time: '8 min' },
+              { id: 'hard', level: '🔴 Hard', title: 'Raw Control 4-Block Stint', desc: 'Drive 5 clean laps executing all 4 blocks flawlessly with 100% assists OFF.', reps: 5, time: '10 min' }
             ]
           },
           practical: {
-            title: 'Driver Self-Correction',
-            focus: 'Identifying and fixing braking flaws',
+            title: '100% Raw Control 4-Block Stint',
+            focus: 'Flawless execution of the 4 cornering blocks',
             laps: 7,
             instructions: [
-              'Drive 7 laps self-diagnosing telemetry feel after every corner.',
-              'Adjust pressure build, hold, and release based on car feedback.'
+              'Verify ALL ASSISTS (Line, TCS, STM, ABS) are set to OFF with Sim Steering ON.',
+              'Drive 7 continuous clean laps at Lime Rock Park in the Mazda MX-5 Cup.',
+              'Execute Block 1 through Block 4 on every corner without lockups or spins.'
             ]
           },
           challenge: {
-            title: 'Braking Audit Challenge',
+            title: 'Raw Control Clean Stint Challenge',
             type: 'technique',
-            description: 'Identify and correct a braking flaw during a 5-lap stint, improving lap time by 0.5+ seconds.',
-            criteria: 'Target lap time 1:37.5 met.'
+            description: 'Complete 5 continuous clean laps with 100% ASSISTS OFF with zero off-track penalties, lockups, or spins.',
+            criteria: '5 continuous clean raw-control laps logged.'
+          },
+          assessment: {
+            title: '4-Block Raw Control Assessment',
+            criteria: 'Demonstrated seamless integration of all 4 cornering blocks with 100% assists disabled.',
+            passingScore: 85
+          },
+          telemetryReflection: {
+            title: 'Replay 4-Block Audit',
+            prompts: [
+              { key: 'coastingCheck', label: 'Coasting Detection', question: 'Was there any gap between releasing throttle and hitting brakes in Block 1?' },
+              { key: 'apexTransition', label: 'Brake-Throttle Swap', question: 'Did throttle application start immediately as brake pressure reached zero at the apex?' }
+            ]
+          },
+          psychologicalCheckIn: {
+            defaultFocus: 5,
+            defaultFrustration: 1,
+            defaultConfidence: 4,
+            resetPrompt: 'You are driving raw! Enjoy the pure physical connection between your hands, feet, and the car.'
+          },
+          sessionReflection: {
+            questions: [
+              'Which of the 4 blocks felt most natural to execute today?',
+              'Did you notice how smooth pedal transitions prevent chassis unsettle with zero assists?',
+              'What lap time did you achieve during your 5 clean laps?'
+            ]
           }
         },
         {
           id: 11,
-          title: 'Putting It Together',
-          focus: 'All skills combined, faster car',
-          car: 'Porsche Cayman GT4',
-          track: 'Laguna Seca',
-          targetLapTime: 97.0,
-          difficulty: 4,
+          title: 'Pace Building & Consistency Audit',
+          focus: 'Operating at 95% limit with zero assist safety net',
+          car: 'Mazda MX-5 Cup',
+          track: 'Lime Rock Park (Full Circuit)',
+          targetLapTime: 58.8,
+          difficulty: 5,
+          assistsConfig: {
+            transmission: 'Automatic (No Clutch)',
+            drivingLine: 'Off',
+            tcs: 'Off',
+            stm: 'Off',
+            abs: 'Off',
+            steering: 'Simulation'
+          },
           theory: {
-            title: 'The Complete Braking Picture',
-            content: `Step up to the high-performance Porsche Cayman GT4! Mid-engine layout and high-downforce brakes demand smooth, decisive pedal modulation.
+            title: 'Pace Building & Operating at 95% Limit',
+            content: `Today we focus on building pace and consistency without over-driving.
 
-### The Complete Corner Entry Chain
-1. Spot visual brake reference
-2. Rapid transition from throttle to brake (no coasting)
-3. Hold threshold deceleration in straight line
-4. Bleed brake pressure as steering turns in
-5. Trail-brake to apex for mid-engine rotation
-6. Smooth release to zero brake at apex and pick up throttle`,
+### The 95% Rule
+When drivers try to push at 100% or 105% of their limit, they lock brakes, slide rear tires, miss apexes, and slow down!
+- **95% Pace**: Driving with 5% margin for safety allows your brain to stay calm, hit visual reference points accurately, and maintain sub-second lap time consistency.
+- **Smoothness Equals Speed**: A smooth 95% lap with perfect apexes and early throttle exit is consistently faster than an aggressive, ragged 100% attempt.
+
+### Pre-Graduation Pace Target
+Today's goal is building a repeatable stint under **59.0s lap pace** at Lime Rock Park with 100% assists OFF.`,
             keyTakeaways: [
-              'The Cayman GT4 has immense stopping power but requires smooth pedal release',
-              'Mid-engine weight bias amplifies rotation under trail-braking',
-              'Combine all 5 braking skills into one fluid entry movement'
+              'Driving at 95% of your limit maintains mental clarity and prevents costly driving errors',
+              'Sub-second consistency across a 5-lap stint proves true raw car control mastery',
+              'Focus on smooth inputs and exact visual reference markers rather than forcing lap times'
             ],
-            diagramId: 'weight-transfer-friction-circle'
+            diagramId: 'pedal-squeeze-diagram'
           },
           practice: {
-            focus: 'Cayman GT4 high-performance braking',
+            focus: 'Building pace & stint consistency',
             drills: [
-              { id: 'easy', level: '🟢 Easy', title: 'Cayman Braking Feel', desc: 'Feel GT4 stopping power and mid-engine rotation at Turn 2.', reps: 3, time: '5 min' },
-              { id: 'medium', level: '🟡 Medium', title: 'Complete Sequence Execution', desc: 'Execute full transition → threshold → trail-brake → throttle sequence.', reps: 5, time: '8 min' },
-              { id: 'hard', level: '🔴 Hard', title: 'Cayman Speed Attack', desc: 'Push GT4 to braking limit across all corners at Laguna Seca.', reps: 8, time: '10 min' }
+              { id: 'easy', level: '🟢 Easy', title: '3-Lap Rhythm Build', desc: 'Drive 3 laps establishing a calm, relaxed driving rhythm at 90% pace.', reps: 3, time: '5 min' },
+              { id: 'medium', level: '🟡 Medium', title: 'Apex Speed Tuning', desc: 'Fine-tune minimum corner speed through Turn 1 and Turn 6 across 4 laps.', reps: 4, time: '8 min' },
+              { id: 'hard', level: '🔴 Hard', title: '6-Lap Benchmark Stint', desc: 'Drive 6 continuous laps pushing for sub-59.0s pace with minimum variance.', reps: 6, time: '12 min' }
             ]
           },
           practical: {
-            title: 'Mastering High-Performance Braking',
-            focus: 'GT4 stopping power & rotation',
+            title: 'Pace & Consistency Audit Stint',
+            focus: 'Repeatable raw control lap pace',
             laps: 8,
             instructions: [
-              'Drive 8 focused laps in the Porsche Cayman GT4.',
-              'Apply every braking skill seamlessly at higher speeds.'
+              'Drive 8 continuous laps at Lime Rock Park with 100% ASSISTS OFF.',
+              'Target consistent lap times under 59.0s with lap variance under 0.3 seconds.'
             ]
           },
           challenge: {
-            title: 'GT4 High Score Challenge',
-            type: 'mechanical',
-            description: 'Achieve an overall braking execution score of 8/10+ across 3 consecutive laps in the Cayman GT4.',
-            criteria: 'Target lap time 1:37.0 met.'
+            title: 'Sub-0.3s Variance Challenge',
+            type: 'laptime',
+            description: 'Complete 5 consecutive clean laps with lap time variance under 0.3 seconds and target lap time under 58.8s.',
+            criteria: '5-lap stint with variance < 0.3s achieved.'
+          },
+          assessment: {
+            title: 'Pace & Consistency Assessment',
+            criteria: 'Demonstrated sub-0.3s lap time variance and clean raw car control at 95% limit.',
+            passingScore: 90
+          },
+          telemetryReflection: {
+            title: 'Replay Stint Audit',
+            prompts: [
+              { key: 'lapTimeVariance', label: 'Lap Variance', question: 'What was your fastest lap and slowest lap during your 5-lap benchmark stint?' },
+              { key: 'errorFreeStint', label: 'Clean Execution', question: 'Were all 5 laps completed without a single lockup, slide, or off-track excursion?' }
+            ]
+          },
+          psychologicalCheckIn: {
+            defaultFocus: 5,
+            defaultFrustration: 1,
+            defaultConfidence: 5,
+            resetPrompt: 'You have built real driving skill. Trust your muscle memory and stay relaxed.'
+          },
+          sessionReflection: {
+            questions: [
+              'Did driving at 95% feel smoother and faster than trying to force 100% pace?',
+              'What was your lap time variance across your 5 benchmark laps?',
+              'Are you ready for Session 12 Graduation?'
+            ]
           }
         },
         {
           id: 12,
-          title: 'Module Mastery',
-          focus: 'Module assessment and achievement',
-          car: 'Porsche Cayman GT4',
-          track: 'Laguna Seca',
-          targetLapTime: 96.5,
+          title: 'Module 2 Graduation: Raw Car Control Master',
+          focus: 'Final 10-lap graduation stint with ALL ASSISTS OFF',
+          car: 'Mazda MX-5 Cup',
+          track: 'Lime Rock Park (Full Circuit)',
+          targetLapTime: 58.5,
           difficulty: 5,
+          assistsConfig: {
+            transmission: 'Automatic (No Clutch)',
+            drivingLine: 'Off',
+            tcs: 'Off',
+            stm: 'Off',
+            abs: 'Off',
+            steering: 'Simulation'
+          },
           theory: {
-            title: 'Module 2 Graduation: The Braking Master',
-            content: `Congratulations on reaching Session 12 of Module 2! You have spent 30 days mastering pedal transitions, threshold braking, brake-turning, trail-braking, friction circle management, and driver self-diagnosis.
+            title: 'Module 2 Graduation: Raw Car Control Master',
+            content: `Congratulations on reaching Session 12 of Module 2! Over the last 30 days and 12 sessions, you have transformed from a complete beginner into a raw car control driver.
 
-Today is your final 10-lap graduation stint!`,
+### Summary of What You Mastered (Skip Barber Chapter 2):
+1. **THE RACING LINE**: Corner radius math ($15GR = m.p.h.^2$), maximizing arc width, eliminating early apex errors, and hitting fixed visual reference markers without a driving line assist.
+2. **CORNER EXIT SPEED**: Disabling TCS & STM, managing longitudinal weight transfer, trailing throttle balance, oversteer recovery (Correction-Pause-Recovery), and early 100% throttle launch onto straights.
+3. **BRAKING & WEIGHT TRANSFER**: Disabling ABS, threshold braking at 15% slip ratio, lockup relief modulation, trail-braking to the apex, and integrating the Four Blocks of Cornering.
+
+Today is your **Final 10-Lap Graduation Stint**. Drive 10 continuous clean laps at Lime Rock Park in the Mazda MX-5 Cup with 100% ASSISTS OFF!`,
             keyTakeaways: [
-              'Brakes are a tool for car positioning and rotation, not just slowing down',
-              'Trail-braking is the key to elite corner entry speed',
-              'You are ready for Module 3: Corner Exit & Car Control!'
+              'You have mastered raw car control with zero electronic aids (Line, TCS, STM, ABS OFF)',
+              'You understand the physics of racing line arcs, exit speed compounding, and threshold/trail braking',
+              'You are fully certified and ready for Module 3: Advanced Car Control & Racecraft!'
             ],
             diagramId: 'weight-transfer-friction-circle'
           },
           practice: {
-            focus: 'Module 2 Final Assessment',
+            focus: 'Graduation stint warmup & pace verification',
             drills: [
-              { id: 'easy', level: '🟢 Easy', title: 'Warm-Up Lap', desc: '1 slow lap feeling brake pedal modulation and car balance.', reps: 1, time: '4 min' },
-              { id: 'medium', level: '🟡 Medium', title: 'Assessment Stint', desc: '5 laps at race pace refining trail-braking depth.', reps: 5, time: '8 min' },
+              { id: 'easy', level: '🟢 Easy', title: '2-Lap Tire Warmup', desc: 'Drive 2 slow laps bringing tires up to temperature and verifying pedal feel.', reps: 2, time: '4 min' },
+              { id: 'medium', level: '🟡 Medium', title: 'Benchmark Pace Trial', desc: 'Drive 3 laps verifying target pace under 58.5s with zero assists.', reps: 3, time: '6 min' },
               { id: 'hard', level: '🔴 Hard', title: '10-Lap Graduation Stint', desc: 'Complete 10 continuous clean laps for Module 2 graduation.', reps: 10, time: '18 min' }
             ]
           },
           practical: {
-            title: 'Module 2 Graduation Stint',
-            focus: '10 continuous clean laps',
+            title: 'The Module 2 Graduation Stint',
+            focus: '10 continuous clean laps with 100% ASSISTS OFF',
             laps: 10,
             instructions: [
-              'Drive 10 continuous clean laps in the Porsche Cayman GT4.',
-              'Demonstrate complete mastery of threshold and trail-braking.'
+              'Verify ALL ASSISTS (Driving Line, TCS, STM, ABS) are set to OFF with Sim Steering ON.',
+              'Drive 10 continuous clean laps at Lime Rock Park in the Mazda MX-5 Cup.',
+              'Execute threshold braking, trail-braking, apex clipping, smooth throttle squeeze, and eyes-up vision.',
+              'Aim for 10 continuous clean laps with target pace under 58.5s!'
             ]
           },
           challenge: {
-            title: 'Module 2 Graduation',
+            title: 'Module 2 Graduation Benchmark',
             type: 'mechanical',
-            description: 'Set a lap time under 1:36.5 in the Porsche Cayman GT4 at Laguna Seca while maintaining 10 clean laps.',
-            criteria: 'Module 2 Completed!'
+            description: 'Complete 10 continuous clean laps with 100% ASSISTS OFF in the Mazda MX-5 Cup at Lime Rock Park, setting a personal best lap under 58.5s.',
+            criteria: 'Module 2 Graduation Benchmark Achieved! Module 2 Completed.'
+          },
+          assessment: {
+            title: 'Module 2 Graduation Assessment',
+            criteria: 'Completed 10 continuous clean laps with ALL ASSISTS OFF, demonstrating total mastery of Skip Barber Chapter 2 raw car control principles.',
+            passingScore: 90
+          },
+          telemetryReflection: {
+            title: 'Module 2 Final Telemetry & Replay Audit',
+            prompts: [
+              { key: 'graduationPaceVariance', label: '10-Lap Stint Variance', question: 'What was your average lap time and total variance across your 10 graduation laps?' },
+              { key: 'rawControlConfidence', label: 'Raw Control Mastery', question: 'How confident do you feel controlling the car with 100% assists OFF compared to Day 1?' }
+            ]
+          },
+          psychologicalCheckIn: {
+            defaultFocus: 5,
+            defaultFrustration: 1,
+            defaultConfidence: 5,
+            resetPrompt: 'Congratulations! Take a deep breath and celebrate mastering raw car control.'
+          },
+          sessionReflection: {
+            questions: [
+              'What was your single biggest breakthrough during Module 2?',
+              'Which assist removal (Line, TCS/STM, ABS) taught you the most about real car physics?',
+              'What is your next goal in Apex Sim Racing Coach?'
+            ]
           }
         }
       ]

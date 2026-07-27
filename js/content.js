@@ -2659,11 +2659,1024 @@ Today is your **Final 10-Lap Graduation Stint**. Drive 10 continuous clean laps 
     },
     {
       id: 3,
-      title: 'Corner Exit & Car Control',
-      subtitle: 'Maximizing Acceleration & Oversteer Recovery',
-      description: 'Master throttle application, slip angle, counter-steering, catching spins, and launching onto long straights.',
-      duration: '12 Sessions (30 Days)',
-      sessions: []
+      title: "Skip Barber: The Real-World Line",
+      subtitle: "30-Day Raw Car Control & Racing Line Mastery",
+      description: "Master Skip Barber Chapter 3: The Real-World Line in Forza Motorsport 2023. Transition off driving assists (STM, TCS, Line, ABS) in the Mazda MX-5 Cup at Lime Rock Park across 12 telemetry-backed sessions.",
+      duration: "12 Sessions (30 Days)",
+      sessions: [
+        {
+          id: 1,
+          title: "Real-World Line vs. Geometric Line",
+          focus: "Geometric vs real-world racing line & sight picture",
+          car: "Mazda MX-5 Cup",
+          track: "Lime Rock Park (Full Circuit)",
+          targetLapTime: 61.5,
+          difficulty: 1,
+          assistsConfig: {
+            transmission: "Automatic (No Clutch)",
+            drivingLine: "Braking Only",
+            tcs: "Sport",
+            stm: "Off",
+            abs: "On",
+            steering: "Normal"
+          },
+          theory: {
+            title: "Real-World Line vs. Geometric Line & The Sight Picture",
+            content: `Welcome to Module 3! Based on Skip Barber Chapter 3: The Real-World Line, we shift from basic geometry to real-world racing physics.
+
+### The Real-World Line Principle
+The basic geometric line maximizes corner radius assuming constant speed. But real racecars accelerate, brake, and change speed dynamically! The real-world line delays turn-in and shifts the apex later to maximize exit velocity onto straights.
+
+### Developing Your "Sight Picture"
+Instead of staring at your front bumper, cultivate a mental visual overlay ("sight picture") connecting turn-in, apex, and track-out before turning the wheel.
+
+### Today's Goal
+Explore Turn 1 & 2 (Big Bend) at Lime Rock Park. Focus on delaying turn-in past the outer curb marker and visual anchoring.`,
+            keyTakeaways: [
+              "Real-world racing lines prioritize exit acceleration over entry geometry",
+              "Developing a visual sight picture allows proactive line planning 200 feet ahead",
+              "Turning off STM allows the Mazda MX-5 rear end to rotate naturally under turn-in"
+            ],
+            diagramId: "corner-path-comparison"
+          },
+          practice: {
+            focus: "Big Bend line geometry & sight picture drills",
+            drills: [
+              { id: "easy", level: "🟢 Easy", title: "Big Bend Radius Exploration", desc: "Drive T1 at 70 km/h testing early vs late turn-in arcs.", reps: 3, time: "5 min" },
+              { id: "medium", level: "🟡 Medium", title: "Sight Picture Visual Anchoring", desc: "Spot T1 apex curb across the corner before initiating steering input.", reps: 3, time: "8 min" },
+              { id: "hard", level: "🔴 Hard", title: "Delayed Turn-in Precision", desc: "Drive 4 laps delaying T1 turn-in by 5 meters to open up exit arc.", reps: 4, time: "10 min" }
+            ]
+          },
+          practical: {
+            title: "Big Bend Sight Picture Stint",
+            focus: "Late apex arc & visual target scanning",
+            laps: 5,
+            instructions: [
+              "Drive 5 clean laps at Lime Rock Park.",
+              "Focus on Turn 1 & 2 (Big Bend): Delay turn-in past the outer curb, lock eyes onto the inner apex curb, and unwind steering to track-out."
+            ]
+          },
+          challenge: {
+            title: "Big Bend Apex Precision Challenge",
+            type: "technique",
+            description: "Complete 3 consecutive clean laps clipping the Big Bend inner apex curb within 2 feet without touching outer grass.",
+            criteria: "3 clean precision laps completed."
+          },
+          assessment: {
+            title: "Sight Picture & Apex Precision Assessment",
+            criteria: "Demonstrated delayed turn-in, visual sight picture targeting, and clean apex execution at Big Bend.",
+            passingScore: 80
+          },
+          telemetryReflection: {
+            title: "Friction Circle G-Force Audit",
+            prompts: [
+              { key: "lateralGSmoothness", label: "Friction Circle Shape", question: "Did your friction circle trace show a smooth rounded outer boundary entering Big Bend?" },
+              { key: "turnInApexVisual", label: "Apex Targeting", question: "Were you looking at the apex curb before turning the Moza R3 wheel?" }
+            ]
+          },
+          psychologicalCheckIn: {
+            defaultFocus: 4,
+            defaultFrustration: 1,
+            defaultConfidence: 4,
+            resetPrompt: "Keep your eyes far down the track. Looking ahead calms your hands and removes corner panic."
+          },
+          sessionReflection: {
+            questions: [
+              "Did my eyes look far enough down the track into Big Bend, or was I staring close to the hood?",
+              "How did delaying turn-in change the car's exit trajectory onto the short chute?",
+              "What visual reference point will I anchor to for Session 2?"
+            ]
+          }
+        },
+        {
+          id: 2,
+          title: "Diagnosing Early Apexing & Exit Pinch",
+          focus: "Early apex diagnosis, recognizing early turn-in 90ft before point A",
+          car: "Mazda MX-5 Cup",
+          track: "Lime Rock Park (Full Circuit)",
+          targetLapTime: 61.0,
+          difficulty: 2,
+          assistsConfig: {
+            transmission: "Automatic (No Clutch)",
+            drivingLine: "Braking Only",
+            tcs: "Sport",
+            stm: "Off",
+            abs: "On",
+            steering: "Normal"
+          },
+          theory: {
+            title: "Early Apex Diagnosis & The Exit Pinch",
+            content: `Skip Barber Chapter 3 highlights the single most common mistake in racing: **The Early Apex**.
+
+### The Early Apex Trap
+Turning in just 3 car lengths early creates a broad arc initially, making you feel fast at entry. But at the apex, the car is pointed off the road! You are forced to tighten steering ("pinch") or run off the track.
+
+### The Champion Driver's Secret
+*"The champion recognizes the mistake earlier—just 5 car lengths earlier—allowing them to stay on track."* — Skip Barber (pg 38)
+
+### The Early Apex Cure
+If you realize you turned in early: Immediately breathe off throttle, hold light brake pressure, and slow the car *before* the apex to rotate the chassis.`,
+            keyTakeaways: [
+              "Early turn-in guarantees an early apex and forced exit pinching",
+              "Recognizing early apex symptoms 90 feet before the corner allows proactive correction",
+              "If turning early, slow the car down and rotate before reaching the apex curb"
+            ],
+            diagramId: "corner-path-comparison"
+          },
+          practice: {
+            focus: "Early apex detection & recovery in Turn 3/4",
+            drills: [
+              { id: "easy", level: "🟢 Easy", title: "Intentional Early Turn-In Sensation", desc: "Turn in 2 car lengths early into Turn 3 to feel exit pinching.", reps: 3, time: "5 min" },
+              { id: "medium", level: "🟡 Medium", title: "Early Detection & Lift Rotation", desc: "Recognize early arc 50ft before apex and breathe off throttle to rotate chassis.", reps: 4, time: "8 min" },
+              { id: "hard", level: "🔴 Hard", title: "Pinch-Free Esse Stint", desc: "Drive 4 laps through Turn 3 & 4 with zero counter-steer or exit grass touches.", reps: 4, time: "10 min" }
+            ]
+          },
+          practical: {
+            title: "Esse Combo Early Apex Audit",
+            focus: "Eliminating early turn-in through Turn 3 & 4",
+            laps: 5,
+            instructions: [
+              "Drive 5 laps at Lime Rock Park focusing on Turn 3 & 4 (The Esse).",
+              "Delay turn-in until the car is aligned to clip the late apex without tightening steering at exit."
+            ]
+          },
+          challenge: {
+            title: "Zero-Pinch Esse Challenge",
+            type: "technique",
+            description: "Complete 4 consecutive laps through the Esse combo unwinding steering smoothly at exit without scrubbing off speed.",
+            criteria: "4 clean laps with zero exit pinching."
+          },
+          assessment: {
+            title: "Early Apex Diagnosis Assessment",
+            criteria: "Recognized early turn-in errors before apex and unwound steering cleanly at track-out.",
+            passingScore: 80
+          },
+          telemetryReflection: {
+            title: "Steering Trace & Exit Pinch Review",
+            prompts: [
+              { key: "steeringUnwindTrace", label: "Exit Steering Trace", question: "Did your steering angle unwind continuously at exit, or did it spike past the apex?" },
+              { key: "exitSpeedRetained", label: "Exit Velocity", question: "Did early apex corrections preserve corner exit speed onto the back chute?" }
+            ]
+          },
+          psychologicalCheckIn: {
+            defaultFocus: 4,
+            defaultFrustration: 2,
+            defaultConfidence: 3,
+            resetPrompt: "Mistakes happen early in the corner. Catching them early gives you time to fix them smoothly."
+          },
+          sessionReflection: {
+            questions: [
+              "Did I feel the early turn-in mistake *before* reaching the apex, or only at track-out?",
+              "What physical cue told me that my turn-in point was correct?",
+              "How will I adjust my vision for Session 3?"
+            ]
+          }
+        },
+        {
+          id: 3,
+          title: "Reference Points vs. Intuitive Sight Picture",
+          focus: "Building fixed visual cues & intuition without line guide",
+          car: "Mazda MX-5 Cup",
+          track: "Lime Rock Park (Full Circuit)",
+          targetLapTime: 60.5,
+          difficulty: 2,
+          assistsConfig: {
+            transmission: "Automatic (No Clutch)",
+            drivingLine: "Braking Only",
+            tcs: "Sport",
+            stm: "Off",
+            abs: "On",
+            steering: "Normal"
+          },
+          theory: {
+            title: "Reference Points vs. Visual Intuition",
+            content: `In Skip Barber Chapter 3, IndyCar driver Brian Till explains: *"I start with fixed reference points... as the weekend goes on, the visual picture becomes implanted in my mind."*
+
+### Building Your Visual Framework
+- **Braking Reference**: A brake board, curb start, or shadow.
+- **Turn-in Reference**: Paint line end or grass patch.
+- **Apex Reference**: Inner curbing clip point.
+- **Track-Out Reference**: Outer rumble strip end.
+
+### Shifting to Intuitive Flow
+As repetitions build, explicit reference points merge into a fluid visual sight picture. Today we solidify reference points at Turn 5 (No-Name Corner) and prepare to turn OFF TCS in Week 2.`,
+            keyTakeaways: [
+              "Reference points provide objective markers for consistent braking and turn-in",
+              "Over time, hard markers evolve into a fluid visual sight picture",
+              "Scanning sequential reference points keeps driving proactive rather than reactive"
+            ],
+            diagramId: "hardware-driver-software"
+          },
+          practice: {
+            focus: "Reference point identification & horizon scanning",
+            drills: [
+              { id: "easy", level: "🟢 Easy", title: "Reference Marker Mapping", desc: "Map explicit brake, turn-in, apex, and exit markers for all 7 Lime Rock turns.", reps: 3, time: "5 min" },
+              { id: "medium", level: "🟡 Medium", title: "Visual Scanning Sequence", desc: "Practice calling out 'Brake - Turn - Apex - Exit' 2 seconds before reaching each marker.", reps: 4, time: "8 min" },
+              { id: "hard", level: "🔴 Hard", title: "Mental Line-Off Stint", desc: "Drive 4 laps ignoring the braking line overlay, relying purely on visual anchors.", reps: 4, time: "10 min" }
+            ]
+          },
+          practical: {
+            title: "Reference Point Integration Stint",
+            focus: "Building sub-second lap consistency via visual reference markers",
+            laps: 6,
+            instructions: [
+              "Drive 6 clean laps at Lime Rock Park.",
+              "Focus on hitting exact physical reference markers for Turn 1, Turn 5 (No-Name), and Turn 7 (Downhill)."
+            ]
+          },
+          challenge: {
+            title: "Sub-0.5s Target Consistency Challenge",
+            type: "laptime",
+            description: "Complete 4 consecutive laps staying within 0.5 seconds of your target lap time.",
+            criteria: "4-lap consistency band < 0.5s achieved."
+          },
+          assessment: {
+            title: "Week 1 Line Fundamentals Benchmark",
+            criteria: "Completed 5-lap benchmark stint demonstrating consistent reference point targeting and clean apex execution.",
+            passingScore: 85
+          },
+          telemetryReflection: {
+            title: "Friction Circle & Reference Point Audit",
+            prompts: [
+              { key: "gCircleCombined", label: "Combined G-Force Circle", question: "Does your friction circle show smooth combined braking/turning transitions?" },
+              { key: "brakeMarkerVariance", label: "Braking Consistency", question: "Were your initial braking points consistent across all 6 laps?" }
+            ]
+          },
+          psychologicalCheckIn: {
+            defaultFocus: 5,
+            defaultFrustration: 1,
+            defaultConfidence: 4,
+            resetPrompt: "Week 1 complete! You have established a solid visual foundation. Ready for TCS-off in Week 2."
+          },
+          sessionReflection: {
+            questions: [
+              "Was I driving reactively corner-by-corner, or proactively planning 200 feet ahead?",
+              "Which corner felt most natural using physical reference markers?",
+              "Am I ready to turn off Traction Control for Week 2?"
+            ]
+          }
+        },
+        {
+          id: 4,
+          title: "Constant Radius Corners & Unwinding the Wheel (TCS OFF)",
+          focus: "Constant radius geometry, unwinding wheel, TCS OFF throttle control",
+          car: "Mazda MX-5 Cup",
+          track: "Lime Rock Park (Full Circuit)",
+          targetLapTime: 60.0,
+          difficulty: 3,
+          assistsConfig: {
+            transmission: "Automatic (No Clutch)",
+            drivingLine: "Off",
+            tcs: "Off",
+            stm: "Off",
+            abs: "On",
+            steering: "Normal"
+          },
+          theory: {
+            title: "Constant Radius Corners & TCS-Off Throttle Control",
+            content: `Welcome to Week 2! We turn **Traction Control (TCS) OFF** and **Driving Line OFF**.
+
+### Constant Radius Geometry
+In a constant radius corner (like Lime Rock Turn 1 & 2 Big Bend arc), the apex is near the midpoint or 7/8 of the way around (pg 40).
+
+### Unwinding the Wheel to Accelerate
+With TCS OFF, applying 100% throttle while the Moza R3 wheel is turned will break rear tire traction and spin the Mazda MX-5! You MUST unwind the steering wheel straight *as* you open the throttle.
+
+### String Theory
+Imagine a string tied between your big toe and steering wheel: As you unwind the wheel to straight, your toe can press throttle down!`,
+            keyTakeaways: [
+              "With TCS OFF, throttle application must sync perfectly with unwinding the steering wheel",
+              "In constant radius corners, the apex lies near the midpoint or 7/8 point of the arc",
+              "Unwinding the wheel opens up tire grip budget for 100% exit acceleration"
+            ],
+            diagramId: "pedal-squeeze-diagram"
+          },
+          practice: {
+            focus: "TCS-off rear breakaway feel & wheel unwinding",
+            drills: [
+              { id: "easy", level: "🟢 Easy", title: "Rear Traction Breakaway Exploration", desc: "In Big Bend, gently squeeze throttle mid-corner to feel rear tire slip without TCS.", reps: 3, time: "5 min" },
+              { id: "medium", level: "🟡 Medium", title: "String Theory Throttle Unwind", desc: "Practice unwinding wheel to straight while rolling throttle 0-100% over 2 seconds.", reps: 4, time: "8 min" },
+              { id: "hard", level: "🔴 Hard", title: "TCS-Off Big Bend Stint", desc: "Drive 4 clean laps through Big Bend with zero rear slides or wheelspin.", reps: 4, time: "10 min" }
+            ]
+          },
+          practical: {
+            title: "Big Bend Constant Radius TCS-Off Stint",
+            focus: "Linear throttle squeeze & steering unwind",
+            laps: 6,
+            instructions: [
+              "Drive 6 laps at Lime Rock Park with TCS OFF.",
+              "Focus on Big Bend: Hold steady mid-corner maintenance throttle, clip apex, and unwind steering to straight before blasting full throttle."
+            ]
+          },
+          challenge: {
+            title: "TCS-Off Zero-Spin Challenge",
+            type: "technique",
+            description: "Complete 4 consecutive laps with TCS OFF with zero rear spins or heavy counter-steer slides.",
+            criteria: "4 clean TCS-off laps completed."
+          },
+          assessment: {
+            title: "TCS-Off & Unwinding Assessment",
+            criteria: "Demonstrated smooth throttle-steering synchronization without TCS assistance.",
+            passingScore: 85
+          },
+          telemetryReflection: {
+            title: "Throttle & Steering Synchronization Audit",
+            prompts: [
+              { key: "throttlePickupTrace", label: "Throttle Squeeze Curve", question: "Is your throttle pickup curve smooth and linear without mid-corner pumping?" },
+              { key: "wheelUnwindSync", label: "Steering Unwind Alignment", question: "Did steering angle reach zero as throttle reached 100%?" }
+            ]
+          },
+          psychologicalCheckIn: {
+            defaultFocus: 4,
+            defaultFrustration: 2,
+            defaultConfidence: 3,
+            resetPrompt: "Respect the throttle pedal. Squeeze smoothly like pressing a ripe tomato."
+          },
+          sessionReflection: {
+            questions: [
+              "Did I hesitate on throttle due to fear of spinning, or did I sync throttle to wheel unwinding?",
+              "At what exact point in Big Bend was it safe to apply 100% throttle?",
+              "How did the car feel with both TCS and Driving Line turned OFF?"
+            ]
+          }
+        },
+        {
+          id: 5,
+          title: "Hairpins & The Double-Apex Dilemma",
+          focus: "Hairpin apex choices, single late apex vs double apex, exit speed priority",
+          car: "Mazda MX-5 Cup",
+          track: "Lime Rock Park (Full Circuit)",
+          targetLapTime: 59.8,
+          difficulty: 3,
+          assistsConfig: {
+            transmission: "Automatic (No Clutch)",
+            drivingLine: "Off",
+            tcs: "Off",
+            stm: "Off",
+            abs: "On",
+            steering: "Normal"
+          },
+          theory: {
+            title: "Hairpins & The Double-Apex Dilemma",
+            content: `Skip Barber Chapter 3 (pg 41-43) explores hairpin geometry. Hairpins create strategic dilemmas:
+
+### Single Late Apex vs. Double Apex
+1. **Single Late-Apex**: Deep entry, slow mid-corner rotation, single late apex clip. Straightens the exit arc completely for maximum launch speed.
+2. **Double-Apex ("Parking the Car")**: Entry apex -> rotate in middle -> exit apex. High entry speed, but mid-corner speed is compromised.
+
+### The Golden Rule of Hairpins
+Entry speed in hairpins is cheap; exit speed onto straightaways is priceless! When a hairpin leads onto a long straight, ALWAYS sacrifice entry speed for a late single-apex exit launch.`,
+            keyTakeaways: [
+              "Hairpin entry speed should be sacrificed to maximize straightaway exit speed",
+              "Single late-apex lines allow getting the car rotated early and driving straight out",
+              "Double-apex lines suit wide carousels, but single late-apex wins on tight hairpins leading to straights"
+            ],
+            diagramId: "corner-path-comparison"
+          },
+          practice: {
+            focus: "Hairpin line comparison & exit launch",
+            drills: [
+              { id: "easy", level: "🟢 Easy", title: "Single vs Double Apex Line Trial", desc: "Compare single late-apex vs double-apex lines through Big Bend Hook.", reps: 3, time: "5 min" },
+              { id: "medium", level: "🟡 Medium", title: "Deep Entry & Rotation Drill", desc: "Brake straight, turn late, get direction change done early, and launch out.", reps: 4, time: "8 min" },
+              { id: "hard", level: "🔴 Hard", title: "Hairpin Exit Speed Sweep", desc: "Drive 4 laps aiming for maximum top speed at Turn 3 braking marker.", reps: 4, time: "10 min" }
+            ]
+          },
+          practical: {
+            title: "Hairpin Exit Launch Stint",
+            focus: "Late single-apex execution for maximum exit velocity",
+            laps: 6,
+            instructions: [
+              "Drive 6 laps at Lime Rock Park.",
+              "Treat Big Bend as a late single-apex hairpin: Overslow entry slightly, rotate car fully at apex, and get 100% throttle down early."
+            ]
+          },
+          challenge: {
+            title: "Maximum Exit Velocity Challenge",
+            type: "laptime",
+            description: "Set top speed benchmark at Turn 3 entry across 3 consecutive laps.",
+            criteria: "Consistent top speed launch achieved."
+          },
+          assessment: {
+            title: "Hairpin Geometry & Exit Priority Assessment",
+            criteria: "Executed single late-apex line in hairpin section and maximized exit acceleration.",
+            passingScore: 85
+          },
+          telemetryReflection: {
+            title: "Speed Trace & Slip Angle Telemetry",
+            prompts: [
+              { key: "minimumApexSpeed", label: "Apex Speed Location", question: "Did your minimum speed point occur early enough to launch down the straight?" },
+              { key: "rearTireSlip", label: "Rear Slip Angle", question: "Did rear tire slip stay within optimal 5-8% acceleration zone on exit?" }
+            ]
+          },
+          psychologicalCheckIn: {
+            defaultFocus: 4,
+            defaultFrustration: 1,
+            defaultConfidence: 4,
+            resetPrompt: "Slow in, fast out. Sacrificing entry speed is the hardest mental hurdle, but yields the fastest lap times."
+          },
+          sessionReflection: {
+            questions: [
+              "Was I over-driving corner entry out of impatience, ruining my exit speed?",
+              "Which line gave higher exit speed: Single Late Apex or Double Apex?",
+              "How will I apply hairpin exit priority in Session 6?"
+            ]
+          }
+        },
+        {
+          id: 6,
+          title: "Decreasing & Increasing Radius Corners",
+          focus: "Adapting apex points to decreasing and increasing radius geometry",
+          car: "Mazda MX-5 Cup",
+          track: "Lime Rock Park (Full Circuit)",
+          targetLapTime: 59.5,
+          difficulty: 3,
+          assistsConfig: {
+            transmission: "Automatic (No Clutch)",
+            drivingLine: "Off",
+            tcs: "Off",
+            stm: "Off",
+            abs: "On",
+            steering: "Normal"
+          },
+          theory: {
+            title: "Decreasing & Increasing Radius Corners",
+            content: `Not all corners are uniform arcs. Skip Barber Chapter 3 (pg 40-41) breaks down variable radius corners:
+
+### Decreasing Radius Corners (e.g. Turn 5 No-Name Entry)
+- Radius tightens as you go through the corner.
+- **Apex Rule**: MUST apex much later than halfway point!
+- Turning in early causes severe understeer or off-track spin as radius tightens.
+
+### Increasing Radius Corners (e.g. Turn 6 West Bend Exit)
+- Radius opens up as you exit.
+- **Apex Rule**: Apex earlier than halfway point!
+- You can get on throttle earlier because the expanding radius naturally gives you extra road width at exit.`,
+            keyTakeaways: [
+              "Decreasing radius corners require a late apex and trailing brake pressure deep into the turn",
+              "Increasing radius corners allow an earlier turn-in and earlier throttle application",
+              "Matching turn-in point to radius change prevents mid-corner panic adjustments"
+            ],
+            diagramId: "corner-path-comparison"
+          },
+          practice: {
+            focus: "Variable radius adaptation at Turn 5 and Turn 6",
+            drills: [
+              { id: "easy", level: "🟢 Easy", title: "Decreasing Radius Trail Sensation", desc: "Hold light trail-brake into Turn 5 as radius tightens.", reps: 3, time: "5 min" },
+              { id: "medium", level: "🟡 Medium", title: "Increasing Radius Early Throttle", desc: "Turn 6 West Bend: Roll on throttle early as radius expands.", reps: 4, time: "8 min" },
+              { id: "hard", level: "🔴 Hard", title: "Linked Variable Radius Stint", desc: "Drive 4 laps stringing Turn 5 and Turn 6 together with smooth flow.", reps: 4, time: "10 min" }
+            ]
+          },
+          practical: {
+            title: "Variable Radius Integration Stint",
+            focus: "Apex positioning for decreasing (T5) and increasing (T6) radius turns",
+            laps: 6,
+            instructions: [
+              "Drive 6 clean laps at Lime Rock Park.",
+              "Apply late apex for decreasing radius Turn 5 and earlier throttle roll-on for increasing radius Turn 6."
+            ]
+          },
+          challenge: {
+            title: "Seamless Radius Flow Challenge",
+            type: "technique",
+            description: "Complete 4 consecutive laps through T5 and T6 with zero mid-corner steering corrections or wheelspin.",
+            criteria: "4 clean variable-radius laps completed."
+          },
+          assessment: {
+            title: "Week 2 Geometry & TCS-Off Benchmark",
+            criteria: "Demonstrated proper apex placement across constant, decreasing, and increasing radius corners with TCS OFF.",
+            passingScore: 85
+          },
+          telemetryReflection: {
+            title: "Steering & G-Force Dashboard Review",
+            prompts: [
+              { key: "t5TrailBrakeTrace", label: "T5 Brake Trace", question: "Did brake pressure taper off smoothly deep into decreasing radius Turn 5?" },
+              { key: "t6LateralG", label: "T6 Lateral G", question: "Did lateral G hold steady through increasing radius Turn 6 as throttle opened?" }
+            ]
+          },
+          psychologicalCheckIn: {
+            defaultFocus: 5,
+            defaultFrustration: 1,
+            defaultConfidence: 4,
+            resetPrompt: "Week 2 complete! TCS OFF is now second nature. Get ready for raw braking (ABS OFF) in Week 3."
+          },
+          sessionReflection: {
+            questions: [
+              "Did I adjust my turn-in point based on the corner radius type?",
+              "How confident do I feel driving with TCS and Driving Line completely OFF?",
+              "What is my target focus for Week 3?"
+            ]
+          }
+        },
+        {
+          id: 7,
+          title: "Weight Transfer & Threshold Braking (ABS OFF)",
+          focus: "Disabling ABS, threshold braking at 80-85% pressure, avoiding front lockup",
+          car: "Mazda MX-5 Cup",
+          track: "Lime Rock Park (Full Circuit)",
+          targetLapTime: 59.2,
+          difficulty: 4,
+          assistsConfig: {
+            transmission: "Automatic (No Clutch)",
+            drivingLine: "Off",
+            tcs: "Off",
+            stm: "Off",
+            abs: "Off",
+            steering: "Simulation"
+          },
+          theory: {
+            title: "Weight Transfer & Threshold Braking (No ABS)",
+            content: `Welcome to Week 3! We turn **Anti-lock Braking System (ABS) OFF** and set steering to **Simulation**.
+
+### The Mechanics of Braking Weight Transfer
+Braking shifts vehicle load **forward** onto front tires. Loaded front tires have MORE grip for stopping. But if pedal force exceeds tire download, front tires lock up and slide!
+
+### Threshold Braking Technique
+- Without ABS on your Moza R3 pedals, slamming 100% brake pedal WILL lock front wheels instantly.
+- **Step 1**: Squeeze brake initial pressure hard to 80-85% in straight line.
+- **Step 2**: As speed drops and downforce decreases, progressively **bleed off** brake pressure down to 50%, 20%, 0%.
+
+### Feeling Lockup on Moza R3
+When front tires lock, steering wheel force feedback suddenly goes light and limp. Immediately ease off brake pressure 10% to restore tire rotation!`,
+            keyTakeaways: [
+              "Threshold braking requires hard initial squeeze (80-85%) followed by progressive pressure bleed-off",
+              "Lockup occurs when pedal pressure exceeds available tire downforce as speed drops",
+              "Feel front tire lockup through Moza R3 FFB lightness and ease off brake immediately to recover"
+            ],
+            diagramId: "weight-transfer-friction-circle"
+          },
+          practice: {
+            focus: "Straight-line threshold braking & lockup feel",
+            drills: [
+              { id: "easy", level: "🟢 Easy", title: "Lockup Boundary Exploration", desc: "On main straight at 100 km/h, stomp brake to feel front wheel lockup and FFB lightness.", reps: 3, time: "5 min" },
+              { id: "medium", level: "🟡 Medium", title: "85%-to-Zero Pressure Bleed-Off", desc: "Squeeze 85% initial brake in T1 braking zone, bleeding off smoothly as speed drops.", reps: 4, time: "8 min" },
+              { id: "hard", level: "🔴 Hard", title: "ABS-Off T1 Braking Stint", desc: "Drive 4 laps executing threshold braking into Turn 1 without a single lockup.", reps: 4, time: "10 min" }
+            ]
+          },
+          practical: {
+            title: "Threshold Braking ABS-Off Stint",
+            focus: "Progressive brake modulation without ABS intervention",
+            laps: 6,
+            instructions: [
+              "Drive 6 laps at Lime Rock Park with ABS OFF.",
+              "Focus on Turn 1 main braking zone: Squeeze 80-85% initial brake in straight line, bleed off smoothly into turn-in point."
+            ]
+          },
+          challenge: {
+            title: "Zero-Lockup Braking Challenge",
+            type: "technique",
+            description: "Complete 4 consecutive heavy braking zones into Turn 1 with zero tire lockup flatlines.",
+            criteria: "4 clean ABS-off braking zones completed."
+          },
+          assessment: {
+            title: "Threshold Braking & Lockup Relief Assessment",
+            criteria: "Executed 80-85% threshold squeeze and progressive bleed-off without lockup.",
+            passingScore: 85
+          },
+          telemetryReflection: {
+            title: "Brake Trace & Wheel Speed Telemetry",
+            prompts: [
+              { key: "brakeBleedTrace", label: "Brake Pressure Curve", question: "Did your brake trace show a hard initial peak followed by a smooth downward slope?" },
+              { key: "wheelLockupEvents", label: "Wheel Speed Telemetry", question: "Did front wheel speed match ground speed without lockup drops?" }
+            ]
+          },
+          psychologicalCheckIn: {
+            defaultFocus: 4,
+            defaultFrustration: 2,
+            defaultConfidence: 3,
+            resetPrompt: "If wheels lock, don't panic. Gently lift brake pressure 10% to let tires roll again."
+          },
+          sessionReflection: {
+            questions: [
+              "Did I feel the exact pedal pressure threshold before front tire lockup?",
+              "Was my brake release smooth as speed decreased down the braking zone?",
+              "How will I combine threshold braking with trail-braking in Session 8?"
+            ]
+          }
+        },
+        {
+          id: 8,
+          title: "Elevation & Camber — The Lime Rock Uphill",
+          focus: "Elevation compression grip vs hill-crest unweighting at Turn 5 (The Uphill)",
+          car: "Mazda MX-5 Cup",
+          track: "Lime Rock Park (Full Circuit)",
+          targetLapTime: 59.0,
+          difficulty: 4,
+          assistsConfig: {
+            transmission: "Automatic (No Clutch)",
+            drivingLine: "Off",
+            tcs: "Off",
+            stm: "Off",
+            abs: "Off",
+            steering: "Simulation"
+          },
+          theory: {
+            title: "Elevation & Camber — The Lime Rock Uphill",
+            content: `Skip Barber Chapter 3 (pg 49-50) details the physics of elevation and banking:
+
+### The Compression & Unweighting Cycle
+- **Compression at Base**: Running uphill creates massive G-force download on tires, boosting cornering grip!
+- **Unweighting at Crest**: At the top crest of the hill, gravity load drops to near ZERO. The car becomes unweighted ("light").
+
+### The Golden Rule of The Uphill (Turn 5)
+*Finish all steering direction change during compression at the bottom of the hill!*
+Have the Moza R3 wheel completely DEAD-STRAIGHT before crossing the crest. Turning or braking over an unweighted crest causes instant spin-out!`,
+            keyTakeaways: [
+              "Compression at the base of hills provides massive bonus cornering grip",
+              "Hill crests unweight the car, reducing tire traction to near zero",
+              "Complete all turning in compression zone so steering is straight before crossing the crest"
+            ],
+            diagramId: "weight-transfer-friction-circle"
+          },
+          practice: {
+            focus: "Uphill compression turn-in & crest straightening",
+            drills: [
+              { id: "easy", level: "🟢 Easy", title: "Compression Grip Sensation", desc: "Feel heavy G-load at base of Turn 5 Uphill vs lightness at top crest.", reps: 3, time: "5 min" },
+              { id: "medium", level: "🟡 Medium", title: "Crest Straightening Drill", desc: "Turn early in compression, unwind wheel fully before front tires cross crest.", reps: 4, time: "8 min" },
+              { id: "hard", level: "🔴 Hard", title: "Full-Pace Uphill Sweep", desc: "Drive 4 laps over The Uphill at full race pace with zero crest tail slide.", reps: 4, time: "10 min" }
+            ]
+          },
+          practical: {
+            title: "Lime Rock Uphill Elevation Stint",
+            focus: "Managing compression grip and unweighted crest transition",
+            laps: 6,
+            instructions: [
+              "Drive 6 clean laps at Lime Rock Park.",
+              "Focus on Turn 5 (The Uphill): Turn aggressively in the compression zone at the bottom, unwind wheel straight before crossing crest."
+            ]
+          },
+          challenge: {
+            title: "Flawless Crest Transition Challenge",
+            type: "technique",
+            description: "Complete 4 consecutive passes over The Uphill with zero rear instability at hill crest.",
+            criteria: "4 clean elevation transitions completed."
+          },
+          assessment: {
+            title: "Elevation & Chassis Unweighting Assessment",
+            criteria: "Demonstrated proper compression turn-in and dead-straight wheel alignment over hill crest.",
+            passingScore: 85
+          },
+          telemetryReflection: {
+            title: "Suspension Travel & G-Force Audit",
+            prompts: [
+              { key: "suspensionCompression", label: "Suspension Load Trace", question: "Did suspension compress at base of hill and extend fully over crest?" },
+              { key: "steeringAngleAtCrest", label: "Crest Steering Lock", question: "Was steering angle zero (straight) at the exact moment of crest unweighting?" }
+            ]
+          },
+          psychologicalCheckIn: {
+            defaultFocus: 5,
+            defaultFrustration: 1,
+            defaultConfidence: 4,
+            resetPrompt: "Trust the compression grip at the bottom, respect the lightness at the top."
+          },
+          sessionReflection: {
+            questions: [
+              "Did I complete my direction change during compression at the base of the hill?",
+              "Was my steering wheel completely straight before crossing the unweighted crest?",
+              "What did the chassis feel like as the car unweighted over the top?"
+            ]
+          }
+        },
+        {
+          id: 9,
+          title: "Road Banking & Off-Camber Surface Dynamics",
+          focus: "Positive camber grip vs off-camber slip, trail braking to apex",
+          car: "Mazda MX-5 Cup",
+          track: "Lime Rock Park (Full Circuit)",
+          targetLapTime: 58.8,
+          difficulty: 4,
+          assistsConfig: {
+            transmission: "Automatic (No Clutch)",
+            drivingLine: "Off",
+            tcs: "Off",
+            stm: "Off",
+            abs: "Off",
+            steering: "Simulation"
+          },
+          theory: {
+            title: "Road Banking & Off-Camber Dynamics",
+            content: `Skip Barber Chapter 3 (pg 46-48) explains road camber:
+
+### Positive Camber (Banking)
+- A 5-degree banked corner (like Lime Rock Turn 7 Downhill entry) pushes down on tires, increasing total download.
+- Gives **over 10% extra cornering grip** for free!
+
+### Off-Camber Hazards
+- Off-camber slopes away from the corner, reducing tire downforce.
+- Car tends to slide wide uncontrollably if entry speed is too high.
+
+### Trail-Braking to the Camber Hook
+Trail-brake lightly past turn-in to keep front tires loaded until the car hooks into the banked section of Turn 7!`,
+            keyTakeaways: [
+              "Banked corners add downforce and increase cornering grip limit by over 10%",
+              "Off-camber corners reduce grip and require conservative entry speed",
+              "Hooking the inner banked curb allows carrying higher minimum corner speed"
+            ],
+            diagramId: "weight-transfer-friction-circle"
+          },
+          practice: {
+            focus: "Camber hook utilization in Turn 6 & 7",
+            drills: [
+              { id: "easy", level: "🟢 Easy", title: "Camber Grip Sensation", desc: "Feel extra grip in banked Turn 7 vs flat Turn 3.", reps: 3, time: "5 min" },
+              { id: "medium", level: "🟡 Medium", title: "Trail-Brake Camber Hook", desc: "Trail-brake into Turn 7 to hook inner cambered curb.", reps: 4, time: "8 min" },
+              { id: "hard", level: "🔴 Hard", title: "Downhill Exit Launcher", desc: "Drive 4 laps maximizing exit speed off Turn 7 onto front straight.", reps: 4, time: "10 min" }
+            ]
+          },
+          practical: {
+            title: "Downhill Camber Launcher Stint",
+            focus: "Trail-braking into positive camber and launching onto main straight",
+            laps: 6,
+            instructions: [
+              "Drive 6 laps at Lime Rock Park with ALL ASSISTS OFF.",
+              "Trail-brake into Turn 7, hook inner banked curb, unwind wheel, and launch down front straight."
+            ]
+          },
+          challenge: {
+            title: "Sector 3 Personal Best Challenge",
+            type: "laptime",
+            description: "Set personal best sector time through Turn 6 & 7 across 3 consecutive laps.",
+            criteria: "Sector 3 personal best achieved."
+          },
+          assessment: {
+            title: "Week 3 Weight Transfer & Camber Benchmark",
+            criteria: "Demonstrated threshold braking, trail-braking, and camber exploitation with ABS & TCS OFF.",
+            passingScore: 85
+          },
+          telemetryReflection: {
+            title: "Friction Circle & Lateral G Audit",
+            prompts: [
+              { key: "peakLateralGInBank", label: "Banked Lateral G", question: "Did peak lateral G increase in banked Turn 7 compared to flat corners?" },
+              { key: "trailBrakeToApex", label: "Trail-Brake Duration", question: "Did trail-braking pressure taper off to zero right at the apex clip?" }
+            ]
+          },
+          psychologicalCheckIn: {
+            defaultFocus: 5,
+            defaultFrustration: 1,
+            defaultConfidence: 5,
+            resetPrompt: "Week 3 complete! You are controlling raw physics without electronic safety nets. Week 4 is full mastery."
+          },
+          sessionReflection: {
+            questions: [
+              "Could I feel the exact moment road camber assisted front turn-in grip?",
+              "Rate my trail-braking modulation confidence without ABS (1-10).",
+              "Am I ready for corner grading strategy in Week 4?"
+            ]
+          }
+        },
+        {
+          id: 10,
+          title: "Corner Grading — Type I, Type II & Type III Corners",
+          focus: "Strategic corner priority grading: Type I (Exit), Type II (Entry), Type III (Compromise)",
+          car: "Mazda MX-5 Cup",
+          track: "Lime Rock Park (Full Circuit)",
+          targetLapTime: 58.5,
+          difficulty: 4,
+          assistsConfig: {
+            transmission: "Automatic (No Clutch)",
+            drivingLine: "Off",
+            tcs: "Off",
+            stm: "Off",
+            abs: "Off",
+            steering: "Simulation"
+          },
+          theory: {
+            title: "Corner Grading — Type I, Type II & Type III Corners",
+            content: `Welcome to Week 4! We synthesize physics into racetrack strategy. Skip Barber Chapter 3 (pg 54-55) introduces Alan Johnson's **Corner Grading System**:
+
+### The Three Types of Corners
+1. **TYPE I (Highest Priority)**: Leads onto a long straight. *Must maximize exit speed at all costs!* (e.g. Lime Rock Turn 7 Downhill & Turn 4 Esse exit).
+2. **TYPE II**: At the end of a long straight. *Heavy braking zone; aggressive entry speed.* (e.g. Turn 1 Big Bend entry).
+3. **TYPE III (Compromise Corner)**: Precedes another corner. *Must be sacrificed to position car for a Type I corner!* (e.g. Turn 3 Esse entry).
+
+### Strategic Mindset
+Never treat all corners as equally important. Prioritize Type I corners to gain massive time down straightaways!`,
+            keyTakeaways: [
+              "Type I corners lead onto straights and hold highest priority for overall lap time",
+              "Type II corners occur at the end of straights and reward late threshold braking",
+              "Type III corners must be sacrificed to set up wide exit arcs for downstream Type I turns"
+            ],
+            diagramId: "corner-path-comparison"
+          },
+          practice: {
+            focus: "Lime Rock corner priority classification & exit focus",
+            drills: [
+              { id: "easy", level: "🟢 Easy", title: "Track Corner Classification Walkthrough", desc: "Classify all 7 Lime Rock turns into Type I, II, or III.", reps: 3, time: "5 min" },
+              { id: "medium", level: "🟡 Medium", title: "Type I Exit Launcher Focus", desc: "Focus 100% of driving effort on Turn 7 exit velocity down main straight.", reps: 4, time: "8 min" },
+              { id: "hard", level: "🔴 Hard", title: "Top Speed Optimization Sweep", desc: "Drive 4 laps targeting maximum top speed at start/finish line.", reps: 4, time: "10 min" }
+            ]
+          },
+          practical: {
+            title: "Type I Corner Exit Prioritization Stint",
+            focus: "Maximizing straightaway top speed via Type I corner exit launching",
+            laps: 6,
+            instructions: [
+              "Drive 6 clean laps at Lime Rock Park with ALL ASSISTS OFF.",
+              "Treat Turn 7 and Turn 4 as sacred Type I exit launchers."
+            ]
+          },
+          challenge: {
+            title: "Main Straight Top Speed Challenge",
+            type: "laptime",
+            description: "Achieve personal best top speed at main straight finish line across 3 consecutive laps.",
+            criteria: "Top speed benchmark achieved."
+          },
+          assessment: {
+            title: "Corner Grading & Priority Assessment",
+            criteria: "Demonstrated strategic priority driving, sacrificing entry where needed to maximize Type I straightaway speeds.",
+            passingScore: 90
+          },
+          telemetryReflection: {
+            title: "Multi-Lap Telemetry Delta Review",
+            prompts: [
+              { key: "type1ExitSpeedDelta", label: "Type I Exit Velocity", question: "Did a 2 mph higher exit speed out of Turn 7 yield 5+ car lengths gain by end of straight?" },
+              { key: "brakePointType2", label: "Type II Brake Point", question: "Was threshold braking sharp and consistent in Type II Turn 1 entry?" }
+            ]
+          },
+          psychologicalCheckIn: {
+            defaultFocus: 5,
+            defaultFrustration: 1,
+            defaultConfidence: 5,
+            resetPrompt: "Think like a strategist. Prioritize the exit of corners leading to straights."
+          },
+          sessionReflection: {
+            questions: [
+              "Did I over-drive Type III corners, ruining my exit speed through downstream Type I turns?",
+              "What top speed did I achieve at the finish line?",
+              "How will I execute compromise corners in Session 11?"
+            ]
+          }
+        },
+        {
+          id: 11,
+          title: "Compromise Corners & The Esse Sequence",
+          focus: "Compromise line execution in connected corners (Turn 3 & 4)",
+          car: "Mazda MX-5 Cup",
+          track: "Lime Rock Park (Full Circuit)",
+          targetLapTime: 58.2,
+          difficulty: 5,
+          assistsConfig: {
+            transmission: "Automatic (No Clutch)",
+            drivingLine: "Off",
+            tcs: "Off",
+            stm: "Off",
+            abs: "Off",
+            steering: "Simulation"
+          },
+          theory: {
+            title: "Compromise Corners & The Incomplete Surrender",
+            content: `Skip Barber Chapter 3 (pg 51-53) examines connected corners:
+
+### The Compromise Esse Principle
+In connected corners (Lime Rock Turn 3 & 4 Esse combo):
+- Taking the geometric line through Turn 3 puts the car on the far LEFT side of the track at T3 exit.
+- This ruins Turn 4, forcing a tight, slow arc onto the back chute!
+
+### The Incomplete Surrender
+- Drive a tighter, slower arc through Turn 3 (Compromise).
+- Position the car on the RIGHT side of the track at T3 exit.
+- This opens up a wide, sweeping, maximum-radius arc for Turn 4 (Type I Launcher)!
+
+*"Slow down in the first corner to go faster down the entire straightaway."* — Dorsey Schroeder (pg 52)`,
+            keyTakeaways: [
+              "Connected corners require sacrificing entry speed in turn 1 to position for turn 2",
+              "The Incomplete Surrender sacrifices just enough speed in T3 to maximize T4 radius",
+              "Driving a tighter arc in T3 places the car on the correct side of the track for T4 launch"
+            ],
+            diagramId: "corner-path-comparison"
+          },
+          practice: {
+            focus: "Turn 3 & 4 compromise positioning & execution",
+            drills: [
+              { id: "easy", level: "🟢 Easy", title: "Geometric vs Compromise T3 Line Trial", desc: "Compare geometric T3 exit position vs compromise right-hand positioning.", reps: 3, time: "5 min" },
+              { id: "medium", level: "🟡 Medium", title: "T3-T4 Compromise Sequence", desc: "Tighten T3 arc, hold car right, and sweep wide into T4 with early throttle.", reps: 4, time: "8 min" },
+              { id: "hard", level: "🔴 Hard", title: "5-Lap Stint Variance Trial", desc: "Drive 5 continuous laps targeting sub-0.3s lap time variance.", reps: 5, time: "12 min" }
+            ]
+          },
+          practical: {
+            title: "Esse Compromise Masterclass Stint",
+            focus: "Executing the T3-T4 compromise sequence with 100% ASSISTS OFF",
+            laps: 8,
+            instructions: [
+              "Drive 8 continuous laps at Lime Rock Park with ALL ASSISTS OFF.",
+              "Sacrifice T3 entry speed to position car right for maximum T4 exit launcher speed."
+            ]
+          },
+          challenge: {
+            title: "Sub-0.3s Stint Variance Challenge",
+            type: "laptime",
+            description: "Complete 5 consecutive clean laps with lap time variance under 0.3 seconds and pace under 58.2s.",
+            criteria: "5-lap stint variance < 0.3s achieved."
+          },
+          assessment: {
+            title: "Compromise Corner Execution Assessment",
+            criteria: "Demonstrated proper compromise positioning in T3 to maximize T4 exit velocity.",
+            passingScore: 90
+          },
+          telemetryReflection: {
+            title: "Speed Trace & Position Audit",
+            prompts: [
+              { key: "t3SpeedDrop", label: "T3 Compromise Speed", question: "Did speed drop in T3 lead to higher accelerating velocity through T4 exit?" },
+              { key: "t4ThrottlePoint", label: "T4 Throttle Pickup", question: "Were you able to apply 100% throttle earlier in T4 due to compromise positioning?" }
+            ]
+          },
+          psychologicalCheckIn: {
+            defaultFocus: 5,
+            defaultFrustration: 1,
+            defaultConfidence: 5,
+            resetPrompt: "Slowing down to go faster is the hallmark of a master driver. Trust the exit speed!"
+          },
+          sessionReflection: {
+            questions: [
+              "Did I feel comfortable 'slowing down to go faster' in Turn 3 to gain time in Turn 4?",
+              "What was my lap time variance across my 5 benchmark laps?",
+              "Am I ready for Module 3 Graduation in Session 12?"
+            ]
+          }
+        },
+        {
+          id: 12,
+          title: "Module 3 Graduation: Real-World Line Masterclass",
+          focus: "Final 10-lap graduation benchmark with 100% ASSISTS OFF",
+          car: "Mazda MX-5 Cup",
+          track: "Lime Rock Park (Full Circuit)",
+          targetLapTime: 58.0,
+          difficulty: 5,
+          assistsConfig: {
+            transmission: "Automatic (No Clutch)",
+            drivingLine: "Off",
+            tcs: "Off",
+            stm: "Off",
+            abs: "Off",
+            steering: "Simulation"
+          },
+          theory: {
+            title: "Module 3 Graduation: Real-World Line Masterclass",
+            content: `Congratulations on reaching Session 12 of Module 3! Over 30 days and 12 sessions, you have mastered Skip Barber Chapter 3: The Real-World Line.
+
+### Summary of What You Mastered:
+1. **LINE GEOMETRY & SIGHT PICTURE**: Differentiating geometric vs real-world lines, avoiding early apex pinching, building intuitive visual horizon scanning, and navigating without driving lines.
+2. **CORNER TYPES & THROTTLE CONTROL**: Disabling TCS, constant radius 7/8 apexes, hairpin single late-apex exit launches, decreasing radius trail-braking, and increasing radius early throttle.
+3. **WEIGHT TRANSFER & DYNAMICS**: Disabling ABS, threshold braking at 85% slip, elevation compression vs unweighted crests (The Uphill), and positive camber hook exploitation.
+4. **RACETRACK STRATEGY**: Corner grading (Type I, II, III priority) and connected compromise turn execution.
+
+Today is your **Final 10-Lap Graduation Stint**. Drive 10 continuous clean laps at Lime Rock Park in the Mazda MX-5 Cup with 100% ASSISTS OFF!`,
+            keyTakeaways: [
+              "You have mastered Skip Barber Chapter 3 real-world line physics with zero electronic aids",
+              "You possess authentic raw car control, visual horizon discipline, and corner grading strategy",
+              "You are fully certified in Module 3: The Real-World Line Masterclass! 🏆"
+            ],
+            diagramId: "weight-transfer-friction-circle"
+          },
+          practice: {
+            focus: "Graduation stint warmup & system check",
+            drills: [
+              { id: "easy", level: "🟢 Easy", title: "2-Lap Tire & Brake Warmup", desc: "Drive 2 clean laps bringing tires up to operating temperature.", reps: 2, time: "4 min" },
+              { id: "medium", level: "🟡 Medium", title: "Pace Calibration Trial", desc: "Drive 3 laps verifying sub-58.0s target pace with zero assists.", reps: 3, time: "6 min" },
+              { id: "hard", level: "🔴 Hard", title: "10-Lap Graduation Stint", desc: "Complete 10 continuous clean laps for Module 3 graduation.", reps: 10, time: "18 min" }
+            ]
+          },
+          practical: {
+            title: "The Module 3 Graduation Stint",
+            focus: "10 continuous clean laps with 100% ASSISTS OFF",
+            laps: 10,
+            instructions: [
+              "Verify ALL ASSISTS (Driving Line, TCS, STM, ABS) are set to OFF with Sim Steering ON.",
+              "Drive 10 continuous clean laps at Lime Rock Park in the Mazda MX-5 Cup.",
+              "Execute threshold braking, trail-braking, apex clipping, compromise lines, and eyes-up vision. Target pace under 58.0s!"
+            ]
+          },
+          challenge: {
+            title: "Module 3 Graduation Benchmark",
+            type: "mechanical",
+            description: "Complete 10 continuous clean laps with 100% ASSISTS OFF in the Mazda MX-5 Cup at Lime Rock Park, setting a personal best lap under 58.0s.",
+            criteria: "Module 3 Graduation Benchmark Achieved! Module 3 Completed."
+          },
+          assessment: {
+            title: "Module 3 Graduation Assessment",
+            criteria: "Completed 10 continuous clean laps with ALL ASSISTS OFF, demonstrating total mastery of Skip Barber Chapter 3 Real-World Line principles.",
+            passingScore: 90
+          },
+          telemetryReflection: {
+            title: "Module 3 Telemetry & Replay Audit",
+            prompts: [
+              { key: "graduationStintVariance", label: "10-Lap Stint Variance", question: "What was your average lap time and total variance across your 10 graduation laps?" },
+              { key: "realWorldLineMastery", label: "Raw Line Mastery", question: "How confident do you feel applying real-world racing line concepts compared to Day 1?" }
+            ]
+          },
+          psychologicalCheckIn: {
+            defaultFocus: 5,
+            defaultFrustration: 1,
+            defaultConfidence: 5,
+            resetPrompt: "Congratulations! Take a deep breath and celebrate mastering raw car control and the real-world line."
+          },
+          sessionReflection: {
+            questions: [
+              "What was your single biggest breakthrough during Module 3?",
+              "Which concept from Skip Barber Chapter 3 transformed your driving technique the most?",
+              "How does it feel to drive with 100% assists OFF on your Moza R3 wheel?"
+            ]
+          }
+        }
+      ]
     },
     {
       id: 4,

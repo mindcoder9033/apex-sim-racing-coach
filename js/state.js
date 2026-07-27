@@ -251,14 +251,16 @@ class ApexStore {
     }
 
     // Save reflection to journal
-    if (sessionData.reflection || sessionData.notes) {
+    if (sessionData.reflection || sessionData.notes || sessionData.telemetryReflection || sessionData.psychologicalCheckIn) {
       this.addJournalEntry({
         id: `journal-${Date.now()}`,
         sessionId: key,
         moduleId,
         sessionNumber: sessionId,
         date: now,
-        confidence: sessionData.ratings ? sessionData.ratings.confidence : 3,
+        confidence: sessionData.ratings ? sessionData.ratings.confidence : (sessionData.psychologicalCheckIn ? sessionData.psychologicalCheckIn.confidence : 3),
+        psychological: sessionData.psychologicalCheckIn || null,
+        telemetry: sessionData.telemetryReflection || null,
         notes: sessionData.notes || '',
         reflection: sessionData.reflection || '',
         bestLap: sessionData.lapTime || null

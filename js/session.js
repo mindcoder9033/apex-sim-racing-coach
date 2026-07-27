@@ -348,7 +348,7 @@ class SessionController {
 
           <div class="form-group">
             <label class="form-label">Guided Reflection: What worked? What didn't? What will you try next time?</label>
-            <textarea class="form-control" id="txtReflection" placeholder="I felt good at Turn 2, but turned in too early at Turn 6. Next time I'll brake 10 feet later...">${this.sessionData.reflection || ''}</textarea>
+            <textarea class="form-control" id="txtReflection" placeholder="I felt good at Turn 2, but turned in too early at Turn 6. Next time I'll brake 3 meters later...">${this.sessionData.reflection || ''}</textarea>
           </div>
 
           <div class="flex justify-between items-center mt-6">

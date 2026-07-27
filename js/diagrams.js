@@ -8,8 +8,8 @@ class ApexDiagrams {
       inside: {
         label: 'Inside Line',
         color: '#FF1E00',
-        radius: '105 ft',
-        speed: '39.5 mph',
+        radius: '32 m',
+        speed: '63.5 km/h',
         time: '2.4s',
         desc: 'Tight radius forces heavy braking and delays exit acceleration.',
         svgPath: 'M 40,260 Q 80,180 180,180 T 260,260'
@@ -17,8 +17,8 @@ class ApexDiagrams {
       outside: {
         label: 'Outside Line',
         color: '#feca57',
-        radius: '135 ft',
-        speed: '44.2 mph',
+        radius: '41 m',
+        speed: '71.1 km/h',
         time: '2.2s',
         desc: 'Medium radius, but covers a long physical distance.',
         svgPath: 'M 20,280 Q 20,120 180,120 T 340,280'
@@ -26,8 +26,8 @@ class ApexDiagrams {
       racing: {
         label: 'Ideal Racing Line',
         color: '#FFFFFF',
-        radius: '195 ft',
-        speed: '54.0 mph',
+        radius: '59 m',
+        speed: '86.9 km/h',
         time: '1.8s',
         desc: 'Maximum arc radius! Carries highest speed and straightens corner exit.',
         svgPath: 'M 20,280 Q 80,130 180,180 T 340,280'

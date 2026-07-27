@@ -36,7 +36,7 @@ const APEX_CONTENT = {
 - **Self Alignment & Mechanical Trail**: 100% (Feel tire self-aligning torque naturally)
 
 ### Today's Focus
-Set up your equipment correctly, configure in-game controls, and experience your first moments behind the virtual wheel driving slow laps under 40 mph.`,
+Set up your equipment correctly, configure in-game controls, and experience your first moments behind the virtual wheel driving slow laps under 65 km/h.`,
             keyTakeaways: [
               'Comfortable seating position (arms at 90°) prevents fatigue and driving errors',
               'Zero deadzone and linear sensitivity provide direct physical feedback from physics engine',
@@ -66,7 +66,7 @@ Set up your equipment correctly, configure in-game controls, and experience your
               {
                 id: 'hard',
                 level: '🔴 Hard',
-                title: 'First Slow Laps (Under 40 mph)',
+                title: 'First Slow Laps (Under 65 km/h)',
                 desc: 'Drive 3 slow laps at Laguna Seca in 3rd gear. Focus purely on wheel resistance and pedal response.',
                 reps: 3,
                 time: '25 min'
@@ -79,7 +79,7 @@ Set up your equipment correctly, configure in-game controls, and experience your
             laps: 3,
             instructions: [
               'Start a Free Play race at Laguna Seca in the Mazda MX-5.',
-              'Drive slowly—no faster than 40 mph (3rd gear max).',
+              'Drive slowly—no faster than 65 km/h (3rd gear max).',
               'Focus on how the wheel resists your turning (force feedback) and how pedals respond.',
               'Do not worry about lap times or staying on the line perfectly.'
             ]
@@ -125,7 +125,7 @@ When cornering and the wheel suddenly goes light, front tire grip has failed (un
                 id: 'easy',
                 level: '🟢 Easy',
                 title: 'Center-Feel & Self Alignment',
-                desc: 'Drive 30 mph on straight. Turn wheel 5° left/right and release to feel self-aligning torque return wheel to center.',
+                desc: 'Drive 50 km/h on straight. Turn wheel 5° left/right and release to feel self-aligning torque return wheel to center.',
                 reps: 5,
                 time: '5 min'
               },
@@ -133,7 +133,7 @@ When cornering and the wheel suddenly goes light, front tire grip has failed (un
                 id: 'medium',
                 level: '🟡 Medium',
                 title: 'Constant Radius Corner Weight',
-                desc: 'Drive Turn 6 at 40 mph vs 45 mph. Feel the wheel load up heavy, then go slightly light as speed increases.',
+                desc: 'Drive Turn 6 at 65 km/h vs 70 km/h. Feel the wheel load up heavy, then go slightly light as speed increases.',
                 reps: 5,
                 time: '10 min'
               },
@@ -141,7 +141,7 @@ When cornering and the wheel suddenly goes light, front tire grip has failed (un
                 id: 'hard',
                 level: '🔴 Hard',
                 title: 'Understeer Lightness Detection',
-                desc: 'Enter Turn 2 at 45 mph without braking; observe the exact moment wheel resistance drops light.',
+                desc: 'Enter Turn 2 at 70 km/h without braking; observe the exact moment wheel resistance drops light.',
                 reps: 5,
                 time: '5 min'
               }
@@ -207,7 +207,7 @@ Developing precise muscle memory allows your feet to hold 30%, 50%, or 80% pedal
                 id: 'medium',
                 level: '🟡 Medium',
                 title: 'Brake Squeeze Drill',
-                desc: 'Drive 50 mph on main straight. Practice progressively squeezing brake to 100% over 2 seconds without lockup.',
+                desc: 'Drive 80 km/h on main straight. Practice progressively squeezing brake to 100% over 2 seconds without lockup.',
                 reps: 5,
                 time: '7 min'
               },
@@ -271,7 +271,7 @@ Tires have a maximum grip budget. If you use 100% of grip for braking, you have 
                 id: 'easy',
                 level: '🟢 Easy',
                 title: 'Braking Weight Shift Sensation',
-                desc: 'Brake at 50 mph to feel the car nose dip and front steering heavy up as weight moves forward.',
+                desc: 'Brake at 80 km/h to feel the car nose dip and front steering heavy up as weight moves forward.',
                 reps: 5,
                 time: '7 min'
               },
@@ -287,7 +287,7 @@ Tires have a maximum grip budget. If you use 100% of grip for braking, you have 
                 id: 'hard',
                 level: '🔴 Hard',
                 title: 'Friction Circle Boundary Drill',
-                desc: 'Drive steady circle at 20, 25, 30, 35 mph to experience weight loading outside tires to grip limit.',
+                desc: 'Drive steady circle at 30, 40, 50, 60 km/h to experience weight loading outside tires to grip limit.',
                 reps: 5,
                 time: '11 min'
               }
@@ -406,7 +406,7 @@ A mistake on corner entry hurts your speed for a split second. A mistake on corn
           difficulty: 1,
           theory: {
             title: 'Maximizing Track Width',
-            content: `Many beginner drivers leave 2 to 3 feet of pavement unused on corner entry and exit. If you don't use every inch of available asphalt, you are effectively driving a tighter, slower corner!
+            content: `Many beginner drivers leave 0.5 to 1 meter of pavement unused on corner entry and exit. If you don't use every inch of available asphalt, you are effectively driving a tighter, slower corner!
 
 Using the full width of the track lowers the steering angle required to negotiate turns. Less steering angle means less tire scrub, higher corner speed, and better car stability.`,
             keyTakeaways: [
@@ -466,7 +466,7 @@ Using the full width of the track lowers the steering angle required to negotiat
             focus: 'Late Apex Execution at Turn 3 & 4',
             drills: [
               { id: 'easy', level: '🟢 Easy', title: 'Identify Mid vs Late Apex', desc: 'Compare entry points for geometric vs late apex at Turn 3.', reps: 3, time: '5 min' },
-              { id: 'medium', level: '🟡 Medium', title: 'Late Apex Turn-in', desc: 'Delay your turn-in by 10 feet and observe how much straighter your exit path becomes.', reps: 5, time: '8 min' },
+              { id: 'medium', level: '🟡 Medium', title: 'Late Apex Turn-in', desc: 'Delay your turn-in by 3 meters and observe how much straighter your exit path becomes.', reps: 5, time: '8 min' },
               { id: 'hard', level: '🔴 Hard', title: 'Early Throttle Onset', desc: 'Apply 100% throttle at the late apex point.', reps: 8, time: '10 min' }
             ]
           },
@@ -631,7 +631,7 @@ Using the full width of the track lowers the steering angle required to negotiat
             drills: [
               { id: 'easy', level: '🟢 Easy', title: 'Mid-Engine Turn-in Feel', desc: 'Feel quick front-end turn-in response at Turn 2.', reps: 4, time: '5 min' },
               { id: 'medium', level: '🟡 Medium', title: 'Throttle Weight Transfer', desc: 'Apply gentle throttle to settle rear end.', reps: 6, time: '8 min' },
-              { id: 'hard', level: '🔴 Hard', title: 'Cayman Apex Speed', desc: 'Carry 5mph higher apex speed in Turn 5.', reps: 8, time: '10 min' }
+              { id: 'hard', level: '🔴 Hard', title: 'Cayman Apex Speed', desc: 'Carry 8 km/h higher apex speed in Turn 5.', reps: 8, time: '10 min' }
             ]
           },
           practical: { title: 'Mid-Engine Adaptation', focus: 'Smooth Cayman control', laps: 7, instructions: ['Drive 7 laps adapting your line inputs to the Cayman GT4.'] },
@@ -660,7 +660,7 @@ Using the full width of the track lowers the steering angle required to negotiat
             ]
           },
           practical: { title: 'Sequence Optimization', focus: 'Turns 10-11 sequence', laps: 7, instructions: ['Drive 7 laps focusing on corner priority optimization.'] },
-          challenge: { title: 'Straightaway Speed', type: 'mechanical', description: 'Achieve a top speed of 122+ mph on front straight by nailing Turn 11 exit.', criteria: 'Target top speed met.' }
+          challenge: { title: 'Straightaway Speed', type: 'mechanical', description: 'Achieve a top speed of 195+ km/h on front straight by nailing Turn 11 exit.', criteria: 'Target top speed met.' }
         },
         {
           id: 11,
@@ -757,8 +757,8 @@ Today is your final graduation stint: 10 full laps combining everything you have
           practice: {
             focus: 'Pedal transition drills',
             drills: [
-              { id: 'easy', level: '🟢 Easy', title: 'The Lift-Off', desc: 'Approach Turn 2 at 50 mph. Lift off throttle and observe deceleration without braking.', reps: 5, time: '5 min' },
-              { id: 'medium', level: '🟡 Medium', title: 'The Quick Transition', desc: 'Approach Turn 2 at 60 mph. Move from full throttle to brake in under 0.3 seconds.', reps: 5, time: '8 min' },
+              { id: 'easy', level: '🟢 Easy', title: 'The Lift-Off', desc: 'Approach Turn 2 at 80 km/h. Lift off throttle and observe deceleration without braking.', reps: 5, time: '5 min' },
+              { id: 'medium', level: '🟡 Medium', title: 'The Quick Transition', desc: 'Approach Turn 2 at 100 km/h. Move from full throttle to brake in under 0.3 seconds.', reps: 5, time: '8 min' },
               { id: 'hard', level: '🔴 Hard', title: 'The Smooth Transition', desc: 'Practice gradual lift and progressive brake application into Turn 6 to settle the chassis.', reps: 8, time: '10 min' }
             ]
           },
@@ -908,7 +908,7 @@ When you use 100% of tire grip for braking, you have 0% left for turning. If you
           practice: {
             focus: 'Trail-braking depth control',
             drills: [
-              { id: 'easy', level: '🟢 Easy', title: 'Short Trail-Brake', desc: 'Carry light brake pressure 10 feet past turn-in into Turn 2.', reps: 5, time: '5 min' },
+              { id: 'easy', level: '🟢 Easy', title: 'Short Trail-Brake', desc: 'Carry light brake pressure 3 meters past turn-in into Turn 2.', reps: 5, time: '5 min' },
               { id: 'medium', level: '🟡 Medium', title: 'Medium Trail-Brake', desc: 'Carry diminishing brake pressure 1/3 of the distance to apex in Turn 2.', reps: 5, time: '8 min' },
               { id: 'hard', level: '🔴 Hard', title: 'Deep Trail-Brake', desc: 'Carry light trail-brake 2/3 of the distance to apex in Turn 11.', reps: 8, time: '10 min' }
             ]
@@ -925,7 +925,7 @@ When you use 100% of tire grip for braking, you have 0% left for turning. If you
           challenge: {
             title: 'Turn 11 Entry Speed Challenge',
             type: 'mechanical',
-            description: 'Trail-brake deep into Turn 11 to carry 3+ mph higher entry speed while hitting target lap time under 1:39.0.',
+            description: 'Trail-brake deep into Turn 11 to carry 5+ km/h higher entry speed while hitting target lap time under 1:39.0.',
             criteria: 'Target entry speed and lap time under 1:39.0 met.'
           }
         },
@@ -1972,7 +1972,7 @@ Distance from the ground to chassis bottom. Lowering ride height lowers center o
       icon: 'settings',
       summary: 'Stiffness of suspension springs.',
       content: `### Definition
-The stiffness of suspension springs (measured in lbs/in or N/mm). Stiffer springs reduce pitch and roll.`
+The stiffness of suspension springs (measured in N/mm). Stiffer springs reduce pitch and roll.`
     },
     {
       id: 'ref-anti-roll-bar',

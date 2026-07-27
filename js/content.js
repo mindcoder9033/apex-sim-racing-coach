@@ -2512,6 +2512,244 @@ Changes in wing downforce and aerodynamic balance when air hits the car at an an
         { category: 'Racing Rules & Strategy', term: 'Drafting / Slipstreaming', definition: 'Following closely behind a leading car to reduce aerodynamic drag, gaining top speed for an overtaking attempt down straights.' },
         { category: 'Pedal & Vehicle Control', term: 'Cadence / Threshold Braking', definition: 'Modulating brake pedal pressure right at the verge of tire lockup (or ABS threshold) for shortest stopping distance.' }
       ]
+    },
+
+    // 3. Telemetry Guide Data (From Doc/telemetry.md)
+    telemetry: {
+      summary: {
+        title: 'Telemetry: The Data-Driven Path to Faster Laps',
+        subtitle: 'Understanding, Learning, and Interpreting Telemetry Data',
+        authorRef: 'Based on Going Faster! Mastering the Art of Race Driving by Skip Barber Racing School',
+        quote: 'Data collection systems replace theory with hard fact.',
+        duration: 'Self-paced (2-3 weeks)',
+        skillLevel: 'Complete Beginner',
+        tools: 'Forza Motorsport 2023, Moza R3, Telemetry App'
+      },
+      setup: {
+        title: 'Enabling UDP Race Telemetry in Forza Motorsport 2023',
+        steps: [
+          'Launch Forza Motorsport 2023',
+          'Navigate to Settings -> Gameplay & HUD',
+          'Scroll down to the "UDP Race Telemetry" section',
+          'Configure the telemetry parameters below'
+        ],
+        settings: [
+          { setting: 'Data Out', value: 'ON', purpose: 'Enables UDP telemetry transmission' },
+          { setting: 'Data Out IP Address', value: '127.0.0.1 (or PC IP for Xbox)', purpose: 'Sends to localhost or target PC' },
+          { setting: 'Data Out IP Port', value: '9999 or 5300', purpose: 'Target port for listener app' },
+          { setting: 'Data Out Packet Format', value: 'CAR DASH', purpose: 'Full telemetry data packet (331 bytes @ 60 Hz)' }
+        ],
+        platformNotes: {
+          pc: 'Use 127.0.0.1 if running the telemetry app on the same PC as Forza.',
+          xbox: 'Set IP Address to the IPv4 address of your PC/laptop running the telemetry app on the same network.'
+        },
+        tools: [
+          { name: 'Forza-data-tools', platform: 'Windows / Terminal', desc: 'Recommended for beginners. Offers terminal live telemetry, CSV logging, and web dashboard.' },
+          { name: 'RS Dash ASR', platform: 'iOS / Android / Windows', desc: 'Live racing dashboards, track maps, and telemetry graphs.' },
+          { name: 'Simracing Telemetry', platform: 'Windows (Go)', desc: 'Records and displays real-time telemetry curves.' }
+        ],
+        commands: {
+          quickStart: './fdt -j -c log.csv',
+          terminalLog: './fdt -q -c telemetry_log.csv',
+          docker: 'docker run --rm -p 9999:9999/udp -p 8080:8080 forza-data-tools -j -q'
+        }
+      },
+      channels: [
+        {
+          id: 'throttle',
+          name: 'Throttle Trace',
+          range: '0% to 100%',
+          quote: 'A gradual increase in throttle will tend to create understeer. An abrupt application will create oversteer.',
+          goodTitle: 'The Squeeze (Progressive Build)',
+          goodDesc: 'Smooth 0-100% curve over 0.5-1.0s through apex to exit.',
+          badTitle: 'The Stab (Abrupt Spike)',
+          badDesc: 'Vertical line jump 0 to 100%, breaking rear tire traction.',
+          checkpoints: [
+            'Is my throttle smooth and progressive without spikes?',
+            'Am I at 100% full throttle by track-out?',
+            'Do I have unexpected throttle dips mid-corner?'
+          ]
+        },
+        {
+          id: 'brake',
+          name: 'Brake Trace',
+          range: '0% to 100%',
+          quote: 'Threshold braking is matching appropriate brake pedal pressure to the maximum grip of the tire.',
+          goodTitle: 'Threshold & Trail-Braking',
+          goodDesc: 'Hard initial squeeze to 80-90% followed by progressive release tapering off into apex.',
+          badTitle: 'The Stab & Lockup',
+          badDesc: 'Sudden pedal slam locking front wheels or pumping brake pressure.',
+          checkpoints: [
+            'Is brake application progressive without locking up?',
+            'Am I trail-braking smoothly into turn-in?',
+            'Does brake pressure reach zero right near the apex?'
+          ]
+        },
+        {
+          id: 'steering',
+          name: 'Steering Trace',
+          range: '-720° to +720°',
+          quote: 'The primary symptom of early apexing is the need to increase steering effort past the apex.',
+          goodTitle: 'Unwinding on Exit',
+          goodDesc: 'Steady turn-in angle holding smoothly, then unwinding back toward center on exit.',
+          badTitle: 'Early Apex Correction',
+          badDesc: 'Steering angle increases past apex because turn-in was too early.',
+          checkpoints: [
+            'Am I unwinding steering as I apply exit throttle?',
+            'Do I need to add extra wheel turn past the apex?',
+            'Is steering motion smooth without sawing?'
+          ]
+        },
+        {
+          id: 'speed',
+          name: 'Speed Trace',
+          range: 'MPH / KPH',
+          quote: 'The speed you carry out of the corner determines maximum speed on the following straightaway.',
+          goodTitle: 'High Corner Exit Momentum',
+          goodDesc: 'Speed curve smoothly bottoms out at apex (minimum speed) and launches high on exit.',
+          badTitle: 'Overslowed Corner Entry',
+          badDesc: 'Speed dips excessively low in entry zone, destroying straightaway top speed.',
+          checkpoints: [
+            'Where on the track is my speed trace lower than a reference lap?',
+            'What is my minimum cornering speed at apex?',
+            'Is my exit speed maximizing straightaway velocity?'
+          ]
+        },
+        {
+          id: 'lateralG',
+          name: 'Lateral G Trace',
+          range: 'G-Forces (Cornering Grip)',
+          quote: 'At the limit of a car cornering ability, speed is directly related to the radius of the arc it is on.',
+          goodTitle: 'Consistent Cornering G Load',
+          goodDesc: 'Flat, high G load plateau through mid-corner showing tires at grip limit.',
+          badTitle: 'Inconsistent G Drops',
+          badDesc: 'G-force drops abruptly mid-corner indicating loss of tire grip.',
+          checkpoints: [
+            'Is my lateral G load steady throughout the cornering arc?',
+            'Am I hitting peak G forces for the tire compound?',
+            'Do I see sudden G-drops caused by sliding?'
+          ]
+        }
+      ],
+      patterns: [
+        {
+          id: 'early-apex',
+          title: 'Pattern 1: Early Apex',
+          quote: 'If you feel the need to increase steering effort past the apex, you turned in too soon.',
+          signature: {
+            steering: 'Steering angle increases past apex (more lock needed)',
+            throttle: 'Lift or hesitation on corner exit',
+            speed: 'Drops on exit; lost momentum on straight'
+          },
+          fix: 'Turn in later. Move turn-in visual reference marker back by 5-10 meters.',
+          drill: 'Move turn-in marker 5m later until steering trace smoothly unwinds on exit.'
+        },
+        {
+          id: 'late-apex',
+          title: 'Pattern 2: Late Apex',
+          quote: 'If there is road left at corner exit, your turn-in and apex were too late.',
+          signature: {
+            steering: 'Unwinds early, empty road left on track-out',
+            throttle: 'Applied early, but overall corner speed is lower',
+            speed: 'Lower entry speed than vehicle capability'
+          },
+          fix: 'Turn in earlier. Move turn-in point forward by 5-10 meters.',
+          drill: 'Move turn-in marker 5m earlier until car naturally uses full track-out edge.'
+        },
+        {
+          id: 'abrupt-throttle',
+          title: 'Pattern 3: Abrupt Throttle',
+          quote: 'A gradual increase in throttle creates understeer. Abrupt throttle creates oversteer.',
+          signature: {
+            throttle: 'Vertical line jump 0% to 100%',
+            slip: 'Tire slip ratio spikes above 1.0 (wheelspin)',
+            speed: 'Loss of forward acceleration; oversteer corrections'
+          },
+          fix: 'Squeeze throttle smoothly over 0.5 - 1.0 second roll-on.',
+          drill: 'Practice 1-second throttle roll-on on corner exit while monitoring slip ratio.'
+        },
+        {
+          id: 'abrupt-brake',
+          title: 'Pattern 4: Abrupt Brake',
+          quote: 'Slamming on brakes is like driving a nail with a hammer. Squeeze for grip.',
+          signature: {
+            brake: 'Vertical spike 0% to 100%',
+            slip: 'Tire lockup (wheel rotation stops)',
+            steering: 'Complete loss of turning authority'
+          },
+          fix: 'Squeeze brake pedal over 0.2 - 0.3 seconds to load front tires.',
+          drill: 'Progressive brake squeeze in straight braking zones without lockup.'
+        },
+        {
+          id: 'too-much-trail',
+          title: 'Pattern 5: Too Much Trail-Braking',
+          quote: 'A car will decelerate and turn just like it accelerates and turns.',
+          signature: {
+            brake: 'Brake pressure continues deep past apex',
+            steering: 'Wheel turned heavily while brake is applied',
+            speed: 'Overslowed at apex; front understeer or rear snap'
+          },
+          fix: 'Release brake pedal earlier. Aim for zero brake pressure right before apex.',
+          drill: 'Release trail brake smoothly so pressure reaches 0% as you clip apex.'
+        },
+        {
+          id: 'too-little-trail',
+          title: 'Pattern 6: Too Little Trail-Braking',
+          quote: 'Carrying brake into turn-in loads front tires for maximum turn-in grip.',
+          signature: {
+            brake: 'Zero brake pressure immediately after turn-in',
+            steering: 'Wheel turned with unloaded front suspension',
+            speed: 'Entry speed too slow; car pushes wide (understeer)'
+          },
+          fix: 'Carry light trail brake (10-20%) into turn-in.',
+          drill: 'Maintain trailing brake pressure past turn-in point to keep front loaded.'
+        }
+      ],
+      practices: [
+        {
+          id: 'three-lap',
+          title: 'The Three-Lap Telemetry Comparison',
+          desc: 'Drive 5 laps, log to CSV, and compare your best lap vs worst lap in telemetry to isolate exact time-loss points.',
+          metrics: ['Brake Point Distance', 'Minimum Cornering Speed', 'Throttle Squeeze Smoothness', 'Apex Steering Angle']
+        },
+        {
+          id: 'reference-lap',
+          title: 'Rivals Reference Lap Overlay',
+          desc: 'Overlay a faster driver Rivals telemetry trace over yours. Spot brake point differences and exit speed gaps.',
+          keyQuestions: [
+            'Where does reference driver brake later?',
+            'Where does reference driver get on throttle earlier?',
+            'What is the minimum speed delta at key apexes?'
+          ]
+        },
+        {
+          id: 'corner-diagnosis',
+          title: 'One-Corner Focus Diagnosis',
+          desc: 'Drive 10 laps focusing 100% on one problem corner. Log telemetry for all 10 laps to analyze best vs worst technique.',
+          cycle: 'Measure -> Practice -> Measure -> Improve -> Repeat'
+        }
+      ],
+      mozaFfb: {
+        title: 'Syncing Moza R3 Force Feedback with Telemetry',
+        sensations: [
+          { feel: 'Heavy Wheel Resistance', meaning: 'High tire grip loaded up', telemetryCheck: 'High lateral G, steady speed trace' },
+          { feel: 'Light Wheel Feeling', meaning: 'Front tire grip loss (understeer)', telemetryCheck: 'Lateral G drop, steering angle spike' },
+          { feel: 'Vibration / Pulsing', meaning: 'Rumble strips, surface bumps, lockup', telemetryCheck: 'Suspension travel, wheel slip spikes' }
+        ],
+        rpmLeds: [
+          { color: 'Green', meaning: 'Optimal power band RPM', action: 'Maintain throttle build' },
+          { color: 'Yellow', meaning: 'Approaching redline', action: 'Prepare to upshift' },
+          { color: 'Red', meaning: 'Redline limit', action: 'Shift immediately' }
+        ]
+      },
+      glossary: [
+        { term: 'Telemetry', definition: 'Collection and automated transmission of vehicle data during driving stints.' },
+        { term: 'Trace', definition: 'Graphical representation of a single telemetry data channel over distance or time.' },
+        { term: 'Tire Slip Ratio', definition: 'Ratio difference between wheel rotational speed and actual vehicle speed (optimal acceleration at 5-10% slip).' },
+        { term: 'Threshold Braking', definition: 'Braking at maximum pedal pressure right before tire lockup occur.' },
+        { term: 'Trail-Braking', definition: 'Gradually easing brake pressure while turning into the apex.' },
+        { term: 'Lateral G', definition: 'Cornering force in sideways direction measured in Gs.' }
+      ]
     }
   }
 };

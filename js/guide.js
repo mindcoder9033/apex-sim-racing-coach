@@ -7,12 +7,13 @@
 
 class GuideController {
   constructor() {
-    this.activeSubTab = 'mozaR3'; // 'mozaR3' | 'forza2023'
+    this.activeSubTab = window.apexStore?.settings?.activeGuideSubTab || 'mozaR3'; // 'mozaR3' | 'forza2023' | 'telemetry'
     this.activePreset = 'smooth';  // 'smooth' | 'raw'
     this.searchQuery = '';
     this.selectedCategory = 'all'; // Forza glossary category filter
     this.selectedMozaCategory = 'all'; // Moza category filter: 'all' | 'hardware' | 'ffb' | 'upgrades' | 'progression'
     this.selectedForzaCategory = 'all'; // Forza category filter: 'all' | 'getting-started' | 'tuning' | 'technique' | 'mastery'
+    this.selectedTelemetryCategory = window.apexStore?.settings?.selectedTelemetryCategory || 'all'; // Telemetry category filter
 
     this.mozaCategories = [
       { id: 'all', label: 'All Categories', icon: 'grid', count: 13, desc: 'Complete manual & setup reference' },
@@ -28,6 +29,15 @@ class GuideController {
       { id: 'tuning', label: 'FFB & Car Tuning', icon: 'settings', count: 2, desc: 'In-game deadzones & simple car setup adjustments' },
       { id: 'technique', label: 'Practice & Driving Technique', icon: 'target', count: 3, desc: 'Rivals mode, Skip Barber apex method & beginner fixes' },
       { id: 'mastery', label: 'Handling & Track Knowledge', icon: 'map-pin', count: 4, desc: 'Understeer/oversteer fixes, 4-week plan, tracks & glossary' }
+    ];
+
+    this.telemetryCategories = [
+      { id: 'all', label: 'All Modules', icon: 'grid', count: 5, desc: 'Complete Telemetry Basics manual' },
+      { id: 'setup', label: 'Telemetry Setup & UDP', icon: 'wifi', count: 4, desc: 'Forza 2023 Data Out, IP, Port, tool choices & Docker commands' },
+      { id: 'channels', label: 'Core Channels & Traces', icon: 'activity', count: 5, desc: 'Throttle, Brake, Steering, Speed & Lateral G trace analysis' },
+      { id: 'patterns', label: '6 Key Driving Patterns', icon: 'alert-triangle', count: 6, desc: 'Early/Late apex, abrupt pedals, trail-braking fixes' },
+      { id: 'practices', label: 'Data Comparison & Drills', icon: 'sliders', count: 3, desc: 'Three-lap comparison, Rivals overlay & 1-corner focus' },
+      { id: 'moza-ffb', label: 'Moza R3 FFB Connection', icon: 'disc', count: 2, desc: 'Syncing wheel feedback & 10-LED RPM telemetry' }
     ];
   }
 
@@ -45,7 +55,7 @@ class GuideController {
             <span class="title-icon"><i data-lucide="compass"></i></span>
             Driver & Equipment Guides
           </h1>
-          <p class="page-subtitle">Comprehensive beginner manuals for Moza R3 Direct Drive on Xbox and Forza Motorsport 2023 racing mechanics based on Skip Barber's <em>Going Faster!</em></p>
+          <p class="page-subtitle">Comprehensive beginner manuals for Moza R3 Direct Drive on Xbox, Forza Motorsport 2023 racing mechanics, and Telemetry Data Analysis based on Skip Barber's <em>Going Faster!</em></p>
         </div>
       </header>
 
@@ -60,12 +70,18 @@ class GuideController {
             <i data-lucide="trophy"></i>
             <span>Forza Motorsport 2023 Guide</span>
           </button>
+          <button class="guide-tab-btn ${this.activeSubTab === 'telemetry' ? 'active' : ''}" data-subtab="telemetry">
+            <i data-lucide="line-chart"></i>
+            <span>Telemetry Data Guide</span>
+          </button>
         </div>
       </div>
 
       <!-- Main Sub-View Content Container -->
       <div class="guide-content-body">
-        ${this.activeSubTab === 'mozaR3' ? this.renderMozaView(guidesData.mozaR3) : this.renderForzaView(guidesData.forza2023)}
+        ${this.activeSubTab === 'mozaR3' ? this.renderMozaView(guidesData.mozaR3) : 
+          (this.activeSubTab === 'forza2023' ? this.renderForzaView(guidesData.forza2023) : 
+          this.renderTelemetryView(guidesData.telemetry))}
       </div>
     `;
 
@@ -83,6 +99,9 @@ class GuideController {
         const targetTab = e.currentTarget.getAttribute('data-subtab');
         if (targetTab && targetTab !== this.activeSubTab) {
           this.activeSubTab = targetTab;
+          if (window.apexStore) {
+            window.apexStore.saveSettings({ activeGuideSubTab: targetTab });
+          }
           this.render();
         }
       });
@@ -109,6 +128,54 @@ class GuideController {
           this.selectedForzaCategory = cat;
           this.render();
         }
+      });
+    });
+
+    // Telemetry Category pills & cards
+    const telemetryCatElements = document.querySelectorAll('.telemetry-cat-pill, .telemetry-cat-card');
+    telemetryCatElements.forEach(el => {
+      el.addEventListener('click', (e) => {
+        const cat = e.currentTarget.getAttribute('data-cat');
+        if (cat && cat !== this.selectedTelemetryCategory) {
+          this.selectedTelemetryCategory = cat;
+          if (window.apexStore) {
+            window.apexStore.saveSettings({ selectedTelemetryCategory: cat });
+          }
+          this.render();
+        }
+      });
+    });
+
+    // Copy command buttons
+    const copyBtns = document.querySelectorAll('.btn-copy-cmd');
+    copyBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const textToCopy = e.currentTarget.getAttribute('data-copy');
+        if (textToCopy) {
+          navigator.clipboard.writeText(textToCopy).then(() => {
+            const originalHTML = e.currentTarget.innerHTML;
+            e.currentTarget.innerHTML = '<i data-lucide="check" class="icon-sm"></i> Copied!';
+            if (window.renderLucideIcons) window.renderLucideIcons();
+            setTimeout(() => {
+              e.currentTarget.innerHTML = originalHTML;
+              if (window.renderLucideIcons) window.renderLucideIcons();
+            }, 2000);
+          });
+        }
+      });
+    });
+
+    // Cross-link buttons to telemetry tab
+    const gotoTelemetryBtns = document.querySelectorAll('[data-action="goto-telemetry-tab"]');
+    gotoTelemetryBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const targetCat = e.currentTarget.getAttribute('data-target-cat') || 'setup';
+        this.activeSubTab = 'telemetry';
+        this.selectedTelemetryCategory = targetCat;
+        if (window.apexStore) {
+          window.apexStore.saveSettings({ activeGuideSubTab: 'telemetry', selectedTelemetryCategory: targetCat });
+        }
+        this.render();
       });
     });
 
@@ -1121,6 +1188,332 @@ class GuideController {
         window.renderLucideIcons();
       }
     }
+  }
+
+  renderTelemetryCategoryFilterBar() {
+    return `
+      <div class="category-filter-bar mb-4">
+        <div class="category-pills">
+          ${this.telemetryCategories.map(c => `
+            <button class="category-pill telemetry-cat-pill ${this.selectedTelemetryCategory === c.id ? 'active' : ''}" data-cat="${c.id}">
+              <i data-lucide="${c.icon}"></i>
+              <span>${c.label}</span>
+            </button>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  }
+
+  renderTelemetryCategoryOverviewCards() {
+    return `
+      <div class="guide-category-overview-grid mb-6">
+        ${this.telemetryCategories.filter(c => c.id !== 'all').map(c => `
+          <div class="guide-cat-card telemetry-cat-card" data-cat="${c.id}">
+            <div>
+              <div class="guide-cat-card-header">
+                <div class="guide-cat-card-icon"><i data-lucide="${c.icon}"></i></div>
+                <span class="guide-cat-card-count">${c.count} Topics</span>
+              </div>
+              <h4 class="guide-cat-card-title">${c.label}</h4>
+              <p class="guide-cat-card-desc">${c.desc}</p>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  }
+
+  renderTelemetryView(data) {
+    if (!data) return '';
+
+    const cat = this.selectedTelemetryCategory;
+    const showSetup = cat === 'all' || cat === 'setup';
+    const showChannels = cat === 'all' || cat === 'channels';
+    const showPatterns = cat === 'all' || cat === 'patterns';
+    const showPractices = cat === 'all' || cat === 'practices';
+    const showMozaFFB = cat === 'all' || cat === 'moza-ffb';
+
+    return `
+      <div class="telemetry-guide-section fade-in">
+        <!-- Hero Banner Card -->
+        <div class="guide-hero-card mb-4" style="background: linear-gradient(135deg, rgba(30,30,45,0.95) 0%, rgba(15,23,42,0.95) 100%); border-left: 4px solid #3b82f6;">
+          <div class="hero-badge" style="background: rgba(59,130,246,0.15); color: #60a5fa;"><i data-lucide="line-chart"></i> Telemetry Basics & Data Analysis</div>
+          <h2>${data.summary.title}</h2>
+          <p class="mt-1">${data.summary.subtitle}</p>
+          <div class="flex items-center gap-3 mt-3 flex-wrap text-tertiary" style="font-size: 0.85rem;">
+            <span><i data-lucide="clock" class="icon-sm"></i> ${data.summary.duration}</span>
+            <span>•</span>
+            <span><i data-lucide="award" class="icon-sm"></i> ${data.summary.skillLevel}</span>
+            <span>•</span>
+            <span><i data-lucide="wrench" class="icon-sm"></i> ${data.summary.tools}</span>
+          </div>
+          ${data.summary.quote ? `<blockquote class="hero-quote mt-3"><em>"${data.summary.quote}"</em> — Going Faster!</blockquote>` : ''}
+        </div>
+
+        <!-- Category Filter Bar -->
+        ${this.renderTelemetryCategoryFilterBar()}
+
+        <!-- Category Overview Grid (Visible when 'all' is selected) -->
+        ${cat === 'all' ? this.renderTelemetryCategoryOverviewCards() : ''}
+
+        <!-- SECTION 1: TELEMETRY SETUP & UDP -->
+        ${showSetup ? `
+          <div class="section-card mb-4">
+            <div class="guide-category-badge" style="background: rgba(59,130,246,0.15); color: #60a5fa;"><i data-lucide="wifi"></i> Telemetry Setup & UDP Data Out</div>
+            <h3 class="section-card-title mb-3">${data.setup.title}</h3>
+            
+            <ol class="setup-steps-list mb-4" style="padding-left: 1.25rem; line-height: 1.6;">
+              ${data.setup.steps.map(s => `<li class="mb-1">${s}</li>`).join('')}
+            </ol>
+
+            <h4 class="card-subhead mb-2"><i data-lucide="sliders" class="icon-sm"></i> Recommended UDP In-Game Settings</h4>
+            <div class="settings-table-wrapper mb-4">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Setting</th>
+                    <th>Value</th>
+                    <th>Purpose</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${data.setup.settings.map(st => `
+                    <tr>
+                      <td><strong>${st.setting}</strong></td>
+                      <td><code class="code-badge" style="background:rgba(59,130,246,0.2); color:#93c5fd; padding:0.2rem 0.5rem; border-radius:4px;">${st.value}</code></td>
+                      <td class="text-tertiary">${st.purpose}</td>
+                    </tr>
+                  `).join('')}
+                </tbody>
+              </table>
+            </div>
+
+            <div class="grid-2-col mb-4">
+              <div class="setup-option-card">
+                <h4><i data-lucide="monitor" class="icon-sm text-primary"></i> PC Telemetry Setup</h4>
+                <p class="mt-1 text-secondary">${data.setup.platformNotes.pc}</p>
+              </div>
+              <div class="setup-option-card">
+                <h4><i data-lucide="gamepad-2" class="icon-sm text-primary"></i> Xbox Telemetry Setup</h4>
+                <p class="mt-1 text-secondary">${data.setup.platformNotes.xbox}</p>
+              </div>
+            </div>
+
+            <h4 class="card-subhead mb-2"><i data-lucide="terminal" class="icon-sm"></i> Recommended Telemetry Listener Commands</h4>
+            <div class="commands-grid mb-3">
+              <div class="command-box mb-2 p-3" style="background: rgba(0,0,0,0.4); border: 1px solid var(--color-border); border-radius: 8px;">
+                <div class="flex justify-between items-center mb-1">
+                  <span class="font-telemetry text-tertiary" style="font-size:0.8rem;">Quick Start (Web Dashboard)</span>
+                  <button class="btn-copy-cmd btn-sm" data-copy="${data.setup.commands.quickStart}" style="padding:0.25rem 0.6rem; font-size:0.75rem;">
+                    <i data-lucide="copy" class="icon-sm"></i> Copy
+                  </button>
+                </div>
+                <code class="font-telemetry" style="color: #60a5fa;">${data.setup.commands.quickStart}</code>
+              </div>
+
+              <div class="command-box mb-2 p-3" style="background: rgba(0,0,0,0.4); border: 1px solid var(--color-border); border-radius: 8px;">
+                <div class="flex justify-between items-center mb-1">
+                  <span class="font-telemetry text-tertiary" style="font-size:0.8rem;">Docker Container</span>
+                  <button class="btn-copy-cmd btn-sm" data-copy="${data.setup.commands.docker}" style="padding:0.25rem 0.6rem; font-size:0.75rem;">
+                    <i data-lucide="copy" class="icon-sm"></i> Copy
+                  </button>
+                </div>
+                <code class="font-telemetry" style="color: #60a5fa; word-break: break-all;">${data.setup.commands.docker}</code>
+              </div>
+            </div>
+          </div>
+        ` : ''}
+
+        <!-- SECTION 2: CORE CHANNELS & TRACES -->
+        ${showChannels ? `
+          <div class="section-card mb-4">
+            <div class="guide-category-badge" style="background: rgba(59,130,246,0.15); color: #60a5fa;"><i data-lucide="activity"></i> Core Telemetry Channels</div>
+            <h3 class="section-card-title mb-3">Understanding the Core Data Traces</h3>
+            <p class="text-tertiary mb-4">Telemetry measures what you do with the controls and how the car responds. Master these 5 channels to spot mistakes instantenously.</p>
+            
+            <div class="channels-grid">
+              ${data.channels.map(ch => this.renderTelemetryTraceCard(ch)).join('')}
+            </div>
+          </div>
+        ` : ''}
+
+        <!-- SECTION 3: 6 KEY DRIVING PATTERNS -->
+        ${showPatterns ? `
+          <div class="section-card mb-4">
+            <div class="guide-category-badge" style="background: rgba(239,68,68,0.15); color: #f87171;"><i data-lucide="alert-triangle"></i> Driving Diagnosis</div>
+            <h3 class="section-card-title mb-3">The Six Key Telemetry Driving Patterns</h3>
+            <p class="text-tertiary mb-4">Every driving mistake leaves a distinct visual signature in your data. Learn to diagnose and fix them immediately.</p>
+
+            <div class="patterns-grid">
+              ${data.patterns.map(pt => this.renderTelemetryPatternCard(pt)).join('')}
+            </div>
+          </div>
+        ` : ''}
+
+        <!-- SECTION 4: DATA COMPARISON & PRACTICES -->
+        ${showPractices ? `
+          <div class="section-card mb-4">
+            <div class="guide-category-badge" style="background: rgba(34,197,94,0.15); color: #4ade80;"><i data-lucide="sliders"></i> Actionable Practices</div>
+            <h3 class="section-card-title mb-3">Data Comparison & Practice Frameworks</h3>
+
+            <div class="practices-grid grid-3-col mb-4">
+              ${data.practices.map(pr => `
+                <div class="practice-card p-4" style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 8px;">
+                  <h4 class="font-menu text-primary mb-2" style="font-size:1.1rem;">${pr.title}</h4>
+                  <p class="text-tertiary mb-3" style="font-size:0.85rem; line-height:1.4;">${pr.desc}</p>
+                  ${pr.metrics ? `
+                    <div class="metrics-list">
+                      <span class="text-secondary font-telemetry" style="font-size:0.75rem; text-transform:uppercase;">Metrics to measure:</span>
+                      <ul class="mt-1" style="padding-left:1.1rem; font-size:0.82rem;">
+                        ${pr.metrics.map(m => `<li>${m}</li>`).join('')}
+                      </ul>
+                    </div>
+                  ` : ''}
+                  ${pr.keyQuestions ? `
+                    <div class="questions-list">
+                      <span class="text-secondary font-telemetry" style="font-size:0.75rem; text-transform:uppercase;">Key Questions:</span>
+                      <ul class="mt-1" style="padding-left:1.1rem; font-size:0.82rem;">
+                        ${pr.keyQuestions.map(q => `<li>${q}</li>`).join('')}
+                      </ul>
+                    </div>
+                  ` : ''}
+                  ${pr.cycle ? `
+                    <div class="cycle-badge mt-3 p-2 text-center" style="background:rgba(34,197,94,0.1); border:1px solid rgba(34,197,94,0.2); border-radius:6px; color:#4ade80; font-size:0.8rem;">
+                      <strong>Loop:</strong> ${pr.cycle}
+                    </div>
+                  ` : ''}
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        ` : ''}
+
+        <!-- SECTION 5: MOZA R3 FFB CONNECTION -->
+        ${showMozaFFB ? `
+          <div class="section-card mb-4">
+            <div class="guide-category-badge" style="background: rgba(168,85,247,0.15); color: #c084fc;"><i data-lucide="disc"></i> Wheel Telemetry</div>
+            <h3 class="section-card-title mb-3">${data.mozaFfb.title}</h3>
+            <p class="text-tertiary mb-4">Your Moza R3 force feedback is a physical real-time telemetry stream. Connect what you feel in your hands to what appears on telemetry graphs.</p>
+
+            <div class="grid-2-col mb-4">
+              <div>
+                <h4 class="card-subhead mb-2"><i data-lucide="hand" class="icon-sm"></i> FFB Sensation Matrix</h4>
+                <div class="sensations-list">
+                  ${data.mozaFfb.sensations.map(s => `
+                    <div class="sensation-item p-3 mb-2" style="background:var(--color-surface); border:1px solid var(--color-border); border-radius:6px;">
+                      <div class="flex justify-between items-center">
+                        <strong style="color:var(--color-primary);">${s.feel}</strong>
+                        <span class="badge" style="font-size:0.75rem;">${s.meaning}</span>
+                      </div>
+                      <div class="text-tertiary mt-1" style="font-size:0.8rem;">
+                        <strong>Telemetry check:</strong> ${s.telemetryCheck}
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+
+              <div>
+                <h4 class="card-subhead mb-2"><i data-lucide="zap" class="icon-sm"></i> Moza R3 10-LED RPM Telemetry Bar</h4>
+                <div class="rpm-leds-list">
+                  ${data.mozaFfb.rpmLeds.map(led => `
+                    <div class="rpm-led-item p-3 mb-2" style="background:var(--color-surface); border-left:4px solid ${led.color.toLowerCase() === 'green' ? '#22c55e' : (led.color.toLowerCase() === 'yellow' ? '#eab308' : '#ef4444')}; border-radius:6px;">
+                      <div class="flex justify-between items-center">
+                        <strong style="color:${led.color.toLowerCase() === 'green' ? '#22c55e' : (led.color.toLowerCase() === 'yellow' ? '#eab308' : '#ef4444')};">${led.color} LEDs</strong>
+                        <span class="font-telemetry" style="font-size:0.8rem;">${led.meaning}</span>
+                      </div>
+                      <div class="text-tertiary mt-1" style="font-size:0.8rem;">
+                        <strong>Driver Action:</strong> ${led.action}
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            </div>
+          </div>
+        ` : ''}
+
+        <!-- SECTION 6: TELEMETRY GLOSSARY -->
+        ${cat === 'all' ? `
+          <div class="section-card mb-4">
+            <div class="guide-category-badge"><i data-lucide="book-open"></i> Reference</div>
+            <h3 class="section-card-title mb-3">Telemetry Data Terms</h3>
+            <div class="terms-grid">
+              ${data.glossary.map(t => `
+                <div class="term-card">
+                  <h4 class="term-title">${t.term}</h4>
+                  <p class="term-def mt-2">${t.definition}</p>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        ` : ''}
+      </div>
+    `;
+  }
+
+  renderTelemetryTraceCard(ch) {
+    return `
+      <div class="trace-card mb-4 p-4" style="background:var(--color-surface); border:1px solid var(--color-border); border-radius:8px;">
+        <div class="flex justify-between items-center flex-wrap gap-2 mb-2">
+          <h4 class="font-menu text-primary" style="font-size:1.2rem; margin:0;">${ch.name}</h4>
+          <span class="badge font-telemetry" style="font-size:0.75rem;">Range: ${ch.range}</span>
+        </div>
+        <blockquote class="text-tertiary mb-3" style="font-size:0.85rem; font-style:italic; border-left:3px solid var(--color-primary); padding-left:0.75rem;">
+          "${ch.quote}"
+        </blockquote>
+
+        <div class="grid-2-col mb-3">
+          <div class="trace-good-box p-3" style="background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.2); border-radius:6px;">
+            <div class="flex items-center gap-2 mb-1" style="color:#22c55e;">
+              <i data-lucide="check-circle-2" class="icon-sm"></i>
+              <strong>${ch.goodTitle}</strong>
+            </div>
+            <p class="text-tertiary" style="font-size:0.82rem;">${ch.goodDesc}</p>
+          </div>
+
+          <div class="trace-bad-box p-3" style="background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.2); border-radius:6px;">
+            <div class="flex items-center gap-2 mb-1" style="color:#ef4444;">
+              <i data-lucide="x-circle" class="icon-sm"></i>
+              <strong>${ch.badTitle}</strong>
+            </div>
+            <p class="text-tertiary" style="font-size:0.82rem;">${ch.badDesc}</p>
+          </div>
+        </div>
+
+        <div class="checkpoints-box">
+          <span class="text-secondary font-telemetry" style="font-size:0.75rem; text-transform:uppercase;">Data Checkpoints to verify:</span>
+          <ul class="mt-1" style="padding-left:1.1rem; font-size:0.83rem;">
+            ${ch.checkpoints.map(cp => `<li>${cp}</li>`).join('')}
+          </ul>
+        </div>
+      </div>
+    `;
+  }
+
+  renderTelemetryPatternCard(pt) {
+    return `
+      <div class="pattern-card mb-4 p-4" style="background:var(--color-surface); border:1px solid var(--color-border); border-left:4px solid #ef4444; border-radius:8px;">
+        <h4 class="font-menu text-primary mb-1" style="font-size:1.2rem;">${pt.title}</h4>
+        <p class="text-tertiary mb-3" style="font-size:0.85rem; font-style:italic;">"${pt.quote}"</p>
+
+        <div class="grid-2-col mb-3">
+          <div class="signature-box p-3" style="background:rgba(0,0,0,0.3); border:1px solid var(--color-border); border-radius:6px;">
+            <span class="badge badge-locked mb-2" style="background:rgba(239,68,68,0.15); color:#f87171; font-size:0.75rem;"><i data-lucide="activity" class="icon-sm"></i> Telemetry Signature</span>
+            <ul style="padding-left:1.1rem; font-size:0.82rem; margin:0;">
+              ${Object.entries(pt.signature).map(([k, v]) => `<li><strong style="text-transform:capitalize;">${k}:</strong> ${v}</li>`).join('')}
+            </ul>
+          </div>
+
+          <div class="fix-box p-3" style="background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.2); border-radius:6px;">
+            <span class="badge badge-success mb-2" style="background:rgba(34,197,94,0.15); color:#4ade80; font-size:0.75rem;"><i data-lucide="check" class="icon-sm"></i> The Fix & Action</span>
+            <p class="text-primary mb-2" style="font-size:0.88rem; font-weight:600;">${pt.fix}</p>
+            <p class="text-tertiary" style="font-size:0.82rem;"><strong>Practice Drill:</strong> ${pt.drill}</p>
+          </div>
+        </div>
+      </div>
+    `;
   }
 }
 

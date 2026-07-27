@@ -61,7 +61,16 @@ class ApexStore {
       const raw = localStorage.getItem(this.SETTINGS_KEY);
       if (raw) {
         const parsed = JSON.parse(raw);
-        return { driverName: 'DRIVER APEX-01', theme: 'dark', defaultCar: 'Mazda MX-5', defaultTrack: 'Laguna Seca', sidebarCollapsed: false, ...parsed };
+        return {
+          driverName: 'DRIVER APEX-01',
+          theme: 'dark',
+          defaultCar: 'Mazda MX-5',
+          defaultTrack: 'Laguna Seca',
+          sidebarCollapsed: false,
+          activeGuideSubTab: 'mozaR3',
+          selectedTelemetryCategory: 'all',
+          ...parsed
+        };
       }
     } catch (e) {}
     return {
@@ -69,7 +78,9 @@ class ApexStore {
       theme: 'dark',
       defaultCar: 'Mazda MX-5',
       defaultTrack: 'Laguna Seca',
-      sidebarCollapsed: false
+      sidebarCollapsed: false,
+      activeGuideSubTab: 'mozaR3',
+      selectedTelemetryCategory: 'all'
     };
   }
 

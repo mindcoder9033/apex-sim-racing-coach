@@ -2142,6 +2142,11 @@ textarea.form-control {
   box-shadow: 0 6px 20px rgba(0, 210, 255, 0.15);
 }
 
+.telemetry-guide-section .guide-cat-card:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.15);
+}
+
 .guide-cat-card-header {
   display: flex;
   align-items: center;
@@ -2169,6 +2174,12 @@ textarea.form-control {
   background: rgba(0, 210, 255, 0.15);
   color: #00d2ff;
   border: 1px solid rgba(0, 210, 255, 0.3);
+}
+
+.telemetry-guide-section .guide-cat-card-icon {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.3);
 }
 
 .guide-cat-card-icon i {

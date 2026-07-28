@@ -6,16 +6,16 @@ Duration - 30 days
 12 sessions
 45 mins for each session
 
-The module should have an overarching goal
+The module should have an overarching goal & a global baseline setup - Forza Motorsport 2023 in-game settings & Moza R3 wheel 
+
 Session format:
 1. Suggest a Car and a track
 2. Define session objectives
-3. Setup - Forza Motorsport 2023 in-game settings & Moza R3 wheel setup
-4. Theory
-5. One practice drill
-6. One practical driving test
-7. One challenge
-8. Telemetry study 3 Questions
-9. Technique assessment 3 questions
-10. Mental attitude check-in 3 questions
-11. End session reflection 3 questions
+3. Theory
+4. One practice drill
+5. One practical driving test
+6. One challenge
+7. Telemetry study 3 Questions
+8. Technique assessment 3 questions
+9. Mental attitude check-in 3 questions
+10. End session reflection 3 questions

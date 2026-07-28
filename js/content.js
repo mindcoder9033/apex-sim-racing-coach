@@ -372,18 +372,10 @@ const APEX_CONTENT = {
               {
                 "id": "easy",
                 "level": "🟢 Easy",
-                "title": "The Squeeze Drill",
-                "desc": "At 60 km/h on a long straight, squeeze brake pedal gradually over 2 full seconds. Feel nose dip, hold pressure 1s, then squeeze off over 1s.",
+                "title": "Pedal Modulation & Squeeze Drill",
+                "desc": "Drive 10 minutes practicing progressive 2-second brake squeezes on straights and egg-smooth throttle application through corner exits without triggering wheelspin.",
                 "reps": 5,
-                "time": "5 min"
-              },
-              {
-                "id": "medium",
-                "level": "🟡 Medium",
-                "title": "The Egg Under Throttle Exercise",
-                "desc": "From standing start through a corner, imagine an egg between foot and pedal. Apply throttle without breaking the egg or triggering wheelspin.",
-                "reps": 5,
-                "time": "5 min"
+                "time": "10 min"
               }
             ]
           },
@@ -548,18 +540,10 @@ const APEX_CONTENT = {
               {
                 "id": "easy",
                 "level": "🟢 Easy",
-                "title": "The Corner Rhythm Drill",
-                "desc": "At Mid-Ohio Turn 1, practice 4 stages: 1. Straight brake -> 2. Trail brake turn-in -> 3. Apex balance -> 4. Exit throttle squeeze.",
+                "title": "Corner Rhythm & Sync Drill",
+                "desc": "At Mid-Ohio, execute the 4-part corner rhythm: straight braking, progressive trail-brake turn-in, apex balance, and smooth transition to exit throttle as steering unwinds.",
                 "reps": 10,
-                "time": "5 min"
-              },
-              {
-                "id": "medium",
-                "level": "🟡 Medium",
-                "title": "The Sync Exercise",
-                "desc": "Approach medium corner. As wheel turns, taper brake to 0%. At apex, transition to 20% throttle. As wheel unwinds, ramp throttle to 100%.",
-                "reps": 5,
-                "time": "5 min"
+                "time": "10 min"
               }
             ]
           },
@@ -716,18 +700,10 @@ const APEX_CONTENT = {
               {
                 "id": "easy",
                 "level": "🟢 Easy",
-                "title": "The No Thinking Drill",
-                "desc": "Drive 3 laps with no target lap time. Focus purely on visual points ahead and feeling wheel resistance.",
-                "reps": 3,
-                "time": "5 min"
-              },
-              {
-                "id": "medium",
-                "level": "🟡 Medium",
-                "title": "The Look Ahead Exercise",
-                "desc": "Approach corners looking strictly at apex, then exit. Notice how hands automatically guide wheel without conscious effort.",
+                "title": "Visual Targeting & Flow Drill",
+                "desc": "Drive 10 minutes looking strictly through corner entry to apex and exit reference points, letting your hands and feet guide the car instinctively without conscious overthinking.",
                 "reps": 5,
-                "time": "5 min"
+                "time": "10 min"
               }
             ]
           },

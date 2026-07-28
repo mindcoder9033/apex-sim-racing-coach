@@ -98,13 +98,6 @@ class SessionController {
     return this.sessionData;
   }
 
-  getCurrentPhaseIndex() {
-    if (!this.is8Stage) return 0;
-    if (this.currentStepIndex <= 1) return 0; // Pre-Drive
-    if (this.currentStepIndex <= 4) return 1; // In-Car
-    return 2; // Post-Drive
-  }
-
   renderHeader() {
     const headerEl = document.getElementById('sessionHeaderContainer');
     if (!headerEl) return;
@@ -150,27 +143,7 @@ class SessionController {
 
     let progressHeaderHtml = '';
     if (this.is8Stage) {
-      const phaseIdx = this.getCurrentPhaseIndex();
       progressHeaderHtml = `
-        <!-- 3-Phase Tabbed Workflow Header -->
-        <div class="workflow-phase-tabs mt-4 flex gap-2 border-b border-border pb-3">
-          <button class="phase-tab-btn flex-1 py-2 px-3 rounded flex items-center justify-center gap-2 ${phaseIdx === 0 ? 'active' : ''}" data-phase-idx="0" style="${phaseIdx === 0 ? 'background:var(--color-primary); color:#0a0a0f; font-weight:700;' : 'background:var(--color-surface-light); color:var(--color-text-muted);'}">
-            <i data-lucide="book-open" class="icon-sm"></i>
-            <span>Phase 1: Pre-Drive</span>
-            <span class="badge font-telemetry" style="font-size:0.7rem; background:rgba(0,0,0,0.2);">15 mins</span>
-          </button>
-          <button class="phase-tab-btn flex-1 py-2 px-3 rounded flex items-center justify-center gap-2 ${phaseIdx === 1 ? 'active' : ''}" data-phase-idx="1" style="${phaseIdx === 1 ? 'background:var(--color-primary); color:#0a0a0f; font-weight:700;' : 'background:var(--color-surface-light); color:var(--color-text-muted);'}">
-            <i data-lucide="car" class="icon-sm"></i>
-            <span>Phase 2: In-Car</span>
-            <span class="badge font-telemetry" style="font-size:0.7rem; background:rgba(0,0,0,0.2);">20 mins</span>
-          </button>
-          <button class="phase-tab-btn flex-1 py-2 px-3 rounded flex items-center justify-center gap-2 ${phaseIdx === 2 ? 'active' : ''}" data-phase-idx="2" style="${phaseIdx === 2 ? 'background:var(--color-primary); color:#0a0a0f; font-weight:700;' : 'background:var(--color-surface-light); color:var(--color-text-muted);'}">
-            <i data-lucide="brain" class="icon-sm"></i>
-            <span>Phase 3: Post-Drive</span>
-            <span class="badge font-telemetry" style="font-size:0.7rem; background:rgba(0,0,0,0.2);">10 mins</span>
-          </button>
-        </div>
-
         <!-- 8-Stage Bubble Stepper -->
         <div class="step-progress-bar mt-3" style="overflow-x:auto; padding-bottom:0.5rem;">
           ${this.steps.map((stKey, idx) => {
@@ -235,17 +208,6 @@ class SessionController {
       item.addEventListener('click', (e) => {
         const idx = parseInt(e.currentTarget.getAttribute('data-step-idx'));
         this.currentStepIndex = idx;
-        this.renderHeader();
-        this.renderStepContent();
-      });
-    });
-
-    document.querySelectorAll('.phase-tab-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const phase = parseInt(e.currentTarget.getAttribute('data-phase-idx'));
-        if (phase === 0) this.currentStepIndex = 0;
-        else if (phase === 1) this.currentStepIndex = 2;
-        else if (phase === 2) this.currentStepIndex = 5;
         this.renderHeader();
         this.renderStepContent();
       });
@@ -368,7 +330,7 @@ class SessionController {
           </div>
           <p class="text-muted mb-4">Focus: ${s.practice.focus}</p>
           
-          <div class="grid-3 gap-4">
+          <div class="${s.practice.drills.length > 1 ? 'grid-3' : 'max-w-md'} gap-4 mb-4">
             ${s.practice.drills.map(d => `
               <div class="card p-4 drill-level-card ${this.sessionData.selectedDrillLevel === d.id ? 'selected' : ''}" data-drill-id="${d.id}" style="background:var(--color-surface-light); border:1px solid var(--color-border); cursor:pointer;">
                 <div class="flex justify-between items-center mb-2">

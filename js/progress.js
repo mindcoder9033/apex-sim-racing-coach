@@ -70,21 +70,6 @@ class ProgressController {
             </div>
           </div>
         </div>
-
-        <!-- Achievements Gallery -->
-        <div class="card mb-6">
-          <div class="card-header">
-            <h3>Achievements Gallery</h3>
-            <span class="text-muted" style="font-size:0.8rem;">${data.achievements.length} Unlocked</span>
-          </div>
-          <div class="grid-3 mt-4">
-            ${this.renderAchievementCard('first_visit', 'First Step', 'Visited Apex and started your coaching journey.', data.achievements, 'flag')}
-            ${this.renderAchievementCard('first_session', 'First Session', 'Completed your first 45-minute structured session.', data.achievements, 'gauge')}
-            ${this.renderAchievementCard('the_completer', 'The Completer', 'Successfully completed a curriculum module.', data.achievements, 'trophy')}
-            ${this.renderAchievementCard('streak_master', 'Consistent Racer', 'Maintained a 3-week consecutive practice streak.', data.achievements, 'zap')}
-            ${this.renderAchievementCard('apex_legend', 'Apex Legend', 'Achieved an overall module scorecard rating of 85+.', data.achievements, 'award')}
-          </div>
-        </div>
       </div>
     `;
 
@@ -94,22 +79,6 @@ class ProgressController {
       window.apexCharts.renderRadarChart('skillRadarCanvas', ratings);
       window.renderLucideIcons();
     }, 50);
-  }
-
-  renderAchievementCard(id, title, desc, unlockedList, iconName = 'award') {
-    const isUnlocked = unlockedList.includes(id);
-    return `
-      <div class="achievement-card ${isUnlocked ? 'unlocked' : 'locked'}">
-        <div class="achievement-icon flex items-center justify-center">
-          <i data-lucide="${iconName}" class="icon-lg ${isUnlocked ? 'icon-accent' : 'icon-muted'}"></i>
-        </div>
-        <div class="achievement-title">${title}</div>
-        <div class="achievement-desc">${desc}</div>
-        <div class="mt-2 flex items-center gap-1 justify-center" style="font-size:0.75rem; color:${isUnlocked ? 'var(--color-warning)' : 'var(--color-text-dim)'}; font-weight:600;">
-          ${isUnlocked ? '<i data-lucide="check-circle-2" class="icon-sm"></i> Unlocked' : '<i data-lucide="lock" class="icon-sm"></i> Locked'}
-        </div>
-      </div>
-    `;
   }
 }
 

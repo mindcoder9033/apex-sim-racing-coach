@@ -244,7 +244,10 @@ class ApexStore {
       if (!this.data.completedModules.includes(moduleId)) {
         this.data.completedModules.push(moduleId);
       }
-      if (moduleId < 4) {
+      const maxModuleId = (typeof APEX_CONTENT !== 'undefined' && APEX_CONTENT.modules && APEX_CONTENT.modules.length > 0)
+        ? Math.max(...APEX_CONTENT.modules.map(m => m.id))
+        : 1;
+      if (moduleId < maxModuleId) {
         this.data.currentModule = moduleId + 1;
         this.data.currentSession = 1;
       }

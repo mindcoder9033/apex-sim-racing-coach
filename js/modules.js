@@ -273,6 +273,23 @@ class ModulesController {
             </div>
           </div>
 
+          ${session.suggestedAlternatives && session.suggestedAlternatives.length ? `
+            <div class="suggested-alternatives-box mb-4 p-2.5 rounded border border-border" style="background: rgba(255,255,255,0.02);">
+              <div class="text-xs font-semibold text-muted mb-1.5 flex items-center gap-1">
+                <i data-lucide="compass" class="icon-xs text-accent"></i> Suggested FM23 Alternatives:
+              </div>
+              <div class="flex flex-wrap gap-1.5">
+                ${session.suggestedAlternatives.map(alt => `
+                  <span class="badge font-telemetry text-xs flex items-center gap-1" style="background: rgba(255,255,255,0.06); border: 1px solid var(--color-border); font-size:0.75rem; padding: 3px 8px;" title="${alt.note}">
+                    <span>🚗 ${alt.car}</span>
+                    <span style="opacity:0.6;">@</span>
+                    <span>🏁 ${alt.track}</span>
+                  </span>
+                `).join('')}
+              </div>
+            </div>
+          ` : ''}
+
           ${session.challenge ? `
             <div class="session-challenge-box mb-4">
               <div class="challenge-header mb-1 flex items-center gap-2">

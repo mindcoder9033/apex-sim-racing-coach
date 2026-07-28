@@ -133,6 +133,21 @@ class SessionController {
       `;
     }
 
+    let altsHtml = '';
+    if (s.suggestedAlternatives && s.suggestedAlternatives.length > 0) {
+      altsHtml = `
+        <div class="meta-pill flex items-center gap-2 flex-wrap" style="background:rgba(255,255,255,0.03); border:1px solid var(--color-border); font-size:0.75rem;">
+          <i data-lucide="compass" class="icon-sm text-accent"></i>
+          <span>FM23 Alternatives:</span>
+          ${s.suggestedAlternatives.map(alt => `
+            <span class="badge font-telemetry" style="background:rgba(255,255,255,0.06); border:1px solid var(--color-border); font-size:0.72rem; padding: 2px 6px;" title="${alt.note}">
+              🚗 ${alt.car} @ 🏁 ${alt.track}
+            </span>
+          `).join('')}
+        </div>
+      `;
+    }
+
     let progressHeaderHtml = '';
     if (this.is8Stage) {
       const phaseIdx = this.getCurrentPhaseIndex();
@@ -201,6 +216,7 @@ class SessionController {
           <span class="meta-pill font-telemetry flex items-center gap-1"><i data-lucide="timer" class="icon-sm text-muted"></i> Target: ${s.targetLapTime ? (s.targetLapTime / 60).toFixed(2).replace('.', ':') : 'N/A'}</span>
           <span class="meta-pill font-telemetry flex items-center gap-1"><i data-lucide="clock" class="icon-sm text-muted"></i> Total Time: 45 min</span>
           ${assistsHtml}
+          ${altsHtml}
         </div>
         ${progressHeaderHtml}
       </div>

@@ -16,10 +16,14 @@ const APEX_CONTENT = {
           id: 1,
           title: 'Setting Up Your World',
           focus: 'Hardware setup, Forza settings, first feel',
-          car: 'Mazda MX-5',
-          track: 'Laguna Seca',
+          car: 'Mazda MX-5 2016',
+          track: 'Grand Oak Raceway (Grand Oak Club)',
           targetLapTime: null,
           difficulty: 1,
+          suggestedAlternatives: [
+            { car: 'Toyota Sprinter Trueno GT Apex 1985', track: 'Eaglerock Club', note: 'Classic RWD Lightweight' },
+            { car: 'Volkswagen Golf GTI 1983', track: 'Lime Rock Full', note: 'Vintage FWD Baseline' }
+          ],
           theory: {
             title: 'Welcome to Sim Racing & Hardware Setup',
             content: `You're about to enter a world that combines the thrill of racing with the precision of simulation. But before you can drive fast, you need to understand your tools.
@@ -36,7 +40,7 @@ const APEX_CONTENT = {
 - **Self Alignment & Mechanical Trail**: 100% (Feel tire self-aligning torque naturally)
 
 ### Today's Focus
-Set up your equipment correctly, configure in-game controls, and experience your first moments behind the virtual wheel driving slow laps under 65 km/h.`,
+Set up your equipment correctly, configure in-game controls, and experience your first moments behind the virtual wheel driving slow laps under 65 km/h on the wide, forgiving Grand Oak Club circuit.`,
             keyTakeaways: [
               'Comfortable seating position (arms at 90°) prevents fatigue and driving errors',
               'Zero deadzone and linear sensitivity provide direct physical feedback from physics engine',
@@ -67,7 +71,7 @@ Set up your equipment correctly, configure in-game controls, and experience your
                 id: 'hard',
                 level: '🔴 Hard',
                 title: 'First Slow Laps (Under 65 km/h)',
-                desc: 'Drive 3 slow laps at Laguna Seca in 3rd gear. Focus purely on wheel resistance and pedal response.',
+                desc: 'Drive 3 slow laps at Grand Oak Club in 3rd gear. Focus purely on wheel resistance into Turn 1 and pedal response.',
                 reps: 3,
                 time: '25 min'
               }
@@ -78,7 +82,7 @@ Set up your equipment correctly, configure in-game controls, and experience your
             focus: 'Feel the car and track for the first time',
             laps: 3,
             instructions: [
-              'Start a Free Play race at Laguna Seca in the Mazda MX-5.',
+              'Start a Free Play race at Grand Oak Club in the Mazda MX-5 2016.',
               'Drive slowly—no faster than 65 km/h (3rd gear max).',
               'Focus on how the wheel resists your turning (force feedback) and how pedals respond.',
               'Do not worry about lap times or staying on the line perfectly.'
@@ -87,7 +91,7 @@ Set up your equipment correctly, configure in-game controls, and experience your
           challenge: {
             title: 'Equipment & Control Verification',
             type: 'technique',
-            description: 'Complete 3 slow, controlled laps without off-track incidents while verifying wheel FFB and pedal responsiveness.',
+            description: 'Complete 3 slow, controlled laps at Grand Oak Club without off-track incidents while verifying wheel FFB and pedal responsiveness.',
             criteria: '3 clean slow laps completed.'
           }
         },
@@ -95,10 +99,14 @@ Set up your equipment correctly, configure in-game controls, and experience your
           id: 2,
           title: 'Understanding Force Feedback',
           focus: 'Interpreting wheel feedback & grip limits',
-          car: 'Mazda MX-5',
-          track: 'Laguna Seca',
+          car: 'Subaru BRZ 2013',
+          track: 'Lime Rock Park (Lime Rock Full)',
           targetLapTime: null,
           difficulty: 1,
+          suggestedAlternatives: [
+            { car: 'Mazda MX-5 Miata 1990', track: 'Laguna Seca Short', note: 'Pure Analog FFB' },
+            { car: 'BMW M3 1991', track: 'Grand Oak National', note: 'Classic German Sports Sedan' }
+          ],
           theory: {
             title: 'The Language of the Wheel',
             content: `Your Moza R3 communicates with you through force feedback. Learning to "read" what the wheel is telling you is the most important skill in sim racing.
@@ -110,7 +118,7 @@ Set up your equipment correctly, configure in-game controls, and experience your
 - **Rumble / Vibration**: Track surface, curbs, or rumble strips.
 
 ### Understeer vs. Oversteer Sensations
-When cornering and the wheel suddenly goes light, front tire grip has failed (understeer). Reduce steering angle immediately to restore traction.`,
+When cornering through high-load turns like Big Bend at Lime Rock Park, if the wheel suddenly goes light, front tire grip has failed (understeer). Reduce steering angle immediately to restore traction.`,
             keyTakeaways: [
               'Heavy wheel feeling equals grip; light wheel feeling equals loss of front tire grip',
               'Self-aligning torque naturally straightens the wheel when traction is maintained',
@@ -125,7 +133,7 @@ When cornering and the wheel suddenly goes light, front tire grip has failed (un
                 id: 'easy',
                 level: '🟢 Easy',
                 title: 'Center-Feel & Self Alignment',
-                desc: 'Drive 50 km/h on straight. Turn wheel 5° left/right and release to feel self-aligning torque return wheel to center.',
+                desc: 'Drive 50 km/h on Sam Posey Straight. Turn wheel 5° left/right and release to feel self-aligning torque return wheel to center.',
                 reps: 5,
                 time: '5 min'
               },
@@ -133,7 +141,7 @@ When cornering and the wheel suddenly goes light, front tire grip has failed (un
                 id: 'medium',
                 level: '🟡 Medium',
                 title: 'Constant Radius Corner Weight',
-                desc: 'Drive Turn 6 at 65 km/h vs 70 km/h. Feel the wheel load up heavy, then go slightly light as speed increases.',
+                desc: 'Drive Big Bend (Turns 1-2) at 65 km/h vs 75 km/h. Feel the wheel load up heavy, then go slightly light as front tires begin to slip.',
                 reps: 5,
                 time: '10 min'
               },
@@ -141,7 +149,7 @@ When cornering and the wheel suddenly goes light, front tire grip has failed (un
                 id: 'hard',
                 level: '🔴 Hard',
                 title: 'Understeer Lightness Detection',
-                desc: 'Enter Turn 2 at 70 km/h without braking; observe the exact moment wheel resistance drops light.',
+                desc: 'Enter Big Bend at 80 km/h without extra braking; observe the exact moment wheel resistance drops light due to understeer.',
                 reps: 5,
                 time: '5 min'
               }
@@ -152,15 +160,15 @@ When cornering and the wheel suddenly goes light, front tire grip has failed (un
             focus: 'Identify heavy vs light steering transitions',
             laps: 5,
             instructions: [
-              'Drive 5 laps at Laguna Seca focusing on steering wheel weight.',
-              'Pay attention to Turn 2 and Turn 6 when cornering loads build up.',
-              'Note the exact speed where the steering force lightens.'
+              'Drive 5 laps at Lime Rock Park in the Subaru BRZ 2013 focusing on steering wheel weight.',
+              'Pay attention to Big Bend and the Uphill when cornering loads build up.',
+              'Note the exact speed where steering force lightens.'
             ]
           },
           challenge: {
             title: 'Grip Limit Awareness Challenge',
             type: 'technique',
-            description: 'Identify the cornering speed limit in Turn 6 where wheel weight transitions from heavy to light without spinning.',
+            description: 'Identify the cornering speed limit in Big Bend where wheel weight transitions from heavy to light without spinning.',
             criteria: 'Successfully spot understeer threshold.'
           }
         },
@@ -168,20 +176,24 @@ When cornering and the wheel suddenly goes light, front tire grip has failed (un
           id: 3,
           title: 'Pedal Control & Muscle Memory',
           focus: 'Smooth brake and throttle application',
-          car: 'Mazda MX-5',
-          track: 'Laguna Seca',
+          car: 'Honda Civic Type R 2018',
+          track: 'Grand Oak Raceway (Grand Oak National)',
           targetLapTime: null,
           difficulty: 1,
+          suggestedAlternatives: [
+            { car: 'Toyota GR Supra 2020', track: 'Hakone Club', note: 'Modern Turbo RWD' },
+            { car: 'Ford Mustang GT 2018', track: 'Silverstone National', note: 'High-Torque V8 Muscle' }
+          ],
           theory: {
             title: 'Your Feet Are Your Engine and Brakes',
             content: `In a racecar, your feet control power delivery and deceleration. Smooth, progressive pedal control is mandatory for car stability.
 
 ### The "Squeeze" Concept
 Never stab or slam pedals! Imagine pressing a ripe tomato—apply pressure progressively.
-- **Abrupt Throttle**: Spikes engine torque, causes wheelspin and instant snap oversteer.
-- **Smooth Throttle**: Transfers weight smoothly to rear tires, maximizing traction.
+- **Abrupt Throttle**: Spikes engine torque, causes front wheelspin and power understeer in FWD cars or snap oversteer in RWD cars.
+- **Smooth Throttle**: Transfers weight smoothly, maximizing exit traction out of the Grand Oak Hairpin.
 - **Abrupt Brake**: Locks up wheels, unbalances chassis violently.
-- **Smooth Brake**: Loads front tires progressively for maximum stopping grip.
+- **Smooth Brake**: Loads front tires progressively for maximum stopping grip into heavy braking zones.
 
 ### Muscle Memory Training
 Developing precise muscle memory allows your feet to hold 30%, 50%, or 80% pedal pressure without looking at telemetry meters.`,
@@ -199,7 +211,7 @@ Developing precise muscle memory allows your feet to hold 30%, 50%, or 80% pedal
                 id: 'easy',
                 level: '🟢 Easy',
                 title: 'Throttle Squeeze Drill',
-                desc: 'From a standstill in 2nd gear, compare stabbing throttle vs smoothly squeezing to 100% over 3 seconds.',
+                desc: 'From a standstill on the Grand Oak main straight, compare stabbing throttle vs smoothly squeezing to 100% over 3 seconds in 2nd gear.',
                 reps: 5,
                 time: '7 min'
               },
@@ -207,7 +219,7 @@ Developing precise muscle memory allows your feet to hold 30%, 50%, or 80% pedal
                 id: 'medium',
                 level: '🟡 Medium',
                 title: 'Brake Squeeze Drill',
-                desc: 'Drive 80 km/h on main straight. Practice progressively squeezing brake to 100% over 2 seconds without lockup.',
+                desc: 'Drive 100 km/h on the back straight. Practice progressively squeezing brake to 100% into the Hairpin over 2 seconds without lockup.',
                 reps: 5,
                 time: '7 min'
               },
@@ -215,7 +227,7 @@ Developing precise muscle memory allows your feet to hold 30%, 50%, or 80% pedal
                 id: 'hard',
                 level: '🔴 Hard',
                 title: 'Pedal Rhythm & 50% Hold',
-                desc: 'Alternate 50% throttle hold (2s) and 50% brake hold (2s) to calibrate muscle memory.',
+                desc: 'Alternate 50% throttle hold (2s) and 50% brake hold (2s) down the back straight to calibrate muscle memory.',
                 reps: 10,
                 time: '6 min'
               }
@@ -226,15 +238,15 @@ Developing precise muscle memory allows your feet to hold 30%, 50%, or 80% pedal
             focus: 'Eliminating abrupt pedal spikes',
             laps: 5,
             instructions: [
-              'Drive 5 laps at Laguna Seca using smooth, progressive pedal squeezes.',
-              'Listen for tire squeal or engine rev spikes caused by abrupt inputs.',
-              'Focus on smooth transition from brake release to throttle squeeze.'
+              'Drive 5 laps at Grand Oak National in the Honda Civic Type R 2018 using smooth, progressive pedal squeezes.',
+              'Listen for tire squeal or engine rev spikes caused by abrupt inputs on corner exits.',
+              'Focus on smooth transition from brake release to throttle squeeze through the Hairpin.'
             ]
           },
           challenge: {
             title: 'Smooth Input Challenge',
             type: 'technique',
-            description: 'Complete 4 consecutive laps with zero wheel lockups or sudden throttle wheelspins.',
+            description: 'Complete 4 consecutive laps at Grand Oak National with zero wheel lockups or sudden throttle wheelspins.',
             criteria: '4 clean laps with smooth pedal modulation.'
           }
         },
@@ -242,21 +254,25 @@ Developing precise muscle memory allows your feet to hold 30%, 50%, or 80% pedal
           id: 4,
           title: 'Feeling the Car',
           focus: 'Weight transfer, grip, and balance',
-          car: 'Mazda MX-5',
-          track: 'Laguna Seca',
+          car: 'Mazda MX-5 2016',
+          track: 'Laguna Seca Raceway (Laguna Seca)',
           targetLapTime: null,
           difficulty: 2,
+          suggestedAlternatives: [
+            { car: 'Subaru BRZ 2013', track: 'VIR North', note: 'Elevation Flow Circuit' },
+            { car: 'Porsche 718 Cayman GTS 2018', track: 'Mugello Club', note: 'Mid-Engine Balance Test' }
+          ],
           theory: {
             title: 'The Physics of Car Control & Weight Transfer',
             content: `A racecar responds dynamically to physics. When you accelerate, brake, or turn, weight shifts between the four tires.
 
 ### Weight Transfer Principles
-- **Braking**: Weight transfers **forward** → Front tires gain grip, nose dips, steering gets heavier.
-- **Accelerating**: Weight transfers **rearward** → Rear tires gain traction, nose rises.
-- **Turning**: Weight transfers to **outside tires** → Outside tires carry cornering load.
+- **Braking**: Weight transfers **forward** → Front tires gain grip, nose dips, steering gets heavier into Turn 2.
+- **Accelerating**: Weight transfers **rearward** → Rear tires gain traction, nose rises on main straight exit.
+- **Turning**: Weight transfers to **outside tires** → Outside tires carry cornering load through the Corkscrew downhill drop.
 
 ### The Friction Circle (Grip Limit)
-Tires have a maximum grip budget. If you use 100% of grip for braking, you have 0% left for steering. As you release the brake, you unlock grip for turning!`,
+Tires have a maximum grip budget. If you use 100% of grip for braking into Turn 2, you have 0% left for steering. As you release the brake, you unlock grip for turning!`,
             keyTakeaways: [
               'Braking loads front tires for turning grip; accelerating loads rear tires for exit traction',
               'Smooth weight transfer keeps the car balanced near the limit',
@@ -271,7 +287,7 @@ Tires have a maximum grip budget. If you use 100% of grip for braking, you have 
                 id: 'easy',
                 level: '🟢 Easy',
                 title: 'Braking Weight Shift Sensation',
-                desc: 'Brake at 80 km/h to feel the car nose dip and front steering heavy up as weight moves forward.',
+                desc: 'Brake into Turn 2 at 80 km/h to feel the car nose dip and front steering heavy up as weight moves forward.',
                 reps: 5,
                 time: '7 min'
               },
@@ -279,15 +295,15 @@ Tires have a maximum grip budget. If you use 100% of grip for braking, you have 
                 id: 'medium',
                 level: '🟡 Medium',
                 title: 'Acceleration Squat Sensation',
-                desc: 'Accelerate from stop to feel rear suspension squat and front end lighten.',
+                desc: 'Accelerate out of Turn 11 onto the main straight to feel rear suspension squat and front end lighten.',
                 reps: 5,
                 time: '7 min'
               },
               {
                 id: 'hard',
                 level: '🔴 Hard',
-                title: 'Friction Circle Boundary Drill',
-                desc: 'Drive steady circle at 30, 40, 50, 60 km/h to experience weight loading outside tires to grip limit.',
+                title: 'Friction Circle & Elevation Drop Drill',
+                desc: 'Drive through the Corkscrew downhill drop at 45, 55, 65 km/h to experience weight loading outside tires to the grip limit.',
                 reps: 5,
                 time: '11 min'
               }
@@ -299,8 +315,9 @@ Tires have a maximum grip budget. If you use 100% of grip for braking, you have 
             laps: 6,
             instructions: [
               'Drive 6 laps at Laguna Seca integrating all Module 0 skills.',
-              'Feel weight transfer under braking before turn-in.',
-              'Squeeze throttle smoothly on exit as steering unwinds.',
+              'Feel weight transfer under heavy braking into Turn 2 before turn-in.',
+              'Manage weight balance through the elevation drop at the Corkscrew.',
+              'Squeeze throttle smoothly on exit as steering unwinds out of Turn 11.',
               'Congratulate yourself—you are ready for Module 1!'
             ]
           },

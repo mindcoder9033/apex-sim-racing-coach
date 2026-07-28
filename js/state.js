@@ -445,7 +445,7 @@ class ApexStore {
     // Module 1 Completion
     if (this.data.completedSessions.filter(k => k.startsWith('1-')).length >= 12 && !this.data.achievements.includes('the_completer')) {
       this.data.achievements.push('the_completer');
-      newlyUnlocked.push({ id: 'the_completer', title: 'The Completer', desc: 'Successfully finished Module 1: The Line!' });
+      newlyUnlocked.push({ id: 'the_completer', title: 'The Completer', desc: 'Successfully finished Module 1: The Three Pillars of Racing!' });
     }
 
     // Streak Achievement

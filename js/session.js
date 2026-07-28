@@ -288,6 +288,44 @@ class SessionController {
         `;
       }
 
+      let performanceCriteriaHtml = '';
+      if (s.performanceCriteria) {
+        const pc = s.performanceCriteria;
+        performanceCriteriaHtml = `
+          <div class="card mt-4 p-4" style="background:var(--color-surface-light); border:1px solid var(--color-border);">
+            <h4 class="flex items-center gap-2 mb-3" style="font-size:1rem; color:var(--color-accent);">
+              <i data-lucide="award" class="icon-sm"></i> Performance Tier Mastery Criteria
+            </h4>
+            <div class="grid-3 gap-3">
+              ${pc.bronze ? `
+                <div class="p-3 rounded" style="background:rgba(205, 127, 50, 0.08); border:1px solid rgba(205, 127, 50, 0.3);">
+                  <h5 class="font-semibold mb-2" style="color:#cd7f32; font-size:0.95rem;">${pc.bronze.title}</h5>
+                  <ul class="pl-4 text-tertiary" style="font-size:0.83rem; line-height:1.4;">
+                    ${pc.bronze.bullets.map(b => `<li class="mt-1">${b}</li>`).join('')}
+                  </ul>
+                </div>
+              ` : ''}
+              ${pc.silver ? `
+                <div class="p-3 rounded" style="background:rgba(192, 192, 192, 0.08); border:1px solid rgba(192, 192, 192, 0.3);">
+                  <h5 class="font-semibold mb-2" style="color:#c0c0c0; font-size:0.95rem;">${pc.silver.title}</h5>
+                  <ul class="pl-4 text-tertiary" style="font-size:0.83rem; line-height:1.4;">
+                    ${pc.silver.bullets.map(b => `<li class="mt-1">${b}</li>`).join('')}
+                  </ul>
+                </div>
+              ` : ''}
+              ${pc.gold ? `
+                <div class="p-3 rounded" style="background:rgba(255, 215, 0, 0.08); border:1px solid rgba(255, 215, 0, 0.3);">
+                  <h5 class="font-semibold mb-2" style="color:#ffd700; font-size:0.95rem;">${pc.gold.title}</h5>
+                  <ul class="pl-4 text-tertiary" style="font-size:0.83rem; line-height:1.4;">
+                    ${pc.gold.bullets.map(b => `<li class="mt-1">${b}</li>`).join('')}
+                  </ul>
+                </div>
+              ` : ''}
+            </div>
+          </div>
+        `;
+      }
+
       html = `
         <div class="card fade-in">
           <div class="card-header flex justify-between items-center">
@@ -311,6 +349,8 @@ class SessionController {
               </ul>
             </div>
           ` : ''}
+
+          ${performanceCriteriaHtml}
 
           <div class="flex justify-between items-center mt-6">
             <div></div>
@@ -712,6 +752,8 @@ class SessionController {
     if (stepName === 'theory') {
       if (s.theory && s.theory.diagramId === 'corner-path-comparison') {
         if (window.apexDiagrams) window.apexDiagrams.renderCornerComparison('sessionDiagramContainer');
+      } else if (s.theory && s.theory.diagramId === 'vision-looking-ahead-diagram') {
+        if (window.apexDiagrams) window.apexDiagrams.renderVisionSightlineDiagram('sessionDiagramContainer');
       }
     } else if (stepName === 'practice') {
       container.querySelectorAll('.drill-level-card').forEach(card => {

@@ -132,6 +132,162 @@ const APEX_CONTENT = {
               "What single improvement will I focus on during Session 2?"
             ]
           }
+        },
+        {
+          "id": 2,
+          "title": "Session 2 — Vision & Looking Ahead",
+          "phase": "Phase 1 — Build Confidence",
+          "duration": "45 Minutes",
+          "primarySkill": "Vision & Looking Ahead",
+          "previouslyLearnedSkill": "Steering Fundamentals",
+          "car": "2021 Honda Civic Type R (FWD)",
+          "track": "Hakone Club Circuit",
+          "targetLapTime": "1:15.000",
+          "difficulty": 1,
+          "assistsConfig": {
+            "transmission": "Automatic (No Clutch)",
+            "drivingLine": "Full Racing Line",
+            "tcs": "On (Default)",
+            "stm": "On (Default)",
+            "abs": "On (Default)",
+            "steering": "Simulation (900°)"
+          },
+          "theory": {
+            "title": "Vision Leads the Car",
+            "content": "Your hands naturally follow your eyes. Where you look determines where the car goes.\n\nOne of the biggest differences between beginners and experienced drivers is **not** steering ability—it's vision.\n\nBeginners focus on the road directly in front of the car, reacting late to every curve. Experienced drivers focus on where they want the car to be **several seconds later**, driving with their eyes first.\n\n### The Three-Second Rule\nAs a beginner, keep your eyes approximately **3 seconds ahead** of the car. Looking farther ahead provides:\n- Earlier, calmer steering decisions.\n- Smoother corner entry and exit.\n- Better placement along the racing line.\n- Reduced panic corrections.\n\n### The 4-Stage Visual Sequence\nDuring every corner, shift your eyes in order:\n1. **Approach:** Look toward the braking point.\n2. **Turn-In:** Shift vision toward the apex.\n3. **Mid-Corner:** Begin looking toward the corner exit.\n4. **Corner Exit:** Look down the next straight or toward the next corner.",
+            "keyTakeaways": [
+              "Your hands follow your eyes—look where you want the car to go, not where it is",
+              "Maintain visual focus ~3 seconds ahead down the track to eliminate panic corrections",
+              "Follow the visual sequence: Braking Point → Apex → Exit → Next Corner"
+            ],
+            "diagramId": "vision-looking-ahead-diagram"
+          },
+          "practice": {
+            "focus": "10-minute Vision Lead Exercise training your eyes to stay ahead of the car",
+            "drills": [
+              {
+                "id": "easy",
+                "level": "🟢 Easy",
+                "title": "Vision Lead Exercise",
+                "desc": "Drive for 10 minutes focusing entirely on eye movement. On straights, look to braking markers. On entry, move eyes to apex before turning wheel. Mid-corner, look to exit before reaching apex.",
+                "reps": 1,
+                "time": "10 min"
+              }
+            ]
+          },
+          "practical": {
+            "title": "Practical Driving Test — 5 Consecutive Clean Laps",
+            "focus": "Executing the visual sequence Braking Point → Apex → Exit on every corner",
+            "laps": 5,
+            "instructions": [
+              "Complete 5 consecutive clean laps without leaving the circuit.",
+              "Consciously move your eyes to the next focal point before turning the wheel.",
+              "Focus on reducing unnecessary steering corrections.",
+              "If you catch yourself staring right in front of the hood, gently reset your focus."
+            ],
+            "lapTargets": [
+              {
+                "lap": 1,
+                "target": "Visual Lead Benchmark",
+                "focus": "Maintain 3-second visual lead through 5 clean consecutive laps"
+              }
+            ]
+          },
+          "challenge": {
+            "title": "The 'Eyes First' Challenge",
+            "type": "technique",
+            "description": "For one complete lap, ask yourself before every steering input: 'Where am I looking?' Move your eyes before you move your hands.",
+            "criteria": "Smooth, early corner preparation with zero panic steering inputs across a full lap."
+          },
+          "assessment": {
+            "title": "Session 2 Vision & Technique Assessment",
+            "criteria": "5 consecutive clean laps with active eye movement leading all steering inputs.",
+            "passingScore": 80,
+            "questions": [
+              {
+                "question": "Did you consistently look ahead rather than directly in front of the car?",
+                "modelAnswer": "Looking ahead allowed the brain time to calculate smoother steering arcs effortlessly."
+              },
+              {
+                "question": "Did you move your eyes toward the corner exit before reaching the apex?",
+                "modelAnswer": "Shifting vision early to exit unlocked smoother unwind and earlier throttle application."
+              },
+              {
+                "question": "Did your steering become smoother compared to Session 1?",
+                "modelAnswer": "Fewer corrections confirmed that eyes were properly leading hands through corner arcs."
+              }
+            ]
+          },
+          "telemetryReflection": {
+            "title": "Speed Trace & Steering Input Review",
+            "prompts": [
+              {
+                "key": "fewestCorrectionsLap",
+                "label": "Steering Smoothness",
+                "question": "Which lap showed the fewest steering corrections?",
+                "expectedAnswer": "Laps where vision led steering showed clean, single-arc inputs with minimal micro-corrections."
+              },
+              {
+                "key": "visionSteeringCorrelation",
+                "label": "Vision & Steering Correlation",
+                "question": "Did smoother vision result in smoother steering inputs?",
+                "expectedAnswer": "Yes, looking ahead eliminates sudden reactive steering jerks."
+              },
+              {
+                "key": "cornerExitSpeed",
+                "label": "Exit Speed Maintenance",
+                "question": "Did looking farther ahead help maintain speed through corner exits?",
+                "expectedAnswer": "Early vision toward exit allows earlier unwinding and smoother acceleration."
+              }
+            ]
+          },
+          "psychologicalCheckIn": {
+            "defaultFocus": 4,
+            "defaultFrustration": 1,
+            "defaultConfidence": 4,
+            "resetPrompt": "Changing visual habits takes repetition. Stay relaxed and trust your eyes to lead.",
+            "questions": [
+              "Did I stay relaxed while learning a new visual habit?",
+              "Did I focus on observation instead of speed?",
+              "Am I becoming more aware of where my eyes are looking?"
+            ]
+          },
+          "sessionReflection": {
+            "questions": [
+              "What changed when I looked farther ahead?",
+              "Which corners became easier after improving my vision?",
+              "What visual habit do I want to improve before Session 3?"
+            ]
+          },
+          "performanceCriteria": {
+            "bronze": {
+              "title": "🥉 Bronze — Safe Driver",
+              "bullets": [
+                "Complete the session.",
+                "Finish 5 clean laps.",
+                "Demonstrate awareness of braking points, apexes, and exits.",
+                "Intentionally look farther ahead than in Session 1."
+              ]
+            },
+            "silver": {
+              "title": "🥈 Silver — Consistent Driver",
+              "bullets": [
+                "Complete 5 consecutive clean laps.",
+                "Consistently shift your vision from braking point to apex to exit.",
+                "Reduce unnecessary steering corrections.",
+                "Maintain a calm, deliberate driving rhythm."
+              ]
+            },
+            "gold": {
+              "title": "🥇 Gold — Confident Driver",
+              "bullets": [
+                "Naturally look ahead without conscious reminders.",
+                "Use vision to guide smooth steering and stable cornering.",
+                "Explain how improved vision affected your steering and confidence.",
+                "Demonstrate repeatable, consistent visual discipline throughout the session."
+              ]
+            }
+          }
         }
       ]
     }

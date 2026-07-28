@@ -33,6 +33,41 @@ class ApexDiagrams {
         svgPath: 'M 20,280 Q 80,130 180,180 T 340,280'
       }
     };
+
+    this.visionPhases = {
+      approach: {
+        label: '1. Approach',
+        color: '#3498db',
+        focusTarget: 'Braking Point',
+        carX: 40, carY: 270,
+        eyeX: 120, eyeY: 130,
+        desc: 'Look far ahead toward the braking marker before reaching the corner entry.'
+      },
+      turnIn: {
+        label: '2. Turn-In',
+        color: '#e67e22',
+        focusTarget: 'Apex Curb',
+        carX: 110, carY: 150,
+        eyeX: 200, eyeY: 90,
+        desc: 'Shift your visual focus to the apex BEFORE turning the wheel.'
+      },
+      midCorner: {
+        label: '3. Mid-Corner',
+        color: '#2ecc71',
+        focusTarget: 'Track-Out Exit',
+        carX: 200, carY: 90,
+        eyeX: 350, eyeY: 250,
+        desc: 'Look toward the exit curb before the car reaches the apex.'
+      },
+      exit: {
+        label: '4. Exit Focus',
+        color: '#9b59b6',
+        focusTarget: 'Next Straightaway',
+        carX: 340, carY: 260,
+        eyeX: 380, eyeY: 100,
+        desc: 'Immediately scan down the straight or next braking marker.'
+      }
+    };
   }
 
   renderCornerComparison(containerId, initialPathKey = 'racing') {
@@ -128,6 +163,118 @@ class ApexDiagrams {
       }
     });
   }
+
+  renderVisionSightlineDiagram(containerId, initialPhase = 'approach') {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    const phase = this.visionPhases[initialPhase] || this.visionPhases.approach;
+
+    container.innerHTML = `
+      <div class="diagram-container">
+        <div class="diagram-controls flex gap-2 flex-wrap justify-center mb-3">
+          ${Object.keys(this.visionPhases).map(key => {
+            const item = this.visionPhases[key];
+            const isActive = key === initialPhase;
+            return `<button class="btn ${isActive ? 'btn-primary' : 'btn-outline'}" data-vision="${key}" style="${isActive ? `background:${item.color}; border-color:${item.color};` : ''}">${item.label}</button>`;
+          }).join('')}
+        </div>
+
+        <div style="position:relative; width:100%; max-width:500px; height:240px; margin:0 auto; background:var(--color-surface, #18181C); border:1px solid var(--color-border, rgba(58, 58, 69, 0.2)); border-radius:12px; overflow:hidden;">
+          <svg viewBox="0 0 400 300" style="width:100%; height:100%;">
+            <!-- Track Curve -->
+            <path d="M 10,290 Q 10,90 200,90 T 390,290" fill="none" stroke="var(--color-border, rgba(58, 58, 69, 0.2))" stroke-width="60" stroke-linecap="round"/>
+            <path d="M 10,290 Q 10,90 200,90 T 390,290" fill="none" stroke="var(--color-bg, #0A0A0C)" stroke-width="50" stroke-linecap="round"/>
+            
+            <!-- Racing Line Reference -->
+            <path d="M 20,280 Q 80,130 180,180 T 340,280" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="3" stroke-dasharray="6,6"/>
+
+            <!-- Sightline Vector -->
+            <line id="visionSightline" x1="${phase.carX}" y1="${phase.carY}" x2="${phase.eyeX}" y2="${phase.eyeY}" stroke="${phase.color}" stroke-width="3" stroke-dasharray="4,4"/>
+            
+            <!-- Car Position Marker -->
+            <circle id="visionCarDot" cx="${phase.carX}" cy="${phase.carY}" r="9" fill="#FFFFFF" stroke="${phase.color}" stroke-width="3"/>
+
+            <!-- Eye Target Focal Point Marker -->
+            <circle id="visionEyeTarget" cx="${phase.eyeX}" cy="${phase.eyeY}" r="7" fill="${phase.color}">
+              <animate attributeName="r" values="6;10;6" dur="1.5s" repeatCount="indefinite"/>
+            </circle>
+          </svg>
+        </div>
+
+        <div class="diagram-stats mt-3 text-center">
+          <div class="badge font-telemetry mb-1" id="visionTargetBadge" style="background:rgba(255,255,255,0.08); color:${phase.color}; border:1px solid ${phase.color};">
+            🎯 Target Focus: ${phase.focusTarget}
+          </div>
+          <p class="text-tertiary mt-2 text-center" id="visionDesc" style="font-size:0.88rem;">${phase.desc}</p>
+        </div>
+      </div>
+    `;
+
+    const buttons = container.querySelectorAll('[data-vision]');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const key = e.currentTarget.getAttribute('data-vision');
+        this.updateVisionDiagram(container, key);
+      });
+    });
+  }
+
+  updateVisionDiagram(container, phaseKey) {
+    const data = this.visionPhases[phaseKey];
+    if (!data) return;
+
+    const sightline = container.querySelector('#visionSightline');
+    const carDot = container.querySelector('#visionCarDot');
+    const eyeTarget = container.querySelector('#visionEyeTarget');
+    const badge = container.querySelector('#visionTargetBadge');
+    const desc = container.querySelector('#visionDesc');
+
+    if (sightline) {
+      sightline.setAttribute('x1', data.carX);
+      sightline.setAttribute('y1', data.carY);
+      sightline.setAttribute('x2', data.eyeX);
+      sightline.setAttribute('y2', data.eyeY);
+      sightline.setAttribute('stroke', data.color);
+    }
+
+    if (carDot) {
+      carDot.setAttribute('cx', data.carX);
+      carDot.setAttribute('cy', data.carY);
+      carDot.setAttribute('stroke', data.color);
+    }
+
+    if (eyeTarget) {
+      eyeTarget.setAttribute('cx', data.eyeX);
+      eyeTarget.setAttribute('cy', data.eyeY);
+      eyeTarget.setAttribute('fill', data.color);
+    }
+
+    if (badge) {
+      badge.style.color = data.color;
+      badge.style.borderColor = data.color;
+      badge.textContent = `🎯 Target Focus: ${data.focusTarget}`;
+    }
+
+    if (desc) {
+      desc.textContent = data.desc;
+    }
+
+    container.querySelectorAll('[data-vision]').forEach(btn => {
+      const key = btn.getAttribute('data-vision');
+      const item = this.visionPhases[key];
+      if (key === phaseKey) {
+        btn.className = 'btn btn-primary';
+        btn.style.background = item.color;
+        btn.style.borderColor = item.color;
+      } else {
+        btn.className = 'btn btn-outline';
+        btn.style.background = '';
+        btn.style.borderColor = '';
+      }
+    });
+  }
 }
 
 window.apexDiagrams = new ApexDiagrams();
+

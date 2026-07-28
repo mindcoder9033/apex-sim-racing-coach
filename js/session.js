@@ -268,6 +268,64 @@ class SessionController {
     let html = '';
 
     if (stepName === 'theory') {
+      let setupTablesHtml = '';
+      if (s.setupConfig) {
+        const forza = s.setupConfig.forzaSettings;
+        const moza = s.setupConfig.mozaR3Settings;
+        const adj = s.setupConfig.adjustments;
+
+        setupTablesHtml = `
+          <div class="card mt-4 p-4" style="background:var(--color-surface-light); border:1px solid var(--color-border);">
+            <h4 class="flex items-center gap-2 mb-3" style="font-size:1rem; color:var(--color-accent);"><i data-lucide="sliders" class="icon-sm"></i> Hardware & Game Setup Specifications</h4>
+            
+            ${adj ? `
+              <div class="mb-4 p-3 rounded" style="background:rgba(230,57,70,0.1); border:1px solid rgba(230,57,70,0.25);">
+                <span class="font-semibold text-danger" style="font-size:0.85rem; text-transform:uppercase;">Session Setup Adjustments</span>
+                <div class="grid-2 gap-2 mt-2" style="font-size:0.85rem;">
+                  ${adj.map(a => `<div><strong class="text-primary">${a.setting}:</strong> <span class="text-tertiary">${a.value}</span></div>`).join('')}
+                </div>
+              </div>
+            ` : ''}
+
+            ${forza ? `
+              <div class="mb-4">
+                <h5 class="font-semibold text-primary mb-2" style="font-size:0.9rem;">Forza Motorsport 2023 Settings</h5>
+                <div class="grid-3 gap-3" style="font-size:0.82rem;">
+                  <div class="p-2 rounded" style="background:rgba(255,255,255,0.02); border:1px solid var(--color-border);">
+                    <strong class="text-accent block mb-1">Controller / Wheel</strong>
+                    ${forza.controller ? forza.controller.map(c => `<div>${c.setting}: <span class="text-tertiary">${c.value}</span></div>`).join('') : ''}
+                  </div>
+                  <div class="p-2 rounded" style="background:rgba(255,255,255,0.02); border:1px solid var(--color-border);">
+                    <strong class="text-accent block mb-1">Assists / Difficulty</strong>
+                    ${forza.difficulty ? forza.difficulty.map(d => `<div>${d.setting}: <span class="text-tertiary">${d.value}</span></div>`).join('') : ''}
+                  </div>
+                  <div class="p-2 rounded" style="background:rgba(255,255,255,0.02); border:1px solid var(--color-border);">
+                    <strong class="text-accent block mb-1">HUD & Line</strong>
+                    ${forza.hud ? forza.hud.map(h => `<div>${h.setting}: <span class="text-tertiary">${h.value}</span></div>`).join('') : ''}
+                  </div>
+                </div>
+              </div>
+            ` : ''}
+
+            ${moza ? `
+              <div>
+                <h5 class="font-semibold text-primary mb-2" style="font-size:0.9rem;">Moza R3 Wheel Base & Pedal Calibration</h5>
+                <div class="grid-2 gap-3" style="font-size:0.82rem;">
+                  <div class="p-2 rounded" style="background:rgba(255,255,255,0.02); border:1px solid var(--color-border);">
+                    <strong class="text-accent block mb-1">Pit House Base Parameters</strong>
+                    ${moza.base ? moza.base.map(b => `<div>${b.setting}: <span class="text-tertiary">${b.value}</span></div>`).join('') : ''}
+                  </div>
+                  <div class="p-2 rounded" style="background:rgba(255,255,255,0.02); border:1px solid var(--color-border);">
+                    <strong class="text-accent block mb-1">Pedal Setup</strong>
+                    ${moza.pedal ? moza.pedal.map(p => `<div>${p.pedal}: <span class="text-tertiary">${p.config}</span></div>`).join('') : ''}
+                  </div>
+                </div>
+              </div>
+            ` : ''}
+          </div>
+        `;
+      }
+
       html = `
         <div class="card fade-in">
           <div class="card-header flex justify-between items-center">
@@ -279,6 +337,8 @@ class SessionController {
             ${s.theory.content.replace(/\n\n/g, '<br><br>')}
           </div>
           
+          ${setupTablesHtml}
+
           <div id="sessionDiagramContainer" class="mt-4"></div>
 
           ${s.theory.keyTakeaways ? `
@@ -341,6 +401,35 @@ class SessionController {
         </div>
       `;
     } else if (stepName === 'practical') {
+      let lapTargetsHtml = '';
+      if (s.practical.lapTargets && s.practical.lapTargets.length > 0) {
+        lapTargetsHtml = `
+          <div class="card mt-4 p-3" style="background:var(--color-surface-light); border:1px solid var(--color-border);">
+            <h5 class="font-semibold text-primary mb-2" style="font-size:0.9rem;"><i data-lucide="timer" class="icon-sm text-accent me-1"></i> Practical Lap Time & Focus Progression</h5>
+            <div class="table-responsive">
+              <table style="width:100%; font-size:0.85rem; border-collapse:collapse;">
+                <thead>
+                  <tr style="border-bottom:1px solid var(--color-border); text-align:left; color:var(--color-text-tertiary);">
+                    <th style="padding:0.4rem 0.6rem;">Lap #</th>
+                    <th style="padding:0.4rem 0.6rem;">Target Time</th>
+                    <th style="padding:0.4rem 0.6rem;">Stint Focus</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${s.practical.lapTargets.map(lt => `
+                    <tr style="border-bottom:1px solid rgba(255,255,255,0.03);">
+                      <td style="padding:0.4rem 0.6rem; font-weight:600; color:var(--color-text);">Lap ${lt.lap}</td>
+                      <td style="padding:0.4rem 0.6rem;" class="font-telemetry text-accent">${lt.target}</td>
+                      <td style="padding:0.4rem 0.6rem;" class="text-tertiary">${lt.focus}</td>
+                    </tr>
+                  `).join('')}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        `;
+      }
+
       html = `
         <div class="card fade-in">
           <div class="card-header flex justify-between items-center">
@@ -356,6 +445,8 @@ class SessionController {
               ${s.practical.instructions.map(inst => `<li class="mt-1">${inst}</li>`).join('')}
             </ol>
           </div>
+
+          ${lapTargetsHtml}
 
           <div class="form-group mt-5 p-3 rounded" style="background:rgba(255,255,255,0.02); border:1px solid var(--color-border);">
             <label class="flex items-center gap-2 cursor-pointer">
@@ -414,6 +505,8 @@ class SessionController {
     } else if (stepName === 'assessment') {
       const criteriaText = s.assessment ? s.assessment.criteria : 'Technique execution and lap consistency evaluation.';
       const passing = s.assessment ? s.assessment.passingScore : 80;
+      const techQuestions = s.assessment && s.assessment.questions ? s.assessment.questions : [];
+
       html = `
         <div class="card fade-in">
           <div class="card-header flex justify-between items-center">
@@ -444,6 +537,29 @@ class SessionController {
               <div class="star-rating mt-2" data-rating-key="overallControl">${this.renderStars(this.sessionData.ratings.overallControl)}</div>
             </div>
           </div>
+
+          ${techQuestions.length > 0 ? `
+            <div class="mt-5">
+              <h4 class="font-semibold text-primary mb-3" style="font-size:0.95rem;"><i data-lucide="help-circle" class="icon-sm text-accent me-1"></i> Technique Self-Assessment & Model Answers</h4>
+              <div class="flex flex-col gap-4">
+                ${techQuestions.map((qObj, qIdx) => `
+                  <div class="card p-4" style="background:var(--color-surface-light); border:1px solid var(--color-border);">
+                    <label class="form-label font-semibold text-primary">${qIdx + 1}. ${qObj.question}</label>
+                    <textarea class="form-control mt-2 txt-reflection-q" data-q-idx="tech_${qIdx}" rows="2" placeholder="Record your response...">${this.sessionData.reflectionAnswers[`tech_${qIdx}`] || ''}</textarea>
+                    
+                    ${qObj.modelAnswer ? `
+                      <details class="mt-3" style="background:rgba(255,255,255,0.03); border:1px solid var(--color-border); border-radius:6px; padding:0.6rem 0.8rem;">
+                        <summary style="cursor:pointer; font-weight:600; color:var(--color-accent); font-size:0.85rem; display:flex; align-items:center; gap:0.4rem;">
+                          <i data-lucide="lightbulb" class="icon-sm text-warning"></i> View Coaching Model Answer
+                        </summary>
+                        <p class="mt-2 text-tertiary" style="font-size:0.88rem; line-height:1.5;">"${qObj.modelAnswer}"</p>
+                      </details>
+                    ` : ''}
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          ` : ''}
 
           <div class="flex justify-between items-center mt-6">
             <button class="btn btn-secondary flex items-center gap-1" id="btnPrevStep">
@@ -480,6 +596,15 @@ class SessionController {
                 </label>
                 <p class="text-muted" style="font-size:0.88rem;">${p.question}</p>
                 <textarea class="form-control mt-2 txt-telemetry-prompt" data-telemetry-key="${p.key}" rows="2" placeholder="Record your observations...">${this.sessionData.telemetryNotes[p.key] || ''}</textarea>
+
+                ${p.expectedAnswer ? `
+                  <details class="mt-3" style="background:rgba(255,255,255,0.03); border:1px solid var(--color-border); border-radius:6px; padding:0.6rem 0.8rem;">
+                    <summary style="cursor:pointer; font-weight:600; color:var(--color-accent); font-size:0.85rem; display:flex; align-items:center; gap:0.4rem;">
+                      <i data-lucide="sparkles" class="icon-sm text-accent"></i> View Expected Telemetry Insight
+                    </summary>
+                    <p class="mt-2 text-tertiary" style="font-size:0.88rem; line-height:1.5;">"${p.expectedAnswer}"</p>
+                  </details>
+                ` : ''}
               </div>
             `).join('')}
           </div>

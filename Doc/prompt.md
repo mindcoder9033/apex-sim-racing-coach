@@ -1,16 +1,21 @@
-
 Based on the file
-we are designing 30 day simracing module 2 for a complete beginner
-3 sessions per week, 45mins for each session
+we are designing simracing - module 1 for a complete beginner
 hardware - Moza R3 Wheel bundle for Xbox
 Game - Forza Motorsport 2023
+Duration - 30 days 
+12 sessions
+45 mins for each session
 
-automatic transmission without a clutch
-suggest a car and track 
-the module to focus on turning them off to learn raw car control. 
-
-Lesson structure:
-Theory -> Practice -> Practical -> challenge -> Assessment -> Telemetry study -> psychological reflection -> Session reflection
-
-I'm comfortable using Forza's built-in replay and data overlay.
-
+The module should have an overarching goal
+Session format:
+1. Suggest a Car and a track
+2. Define session objectives
+3. Setup - Forza Motorsport 2023 in-game settings & Moza R3 wheel setup
+4. Theory
+5. One practice drill
+6. One practical driving test
+7. One challenge
+8. Telemetry study 3 Questions
+9. Technique assessment 3 questions
+10. Mental attitude check-in 3 questions
+11. End session reflection 3 questions

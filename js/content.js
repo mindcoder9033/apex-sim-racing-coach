@@ -7,325 +7,597 @@ const APEX_CONTENT = {
   modules: [
     {
       id: 0,
-      title: 'The Foundation',
-      subtitle: 'Your First Steps into Sim Racing',
-      description: 'Understand your equipment, interpret force feedback, master smooth pedal control, and build muscle memory for feel before speed.',
-      duration: '4 Sessions (7 Days)',
+      title: 'Building the Connection: Wheel Feel & Muscle Memory',
+      subtitle: 'Hardware setup, wheel feel, pedal modulation, and muscle memory foundation.',
+      description: 'Develop an intuitive physical connection between driver inputs and car behavior, establishing fundamental muscle memory for steering, throttle, and brake control before introducing complex racing techniques.',
+      duration: '1 Week (4 Sessions)',
+      hardware: 'Moza R3 Wheel Bundle for Xbox',
+      game: 'Forza Motorsport 2023',
+      overarchingGoal: 'To develop an intuitive physical connection between driver inputs and car behavior, establishing fundamental muscle memory for steering, throttle, and brake control before introducing complex racing techniques.',
+      outcomes: [
+        'Feel the transition from grip to slip through the steering wheel',
+        'Apply smooth, progressive inputs without thinking about them',
+        'Identify understeer and oversteer through tactile feedback',
+        'Maintain consistent lap times within ±2 seconds over 5 laps'
+      ],
       sessions: [
         {
           id: 1,
-          title: 'Setting Up Your World',
-          focus: 'Hardware setup, Forza settings, first feel',
-          car: 'Mazda MX-5 2016',
-          track: 'Grand Oak Raceway (Grand Oak Club)',
-          targetLapTime: null,
+          title: 'The Steering Connection',
+          focus: 'Wheel grip, seating position, center position, understeer/oversteer tactile feel',
+          car: '2016 Mazda MX-5',
+          track: 'Lime Rock Park - Full Alt',
+          targetLapTime: '1:23.500',
           difficulty: 1,
-          suggestedAlternatives: [
-            { car: 'Toyota Sprinter Trueno GT Apex 1985', track: 'Eaglerock Club', note: 'Classic RWD Lightweight' },
-            { car: 'Volkswagen Golf GTI 1983', track: 'Lime Rock Full', note: 'Vintage FWD Baseline' }
-          ],
+          setupConfig: {
+            forzaSettings: {
+              controller: [
+                { setting: 'Steering', value: 'Simulation' },
+                { setting: 'Vibration Scale', value: '100' },
+                { setting: 'Force Feedback Scale', value: '100' },
+                { setting: 'Steering Self Alignment', value: '75' },
+                { setting: 'Mechanical Trail Scale', value: '100' },
+                { setting: 'Pneumatic Trail Scale', value: '100' },
+                { setting: 'Road Feel Scale', value: '85' },
+                { setting: 'Load Sensitivity', value: '75' },
+                { setting: 'Wheel Damper Scale', value: '80' },
+                { setting: 'Center Spring Scale', value: '50' },
+                { setting: 'Dynamic Damper Behavior', value: '100' },
+                { setting: 'Steering Sensitivity', value: '50 (Linear)' }
+              ],
+              difficulty: [
+                { setting: 'Braking', value: 'Assisted (ABS On)' },
+                { setting: 'Steering', value: 'Assisted' },
+                { setting: 'Traction Control', value: 'On' },
+                { setting: 'Stability Control', value: 'On' },
+                { setting: 'Damage', value: 'Cosmetic Only' },
+                { setting: 'Fuel/Tire Wear', value: 'Off' },
+                { setting: 'Rewind', value: 'On' }
+              ],
+              hud: [
+                { setting: 'Speed/Revs', value: 'On' },
+                { setting: 'Lap Time', value: 'On' },
+                { setting: 'Minimap', value: 'Off' },
+                { setting: 'Suggested Line', value: 'Braking Only' }
+              ]
+            },
+            mozaR3Settings: {
+              base: [
+                { setting: 'Wheel Rotation', value: '900° (2.5 turns lock-to-lock)' },
+                { setting: 'Force Feedback Strength', value: '60%' },
+                { setting: 'Natural Inertia', value: '150%' },
+                { setting: 'Wheel Friction', value: '40%' },
+                { setting: 'Wheel Damper', value: '30%' },
+                { setting: 'Spring Strength', value: '20%' },
+                { setting: 'Damper Gain', value: '30%' },
+                { setting: 'Speed Sensitivity', value: '100%' },
+                { setting: 'Peak Force', value: '100%' },
+                { setting: 'Continuous Force', value: '80%' }
+              ],
+              buttonMapping: [
+                'Left Bumper: Look Left',
+                'Right Bumper: Look Right',
+                'A Button: Rewind (if enabled)',
+                'B Button: Pause/Menu',
+                'X Button: Cycle Camera',
+                'Y Button: Toggle Telemetry'
+              ],
+              pedal: [
+                { pedal: 'Brake', config: '80% at full press (progressive feel)' },
+                { pedal: 'Throttle', config: 'Linear response (0-100%)' },
+                { pedal: 'Clutch', config: 'Disabled' }
+              ]
+            }
+          },
           theory: {
-            title: 'Welcome to Sim Racing & Hardware Setup',
-            content: `You're about to enter a world that combines the thrill of racing with the precision of simulation. But before you can drive fast, you need to understand your tools.
-
-### The Three Components of Sim Racing
-1. **THE DRIVER (YOU)**: Your brain processes information, your muscles execute movements, and your senses gather telemetry data.
-2. **THE HARDWARE (MOZA R3)**: Wheel provides force feedback & steering input; Pedals provide throttle, brake, and clutch control.
-3. **THE SOFTWARE (FORZA MOTORSPORT 2023)**: Physics engine simulating car behavior, graphics, and audio cues.
-
-### Critical Settings for the Moza R3
-- **Steering Axis Deadzone**: 0 (No deadzone = immediate response)
-- **Steering Axis Sensitivity**: 50% (Linear response)
-- **Force Feedback Scale**: 100% (Full feedback from the car)
-- **Self Alignment & Mechanical Trail**: 100% (Feel tire self-aligning torque naturally)
-
-### Today's Focus
-Set up your equipment correctly, configure in-game controls, and experience your first moments behind the virtual wheel driving slow laps under 65 km/h on the wide, forgiving Grand Oak Club circuit.`,
+            title: 'The Language of the Wheel & 9-and-3 Posture',
+            content: `Think of the steering wheel as your direct connection to the front tires. Every bump, slide, and grip change is translated through this interface.\n\n### Key Concept: Self-Aligning Torque\nWhen you turn the wheel and the car corners, the front tires naturally want to return to straight ahead. This creates resistance in the wheel that tells you how much grip the front tires have.\n\n### Three States of Steering Feel\n1. **Heavy Resistance** = Front tires have grip (good traction)\n2. **Light Resistance** = Front tires are losing grip (understeer approaching)\n3. **Feedback Flutter** = The car is at the limit (the "buzz" of peak grip)\n\n### The 9-and-3 Position\nAlways place your hands at **9 o'clock and 3 o'clock** on the wheel. This is your anchor position from which all steering inputs begin and return.\n- Equal leverage for both directions\n- Immediate reference for "straight ahead"\n- Allows smooth hand-over-hand on sharp corners\n- Reduces fatigue during extended sessions\n\n### Muscle Memory Principle\n"Your hands will do what your eyes see." Look where you want to go, and your hands will naturally follow.`,
             keyTakeaways: [
-              'Comfortable seating position (arms at 90°) prevents fatigue and driving errors',
-              'Zero deadzone and linear sensitivity provide direct physical feedback from physics engine',
-              'Your initial goal is feeling the car and track, not chasing lap times'
-            ],
-            diagramId: 'hardware-driver-software'
-          },
-          practice: {
-            focus: 'Hardware setup & first feel',
-            drills: [
-              {
-                id: 'easy',
-                level: '🟢 Easy',
-                title: 'Physical Setup & Seating',
-                desc: 'Mount Moza R3 wheel base & pedals securely. Adjust seating so arms are bent at 90° and feet reach pedals comfortably.',
-                reps: 1,
-                time: '10 min'
-              },
-              {
-                id: 'medium',
-                level: '🟡 Medium',
-                title: 'In-Game Control Calibration',
-                desc: 'Configure Forza Motorsport controls: Set Steering Deadzone to 0, FFB Scale to 100%, and test pedal input bars.',
-                reps: 1,
-                time: '10 min'
-              },
-              {
-                id: 'hard',
-                level: '🔴 Hard',
-                title: 'First Slow Laps (Under 65 km/h)',
-                desc: 'Drive 3 slow laps at Grand Oak Club in 3rd gear. Focus purely on wheel resistance into Turn 1 and pedal response.',
-                reps: 3,
-                time: '25 min'
-              }
-            ]
-          },
-          practical: {
-            title: 'First Drive - Equipment & Road Sensation',
-            focus: 'Feel the car and track for the first time',
-            laps: 3,
-            instructions: [
-              'Start a Free Play race at Grand Oak Club in the Mazda MX-5 2016.',
-              'Drive slowly—no faster than 65 km/h (3rd gear max).',
-              'Focus on how the wheel resists your turning (force feedback) and how pedals respond.',
-              'Do not worry about lap times or staying on the line perfectly.'
-            ]
-          },
-          challenge: {
-            title: 'Equipment & Control Verification',
-            type: 'technique',
-            description: 'Complete 3 slow, controlled laps at Grand Oak Club without off-track incidents while verifying wheel FFB and pedal responsiveness.',
-            criteria: '3 clean slow laps completed.'
-          }
-        },
-        {
-          id: 2,
-          title: 'Understanding Force Feedback',
-          focus: 'Interpreting wheel feedback & grip limits',
-          car: 'Subaru BRZ 2013',
-          track: 'Lime Rock Park (Lime Rock Full)',
-          targetLapTime: null,
-          difficulty: 1,
-          suggestedAlternatives: [
-            { car: 'Mazda MX-5 Miata 1990', track: 'Laguna Seca Short', note: 'Pure Analog FFB' },
-            { car: 'BMW M3 1991', track: 'Grand Oak National', note: 'Classic German Sports Sedan' }
-          ],
-          theory: {
-            title: 'The Language of the Wheel',
-            content: `Your Moza R3 communicates with you through force feedback. Learning to "read" what the wheel is telling you is the most important skill in sim racing.
-
-### What the Wheel Tells You
-- **Heavy wheel**: High grip! The car is loaded up in a corner and gripping the track.
-- **Light wheel**: Low grip or loss of traction! Front tires are sliding (understeer).
-- **Wheel pushing back**: Self-aligning torque returning the wheel to center as you exit turns.
-- **Rumble / Vibration**: Track surface, curbs, or rumble strips.
-
-### Understeer vs. Oversteer Sensations
-When cornering through high-load turns like Big Bend at Lime Rock Park, if the wheel suddenly goes light, front tire grip has failed (understeer). Reduce steering angle immediately to restore traction.`,
-            keyTakeaways: [
-              'Heavy wheel feeling equals grip; light wheel feeling equals loss of front tire grip',
-              'Self-aligning torque naturally straightens the wheel when traction is maintained',
-              'When the wheel goes light, reduce steering input to regain front traction'
+              'Heavy wheel feeling equals front tire grip; light wheel feeling equals understeer/loss of traction',
+              'Self-aligning torque naturally returns the wheel to center when traction is maintained',
+              'Keep hands locked at 9-and-3 to build muscle memory for straight-ahead anchor position'
             ],
             diagramId: 'ffb-grip-diagram'
           },
           practice: {
-            focus: 'Reading wheel heavy vs light sensations',
+            focus: 'Straight line grip awareness & subtle micro-corrections',
             drills: [
               {
                 id: 'easy',
                 level: '🟢 Easy',
-                title: 'Center-Feel & Self Alignment',
-                desc: 'Drive 50 km/h on Sam Posey Straight. Turn wheel 5° left/right and release to feel self-aligning torque return wheel to center.',
-                reps: 5,
-                time: '5 min'
-              },
-              {
-                id: 'medium',
-                level: '🟡 Medium',
-                title: 'Constant Radius Corner Weight',
-                desc: 'Drive Big Bend (Turns 1-2) at 65 km/h vs 75 km/h. Feel the wheel load up heavy, then go slightly light as front tires begin to slip.',
+                title: 'Straight Line Grip Drill',
+                desc: 'Enter main straight at 80 km/h. Hold 9-and-3 position, observe "dead zone" center feel, and make micro-corrections under 5 degrees.',
                 reps: 5,
                 time: '10 min'
-              },
-              {
-                id: 'hard',
-                level: '🔴 Hard',
-                title: 'Understeer Lightness Detection',
-                desc: 'Enter Big Bend at 80 km/h without extra braking; observe the exact moment wheel resistance drops light due to understeer.',
-                reps: 5,
-                time: '5 min'
               }
             ]
           },
           practical: {
-            title: 'Force Feedback Reading Stint',
-            focus: 'Identify heavy vs light steering transitions',
+            title: 'Lime Rock Practical Steering Test',
+            focus: 'Developing smooth steering inputs and feeling turn-in grip',
             laps: 5,
             instructions: [
-              'Drive 5 laps at Lime Rock Park in the Subaru BRZ 2013 focusing on steering wheel weight.',
-              'Pay attention to Big Bend and the Uphill when cornering loads build up.',
-              'Note the exact speed where steering force lightens.'
-            ]
-          },
-          challenge: {
-            title: 'Grip Limit Awareness Challenge',
-            type: 'technique',
-            description: 'Identify the cornering speed limit in Big Bend where wheel weight transitions from heavy to light without spinning.',
-            criteria: 'Successfully spot understeer threshold.'
-          }
-        },
-        {
-          id: 3,
-          title: 'Pedal Control & Muscle Memory',
-          focus: 'Smooth brake and throttle application',
-          car: 'Honda Civic Type R 2018',
-          track: 'Grand Oak Raceway (Grand Oak National)',
-          targetLapTime: null,
-          difficulty: 1,
-          suggestedAlternatives: [
-            { car: 'Toyota GR Supra 2020', track: 'Hakone Club', note: 'Modern Turbo RWD' },
-            { car: 'Ford Mustang GT 2018', track: 'Silverstone National', note: 'High-Torque V8 Muscle' }
-          ],
-          theory: {
-            title: 'Your Feet Are Your Engine and Brakes',
-            content: `In a racecar, your feet control power delivery and deceleration. Smooth, progressive pedal control is mandatory for car stability.
-
-### The "Squeeze" Concept
-Never stab or slam pedals! Imagine pressing a ripe tomato—apply pressure progressively.
-- **Abrupt Throttle**: Spikes engine torque, causes front wheelspin and power understeer in FWD cars or snap oversteer in RWD cars.
-- **Smooth Throttle**: Transfers weight smoothly, maximizing exit traction out of the Grand Oak Hairpin.
-- **Abrupt Brake**: Locks up wheels, unbalances chassis violently.
-- **Smooth Brake**: Loads front tires progressively for maximum stopping grip into heavy braking zones.
-
-### Muscle Memory Training
-Developing precise muscle memory allows your feet to hold 30%, 50%, or 80% pedal pressure without looking at telemetry meters.`,
-            keyTakeaways: [
-              'Smooth progressive inputs build grip; abrupt stabs unsettle the chassis',
-              'Squeeze throttle over 2-3 seconds when exiting corners to prevent wheelspin',
-              'Progressive braking loads front tires without causing lockups'
+              'Drive 5 laps around Lime Rock Park (Full Alt) in the 2016 Mazda MX-5.',
+              'Turn 1: Focus on turn-in point and feel wheel heavy up as front tires load.',
+              'Uphill Esses: Execute smooth continuous steering inputs; allow wheel to unwind naturally.',
+              'Main Straight: Return immediately to 9-and-3 anchor position upon corner exit.'
             ],
-            diagramId: 'pedal-squeeze-diagram'
-          },
-          practice: {
-            focus: 'Squeezing vs stabbing pedals',
-            drills: [
-              {
-                id: 'easy',
-                level: '🟢 Easy',
-                title: 'Throttle Squeeze Drill',
-                desc: 'From a standstill on the Grand Oak main straight, compare stabbing throttle vs smoothly squeezing to 100% over 3 seconds in 2nd gear.',
-                reps: 5,
-                time: '7 min'
-              },
-              {
-                id: 'medium',
-                level: '🟡 Medium',
-                title: 'Brake Squeeze Drill',
-                desc: 'Drive 100 km/h on the back straight. Practice progressively squeezing brake to 100% into the Hairpin over 2 seconds without lockup.',
-                reps: 5,
-                time: '7 min'
-              },
-              {
-                id: 'hard',
-                level: '🔴 Hard',
-                title: 'Pedal Rhythm & 50% Hold',
-                desc: 'Alternate 50% throttle hold (2s) and 50% brake hold (2s) down the back straight to calibrate muscle memory.',
-                reps: 10,
-                time: '6 min'
-              }
-            ]
-          },
-          practical: {
-            title: 'Smooth Pedal Modulation Stint',
-            focus: 'Eliminating abrupt pedal spikes',
-            laps: 5,
-            instructions: [
-              'Drive 5 laps at Grand Oak National in the Honda Civic Type R 2018 using smooth, progressive pedal squeezes.',
-              'Listen for tire squeal or engine rev spikes caused by abrupt inputs on corner exits.',
-              'Focus on smooth transition from brake release to throttle squeeze through the Hairpin.'
+            lapTargets: [
+              { lap: 1, target: '1:25.000', focus: 'Find the line, no speed focus' },
+              { lap: 2, target: '1:25.000', focus: 'Focus on steering smoothness' },
+              { lap: 3, target: '1:24.000', focus: 'Add 5% more speed' },
+              { lap: 4, target: '1:24.000', focus: 'Feel for grip through wheel' },
+              { lap: 5, target: '1:23.500', focus: 'Push to comfort limit' }
             ]
           },
           challenge: {
-            title: 'Smooth Input Challenge',
+            title: 'Find the Limit Exercise',
             type: 'technique',
-            description: 'Complete 4 consecutive laps at Grand Oak National with zero wheel lockups or sudden throttle wheelspins.',
-            criteria: '4 clean laps with smooth pedal modulation.'
+            description: 'Take the final corner at 70 km/h. Increase steering angle each lap by 2° until front end pushes and wheel goes light.',
+            criteria: 'Identify understeer threshold and recognize light wheel sensation.'
+          },
+          assessment: {
+            title: 'Steering Feel & Posture Evaluation',
+            criteria: 'Maintain 9-and-3 grip, identify wheel lightness under push, achieve lap consistency within target window.',
+            passingScore: 80,
+            questions: [
+              {
+                question: 'Describe the difference in steering wheel feel between when the car has grip and when the front tires are sliding. (Use 2-3 sentences)',
+                modelAnswer: 'When the car has grip, the steering wheel feels heavy and you can feel resistance that builds as you turn more. When the front tires start to slide (understeer), the wheel suddenly becomes light and the car starts pushing wide, telling me I need to reduce steering angle or speed.'
+              },
+              {
+                question: 'Evaluate your current hand position on the wheel. Are you consistently returning to 9-and-3? What area needs improvement?',
+                modelAnswer: 'I notice that on sharp corners I tend to let go of the wheel with my right hand to grab at 5 o\'clock. On the next lap, I\'ll focus on keeping both hands at 9-and-3 throughout the corner, even if it means turning the wheel past my comfort zone.'
+              },
+              {
+                question: 'What is the single most important feeling you need to develop through the steering wheel?',
+                modelAnswer: 'The ability to feel when the front tires are at their limit. When the steering goes light, I know I\'m about to lose grip. This awareness lets me drive at the limit without going over it.'
+              }
+            ]
+          },
+          telemetryReflection: {
+            title: 'Steering Telemetry & Self-Aligning Torque Study',
+            prompts: [
+              {
+                key: 'steeringTrace',
+                label: 'Steering Input Pattern',
+                question: 'Look at the steering input graph after completing 5 laps. What do you notice about your steering input during long corners?',
+                expectedAnswer: 'Smooth, progressive inputs that don\'t spike—the wheel trace should look like a gentle curve, not a series of steps.'
+              },
+              {
+                key: 'returnCenter',
+                label: 'Return to Center Speed',
+                question: 'How does the steering wheel\'s "return to center" speed compare to how quickly you turn in?',
+                expectedAnswer: 'The wheel will naturally unwind faster than you turned in—this is the self-aligning torque at work. If you\'re fighting the wheel, you\'re probably over-driving the car.'
+              },
+              {
+                key: 'consistencyCheck',
+                label: 'Turn-In Point Consistency',
+                question: 'Are your steering inputs at the same point on the track each lap? What does this tell you?',
+                expectedAnswer: 'If inputs are consistent, you\'re developing muscle memory. Inconsistent inputs suggest you\'re still thinking about the corners rather than feeling them.'
+              }
+            ]
+          },
+          psychologicalCheckIn: {
+            defaultFocus: 4,
+            defaultFrustration: 1,
+            defaultConfidence: 4,
+            resetPrompt: 'Keep your grip relaxed and arms at 90°. Focus on feeling the wheel resistance over pushing for instant lap times.',
+            questions: [
+              'Rate your current frustration level on a scale of 1-10. What aspect of the session caused the most stress?',
+              'Identify one moment during the session where you felt "in the zone" and the car felt natural. What were you doing?',
+              'State your intention for the next session. What is one specific thing you want to improve?'
+            ]
+          },
+          sessionReflection: {
+            questions: [
+              'Summary: What is the single most important thing you learned about steering feel in this session?',
+              'Action: What will you do differently in the next session based on today\'s experience?',
+              'Confidence: On a scale of 1-10, how confident do you feel about your ability to feel the car through the wheel?'
+            ]
           }
         },
         {
-          id: 4,
-          title: 'Feeling the Car',
-          focus: 'Weight transfer, grip, and balance',
-          car: 'Mazda MX-5 2016',
-          track: 'Laguna Seca Raceway (Laguna Seca)',
-          targetLapTime: null,
-          difficulty: 2,
-          suggestedAlternatives: [
-            { car: 'Subaru BRZ 2013', track: 'VIR North', note: 'Elevation Flow Circuit' },
-            { car: 'Porsche 718 Cayman GTS 2018', track: 'Mugello Club', note: 'Mid-Engine Balance Test' }
-          ],
+          id: 2,
+          title: 'Throttle & Brake Feel',
+          focus: 'Sensitivity in right foot, straight line braking, weight transfer & friction circle',
+          car: '2016 Mazda MX-5',
+          track: 'Laguna Seca Raceway',
+          targetLapTime: '1:44.500',
+          difficulty: 1,
+          setupConfig: {
+            adjustments: [
+              { setting: 'Traction Control', value: 'Off (Learn to modulate throttle)' },
+              { setting: 'Stability Control', value: 'Off' },
+              { setting: 'ABS', value: 'On (Keep for now)' },
+              { setting: 'Brake Force (Moza R3)', value: '85% (Slightly stiffer)' },
+              { setting: 'Throttle Deadzone', value: '2% (Removes pedal slack)' },
+              { setting: 'Brake Deadzone', value: '2%' }
+            ]
+          },
           theory: {
-            title: 'The Physics of Car Control & Weight Transfer',
-            content: `A racecar responds dynamically to physics. When you accelerate, brake, or turn, weight shifts between the four tires.
-
-### Weight Transfer Principles
-- **Braking**: Weight transfers **forward** → Front tires gain grip, nose dips, steering gets heavier into Turn 2.
-- **Accelerating**: Weight transfers **rearward** → Rear tires gain traction, nose rises on main straight exit.
-- **Turning**: Weight transfers to **outside tires** → Outside tires carry cornering load through the Corkscrew downhill drop.
-
-### The Friction Circle (Grip Limit)
-Tires have a maximum grip budget. If you use 100% of grip for braking into Turn 2, you have 0% left for steering. As you release the brake, you unlock grip for turning!`,
+            title: 'The Friction Circle & Progressive Pedal Control',
+            content: `All the grip a tire has is shared between four tasks: Accelerating, Braking, Cornering, or a combination.\n\n### The Golden Rule\nIf you use 100% of your grip to brake, you have 0% left to turn. If you use 100% to turn, you have 0% left to accelerate.\n\n### Progressive Inputs vs Stabbing\n- **Throttle**: Squeeze it like an orange—never stomp it down.\n- **Brake**: Squeeze it on smoothly—never stab it violently.\n- **Steering**: Smoothly rotate—never jerk.\n\n### Weight Transfer Principles\nWhen you apply the brake, weight moves **forward** (nose dips, front tires gain grip). When you apply throttle, weight moves **backward** (tail squats, rear tires gain grip). Driver controls grip distribution with the pedals!`,
             keyTakeaways: [
-              'Braking loads front tires for turning grip; accelerating loads rear tires for exit traction',
-              'Smooth weight transfer keeps the car balanced near the limit',
-              'Managing tire grip budget is the key to cornering speed'
+              'Tire grip is a shared budget—never ask 100% braking and 100% cornering at the same time',
+              'Squeeze pedals progressively ("like an orange") rather than stabbing them',
+              'Braking shifts weight forward for front grip; acceleration shifts weight rearward for rear traction'
             ],
             diagramId: 'weight-transfer-friction-circle'
           },
           practice: {
-            focus: 'Weight transfer & friction circle awareness',
+            focus: 'Progressive pedal feel and throttle modulation without wheelspin',
             drills: [
               {
                 id: 'easy',
                 level: '🟢 Easy',
-                title: 'Braking Weight Shift Sensation',
-                desc: 'Brake into Turn 2 at 80 km/h to feel the car nose dip and front steering heavy up as weight moves forward.',
+                title: 'The Squeeze Drill',
+                desc: 'At 60 km/h on a long straight, squeeze brake pedal gradually over 2 full seconds. Feel nose dip, hold pressure 1s, then squeeze off over 1s.',
                 reps: 5,
-                time: '7 min'
+                time: '5 min'
               },
               {
                 id: 'medium',
                 level: '🟡 Medium',
-                title: 'Acceleration Squat Sensation',
-                desc: 'Accelerate out of Turn 11 onto the main straight to feel rear suspension squat and front end lighten.',
+                title: 'The Egg Under Throttle Exercise',
+                desc: 'From standing start through a corner, imagine an egg between foot and pedal. Apply throttle without breaking the egg or triggering wheelspin.',
                 reps: 5,
-                time: '7 min'
-              },
-              {
-                id: 'hard',
-                level: '🔴 Hard',
-                title: 'Friction Circle & Elevation Drop Drill',
-                desc: 'Drive through the Corkscrew downhill drop at 45, 55, 65 km/h to experience weight loading outside tires to the grip limit.',
-                reps: 5,
-                time: '11 min'
+                time: '5 min'
               }
             ]
           },
           practical: {
-            title: 'Chassis Balance & Foundation Stint',
-            focus: 'Connecting steering, pedal, and weight transfer feel',
-            laps: 6,
+            title: 'Laguna Seca Pedal Modulation Stint',
+            focus: 'Braking in a straight line and smooth progressive throttle application',
+            laps: 5,
             instructions: [
-              'Drive 6 laps at Laguna Seca integrating all Module 0 skills.',
-              'Feel weight transfer under heavy braking into Turn 2 before turn-in.',
-              'Manage weight balance through the elevation drop at the Corkscrew.',
-              'Squeeze throttle smoothly on exit as steering unwinds out of Turn 11.',
-              'Congratulate yourself—you are ready for Module 1!'
+              'Drive 5 laps at Laguna Seca in the 2016 Mazda MX-5 with Traction Control OFF.',
+              'Turn 2 (Andretti Hairpin): Brake hard in a straight line, then squeeze throttle on exit.',
+              'The Corkscrew (Turns 8-9): Brake straight before crest, let car settle, squeeze throttle down the hill.',
+              'Turn 11: Execute progressive throttle application—no stabbing on exit!'
+            ],
+            lapTargets: [
+              { lap: 1, target: '1:50.000', focus: 'Brake points only' },
+              { lap: 2, target: '1:48.000', focus: 'Smooth throttle' },
+              { lap: 3, target: '1:46.000', focus: 'Combining brake and throttle' },
+              { lap: 4, target: '1:45.000', focus: 'Consistent inputs' },
+              { lap: 5, target: '1:44.500', focus: 'Push to limit' }
             ]
           },
           challenge: {
-            title: 'Module 0 Graduation Stint',
+            title: 'The No Spin Challenge',
             type: 'technique',
-            description: 'Complete 5 continuous clean laps at Laguna Seca demonstrating weight transfer balance and smooth inputs.',
-            criteria: 'Module 0 Completed & Ready for Module 1!'
+            description: 'Complete 3 clean laps with Traction Control OFF without any wheelspin or snap oversteer excursions.',
+            criteria: '3 clean laps with smooth throttle trace (no spikes).'
+          },
+          assessment: {
+            title: 'Pedal Squeeze & Weight Transfer Assessment',
+            criteria: 'Brake in a straight line, eliminate abrupt pedal spikes, maintain throttle modulation with TCS off.',
+            passingScore: 80,
+            questions: [
+              {
+                question: 'Describe the proper technique for transitioning from braking to throttle. What should you feel?',
+                modelAnswer: 'When you release the brake, the nose rises. When you apply throttle, the rear squats. The transition should be smooth—the car should be on the verge of rotating as you go from brake to throttle.'
+              },
+              {
+                question: 'Identify one corner where you consistently get it wrong and one where you get it right. What\'s the difference?',
+                modelAnswer: 'In Turn 11 I used to stomp the gas and spin, whereas in Turn 4 I squeezed the pedal smoothly. The difference was waiting for the car to point straight before going to 100% throttle.'
+              },
+              {
+                question: 'What is the relationship between throttle application and steering wheel resistance?',
+                modelAnswer: 'As you squeeze the throttle out of a corner, the rear tires take load and the steering wheel naturally starts to unwind. If you force the wheel turned while applying 100% throttle, you break rear traction.'
+              }
+            ]
+          },
+          telemetryReflection: {
+            title: 'Throttle & Brake Telemetry Study',
+            prompts: [
+              {
+                key: 'throttleGraph',
+                label: 'Throttle Application Graph',
+                question: 'Look at your throttle application graph. Where do you apply throttle most aggressively? Where are you smooth?',
+                expectedAnswer: 'Aggressive application should only happen once steering is unwinding on straights. Smooth progressive ramps are essential in mid-corner exits.'
+              },
+              {
+                key: 'brakePressure',
+                label: 'Brake Pressure vs Speed',
+                question: 'Compare your brake pressure to corner entry speed. Is there a relationship between brake pressure and how much speed you carry?',
+                expectedAnswer: 'Peak brake pressure should occur initial in a straight line, tapering off smoothly as you approach turn-in.'
+              },
+              {
+                key: 'spinAnalysis',
+                label: 'Spin & Loss of Control Analysis',
+                question: 'When you spin or lose control, what was the throttle position? What can you learn from this?',
+                expectedAnswer: 'Spins usually occur from stabbing 100% throttle while still holding a high steering angle with TCS off.'
+              }
+            ]
+          },
+          psychologicalCheckIn: {
+            defaultFocus: 4,
+            defaultFrustration: 1,
+            defaultConfidence: 3,
+            resetPrompt: 'TCS is off—expect minor tailslides as part of learning. Focus on smooth footwork over panic corrections.',
+            questions: [
+              'Are you becoming more or less nervous about using the pedals? What\'s changed?',
+              'What is the most frustrating part of this session?',
+              'Name one thing you\'re proud of from this session.'
+            ]
+          },
+          sessionReflection: {
+            questions: [
+              'Summary: What did you learn about throttle and brake application?',
+              'Action: What will you focus on in the next session?',
+              'Confidence: Rate your pedal feel confidence (1-10).'
+            ]
+          }
+        },
+        {
+          id: 3,
+          title: 'Connecting Steering & Pedals',
+          focus: 'Combining steering & pedals, trail braking fundamentals, corner rhythm',
+          car: '2016 Mazda MX-5',
+          track: 'Mid-Ohio Sports Car Course',
+          targetLapTime: '1:40.500',
+          difficulty: 2,
+          setupConfig: {
+            adjustments: [
+              { setting: 'Traction Control', value: 'Off' },
+              { setting: 'Stability Control', value: 'Off' },
+              { setting: 'ABS', value: 'Off (Modulate brake pressure)' },
+              { setting: 'Suggested Line', value: 'Off' },
+              { setting: 'Brake Force (Moza R3)', value: '90% (Slightly stiffer)' },
+              { setting: 'In-Game Brake Pressure', value: '90%' },
+              { setting: 'Steering FFB', value: '80% (Lighter for subtle feel)' }
+            ]
+          },
+          theory: {
+            title: 'Trail Braking & The Integrated Circle of Grip',
+            content: `Trail braking is continuing to brake *after* you've started turning into a corner.\n\n### Why Trail Brake?\n- Braking keeps weight on the front tires into turn-in\n- Loaded front tires deliver maximum steering response\n- Helps the car rotate smoothly into technical apexes like Mid-Ohio Turn 1\n\n### The Danger\n- Too much brake pressure while turning = front tire lockup or understeer\n- Snapping off the brake = sudden weight transfer rearward and snap oversteer\n- Must bleed off brake pressure in direct proportion to turning the wheel!\n\n### The String Metaphor\nImagine a string connecting your steering wheel to your brake pedal. As you turn the wheel down into the corner, the string pulls your brake pedal up!`,
+            keyTakeaways: [
+              'Trail braking maintains front tire load into turn-in for sharper rotation',
+              'Taper off brake pressure progressively as steering wheel angle increases',
+              'Think of steering wheel and brake pedal as connected by a string'
+            ],
+            diagramId: 'pedal-squeeze-diagram'
+          },
+          practice: {
+            focus: 'Corner rhythm and coordinating hand/foot movements',
+            drills: [
+              {
+                id: 'easy',
+                level: '🟢 Easy',
+                title: 'The Corner Rhythm Drill',
+                desc: 'At Mid-Ohio Turn 1, practice 4 stages: 1. Straight brake -> 2. Trail brake turn-in -> 3. Apex balance -> 4. Exit throttle squeeze.',
+                reps: 10,
+                time: '5 min'
+              },
+              {
+                id: 'medium',
+                level: '🟡 Medium',
+                title: 'The Sync Exercise',
+                desc: 'Approach medium corner. As wheel turns, taper brake to 0%. At apex, transition to 20% throttle. As wheel unwinds, ramp throttle to 100%.',
+                reps: 5,
+                time: '5 min'
+              }
+            ]
+          },
+          practical: {
+            title: 'Mid-Ohio Integrated Technique Stint',
+            focus: 'Trail braking and smooth control synchronization',
+            laps: 5,
+            instructions: [
+              'Drive 5 laps at Mid-Ohio in the 2016 Mazda MX-5 with ABS OFF.',
+              'Turn 1 (Keyhole): Trail brake into corner entry, squeeze throttle early onto back straight.',
+              'Turn 3 & 4: Focus on smooth entry, patience on throttle, late apex for aggressive exit.',
+              'Turn 11: Carry speed with smooth, blended inputs.'
+            ],
+            lapTargets: [
+              { lap: 1, target: '1:45.000', focus: 'Establish line' },
+              { lap: 2, target: '1:43.000', focus: 'Smooth transitions' },
+              { lap: 3, target: '1:42.000', focus: 'Add speed' },
+              { lap: 4, target: '1:41.000', focus: 'Consistent' },
+              { lap: 5, target: '1:40.500', focus: 'Push' }
+            ]
+          },
+          challenge: {
+            title: 'The No ABS Challenge',
+            type: 'technique',
+            description: 'Complete 3 laps with ABS OFF without locking up front tires into heavy braking zones.',
+            criteria: '3 clean laps completed with zero flat-spotting or lockup spikes.'
+          },
+          assessment: {
+            title: 'Trail Braking & Input Blending Assessment',
+            criteria: 'Demonstrate progressive brake release into apex, zero ABS lockups, smooth transition to throttle.',
+            passingScore: 80,
+            questions: [
+              {
+                question: 'Describe what you felt when trail braking correctly vs. incorrectly.',
+                modelAnswer: 'When I trail braked correctly, the car rotated beautifully and I could feel the front tires gripping. When I got it wrong, the car pushed wide (understeer) or the rear came around (oversteer). The difference was smoothness and feel.'
+              },
+              {
+                question: 'What is the relationship between the steering wheel and the pedals? How do they work together?',
+                modelAnswer: 'They act as a single system connected by weight transfer. As steering angle increases, brake or throttle intensity must decrease to stay within the tire friction circle.'
+              },
+              {
+                question: 'Why is smoothness more important than speed at this stage?',
+                modelAnswer: 'Smoothness creates predictable weight transfer and consistent tire contact patches. Speed is a natural byproduct of a stable, well-balanced car.'
+              }
+            ]
+          },
+          telemetryReflection: {
+            title: 'Trail Braking & Blended Control Telemetry',
+            prompts: [
+              {
+                key: 'trailBrakeTrace',
+                label: 'Brake vs Steering Overlap',
+                question: 'Look at your brake pressure vs. steering input for a corner. Are you braking while turning? What does the shape of the graph tell you?',
+                expectedAnswer: 'The brake trace should overlap smoothly with the initial rise of the steering trace, forming a continuous slope down to 0% at apex.'
+              },
+              {
+                key: 'transitionPoint',
+                label: 'Brake-to-Throttle Transition',
+                question: 'Where in the corner do you transition from brake to throttle? Is it smooth or abrupt?',
+                expectedAnswer: 'The transition should occur right around apex with minimal coasting (dead time) and zero overlap of full brake and full throttle.'
+              },
+              {
+                key: 'lapComparison',
+                label: 'Fastest vs Slowest Lap Lap-Trace',
+                question: 'Compare your fastest lap to your slowest lap. What was different about the transitions?',
+                expectedAnswer: 'Fastest laps feature smoother trail-braking decay and earlier progressive throttle pickup on exit.'
+              }
+            ]
+          },
+          psychologicalCheckIn: {
+            defaultFocus: 4,
+            defaultFrustration: 1,
+            defaultConfidence: 4,
+            resetPrompt: 'ABS is off—if you lock up, ease off brake pressure immediately. Stay calm and focus on pedal feel.',
+            questions: [
+              'Are you more confident combining inputs than when you started?',
+              'What area still needs the most work?',
+              'What keeps you motivated to continue?'
+            ]
+          },
+          sessionReflection: {
+            questions: [
+              'Summary: What did you learn about integrating steering and pedals?',
+              'Action: What will you focus on in the next session?',
+              'Confidence: Rate your overall driving confidence (1-10).'
+            ]
+          }
+        },
+        {
+          id: 4,
+          title: 'Muscle Memory Consolidation',
+          focus: 'Consolidating all skills, flow state driving, 10 clean laps consistency',
+          car: '2016 Mazda MX-5',
+          track: 'Lime Rock Park - Full Alt',
+          targetLapTime: '1:23.500',
+          difficulty: 2,
+          setupConfig: {
+            adjustments: [
+              { setting: 'Traction Control', value: 'Off' },
+              { setting: 'Stability Control', value: 'Off' },
+              { setting: 'ABS', value: 'Off' },
+              { setting: 'Suggested Line', value: 'Off' },
+              { setting: 'HUD', value: 'Minimal (Speed only)' }
+            ]
+          },
+          theory: {
+            title: 'The Flow State & The 80% Rule',
+            content: `In this final session of Module 0, your goal is to transition from conscious instruction to automatic muscle memory.\n\n### What Is The Flow State?\nFlow happens when you stop overthinking and start feeling. The car becomes a natural extension of your body.\n\n### How To Achieve Flow\n1. **Look Ahead**: Don't fixate on the pavement right in front of your bumper—look through the corner to the exit!\n2. **Breathe & Relax**: Relax your shoulders and loosen your grip on the wheel.\n3. **Trust The Car**: Trust that your body has learned the wheel feel and pedal squeeze over the last 3 sessions.\n\n### The 80% Rule\nDrive at **80% of your perceived limit**. This leaves a safety margin while allowing your brain to enter a calm, instinctive flow state.`,
+            keyTakeaways: [
+              'Automation means replacing conscious thought with tactile instinct and visual targeting',
+              'Look far ahead to your exit point so your hands naturally unwind the wheel',
+              'Drive at 80% effort to maintain consistency within ±2 seconds across 10 clean laps'
+            ],
+            diagramId: 'ffb-grip-diagram'
+          },
+          practice: {
+            focus: 'Vision targeting and non-conscious driving flow',
+            drills: [
+              {
+                id: 'easy',
+                level: '🟢 Easy',
+                title: 'The No Thinking Drill',
+                desc: 'Drive 3 laps with no target lap time. Focus purely on visual points ahead and feeling wheel resistance.',
+                reps: 3,
+                time: '5 min'
+              },
+              {
+                id: 'medium',
+                level: '🟡 Medium',
+                title: 'The Look Ahead Exercise',
+                desc: 'Approach corners looking strictly at apex, then exit. Notice how hands automatically guide wheel without conscious effort.',
+                reps: 5,
+                time: '5 min'
+              }
+            ]
+          },
+          practical: {
+            title: 'Lime Rock Consolidation & Target Stint',
+            focus: 'Achieving consistent lap times and muscle memory automation',
+            laps: 5,
+            instructions: [
+              'Return to Lime Rock Park (Full Alt) in the 2016 Mazda MX-5 with all assists OFF.',
+              'Execute 5 warm-up and rhythm laps building up to your 1:23.500 target benchmark.',
+              'Perform Task 1: 3 laps without looking at lap times.',
+              'Perform Task 2: 1 lap with minimap turned OFF.',
+              'Perform Task 3: 2 laps focusing on deep breathing and relaxed shoulder posture.'
+            ],
+            lapTargets: [
+              { lap: 1, target: '1:26.000', focus: 'Warm-up' },
+              { lap: 2, target: '1:25.000', focus: 'Focus on feel' },
+              { lap: 3, target: '1:24.500', focus: 'Smooth transitions' },
+              { lap: 4, target: '1:24.000', focus: 'Comfort zone' },
+              { lap: 5, target: '1:23.500', focus: 'Consistency target' }
+            ]
+          },
+          challenge: {
+            title: '10 Clean Laps Consistency Challenge',
+            type: 'technique',
+            description: 'Complete 10 consecutive clean laps at Lime Rock Park without any spins or off-track excursions, maintaining lap time spread within 2 seconds.',
+            criteria: '10 clean consecutive laps completed with lap variance < 2.0s.'
+          },
+          assessment: {
+            title: 'Module 0 Graduation & Consistency Assessment',
+            criteria: 'Demonstrate automated muscle memory, 10 clean laps within 2s spread, confidence >= 7/10.',
+            passingScore: 80,
+            questions: [
+              {
+                question: 'Rate your overall driving from 1-10. Where did you improve most?',
+                modelAnswer: 'I\'d rate myself a 7. I improved most in smooth throttle application and feeling what the car is doing through the wheel.'
+              },
+              {
+                question: 'Name one technique from this module that has become automatic (muscle memory).',
+                modelAnswer: 'Returning to 9-and-3 position naturally and feeling the wheel go light when understeer occurs.'
+              },
+              {
+                question: 'What is the single most important lesson you\'ll carry forward?',
+                modelAnswer: 'Smoothness creates grip. Stabbing controls unsettles the car, while progressive inputs keep the tires in their friction circle window.'
+              }
+            ]
+          },
+          telemetryReflection: {
+            title: 'Module 0 Overall Telemetry Review',
+            prompts: [
+              {
+                key: 'steeringCompare',
+                label: 'Steering Input Progression',
+                question: 'Compare the steering input trace from Session 1 to Session 4. What\'s changed?',
+                expectedAnswer: 'Session 4 trace shows far fewer micro-sawing corrections and smooth, continuous curves.'
+              },
+              {
+                key: 'lapSpread',
+                label: 'Lap Time Consistency Window',
+                question: 'How many lap times are within 2 seconds of each other? What does this tell you about consistency?',
+                expectedAnswer: 'At least 8-10 laps within 2s indicates solid muscle memory and physical control.'
+              },
+              {
+                key: 'throttleProgression',
+                label: 'Throttle Ramp Comparison',
+                question: 'What does your throttle application look like now compared to Session 2?',
+                expectedAnswer: 'Throttle traces are smooth progressive ramps out of corners rather than stair-steps or sudden 100% spikes.'
+              }
+            ]
+          },
+          psychologicalCheckIn: {
+            defaultFocus: 5,
+            defaultFrustration: 1,
+            defaultConfidence: 4,
+            resetPrompt: 'You have built the physical foundation! Trust your muscle memory and drive with relaxed confidence.',
+            questions: [
+              'What was the most rewarding moment of this session?',
+              'How has your anxiety level changed from Session 1 to Session 4?',
+              'What\'s next? Do you feel ready to progress to Module 1?'
+            ]
+          },
+          sessionReflection: {
+            questions: [
+              'Summary: What did you accomplish in this module?',
+              'Assessment: Are you ready to move to Module 1? Why/why not?',
+              'Future: What would you do differently if you repeated this module?'
+            ]
           }
         }
       ]

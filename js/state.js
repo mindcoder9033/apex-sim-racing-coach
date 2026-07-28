@@ -98,23 +98,13 @@ class ApexStore {
   }
 
   getNextRecommendedSession() {
-    if (typeof APEX_CONTENT === 'undefined' || !APEX_CONTENT.modules) {
-      return { moduleId: this.data.currentModule || 1, sessionId: this.data.currentSession || 1, title: 'Session 1', car: 'Mazda MX-5', track: 'Laguna Seca' };
-    }
-
-    // Check Module 0 orientation sessions first
-    const mod0 = APEX_CONTENT.modules.find(m => m.id === 0);
-    if (mod0 && mod0.sessions) {
-      for (const s of mod0.sessions) {
-        if (!this.isSessionCompleted(0, s.id)) {
-          return { moduleId: 0, sessionId: s.id, title: s.title, car: s.car, track: s.track };
-        }
-      }
+    if (typeof APEX_CONTENT === 'undefined' || !APEX_CONTENT.modules || APEX_CONTENT.modules.length === 0) {
+      return { moduleId: this.data.currentModule || 1, sessionId: this.data.currentSession || 1, title: 'No Sessions Available', car: 'N/A', track: 'N/A' };
     }
 
     // Check active module sessions
-    const currentModId = this.data.currentModule || 1;
-    const activeMod = APEX_CONTENT.modules.find(m => m.id === currentModId) || APEX_CONTENT.modules[1];
+    const currentModId = this.data.currentModule || APEX_CONTENT.modules[0].id;
+    const activeMod = APEX_CONTENT.modules.find(m => m.id === currentModId) || APEX_CONTENT.modules[0];
     if (activeMod && activeMod.sessions) {
       for (const s of activeMod.sessions) {
         if (!this.isSessionCompleted(currentModId, s.id)) {
@@ -168,7 +158,10 @@ class ApexStore {
 
   // Check if a module is unlocked
   isModuleUnlocked(moduleId) {
-    if (moduleId === 0 || moduleId === 1) return true;
+    const firstModId = (typeof APEX_CONTENT !== 'undefined' && APEX_CONTENT.modules && APEX_CONTENT.modules.length > 0)
+      ? APEX_CONTENT.modules[0].id
+      : 1;
+    if (moduleId === firstModId) return true;
     const prevModuleId = moduleId - 1;
     const prevModConfig = (typeof APEX_CONTENT !== 'undefined' && APEX_CONTENT.modules)
       ? APEX_CONTENT.modules.find(m => m.id === prevModuleId)
@@ -439,16 +432,10 @@ class ApexStore {
       newlyUnlocked.push({ id: 'first_session', title: 'First Steps', desc: 'Completed your first racing coaching session.' });
     }
 
-    // Line Master (3 sessions in Module 1)
-    if (this.data.completedSessions.filter(k => k.startsWith('1-')).length >= 3 && !this.data.achievements.includes('line_master')) {
-      this.data.achievements.push('line_master');
-      newlyUnlocked.push({ id: 'line_master', title: 'Line Master', desc: 'Understood the fundamentals of corner radius.' });
-    }
-
-    // Module 1 Completion
-    if (this.data.completedSessions.filter(k => k.startsWith('1-')).length >= 12 && !this.data.achievements.includes('the_completer')) {
+    // Module Completion
+    if (this.data.completedModules.length >= 1 && !this.data.achievements.includes('the_completer')) {
       this.data.achievements.push('the_completer');
-      newlyUnlocked.push({ id: 'the_completer', title: 'The Completer', desc: 'Successfully finished Module 1: The Three Pillars of Racing!' });
+      newlyUnlocked.push({ id: 'the_completer', title: 'The Completer', desc: 'Successfully finished a curriculum module!' });
     }
 
     // Streak Achievement

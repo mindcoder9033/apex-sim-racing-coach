@@ -52,12 +52,21 @@ class ModulesController {
         <div class="modules-overview-grid">
     `;
 
-    modules.forEach(mod => {
-      const isUnlocked = window.apexStore.isModuleUnlocked(mod.id);
-      const modCompletedSessions = data.completedSessions.filter(k => k.startsWith(`${mod.id}-`)).length;
-      const totalModSessions = (mod.sessions && mod.sessions.length > 0) ? mod.sessions.length : 12;
-      const modProgressPct = Math.round((modCompletedSessions / totalModSessions) * 100);
-      const isMastered = modCompletedSessions === totalModSessions && totalModSessions > 0;
+    if (modules.length === 0) {
+      html += `
+        <div class="card p-6 text-center" style="grid-column: 1 / -1; background: rgba(255,255,255,0.02); border: 1px dashed var(--color-border);">
+          <i data-lucide="book-open" class="icon-xl text-muted mb-3" style="font-size:2.5rem;"></i>
+          <h2 class="font-menu text-xl mb-2">No Modules Available</h2>
+          <p class="text-tertiary">Curriculum modules are currently under development.</p>
+        </div>
+      `;
+    } else {
+      modules.forEach(mod => {
+        const isUnlocked = window.apexStore.isModuleUnlocked(mod.id);
+        const modCompletedSessions = data.completedSessions.filter(k => k.startsWith(`${mod.id}-`)).length;
+        const totalModSessions = (mod.sessions && mod.sessions.length > 0) ? mod.sessions.length : 12;
+        const modProgressPct = Math.round((modCompletedSessions / totalModSessions) * 100);
+        const isMastered = modCompletedSessions === totalModSessions && totalModSessions > 0;
 
       // Extract key focus tags from module description or session topics
       const focusTags = mod.sessions ? mod.sessions.slice(0, 3).map(s => s.car || s.track).filter(Boolean) : [];
@@ -96,6 +105,7 @@ class ModulesController {
         </div>
       `;
     });
+    }
 
     html += `
         </div>

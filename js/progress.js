@@ -80,8 +80,7 @@ class ProgressController {
           <div class="grid-3 mt-4">
             ${this.renderAchievementCard('first_visit', 'First Step', 'Visited Apex and started your coaching journey.', data.achievements, 'flag')}
             ${this.renderAchievementCard('first_session', 'First Session', 'Completed your first 45-minute structured session.', data.achievements, 'gauge')}
-            ${this.renderAchievementCard('line_master', 'Line Master', 'Understood corner radius and hit reference markers.', data.achievements, 'spline')}
-            ${this.renderAchievementCard('the_completer', 'The Completer', 'Completed all 12 sessions of Module 1: The Three Pillars of Racing.', data.achievements, 'trophy')}
+            ${this.renderAchievementCard('the_completer', 'The Completer', 'Successfully completed a curriculum module.', data.achievements, 'trophy')}
             ${this.renderAchievementCard('streak_master', 'Consistent Racer', 'Maintained a 3-week consecutive practice streak.', data.achievements, 'zap')}
             ${this.renderAchievementCard('apex_legend', 'Apex Legend', 'Achieved an overall module scorecard rating of 85+.', data.achievements, 'award')}
           </div>

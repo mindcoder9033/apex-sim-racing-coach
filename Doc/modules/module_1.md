@@ -326,3 +326,693 @@ Judge it by comparing today's driving to yesterday's.
 If you complete this module with patience, consistency, and an open mindset, you will have established a strong foundation for every advanced driving technique that follows in future modules.
 
 Welcome to your sim racing journey.
+# Part 2 — Global Baseline Setup
+
+> **"Set it once. Learn with it. Understand it."**
+
+One of the most common mistakes beginners make is constantly changing wheel settings after every session or copying force feedback profiles from professional drivers.
+
+In Module 1, **consistency begins with your equipment**.
+
+For the next 30 days, you will use **one global hardware profile** and **one global game profile**. Every lesson, drill, and assessment has been designed around these settings.
+
+Only after completing Module 1 should you begin experimenting with advanced tuning.
+
+---
+
+# Global Setup Philosophy
+
+The settings in this module prioritize:
+
+* Comfort during 45-minute practice sessions.
+* Clear communication of tire grip and vehicle weight transfer.
+* Smooth, predictable steering response.
+* Minimal driver fatigue.
+* Consistency across all 12 sessions.
+* Skill development over maximum realism.
+
+Remember:
+
+> **The objective is not to make the wheel feel heavy.**
+>
+> **The objective is to make the wheel communicate what the car is doing.**
+
+---
+
+# Moza R3 Global Settings
+
+| Setting                   | Recommended Value | Why This Setting                                                                 |
+| ------------------------- | :---------------: | -------------------------------------------------------------------------------- |
+| Steering Rotation         |      **900°**     | Closely matches modern road cars and encourages smooth steering.                 |
+| Force Feedback Strength   |      **70%**      | Strong enough to communicate grip while remaining comfortable for long sessions. |
+| Road Feel                 |      **25%**      | Adds surface detail without excessive vibration.                                 |
+| Wheel Damper              |      **20%**      | Reduces oscillation and improves stability.                                      |
+| Friction                  |      **15%**      | Provides natural steering resistance without feeling heavy.                      |
+| Inertia                   |      **20%**      | Encourages smoother steering transitions.                                        |
+| Spring Effect             |       **0%**      | Avoids artificial self-centering forces.                                         |
+| Natural Damper            |      **25%**      | Creates predictable steering behavior.                                           |
+| Hands-Off Protection      |    **Enabled**    | Prevents unexpected wheel movement when released.                                |
+| Pedal Deadzone (Throttle) |     **0–100%**    | Provides full pedal travel and precise throttle modulation.                      |
+| Pedal Deadzone (Brake)    |     **0–100%**    | Allows consistent brake pressure across the full pedal range.                    |
+
+---
+
+# Understanding Every Moza R3 Setting
+
+## Steering Rotation — 900°
+
+Steering rotation determines how far the wheel turns from full left to full right.
+
+A 900° rotation closely resembles the steering ratio found in many modern road cars. It encourages deliberate, smooth steering movements and helps beginners avoid making abrupt corrections.
+
+**Why 900°?**
+
+* Prevents twitchy steering.
+* Builds correct muscle memory.
+* Transfers well to other simulators.
+
+During Module 1, this value remains unchanged.
+
+---
+
+## Force Feedback Strength — 70%
+
+Force feedback allows the wheel to communicate what the front tires are experiencing.
+
+A beginner does **not** need the strongest possible force feedback.
+
+Instead, you need force feedback that lets you feel:
+
+* Tire loading.
+* Loss of grip.
+* Weight transfer.
+* Road texture.
+
+A value around **70%** provides clear information while reducing arm fatigue during repeated practice sessions.
+
+---
+
+## Road Feel — 25%
+
+Road Feel simulates bumps and surface texture.
+
+Too much vibration makes it difficult to recognize meaningful steering feedback.
+
+Keeping this setting relatively low allows important signals—such as grip changes—to stand out.
+
+---
+
+## Wheel Damper — 20%
+
+Wheel damping slows sudden steering movements.
+
+It helps:
+
+* Reduce oscillation.
+* Stabilize the wheel on straights.
+* Encourage smoother steering corrections.
+
+Too much damping makes the steering feel sluggish, while too little can make the wheel nervous.
+
+---
+
+## Friction — 15%
+
+Friction simulates the natural mechanical resistance found in a real steering system.
+
+A small amount improves steering confidence without making the wheel unnecessarily heavy.
+
+---
+
+## Inertia — 20%
+
+Inertia adds weight to steering transitions.
+
+This encourages smooth, flowing steering inputs instead of rapid left-right corrections.
+
+Beginners generally benefit from a moderate amount of inertia.
+
+---
+
+## Spring Effect — 0%
+
+Artificial spring effects create steering forces that do not exist in the vehicle itself.
+
+Instead of relying on software-generated centering forces, students should learn to recognize the natural self-aligning torque produced by the tires.
+
+---
+
+## Natural Damper — 25%
+
+Natural damping smooths steering movement without masking important feedback.
+
+The wheel should always feel stable, predictable and informative.
+
+---
+
+## Hands-Off Protection
+
+This safety feature should remain enabled.
+
+It helps prevent unexpected wheel movement if the steering wheel is accidentally released during a spin or collision.
+
+---
+
+## Pedal Deadzones
+
+For Module 1:
+
+Throttle:
+
+* Minimum: 0%
+* Maximum: 100%
+
+Brake:
+
+* Minimum: 0%
+* Maximum: 100%
+
+Using the full pedal travel allows beginners to develop precise muscle memory and consistent pedal control.
+
+---
+
+# Forza Motorsport (2023) Global Settings
+
+The following settings establish a neutral, beginner-friendly driving experience.
+
+| Setting                 | Recommended Value | Why This Setting                                                  |
+| ----------------------- | :---------------: | ----------------------------------------------------------------- |
+| Steering Mode           |   **Simulation**  | Produces realistic steering behavior and proper vehicle response. |
+| Steering Sensitivity    |       **50**      | Neutral response with no artificial quickening or slowing.        |
+| Force Feedback Scale    |       **75**      | Balanced steering forces suitable for learning.                   |
+| Center Spring Scale     |       **0**       | Prevents artificial steering resistance.                          |
+| Wheel Damping Scale     |       **15**      | Improves stability without masking tire feedback.                 |
+| Mechanical Trail Scale  |      **100**      | Preserves natural self-aligning torque.                           |
+| Pneumatic Trail Scale   |      **100**      | Enhances tire grip communication.                                 |
+| Road Feel Scale         |       **50**      | Moderate surface detail for improved immersion.                   |
+| Load Sensitivity        |       **50**      | Balanced force buildup during cornering.                          |
+| Dynamic Damper Behavior |       **50**      | Stabilizes steering at higher speeds while remaining responsive.  |
+| Vibration Scale         |       **50**      | Additional tactile feedback without becoming distracting.         |
+
+---
+
+# Driving Assists (Module Progression)
+
+Assists will gradually reduce as your skills improve.
+
+| Sessions | Transmission       | Racing Line       | ABS | TCS                     | Stability Control | Rewind  |
+| -------- | ------------------ | ----------------- | --- | ----------------------- | ----------------- | ------- |
+| 1–3      | Automatic          | Full              | On  | On                      | On                | On      |
+| 4–6      | Automatic → Manual | Braking Line Only | On  | On                      | Off               | On      |
+| 7–9      | Manual             | Braking Line Only | On  | Car Dependent           | Off               | Limited |
+| 10–12    | Manual             | Minimal or Off    | On  | Off (where appropriate) | Off               | Off     |
+
+The purpose of assists is to support learning—not replace driver skill.
+
+---
+
+# Understanding the Forza Settings
+
+## Steering Mode
+
+Simulation steering allows the vehicle to respond naturally to steering inputs.
+
+Although it may feel less forgiving than Normal steering initially, it develops habits that transfer to other simulators and improves long-term car control.
+
+---
+
+## Steering Sensitivity
+
+Keeping sensitivity at the neutral midpoint prevents exaggerated steering responses.
+
+The goal is predictability rather than quick reactions.
+
+---
+
+## Force Feedback Scale
+
+This controls the overall strength of steering forces.
+
+A moderate setting provides sufficient detail while avoiding fatigue during repeated practice.
+
+---
+
+## Mechanical Trail
+
+Mechanical trail creates much of the steering's natural self-centering behavior.
+
+Maintaining it at its default strength allows students to experience realistic front tire loading.
+
+---
+
+## Pneumatic Trail
+
+This setting communicates how much grip the front tires are generating.
+
+It becomes particularly useful during braking and corner entry, where students begin learning to sense available grip.
+
+---
+
+## Wheel Damping
+
+Wheel damping smooths steering movement and reduces unwanted oscillation.
+
+Too much damping masks important feedback, while too little can make the wheel feel unstable.
+
+---
+
+## Road Feel
+
+Road feel reproduces bumps, curbs and surface texture.
+
+Moderate values help distinguish meaningful grip changes from unnecessary vibration.
+
+---
+
+## Dynamic Damper
+
+Dynamic damping provides additional steering stability as vehicle speed increases.
+
+This makes high-speed driving less intimidating for beginners without removing useful steering feedback.
+
+---
+
+# Driver Position Checklist
+
+Before driving, spend a few minutes setting up your seating position correctly.
+
+A comfortable, repeatable driving position improves consistency and reduces fatigue.
+
+## Seating Position
+
+☐ Sit with your back fully supported.
+
+☐ Keep both shoulders against the seat during steering.
+
+☐ Maintain a slight bend in your elbows when holding the wheel.
+
+☐ Maintain a slight bend in your knees when fully pressing the brake pedal.
+
+☐ Keep both feet comfortably positioned over the pedals.
+
+---
+
+## Steering Wheel Position
+
+☐ Wheel centered.
+
+☐ Hands positioned at approximately **9 and 3 o'clock**.
+
+☐ Relax your grip.
+
+☐ Wrists remain straight.
+
+☐ Avoid gripping the wheel too tightly.
+
+---
+
+## Monitor Position
+
+☐ Monitor centered directly in front of you.
+
+☐ Horizon approximately at eye level.
+
+☐ Minimize head movement while driving.
+
+---
+
+## Driving Environment
+
+☐ Comfortable room temperature.
+
+☐ Minimal distractions.
+
+☐ Stable chair.
+
+☐ Good lighting.
+
+☐ Phone on silent.
+
+---
+
+# Before Every Session Checklist
+
+Complete this checklist before beginning each practice session.
+
+## Hardware
+
+☐ Wheel connected.
+
+☐ Pedals calibrated.
+
+☐ Wheel centered.
+
+☐ Force feedback functioning normally.
+
+---
+
+## Game
+
+☐ Correct driver profile loaded.
+
+☐ Correct car selected.
+
+☐ Correct track selected.
+
+☐ Assists match today's session.
+
+---
+
+## Driver
+
+☐ Relaxed posture.
+
+☐ Hands at 9 and 3.
+
+☐ Goals for today's session understood.
+
+☐ No expectation of setting a fastest lap.
+
+---
+
+## Mindset
+
+Ask yourself:
+
+* What is today's primary skill?
+* What mistake am I trying to eliminate?
+* What does success look like today?
+
+Remember:
+
+> **Practice does not make perfect.**
+>
+> **Purposeful practice makes permanent improvement.**
+
+Every session is an opportunity to reinforce good habits. Focus on smooth, deliberate inputs, trust the learning process, and let speed emerge naturally from sound technique.
+
+# Part 3 — Session Roadmap
+
+> **"Every session has a purpose. Every skill builds on the previous one."**
+
+Module 1 has been carefully structured as a progressive driver development program. Rather than teaching isolated techniques, each session introduces **one new core skill** while reinforcing everything learned previously.
+
+The curriculum follows the philosophy:
+
+> **Confidence → Consistency → Speed**
+
+Students are encouraged to repeat sessions whenever necessary. Progress is measured by **consistent execution**, not by how quickly the program is completed.
+
+---
+
+# 12-Session Overview
+
+| Session | Phase             | Car Type            | Track Type           | Primary Skill              | Telemetry Focus            |
+| :-----: | ----------------- | ------------------- | -------------------- | -------------------------- | -------------------------- |
+|    1    | Build Confidence  | FWD Hatchback       | Beginner Fictional   | Steering Fundamentals      | Speed Trace                |
+|    2    | Build Confidence  | FWD Hatchback       | Beginner Fictional   | Vision & Looking Ahead     | Speed + Steering           |
+|    3    | Build Confidence  | FWD Hatchback       | Beginner Fictional   | Racing Line                | Steering Trace             |
+|    4    | Build Control     | RWD Sports Car      | Short Real Circuit   | Braking Technique          | Brake Input                |
+|    5    | Build Control     | RWD Sports Car      | Short Real Circuit   | Brake Release              | Brake Release              |
+|    6    | Build Control     | RWD Sports Car      | Intermediate Circuit | Apex & Corner Exit         | Throttle Application       |
+|    7    | Build Consistency | RWD Sports Car      | Intermediate Circuit | Weight Transfer            | Steering + Throttle        |
+|    8    | Build Consistency | RWD Sports Car      | Intermediate Circuit | Throttle Modulation        | Gear Selection             |
+|    9    | Build Consistency | AWD Performance Car | Technical Circuit    | Driving Rhythm             | Combined Inputs            |
+|    10   | Build Performance | AWD Performance Car | Technical Circuit    | Consistency                | Lap Comparison             |
+|    11   | Build Performance | Mixed Drivetrain    | Advanced Circuit     | Beginner Telemetry         | Full Telemetry Review      |
+|    12   | Final Assessment  | Mixed Drivetrain    | Challenge Circuit    | Complete Driver Evaluation | Final Performance Analysis |
+
+---
+
+# Car Progression
+
+The choice of vehicle is intentional.
+
+Students begin with forgiving cars that encourage confidence before progressing to vehicles that require greater precision and throttle control.
+
+## Sessions 1–3 — Front-Wheel Drive (FWD)
+
+Focus:
+
+* Confidence
+* Smooth steering
+* Stable braking
+* Learning the racing line
+
+Why FWD?
+
+Front-wheel-drive cars naturally resist oversteer, making them ideal for drivers learning basic vehicle control.
+
+Typical characteristics:
+
+* Stable corner entry
+* Predictable handling
+* Forgiving throttle application
+
+Primary learning objective:
+
+> **Learn to control the steering wheel before learning to rotate the car.**
+
+---
+
+## Sessions 4–8 — Rear-Wheel Drive (RWD)
+
+Focus:
+
+* Vehicle balance
+* Brake release
+* Corner exit
+* Weight transfer
+* Progressive throttle
+
+Why RWD?
+
+Rear-wheel-drive vehicles teach students how throttle affects vehicle balance.
+
+Students begin learning that:
+
+* Too much throttle creates instability.
+* Smooth throttle improves grip.
+* Weight transfer influences every corner.
+
+Primary learning objective:
+
+> **Drive the car with both the steering wheel and the accelerator.**
+
+---
+
+## Sessions 9–10 — All-Wheel Drive (AWD)
+
+Focus:
+
+* Traction
+* Stability
+* Confidence at higher speeds
+
+Why AWD?
+
+After students understand weight transfer, AWD introduces higher performance without overwhelming them.
+
+Primary learning objective:
+
+> **Learn how additional traction changes corner exit behavior.**
+
+---
+
+## Sessions 11–12 — Mixed Drivetrain
+
+Students now drive multiple drivetrain layouts while applying exactly the same driving principles.
+
+The emphasis shifts away from the car and toward the driver.
+
+Primary learning objective:
+
+> **Adapt to different vehicles while maintaining consistent driving technique.**
+
+---
+
+# Track Progression
+
+Track selection follows the same philosophy as vehicle selection.
+
+Each circuit has been chosen because it teaches a specific skill rather than simply increasing difficulty.
+
+## Beginner Fictional Circuits
+
+Sessions 1–3
+
+Purpose:
+
+* Reduce cognitive load.
+* Learn steering.
+* Learn vision.
+* Learn racing lines.
+
+Characteristics:
+
+* Wide corners.
+* Generous runoff.
+* Simple layouts.
+* Low stress.
+
+Students focus entirely on technique.
+
+---
+
+## Short Real Circuits
+
+Sessions 4–6
+
+Purpose:
+
+* Introduce realistic braking zones.
+* Learn apexes.
+* Understand corner phases.
+
+Characteristics:
+
+* Moderate elevation changes.
+* Clear braking references.
+* Multiple corner types.
+
+Students begin transferring skills to real-world racing environments.
+
+---
+
+## Intermediate Circuits
+
+Sessions 7–8
+
+Purpose:
+
+* Link corners together.
+* Develop rhythm.
+* Improve consistency.
+
+Characteristics:
+
+* Longer lap length.
+* Flowing sequences.
+* Mixed-speed corners.
+
+Students begin driving complete laps instead of isolated corners.
+
+---
+
+## Technical Circuits
+
+Sessions 9–12
+
+Purpose:
+
+* Integrate all previously learned techniques.
+* Improve precision.
+* Build confidence across varying layouts.
+
+Characteristics:
+
+* High-speed sections.
+* Heavy braking zones.
+* Elevation changes.
+* Complex corner combinations.
+
+By this stage, students should be comfortable adapting to different circuit characteristics.
+
+---
+
+# Skill Progression
+
+Every new lesson builds upon the previous one.
+
+| Session | New Skill                  | Skills Reinforced |
+| ------: | -------------------------- | ----------------- |
+|       1 | Steering Fundamentals      | —                 |
+|       2 | Vision                     | Steering          |
+|       3 | Racing Line                | Steering + Vision |
+|       4 | Braking                    | Previous Skills   |
+|       5 | Brake Release              | Previous Skills   |
+|       6 | Apex & Corner Exit         | Previous Skills   |
+|       7 | Weight Transfer            | Previous Skills   |
+|       8 | Throttle Modulation        | Previous Skills   |
+|       9 | Driving Rhythm             | Previous Skills   |
+|      10 | Consistency                | Previous Skills   |
+|      11 | Beginner Telemetry         | Previous Skills   |
+|      12 | Complete Driver Assessment | Everything        |
+
+By Session 12, students are no longer thinking about individual techniques—they are combining them instinctively.
+
+---
+
+# Telemetry Progression
+
+Telemetry is introduced gradually to avoid overwhelming beginners.
+
+Each session focuses on **one primary telemetry channel**.
+
+| Session | Primary Focus        | Student Learns                        |
+| ------: | -------------------- | ------------------------------------- |
+|       1 | Speed                | Where speed is gained and lost.       |
+|       2 | Steering             | Smooth steering inputs.               |
+|       3 | Steering Corrections | Reducing unnecessary movement.        |
+|       4 | Brake Pressure       | Consistent braking points.            |
+|       5 | Brake Release        | Progressive brake release.            |
+|       6 | Throttle             | Smooth acceleration.                  |
+|       7 | Steering + Throttle  | Balancing the car.                    |
+|       8 | Gear Selection       | Choosing appropriate gears.           |
+|       9 | Combined Inputs      | Coordinating driver controls.         |
+|      10 | Lap Comparison       | Building consistency.                 |
+|      11 | Full Telemetry       | Identifying strengths and weaknesses. |
+|      12 | Performance Review   | Self-coaching using telemetry.        |
+
+Students are never expected to become telemetry experts during Module 1.
+
+Instead, they learn to answer three simple questions:
+
+1. What happened?
+2. Why did it happen?
+3. What will I change next lap?
+
+---
+
+# Assist Progression
+
+Driving assists support learning early in the course and are gradually reduced as confidence increases.
+
+| Sessions | Transmission       | Racing Line       | ABS | TCS                     | Stability Control | Rewind  |
+| -------- | ------------------ | ----------------- | --- | ----------------------- | ----------------- | ------- |
+| 1–3      | Automatic          | Full Racing Line  | On  | On                      | On                | On      |
+| 4–6      | Automatic → Manual | Braking Line Only | On  | On                      | Off               | On      |
+| 7–9      | Manual             | Braking Line Only | On  | Car Dependent           | Off               | Limited |
+| 10–12    | Manual             | Minimal or Off    | On  | Off (where appropriate) | Off               | Off     |
+
+### Why Reduce Assists?
+
+Driving assists are valuable learning tools, but they should not become permanent dependencies.
+
+The progression follows a simple principle:
+
+* **Early sessions:** Build confidence.
+* **Middle sessions:** Build independence.
+* **Final sessions:** Build driver skill.
+
+By the end of Module 1, students should be relying primarily on their own judgment, steering inputs, braking technique, and throttle control rather than electronic aids.
+
+---
+
+# Progress Through the Module
+
+Every session should leave you slightly more capable than the one before.
+
+Do not rush.
+
+If a session feels difficult, repeat it until you can complete clean, consistent laps with confidence.
+
+Remember the guiding principle of this curriculum:
+
+> **Confidence creates consistency.**
+>
+> **Consistency creates speed.**
+>
+> **Speed is earned—not chased.**
+
+When you complete Session 12, you will have established the fundamental skills required for more advanced concepts such as trail braking, racing strategy, advanced telemetry analysis, vehicle setup, and competitive online racing in future modules.

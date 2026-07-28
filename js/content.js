@@ -1,5 +1,141 @@
 const APEX_CONTENT = {
-  "modules": [],
+  "modules": [
+    {
+      "id": 1,
+      "title": "Foundations of Sim Racing",
+      "subtitle": "Confidence → Consistency → Speed (30-Day Beginner Driver Development)",
+      "duration": "30 Days (12 Sessions)",
+      "unlocked": true,
+      "sessions": [
+        {
+          "id": 1,
+          "title": "Session 1 — Steering Fundamentals",
+          "phase": "Phase 1 — Build Confidence",
+          "duration": "45 Minutes",
+          "primarySkill": "Steering Fundamentals",
+          "car": "2021 Honda Civic Type R (FWD)",
+          "track": "Hakone Club Circuit",
+          "targetLapTime": "1:15.000",
+          "difficulty": 1,
+          "assistsConfig": {
+            "transmission": "Automatic (No Clutch)",
+            "drivingLine": "Full Racing Line",
+            "tcs": "On (Default)",
+            "stm": "On (Default)",
+            "abs": "On (Default)",
+            "steering": "Simulation (900°)"
+          },
+          "theory": {
+            "title": "Steering is Communication",
+            "content": "Every advanced driving technique begins with steering. Braking, throttle application, racing line, weight transfer, and cornering all depend on your ability to place the car accurately.\n\n### The Golden Rule of Steering\n> **Turn the wheel only as much as necessary—and no more.**\n\n### Steering is Communication\nThe steering wheel is not simply used to change direction—it is your primary method of communicating with the front tires. Every steering movement asks the tires to generate grip. The smoother your request, the easier it is for the tires to respond.\n\n### Correct Hand Position\nAlways begin with your hands positioned at **9 and 3 o'clock**.\n- **Benefits**: Maximum steering precision, better force feedback communication, reduced arm fatigue, improved control.\n- **Avoid**: Crossing arms, driving with one hand, or gripping the wheel too tightly. Relax your hands and let the wheel communicate.",
+            "keyTakeaways": [
+              "Fast drivers make fewer, smaller, and smoother steering corrections",
+              "Maintain hands at 9 and 3 o'clock with a relaxed grip to read FFB",
+              "Turn progressively into corners, hold a steady angle, and unwind smoothly on exit"
+            ],
+            "diagramId": "steering-fundamentals-diagram"
+          },
+          "practice": {
+            "focus": "10-minute smooth steering drill focusing on one clean input per corner",
+            "drills": [
+              {
+                "id": "easy",
+                "level": "🟢 Easy",
+                "title": "Smooth Steering Exercise",
+                "desc": "Drive at a comfortable pace. For every corner: 1. Look toward exit. 2. Turn smoothly. 3. Hold steady angle. 4. Gradually unwind.",
+                "reps": 1,
+                "time": "10 min"
+              }
+            ]
+          },
+          "practical": {
+            "title": "Practical Driving Test — 5 Clean Laps",
+            "focus": "Completing 5 consecutive clean laps without leaving the circuit",
+            "laps": 5,
+            "instructions": [
+              "Stay on the circuit and avoid collisions.",
+              "Keep both hands at 9 and 3 o'clock.",
+              "Make deliberate steering inputs and minimize unnecessary corrections.",
+              "If you leave the track, restart the count."
+            ],
+            "lapTargets": [
+              {
+                "lap": 1,
+                "target": "Clean Benchmark Lap",
+                "focus": "Complete 5 consecutive clean laps with zero off-track penalties"
+              }
+            ]
+          },
+          "challenge": {
+            "title": "The 'One Steering Input' Challenge",
+            "type": "technique",
+            "description": "For every medium-speed corner, complete the turn using one steering movement in, one steady steering angle held, and one smooth steering release.",
+            "criteria": "Zero sawing at the wheel or rapid left-right corrections during 3 consecutive laps."
+          },
+          "assessment": {
+            "title": "Session 1 Technique & Mastery Assessment",
+            "criteria": "5 consecutive clean laps with smooth single-input cornering and relaxed grip.",
+            "passingScore": 80,
+            "questions": [
+              {
+                "question": "Did you keep your hands at 9 and 3 o'clock throughout the session?",
+                "modelAnswer": "Maintaining 9 and 3 o'clock ensured maximum control and allowed full force feedback perception."
+              },
+              {
+                "question": "Did you make one smooth steering input for most corners?",
+                "modelAnswer": "Single smooth turn-ins prevented overloading the front tires and maintained chassis balance."
+              },
+              {
+                "question": "Did you reduce unnecessary steering corrections compared with your first lap?",
+                "modelAnswer": "Fewer corrections showed improved vision and anticipation through corner arcs."
+              }
+            ]
+          },
+          "telemetryReflection": {
+            "title": "Speed Trace Telemetry Review",
+            "prompts": [
+              {
+                "key": "speedDropPoint",
+                "label": "Speed Drop Location",
+                "question": "Where did your speed drop the most during the lap?",
+                "expectedAnswer": "Identifying excessive speed drops highlights corners with over-steering or premature deceleration."
+              },
+              {
+                "key": "steeringCorrectionLoss",
+                "label": "Steering Correction Impact",
+                "question": "Did you lose speed because of unnecessary steering corrections?",
+                "expectedAnswer": "Sawing at the wheel scrubs off speed due to increased tire friction and drag."
+              },
+              {
+                "key": "smoothestCornerTrace",
+                "label": "Smoothest Corner Speed Curve",
+                "question": "Which corner felt the smoothest, and how is that reflected in your speed trace?",
+                "expectedAnswer": "A smooth 'U-shaped' speed trace indicates steady cornering speed without mid-corner scrub."
+              }
+            ]
+          },
+          "psychologicalCheckIn": {
+            "defaultFocus": 5,
+            "defaultFrustration": 1,
+            "defaultConfidence": 4,
+            "resetPrompt": "Today's objective was confidence—not speed. Relax your grip and trust the process.",
+            "questions": [
+              "Did you remain calm after making mistakes during practice?",
+              "Were you trying to drive smoothly instead of chasing lap times?",
+              "Did you enjoy learning steering fundamentals rather than rushing pace?"
+            ]
+          },
+          "sessionReflection": {
+            "questions": [
+              "What did I learn about steering communication today?",
+              "Which corner felt the most comfortable and why?",
+              "What single improvement will I focus on during Session 2?"
+            ]
+          }
+        }
+      ]
+    }
+  ],
   "references": [
     {
       "id": "ref-apex",
